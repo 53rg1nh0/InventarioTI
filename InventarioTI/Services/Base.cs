@@ -72,6 +72,8 @@ namespace InventarioTI.Services
             TableUnidades = new DataTable();
             TableAdms = new DataTable();
 
+
+
             try
             {
                 Validar.BD();
@@ -94,7 +96,7 @@ namespace InventarioTI.Services
                     SERIE = x.Field<object>("SERIE").ToString(),
                     MEMORIA = x.Field<object>("MEMORIA").ToString()
                 }).ToList();
-                using (OleDbConnection Conexao = new OleDbConnection(new Conection<TMM>(new TMM()).String))
+                using (OleDbConnection Conexao = new OleDbConnection(new Conection().String))
                 {
 
                     Conexao.Open();
@@ -157,39 +159,39 @@ namespace InventarioTI.Services
 
                 //using (var wb = new XLWorkbook(Validar.Arquivo + @"\Info\Ajustes.xlsx"))
                 //{
-                    //TableTMMs = wb.Worksheet("TMM").RangeUsed().AsTable().AsNativeDataTable();
-                    //TMMs = TableTMMs.AsEnumerable().Select(x => new TMM
-                    //{
-                    //    Tipo = x.Field<string>("TIPO"),
-                    //    Marca = x.Field<string>("MARCA"),
-                    //    Modelo = x.Field<string>("MODELO")
+                //TableTMMs = wb.Worksheet("TMM").RangeUsed().AsTable().AsNativeDataTable();
+                //TMMs = TableTMMs.AsEnumerable().Select(x => new TMM
+                //{
+                //    Tipo = x.Field<string>("TIPO"),
+                //    Marca = x.Field<string>("MARCA"),
+                //    Modelo = x.Field<string>("MODELO")
 
-                    //}).ToList();
-                    //TableProcessadores = wb.Worksheet("Processador").RangeUsed().AsTable().AsNativeDataTable();
-                    //Processadores = TableProcessadores.AsEnumerable().Select(x => new Processador
-                    //{
-                    //    Tipo = x.Field<string>("TIPO")
-                    //}).ToList();
-                    //TableMemorias = wb.Worksheet("Memoria").RangeUsed().AsTable().AsNativeDataTable();
-                    //Memorias = TableMemorias.AsEnumerable().AsEnumerable().Select(x => new Memoria
-                    //{
-                    //    Ram = x.Field<string>("RAM")
-                    //}).ToList();
-                    //TableUnidades = wb.Worksheet("Unidade").RangeUsed().AsTable().AsNativeDataTable();
-                    //Unidades = TableUnidades.AsEnumerable().Select(x => new Unidade
-                    //{
-                    //    Regiao = x.Field<string>("REGIAO"),
-                    //    UF = x.Field<string>("UF"),
-                    //    Nome = x.Field<string>("NOME"),
-                    //    Sigla = x.Field<string>("SIGLA")
+                //}).ToList();
+                //TableProcessadores = wb.Worksheet("Processador").RangeUsed().AsTable().AsNativeDataTable();
+                //Processadores = TableProcessadores.AsEnumerable().Select(x => new Processador
+                //{
+                //    Tipo = x.Field<string>("TIPO")
+                //}).ToList();
+                //TableMemorias = wb.Worksheet("Memoria").RangeUsed().AsTable().AsNativeDataTable();
+                //Memorias = TableMemorias.AsEnumerable().AsEnumerable().Select(x => new Memoria
+                //{
+                //    Ram = x.Field<string>("RAM")
+                //}).ToList();
+                //TableUnidades = wb.Worksheet("Unidade").RangeUsed().AsTable().AsNativeDataTable();
+                //Unidades = TableUnidades.AsEnumerable().Select(x => new Unidade
+                //{
+                //    Regiao = x.Field<string>("REGIAO"),
+                //    UF = x.Field<string>("UF"),
+                //    Nome = x.Field<string>("NOME"),
+                //    Sigla = x.Field<string>("SIGLA")
 
-                    //}).ToList();
-                    //TableAdms = wb.Worksheet("Adm").RangeUsed().AsTable().AsNativeDataTable();
-                    //Adms = TableAdms.AsEnumerable().Select(x => new Adm
-                    //{
-                    //    matricula = x.Field<object>("MATRICULA").ToString()
+                //}).ToList();
+                //TableAdms = wb.Worksheet("Adm").RangeUsed().AsTable().AsNativeDataTable();
+                //Adms = TableAdms.AsEnumerable().Select(x => new Adm
+                //{
+                //    matricula = x.Field<object>("MATRICULA").ToString()
 
-                    //}).ToList();
+                //}).ToList();
                 //}
                 if (!string.IsNullOrEmpty(Unidade))
                 {
@@ -232,98 +234,112 @@ namespace InventarioTI.Services
 
         public static void InsertBase<T>(List<T> list)
         {
-           
+            //Realizar tratamento caso aplicativo excel esteja aberto.
+
             try
             {
-                T t = list[0];
-                using (OleDbConnection conexao = new OleDbConnection(new Conection<T>(t).String))
+                if (list[0] is Inventario)
                 {
                     foreach (var item in list)
                     {
-                        var p = item.GetType().GetProperties();
-                        string sql = "", val = "", par = "";
-
-                        OleDbCommand Comandos = new OleDbCommand();
-
-                        for (int i = 0; i < p.Length; i++)
-                        {
-                            if (i == 0) val += "(" + p[i].Name + ", ";
-                            else if (i < p.Length - 1) val += p[i].Name + ", ";
-                            else val += p[i].Name + ")";
-
-                            Comandos.Parameters.AddWithValue("@" + p[i].Name, p[i].GetValue(item).ToString());
-                        }
-                        par = val.Replace("(", "(@").Replace(" ", " @");
-                        sql = "INSERT INTO [" + t.GetType().Name + "$] " + val + " VALUES " + par;
-                        Comandos.CommandText = sql;
-                        Comandos.Connection = conexao;
-                        conexao.Open();
-                        try
-                        {
-                            Comandos.ExecuteNonQuery();
-                        }
-                        catch
-                        {
-                            throw new DomainException("Ocorreu um erro ao Inserir os Dados!");
-                        }
-                        finally
-                        {
-                            conexao.Close();
-                            //if (pasta != null)
-                            //{
-                            //    pasta.Close();
-                            //    app.Quit();
-                            //}
-                        }
-                        //using (var workbook = new XLWorkbook(new Conection<T>(item).Path))
-                        //{
-
-                        //    var worksheet = workbook.Worksheet(item.GetType().Name);
-                        //    var properties = item.GetType().GetProperties();
-                        //    var linha = worksheet.LastRowUsed().RowNumber() + 1;
-                        //    var headerRow = worksheet.FirstRow();
-
-
-                        //    foreach (var p in properties)
-                        //    {
-                        //        int columnPosition = headerRow.CellsUsed(c => c.Value.ToString() == p.Name.ToUpper()).FirstOrDefault().WorksheetColumn().ColumnNumber();
-
-                        //        worksheet.Cell(linha, columnPosition).Value = p.GetValue(item).ToString();
-                        //    }
-
-                        //    //worksheet.AutoFilter.Clear();
-                        //    var tabela = worksheet.RangeUsed().AsTable();
-                        //    var borda = tabela.LastRow().Cells().Style.Border;
-
-                        //    borda.BottomBorder = XLBorderStyleValues.Thin;
-                        //    borda.TopBorder = XLBorderStyleValues.Thin;
-                        //    borda.LeftBorder = XLBorderStyleValues.Thin;
-                        //    borda.RightBorder = XLBorderStyleValues.Thin;
-
-                        //    if (double.TryParse(tabela.LastRow().Cell(1).Value.ToString(), out double valorNumerico1))
-                        //    {
-                        //        tabela.LastRow().Cell(1).SetValue(valorNumerico1);
-                        //    }
-
-                        //    if (double.TryParse(tabela.LastRow().Cell(12).Value.ToString(), out double valorNumerico12))
-                        //    {
-                        //        tabela.LastRow().Cell(12).SetValue(valorNumerico12);
-                        //    }
-                        //    //worksheet.RangeUsed().SetAutoFilter();
-                        //    //if (item is Inventario) worksheet.AutoFilter.Sort(4, XLSortOrder.Ascending, false, true);
-
-                        //    workbook.Save();
-                        //    workbook.Dispose();
-                        //}
+                        Inv.Add(item as Inventario);
+                    }
+                }
+                else if (list[0] is Movimentacoes)
+                {
+                    foreach (var item in list)
+                    {
 
                     }
                 }
+                else if (list[0] is TMM)
+                {
+                    foreach (var item in list)
+                    {
 
-                
-                if (t is not Movimentacoes) Atualizar((t is not Movimentacoes) && (t is not Inventario), (t is not Movimentacoes) && (t is not Inventario) || (t is Inventario));
+                    }
+                }
+                else if (list[0] is Processador)
+                {
+                    foreach (var item in list)
+                    {
+
+                    }
+                }
+                else if (list[0] is Memoria)
+                {
+                    foreach (var item in list)
+                    {
+
+                    }
+                }
+                else if (list[0] is Adm)
+                {
+                    foreach (var item in list)
+                    {
+
+                    }
+                }
+                else if (list[0] is Unidade)
+                {
+                    foreach (var item in list)
+                    {
+
+                    }
+                }
+                FI.uctHome.Atualizar();
             }
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    Excel.Abrir(new Conection().Path);
+
+                    T t = list[0];
+                    using (OleDbConnection conexao = new OleDbConnection(new Conection().String))
+                    {
+                        foreach (var item in list)
+                        {
+                            var p = item.GetType().GetProperties();
+                            string sql = "", val = "", par = "";
+
+                            OleDbCommand Comandos = new OleDbCommand();
+
+                            for (int i = 0; i < p.Length; i++)
+                            {
+                                if (i == 0) val += "(" + p[i].Name + ", ";
+                                else if (i < p.Length - 1) val += p[i].Name + ", ";
+                                else val += p[i].Name + ")";
+
+                                Comandos.Parameters.AddWithValue("@" + p[i].Name, p[i].GetValue(item).ToString());
+                            }
+                            par = val.Replace("(", "(@").Replace(" ", " @");
+                            sql = "INSERT INTO [" + t.GetType().Name + "$] " + val + " VALUES " + par;
+                            Comandos.CommandText = sql;
+                            Comandos.Connection = conexao;
+                            conexao.Open();
+                            try
+                            {
+                                Comandos.ExecuteNonQuery();
+                            }
+                            catch
+                            {
+                                throw new DomainException("Ocorreu um erro ao Inserir os Dados!");
+                            }
+                            finally
+                            {
+                                conexao.Close();
+                                Excel.Fechar();
+                            }
+                        }
+                    }
+                }
+                catch (DomainException ex) { MessageBox.Show(ex.Message); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            });         
         }
 
 
@@ -331,7 +347,7 @@ namespace InventarioTI.Services
         {
             try
             {
-                using var workbook = new XLWorkbook(new Conection<T>(alterados.FirstOrDefault()).Path);
+                using var workbook = new XLWorkbook(new Conection().Path);
                 var worksheet = workbook.Worksheet(alterados.FirstOrDefault().GetType().Name);
                 var headerRow = worksheet.FirstRow();
                 worksheet.AutoFilter.Clear();

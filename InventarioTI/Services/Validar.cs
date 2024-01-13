@@ -36,8 +36,8 @@ namespace InventarioTI.Services
             {
 
                 using (FileStream fileStream = File.Open(Arquivo + @"\BD.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
-                using (FileStream fileStream = File.Open(Arquivo + @"\Info\Ajustes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
-                using (FileStream fileStream = File.Open(Arquivo + @"\Info\Movimentacoes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
+                //using (FileStream fileStream = File.Open(Arquivo + @"\Info\Ajustes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
+                //using (FileStream fileStream = File.Open(Arquivo + @"\Info\Movimentacoes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
             }
             catch
             {
@@ -56,7 +56,7 @@ namespace InventarioTI.Services
             stopwatch.Start();
 
 
-            using (OleDbConnection Conexao = new OleDbConnection(new Conection<Inventario>(new Inventario()).String))
+            using (OleDbConnection Conexao = new OleDbConnection(new Conection().String))
             {
                 string Sql = "SELECT * FROM [Inventario$]";
 

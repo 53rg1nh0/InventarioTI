@@ -280,7 +280,9 @@ namespace InventarioTI.View
         private void ptbAdicionarEquipamento_MouseClick(object sender, MouseEventArgs e)
         {
             try
-            {               
+            {
+                
+
                 Unidade unidade = Base.Unidades.Where(u => u.Sigla == Base.Unidade).FirstOrDefault();
                 Inventario i = Base.GetBackup(new Inventario(), unidade);
 
@@ -293,7 +295,8 @@ namespace InventarioTI.View
                 i.MEMORIA = cbxMemoria.Text;
                 i.Nomenclatura();
 
-                Base.Atualizar(false,false);
+                Base.Atualizar(false, false);
+
                 foreach (var p in i.GetType().GetProperties())
                 {
                     if (p.GetValue(i) is null)
@@ -310,7 +313,7 @@ namespace InventarioTI.View
                 else
                 {
                     Base.InsertBase(new List<Inventario> { i });
-                    Base.Inv.Where(x => x.UND == unidade.Nome).ToList().Add(i);
+                    //Base.Inv.Where(x => x.UND == unidade.Nome).ToList().Add(i);
 
                     Task.Run(() => { MessageBox.Show("Equipamento Adicionado com sucesso!"); });
 

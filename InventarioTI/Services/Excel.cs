@@ -24,6 +24,7 @@ namespace InventarioTI.Services
         {
             if (_pasta != null)
             {
+                _pasta.Save();
                 _pasta.Close();
                 _app.Quit();
             }

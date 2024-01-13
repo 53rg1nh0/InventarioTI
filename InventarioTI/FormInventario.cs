@@ -19,9 +19,7 @@ namespace InventarioTI
         }
 
         private void FormInventario_Load(object sender, EventArgs e)
-        {
-
-            Excel.Abrir(new Conection<Inventario>(new Inventario()).Path);
+        {         
 
             Properties.Settings.Default.Resolucao = Properties.Settings.Default.Resolucao == 0 ? 144f : Properties.Settings.Default.Resolucao;
 
