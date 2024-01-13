@@ -5,6 +5,7 @@ using Microsoft.Win32;
 using Org.BouncyCastle.Crypto.Generators;
 using System.Data;
 using System.Numerics;
+using InventarioTI.Entites.emuns;
 
 namespace InventarioTI
 {
@@ -19,6 +20,9 @@ namespace InventarioTI
 
         private void FormInventario_Load(object sender, EventArgs e)
         {
+
+            Excel.Abrir(new Conection<Inventario>(new Inventario()).Path);
+
             Properties.Settings.Default.Resolucao = Properties.Settings.Default.Resolucao == 0 ? 144f : Properties.Settings.Default.Resolucao;
 
             Properties.Settings.Default.Save();
@@ -66,7 +70,6 @@ namespace InventarioTI
                 uctHome.Atualizar();
             }
         }
-
 
         private void PassarPagina(string pagina)
         {
@@ -117,10 +120,9 @@ namespace InventarioTI
             }
         }
 
-
-
         private void ptbFechar_Click(object sender, EventArgs e)
         {
+            Excel.Fechar();
             this.Close();
         }
 
@@ -142,7 +144,6 @@ namespace InventarioTI
         private void ptbSobre_Click(object sender, EventArgs e)
         {
             PassarPagina("Sobre");
-
         }
 
         private void ptbPrograma_Click(object sender, EventArgs e)
@@ -162,7 +163,7 @@ namespace InventarioTI
                 Properties.Settings.Default.Resolucao = 144f;
             }
             Properties.Settings.Default.Save();
-            Application.Restart();
+            System.Windows.Forms.Application.Restart();
         }
     }
 }

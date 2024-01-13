@@ -28,541 +28,546 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventario));
-            pnlLateral = new Panel();
-            cbxResolucao = new ComboBox();
-            ptbSobre = new PictureBox();
-            ptbAjustes = new PictureBox();
-            ptbHome = new PictureBox();
-            ptbPrograma = new PictureBox();
-            pnlButton = new Panel();
-            tlbBotton = new TableLayoutPanel();
-            pnlDeskAtivo = new Panel();
-            lblBotton3 = new Label();
-            lblDeskAtv = new Label();
-            pictureBox1 = new PictureBox();
-            pnlBotton3 = new Panel();
-            label1 = new Label();
-            lblNotAtv = new Label();
-            ptbBotton3 = new PictureBox();
-            pnlBotton0 = new Panel();
-            lblNotEst = new Label();
-            lblBotton0 = new Label();
-            ptbBotton0 = new PictureBox();
-            pnlBotton1 = new Panel();
-            lblBotton1 = new Label();
-            ptbBotton1 = new PictureBox();
-            lblDeskEst = new Label();
-            pnlBotton2 = new Panel();
-            lblBotton4 = new Label();
-            lblTotal = new Label();
-            pnlUnidade = new Panel();
-            lblUnidade = new Label();
-            ptbFechar = new PictureBox();
-            ptbMinimizar = new PictureBox();
-            ttpForm = new ToolTip(components);
-            uctSobre = new View.uctSobre();
-            uctAjustes = new View.uctAjustes();
-            uctHome = new View.uctHome();
-            pnlLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbSobre).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbAjustes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbHome).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbPrograma).BeginInit();
-            pnlButton.SuspendLayout();
-            tlbBotton.SuspendLayout();
-            pnlDeskAtivo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            pnlBotton3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbBotton3).BeginInit();
-            pnlBotton0.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbBotton0).BeginInit();
-            pnlBotton1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbBotton1).BeginInit();
-            pnlBotton2.SuspendLayout();
-            pnlUnidade.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbFechar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbMinimizar).BeginInit();
-            SuspendLayout();
+            this.pnlLateral = new System.Windows.Forms.Panel();
+            this.cbxResolucao = new System.Windows.Forms.ComboBox();
+            this.ptbSobre = new System.Windows.Forms.PictureBox();
+            this.ptbAjustes = new System.Windows.Forms.PictureBox();
+            this.ptbHome = new System.Windows.Forms.PictureBox();
+            this.ptbPrograma = new System.Windows.Forms.PictureBox();
+            this.pnlButton = new System.Windows.Forms.Panel();
+            this.tlbBotton = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlDeskAtivo = new System.Windows.Forms.Panel();
+            this.lblBotton3 = new System.Windows.Forms.Label();
+            this.lblDeskAtv = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlBotton3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNotAtv = new System.Windows.Forms.Label();
+            this.ptbBotton3 = new System.Windows.Forms.PictureBox();
+            this.pnlBotton0 = new System.Windows.Forms.Panel();
+            this.lblNotEst = new System.Windows.Forms.Label();
+            this.lblBotton0 = new System.Windows.Forms.Label();
+            this.ptbBotton0 = new System.Windows.Forms.PictureBox();
+            this.pnlBotton1 = new System.Windows.Forms.Panel();
+            this.lblBotton1 = new System.Windows.Forms.Label();
+            this.ptbBotton1 = new System.Windows.Forms.PictureBox();
+            this.lblDeskEst = new System.Windows.Forms.Label();
+            this.pnlBotton2 = new System.Windows.Forms.Panel();
+            this.lblBotton4 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.pnlUnidade = new System.Windows.Forms.Panel();
+            this.lblUnidade = new System.Windows.Forms.Label();
+            this.ptbFechar = new System.Windows.Forms.PictureBox();
+            this.ptbMinimizar = new System.Windows.Forms.PictureBox();
+            this.ttpForm = new System.Windows.Forms.ToolTip(this.components);
+            this.uctSobre = new InventarioTI.View.uctSobre();
+            this.uctAjustes = new InventarioTI.View.uctAjustes();
+            this.uctHome = new InventarioTI.View.uctHome();
+            this.pnlLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSobre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAjustes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrograma)).BeginInit();
+            this.pnlButton.SuspendLayout();
+            this.tlbBotton.SuspendLayout();
+            this.pnlDeskAtivo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlBotton3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBotton3)).BeginInit();
+            this.pnlBotton0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBotton0)).BeginInit();
+            this.pnlBotton1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBotton1)).BeginInit();
+            this.pnlBotton2.SuspendLayout();
+            this.pnlUnidade.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMinimizar)).BeginInit();
+            this.SuspendLayout();
             // 
             // pnlLateral
             // 
-            pnlLateral.BackColor = Color.FromArgb(196, 0, 6);
-            pnlLateral.Controls.Add(cbxResolucao);
-            pnlLateral.Controls.Add(ptbSobre);
-            pnlLateral.Controls.Add(ptbAjustes);
-            pnlLateral.Controls.Add(ptbHome);
-            pnlLateral.Controls.Add(ptbPrograma);
-            pnlLateral.Dock = DockStyle.Left;
-            pnlLateral.Location = new Point(0, 0);
-            pnlLateral.Margin = new Padding(3, 2, 3, 2);
-            pnlLateral.Name = "pnlLateral";
-            pnlLateral.Size = new Size(65, 338);
-            pnlLateral.TabIndex = 0;
+            this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.pnlLateral.Controls.Add(this.cbxResolucao);
+            this.pnlLateral.Controls.Add(this.ptbSobre);
+            this.pnlLateral.Controls.Add(this.ptbAjustes);
+            this.pnlLateral.Controls.Add(this.ptbHome);
+            this.pnlLateral.Controls.Add(this.ptbPrograma);
+            this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLateral.Location = new System.Drawing.Point(0, 0);
+            this.pnlLateral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlLateral.Name = "pnlLateral";
+            this.pnlLateral.Size = new System.Drawing.Size(65, 338);
+            this.pnlLateral.TabIndex = 0;
             // 
             // cbxResolucao
             // 
-            cbxResolucao.AutoCompleteCustomSource.AddRange(new string[] { "100%", "150%" });
-            cbxResolucao.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxResolucao.FormattingEnabled = true;
-            cbxResolucao.Items.AddRange(new object[] { "100%", "150%" });
-            cbxResolucao.Location = new Point(0, 17);
-            cbxResolucao.Name = "cbxResolucao";
-            cbxResolucao.Size = new Size(65, 24);
-            cbxResolucao.TabIndex = 7;
-            cbxResolucao.Visible = false;
-            cbxResolucao.SelectionChangeCommitted += cbxResolucao_SelectionChangeCommitted;
+            this.cbxResolucao.AutoCompleteCustomSource.AddRange(new string[] {
+            "100%",
+            "150%"});
+            this.cbxResolucao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxResolucao.FormattingEnabled = true;
+            this.cbxResolucao.Items.AddRange(new object[] {
+            "100%",
+            "150%"});
+            this.cbxResolucao.Location = new System.Drawing.Point(0, 17);
+            this.cbxResolucao.Name = "cbxResolucao";
+            this.cbxResolucao.Size = new System.Drawing.Size(65, 24);
+            this.cbxResolucao.TabIndex = 7;
+            this.cbxResolucao.Visible = false;
+            this.cbxResolucao.SelectionChangeCommitted += new System.EventHandler(this.cbxResolucao_SelectionChangeCommitted);
             // 
             // ptbSobre
             // 
-            ptbSobre.BackColor = Color.FromArgb(196, 0, 6);
-            ptbSobre.BackgroundImageLayout = ImageLayout.Center;
-            ptbSobre.Cursor = Cursors.Hand;
-            ptbSobre.Image = Properties.Resources.Sobre;
-            ptbSobre.Location = new Point(0, 259);
-            ptbSobre.Margin = new Padding(3, 2, 3, 2);
-            ptbSobre.Name = "ptbSobre";
-            ptbSobre.Padding = new Padding(7, 2, 5, 2);
-            ptbSobre.Size = new Size(65, 52);
-            ptbSobre.TabIndex = 6;
-            ptbSobre.TabStop = false;
-            ptbSobre.Click += ptbSobre_Click;
+            this.ptbSobre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.ptbSobre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ptbSobre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbSobre.Image = global::InventarioTI.Properties.Resources.Sobre;
+            this.ptbSobre.Location = new System.Drawing.Point(0, 259);
+            this.ptbSobre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbSobre.Name = "ptbSobre";
+            this.ptbSobre.Padding = new System.Windows.Forms.Padding(7, 2, 5, 2);
+            this.ptbSobre.Size = new System.Drawing.Size(65, 52);
+            this.ptbSobre.TabIndex = 6;
+            this.ptbSobre.TabStop = false;
+            this.ptbSobre.Click += new System.EventHandler(this.ptbSobre_Click);
             // 
             // ptbAjustes
             // 
-            ptbAjustes.BackColor = Color.FromArgb(196, 0, 6);
-            ptbAjustes.BackgroundImageLayout = ImageLayout.Center;
-            ptbAjustes.Cursor = Cursors.Hand;
-            ptbAjustes.Image = Properties.Resources.Ajustes;
-            ptbAjustes.Location = new Point(0, 168);
-            ptbAjustes.Margin = new Padding(3, 2, 3, 2);
-            ptbAjustes.Name = "ptbAjustes";
-            ptbAjustes.Padding = new Padding(7, 2, 5, 2);
-            ptbAjustes.Size = new Size(65, 52);
-            ptbAjustes.TabIndex = 5;
-            ptbAjustes.TabStop = false;
-            ptbAjustes.Click += ptbAjustes_Click;
+            this.ptbAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.ptbAjustes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ptbAjustes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbAjustes.Image = global::InventarioTI.Properties.Resources.Ajustes;
+            this.ptbAjustes.Location = new System.Drawing.Point(0, 168);
+            this.ptbAjustes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbAjustes.Name = "ptbAjustes";
+            this.ptbAjustes.Padding = new System.Windows.Forms.Padding(7, 2, 5, 2);
+            this.ptbAjustes.Size = new System.Drawing.Size(65, 52);
+            this.ptbAjustes.TabIndex = 5;
+            this.ptbAjustes.TabStop = false;
+            this.ptbAjustes.Click += new System.EventHandler(this.ptbAjustes_Click);
             // 
             // ptbHome
             // 
-            ptbHome.BackColor = Color.FromArgb(196, 0, 6);
-            ptbHome.BackgroundImageLayout = ImageLayout.Center;
-            ptbHome.Cursor = Cursors.Hand;
-            ptbHome.Image = Properties.Resources.Home;
-            ptbHome.Location = new Point(0, 77);
-            ptbHome.Margin = new Padding(3, 2, 3, 2);
-            ptbHome.Name = "ptbHome";
-            ptbHome.Padding = new Padding(7, 2, 5, 2);
-            ptbHome.Size = new Size(65, 52);
-            ptbHome.TabIndex = 4;
-            ptbHome.TabStop = false;
-            ptbHome.Click += ptbHome_Click;
+            this.ptbHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.ptbHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ptbHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbHome.Image = global::InventarioTI.Properties.Resources.Home;
+            this.ptbHome.Location = new System.Drawing.Point(0, 77);
+            this.ptbHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbHome.Name = "ptbHome";
+            this.ptbHome.Padding = new System.Windows.Forms.Padding(7, 2, 5, 2);
+            this.ptbHome.Size = new System.Drawing.Size(65, 52);
+            this.ptbHome.TabIndex = 4;
+            this.ptbHome.TabStop = false;
+            this.ptbHome.Click += new System.EventHandler(this.ptbHome_Click);
             // 
             // ptbPrograma
             // 
-            ptbPrograma.BackColor = Color.FromArgb(196, 0, 6);
-            ptbPrograma.BackgroundImage = Properties.Resources.Programa;
-            ptbPrograma.BackgroundImageLayout = ImageLayout.Stretch;
-            ptbPrograma.Location = new Point(0, 0);
-            ptbPrograma.Margin = new Padding(0);
-            ptbPrograma.Name = "ptbPrograma";
-            ptbPrograma.Size = new Size(65, 61);
-            ptbPrograma.TabIndex = 2;
-            ptbPrograma.TabStop = false;
-            ptbPrograma.Click += ptbPrograma_Click;
+            this.ptbPrograma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.ptbPrograma.BackgroundImage = global::InventarioTI.Properties.Resources.Programa;
+            this.ptbPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptbPrograma.Location = new System.Drawing.Point(0, 0);
+            this.ptbPrograma.Margin = new System.Windows.Forms.Padding(0);
+            this.ptbPrograma.Name = "ptbPrograma";
+            this.ptbPrograma.Size = new System.Drawing.Size(65, 61);
+            this.ptbPrograma.TabIndex = 2;
+            this.ptbPrograma.TabStop = false;
+            this.ptbPrograma.Click += new System.EventHandler(this.ptbPrograma_Click);
             // 
             // pnlButton
             // 
-            pnlButton.BackColor = Color.Black;
-            pnlButton.Controls.Add(tlbBotton);
-            pnlButton.ForeColor = Color.White;
-            pnlButton.Location = new Point(0, 311);
-            pnlButton.Margin = new Padding(3, 2, 3, 2);
-            pnlButton.Name = "pnlButton";
-            pnlButton.Size = new Size(1075, 28);
-            pnlButton.TabIndex = 1;
+            this.pnlButton.BackColor = System.Drawing.Color.Black;
+            this.pnlButton.Controls.Add(this.tlbBotton);
+            this.pnlButton.ForeColor = System.Drawing.Color.White;
+            this.pnlButton.Location = new System.Drawing.Point(0, 311);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Size = new System.Drawing.Size(1075, 28);
+            this.pnlButton.TabIndex = 1;
             // 
             // tlbBotton
             // 
-            tlbBotton.ColumnCount = 6;
-            tlbBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            tlbBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tlbBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tlbBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tlbBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tlbBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tlbBotton.Controls.Add(pnlDeskAtivo, 3, 0);
-            tlbBotton.Controls.Add(pnlBotton3, 4, 0);
-            tlbBotton.Controls.Add(pnlBotton0, 2, 0);
-            tlbBotton.Controls.Add(pnlBotton1, 1, 0);
-            tlbBotton.Controls.Add(pnlBotton2, 5, 0);
-            tlbBotton.Controls.Add(pnlUnidade, 0, 0);
-            tlbBotton.Dock = DockStyle.Fill;
-            tlbBotton.Location = new Point(0, 0);
-            tlbBotton.Margin = new Padding(0);
-            tlbBotton.Name = "tlbBotton";
-            tlbBotton.RowCount = 1;
-            tlbBotton.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlbBotton.Size = new Size(1075, 28);
-            tlbBotton.TabIndex = 7;
+            this.tlbBotton.ColumnCount = 6;
+            this.tlbBotton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlbBotton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlbBotton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlbBotton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlbBotton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlbBotton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlbBotton.Controls.Add(this.pnlDeskAtivo, 3, 0);
+            this.tlbBotton.Controls.Add(this.pnlBotton3, 4, 0);
+            this.tlbBotton.Controls.Add(this.pnlBotton0, 2, 0);
+            this.tlbBotton.Controls.Add(this.pnlBotton1, 1, 0);
+            this.tlbBotton.Controls.Add(this.pnlBotton2, 5, 0);
+            this.tlbBotton.Controls.Add(this.pnlUnidade, 0, 0);
+            this.tlbBotton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlbBotton.Location = new System.Drawing.Point(0, 0);
+            this.tlbBotton.Margin = new System.Windows.Forms.Padding(0);
+            this.tlbBotton.Name = "tlbBotton";
+            this.tlbBotton.RowCount = 1;
+            this.tlbBotton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlbBotton.Size = new System.Drawing.Size(1075, 28);
+            this.tlbBotton.TabIndex = 7;
             // 
             // pnlDeskAtivo
             // 
-            pnlDeskAtivo.Controls.Add(lblBotton3);
-            pnlDeskAtivo.Controls.Add(lblDeskAtv);
-            pnlDeskAtivo.Controls.Add(pictureBox1);
-            pnlDeskAtivo.Dock = DockStyle.Fill;
-            pnlDeskAtivo.Location = new Point(550, 0);
-            pnlDeskAtivo.Margin = new Padding(0);
-            pnlDeskAtivo.Name = "pnlDeskAtivo";
-            pnlDeskAtivo.Size = new Size(175, 28);
-            pnlDeskAtivo.TabIndex = 11;
+            this.pnlDeskAtivo.Controls.Add(this.lblBotton3);
+            this.pnlDeskAtivo.Controls.Add(this.lblDeskAtv);
+            this.pnlDeskAtivo.Controls.Add(this.pictureBox1);
+            this.pnlDeskAtivo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDeskAtivo.Location = new System.Drawing.Point(550, 0);
+            this.pnlDeskAtivo.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlDeskAtivo.Name = "pnlDeskAtivo";
+            this.pnlDeskAtivo.Size = new System.Drawing.Size(175, 28);
+            this.pnlDeskAtivo.TabIndex = 11;
             // 
             // lblBotton3
             // 
-            lblBotton3.AutoSize = true;
-            lblBotton3.Dock = DockStyle.Left;
-            lblBotton3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBotton3.Location = new Point(28, 0);
-            lblBotton3.Name = "lblBotton3";
-            lblBotton3.Padding = new Padding(0, 6, 0, 0);
-            lblBotton3.Size = new Size(45, 22);
-            lblBotton3.TabIndex = 7;
-            lblBotton3.Text = "Ativos:";
+            this.lblBotton3.AutoSize = true;
+            this.lblBotton3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBotton3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBotton3.Location = new System.Drawing.Point(28, 0);
+            this.lblBotton3.Name = "lblBotton3";
+            this.lblBotton3.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblBotton3.Size = new System.Drawing.Size(45, 22);
+            this.lblBotton3.TabIndex = 7;
+            this.lblBotton3.Text = "Ativos:";
             // 
             // lblDeskAtv
             // 
-            lblDeskAtv.AutoSize = true;
-            lblDeskAtv.BackColor = Color.White;
-            lblDeskAtv.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDeskAtv.ForeColor = Color.Black;
-            lblDeskAtv.Location = new Point(79, 6);
-            lblDeskAtv.Margin = new Padding(3, 0, 0, 0);
-            lblDeskAtv.Name = "lblDeskAtv";
-            lblDeskAtv.RightToLeft = RightToLeft.No;
-            lblDeskAtv.Size = new Size(37, 16);
-            lblDeskAtv.TabIndex = 3;
-            lblDeskAtv.Text = "label";
-            lblDeskAtv.TextAlign = ContentAlignment.MiddleRight;
+            this.lblDeskAtv.AutoSize = true;
+            this.lblDeskAtv.BackColor = System.Drawing.Color.White;
+            this.lblDeskAtv.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDeskAtv.ForeColor = System.Drawing.Color.Black;
+            this.lblDeskAtv.Location = new System.Drawing.Point(79, 6);
+            this.lblDeskAtv.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.lblDeskAtv.Name = "lblDeskAtv";
+            this.lblDeskAtv.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDeskAtv.Size = new System.Drawing.Size(37, 16);
+            this.lblDeskAtv.TabIndex = 3;
+            this.lblDeskAtv.Text = "label";
+            this.lblDeskAtv.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Left;
-            pictureBox1.Image = Properties.Resources.Desktop;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(30, 0, 0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(28, 28);
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::InventarioTI.Properties.Resources.Desktop;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlBotton3
             // 
-            pnlBotton3.Controls.Add(label1);
-            pnlBotton3.Controls.Add(lblNotAtv);
-            pnlBotton3.Controls.Add(ptbBotton3);
-            pnlBotton3.Dock = DockStyle.Fill;
-            pnlBotton3.Location = new Point(725, 0);
-            pnlBotton3.Margin = new Padding(0);
-            pnlBotton3.Name = "pnlBotton3";
-            pnlBotton3.Size = new Size(175, 28);
-            pnlBotton3.TabIndex = 9;
+            this.pnlBotton3.Controls.Add(this.label1);
+            this.pnlBotton3.Controls.Add(this.lblNotAtv);
+            this.pnlBotton3.Controls.Add(this.ptbBotton3);
+            this.pnlBotton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBotton3.Location = new System.Drawing.Point(725, 0);
+            this.pnlBotton3.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBotton3.Name = "pnlBotton3";
+            this.pnlBotton3.Size = new System.Drawing.Size(175, 28);
+            this.pnlBotton3.TabIndex = 9;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Left;
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(28, 0);
-            label1.Name = "label1";
-            label1.Padding = new Padding(0, 6, 0, 0);
-            label1.Size = new Size(45, 22);
-            label1.TabIndex = 7;
-            label1.Text = "Ativos:";
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(28, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label1.Size = new System.Drawing.Size(45, 22);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ativos:";
             // 
             // lblNotAtv
             // 
-            lblNotAtv.AutoSize = true;
-            lblNotAtv.BackColor = Color.White;
-            lblNotAtv.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNotAtv.ForeColor = Color.Black;
-            lblNotAtv.Location = new Point(79, 6);
-            lblNotAtv.Margin = new Padding(3, 0, 0, 0);
-            lblNotAtv.Name = "lblNotAtv";
-            lblNotAtv.RightToLeft = RightToLeft.No;
-            lblNotAtv.Size = new Size(37, 16);
-            lblNotAtv.TabIndex = 3;
-            lblNotAtv.Text = "label";
-            lblNotAtv.TextAlign = ContentAlignment.MiddleRight;
+            this.lblNotAtv.AutoSize = true;
+            this.lblNotAtv.BackColor = System.Drawing.Color.White;
+            this.lblNotAtv.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNotAtv.ForeColor = System.Drawing.Color.Black;
+            this.lblNotAtv.Location = new System.Drawing.Point(79, 6);
+            this.lblNotAtv.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.lblNotAtv.Name = "lblNotAtv";
+            this.lblNotAtv.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNotAtv.Size = new System.Drawing.Size(37, 16);
+            this.lblNotAtv.TabIndex = 3;
+            this.lblNotAtv.Text = "label";
+            this.lblNotAtv.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ptbBotton3
             // 
-            ptbBotton3.Dock = DockStyle.Left;
-            ptbBotton3.Image = Properties.Resources.Notebook;
-            ptbBotton3.Location = new Point(0, 0);
-            ptbBotton3.Margin = new Padding(30, 0, 0, 0);
-            ptbBotton3.Name = "ptbBotton3";
-            ptbBotton3.Size = new Size(28, 28);
-            ptbBotton3.TabIndex = 10;
-            ptbBotton3.TabStop = false;
+            this.ptbBotton3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ptbBotton3.Image = global::InventarioTI.Properties.Resources.Notebook;
+            this.ptbBotton3.Location = new System.Drawing.Point(0, 0);
+            this.ptbBotton3.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.ptbBotton3.Name = "ptbBotton3";
+            this.ptbBotton3.Size = new System.Drawing.Size(28, 28);
+            this.ptbBotton3.TabIndex = 10;
+            this.ptbBotton3.TabStop = false;
             // 
             // pnlBotton0
             // 
-            pnlBotton0.Controls.Add(lblNotEst);
-            pnlBotton0.Controls.Add(lblBotton0);
-            pnlBotton0.Controls.Add(ptbBotton0);
-            pnlBotton0.Dock = DockStyle.Fill;
-            pnlBotton0.Location = new Point(375, 0);
-            pnlBotton0.Margin = new Padding(0);
-            pnlBotton0.Name = "pnlBotton0";
-            pnlBotton0.Size = new Size(175, 28);
-            pnlBotton0.TabIndex = 8;
+            this.pnlBotton0.Controls.Add(this.lblNotEst);
+            this.pnlBotton0.Controls.Add(this.lblBotton0);
+            this.pnlBotton0.Controls.Add(this.ptbBotton0);
+            this.pnlBotton0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBotton0.Location = new System.Drawing.Point(375, 0);
+            this.pnlBotton0.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBotton0.Name = "pnlBotton0";
+            this.pnlBotton0.Size = new System.Drawing.Size(175, 28);
+            this.pnlBotton0.TabIndex = 8;
             // 
             // lblNotEst
             // 
-            lblNotEst.AutoSize = true;
-            lblNotEst.BackColor = Color.White;
-            lblNotEst.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNotEst.ForeColor = Color.Black;
-            lblNotEst.Location = new Point(89, 6);
-            lblNotEst.Name = "lblNotEst";
-            lblNotEst.RightToLeft = RightToLeft.No;
-            lblNotEst.Size = new Size(37, 16);
-            lblNotEst.TabIndex = 1;
-            lblNotEst.Text = "label";
-            lblNotEst.TextAlign = ContentAlignment.MiddleRight;
+            this.lblNotEst.AutoSize = true;
+            this.lblNotEst.BackColor = System.Drawing.Color.White;
+            this.lblNotEst.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNotEst.ForeColor = System.Drawing.Color.Black;
+            this.lblNotEst.Location = new System.Drawing.Point(89, 6);
+            this.lblNotEst.Name = "lblNotEst";
+            this.lblNotEst.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNotEst.Size = new System.Drawing.Size(37, 16);
+            this.lblNotEst.TabIndex = 1;
+            this.lblNotEst.Text = "label";
+            this.lblNotEst.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblBotton0
             // 
-            lblBotton0.AutoSize = true;
-            lblBotton0.Dock = DockStyle.Left;
-            lblBotton0.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBotton0.Location = new Point(28, 0);
-            lblBotton0.Name = "lblBotton0";
-            lblBotton0.Padding = new Padding(0, 6, 0, 0);
-            lblBotton0.Size = new Size(55, 22);
-            lblBotton0.TabIndex = 7;
-            lblBotton0.Text = "Backup:";
+            this.lblBotton0.AutoSize = true;
+            this.lblBotton0.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBotton0.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBotton0.Location = new System.Drawing.Point(28, 0);
+            this.lblBotton0.Name = "lblBotton0";
+            this.lblBotton0.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblBotton0.Size = new System.Drawing.Size(55, 22);
+            this.lblBotton0.TabIndex = 7;
+            this.lblBotton0.Text = "Backup:";
             // 
             // ptbBotton0
             // 
-            ptbBotton0.Dock = DockStyle.Left;
-            ptbBotton0.Image = Properties.Resources.Notebook;
-            ptbBotton0.Location = new Point(0, 0);
-            ptbBotton0.Margin = new Padding(30, 0, 0, 0);
-            ptbBotton0.Name = "ptbBotton0";
-            ptbBotton0.Size = new Size(28, 28);
-            ptbBotton0.TabIndex = 10;
-            ptbBotton0.TabStop = false;
+            this.ptbBotton0.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ptbBotton0.Image = global::InventarioTI.Properties.Resources.Notebook;
+            this.ptbBotton0.Location = new System.Drawing.Point(0, 0);
+            this.ptbBotton0.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.ptbBotton0.Name = "ptbBotton0";
+            this.ptbBotton0.Size = new System.Drawing.Size(28, 28);
+            this.ptbBotton0.TabIndex = 10;
+            this.ptbBotton0.TabStop = false;
             // 
             // pnlBotton1
             // 
-            pnlBotton1.Controls.Add(lblBotton1);
-            pnlBotton1.Controls.Add(ptbBotton1);
-            pnlBotton1.Controls.Add(lblDeskEst);
-            pnlBotton1.Dock = DockStyle.Fill;
-            pnlBotton1.Location = new Point(200, 0);
-            pnlBotton1.Margin = new Padding(0);
-            pnlBotton1.Name = "pnlBotton1";
-            pnlBotton1.Size = new Size(175, 28);
-            pnlBotton1.TabIndex = 7;
+            this.pnlBotton1.Controls.Add(this.lblBotton1);
+            this.pnlBotton1.Controls.Add(this.ptbBotton1);
+            this.pnlBotton1.Controls.Add(this.lblDeskEst);
+            this.pnlBotton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBotton1.Location = new System.Drawing.Point(200, 0);
+            this.pnlBotton1.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBotton1.Name = "pnlBotton1";
+            this.pnlBotton1.Size = new System.Drawing.Size(175, 28);
+            this.pnlBotton1.TabIndex = 7;
             // 
             // lblBotton1
             // 
-            lblBotton1.AutoSize = true;
-            lblBotton1.Dock = DockStyle.Left;
-            lblBotton1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBotton1.Location = new Point(28, 0);
-            lblBotton1.Name = "lblBotton1";
-            lblBotton1.Padding = new Padding(0, 6, 0, 0);
-            lblBotton1.Size = new Size(55, 22);
-            lblBotton1.TabIndex = 7;
-            lblBotton1.Text = "Backup:";
+            this.lblBotton1.AutoSize = true;
+            this.lblBotton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBotton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBotton1.Location = new System.Drawing.Point(28, 0);
+            this.lblBotton1.Name = "lblBotton1";
+            this.lblBotton1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblBotton1.Size = new System.Drawing.Size(55, 22);
+            this.lblBotton1.TabIndex = 7;
+            this.lblBotton1.Text = "Backup:";
             // 
             // ptbBotton1
             // 
-            ptbBotton1.Dock = DockStyle.Left;
-            ptbBotton1.Image = Properties.Resources.Desktop;
-            ptbBotton1.Location = new Point(0, 0);
-            ptbBotton1.Margin = new Padding(30, 0, 0, 0);
-            ptbBotton1.Name = "ptbBotton1";
-            ptbBotton1.Size = new Size(28, 28);
-            ptbBotton1.TabIndex = 10;
-            ptbBotton1.TabStop = false;
+            this.ptbBotton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ptbBotton1.Image = global::InventarioTI.Properties.Resources.Desktop;
+            this.ptbBotton1.Location = new System.Drawing.Point(0, 0);
+            this.ptbBotton1.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.ptbBotton1.Name = "ptbBotton1";
+            this.ptbBotton1.Size = new System.Drawing.Size(28, 28);
+            this.ptbBotton1.TabIndex = 10;
+            this.ptbBotton1.TabStop = false;
             // 
             // lblDeskEst
             // 
-            lblDeskEst.AutoSize = true;
-            lblDeskEst.BackColor = Color.White;
-            lblDeskEst.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDeskEst.ForeColor = Color.Black;
-            lblDeskEst.Location = new Point(89, 6);
-            lblDeskEst.Name = "lblDeskEst";
-            lblDeskEst.RightToLeft = RightToLeft.No;
-            lblDeskEst.Size = new Size(37, 16);
-            lblDeskEst.TabIndex = 100;
-            lblDeskEst.Text = "label";
-            lblDeskEst.TextAlign = ContentAlignment.MiddleRight;
+            this.lblDeskEst.AutoSize = true;
+            this.lblDeskEst.BackColor = System.Drawing.Color.White;
+            this.lblDeskEst.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDeskEst.ForeColor = System.Drawing.Color.Black;
+            this.lblDeskEst.Location = new System.Drawing.Point(89, 6);
+            this.lblDeskEst.Name = "lblDeskEst";
+            this.lblDeskEst.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDeskEst.Size = new System.Drawing.Size(37, 16);
+            this.lblDeskEst.TabIndex = 100;
+            this.lblDeskEst.Text = "label";
+            this.lblDeskEst.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlBotton2
             // 
-            pnlBotton2.Controls.Add(lblBotton4);
-            pnlBotton2.Controls.Add(lblTotal);
-            pnlBotton2.Dock = DockStyle.Fill;
-            pnlBotton2.Location = new Point(900, 0);
-            pnlBotton2.Margin = new Padding(0);
-            pnlBotton2.Name = "pnlBotton2";
-            pnlBotton2.Padding = new Padding(60, 0, 0, 0);
-            pnlBotton2.Size = new Size(175, 28);
-            pnlBotton2.TabIndex = 10;
+            this.pnlBotton2.Controls.Add(this.lblBotton4);
+            this.pnlBotton2.Controls.Add(this.lblTotal);
+            this.pnlBotton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBotton2.Location = new System.Drawing.Point(900, 0);
+            this.pnlBotton2.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBotton2.Name = "pnlBotton2";
+            this.pnlBotton2.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.pnlBotton2.Size = new System.Drawing.Size(175, 28);
+            this.pnlBotton2.TabIndex = 10;
             // 
             // lblBotton4
             // 
-            lblBotton4.AutoSize = true;
-            lblBotton4.Dock = DockStyle.Left;
-            lblBotton4.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBotton4.Location = new Point(60, 0);
-            lblBotton4.Name = "lblBotton4";
-            lblBotton4.Padding = new Padding(0, 6, 0, 0);
-            lblBotton4.Size = new Size(38, 22);
-            lblBotton4.TabIndex = 7;
-            lblBotton4.Text = "Total:";
+            this.lblBotton4.AutoSize = true;
+            this.lblBotton4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBotton4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBotton4.Location = new System.Drawing.Point(60, 0);
+            this.lblBotton4.Name = "lblBotton4";
+            this.lblBotton4.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblBotton4.Size = new System.Drawing.Size(38, 22);
+            this.lblBotton4.TabIndex = 7;
+            this.lblBotton4.Text = "Total:";
             // 
             // lblTotal
             // 
-            lblTotal.AutoSize = true;
-            lblTotal.BackColor = Color.White;
-            lblTotal.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTotal.ForeColor = Color.Black;
-            lblTotal.Location = new Point(104, 6);
-            lblTotal.Margin = new Padding(3, 0, 0, 0);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(37, 16);
-            lblTotal.TabIndex = 4;
-            lblTotal.Text = "label";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.White;
+            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblTotal.Location = new System.Drawing.Point(104, 6);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(37, 16);
+            this.lblTotal.TabIndex = 4;
+            this.lblTotal.Text = "label";
             // 
             // pnlUnidade
             // 
-            pnlUnidade.Controls.Add(lblUnidade);
-            pnlUnidade.Dock = DockStyle.Fill;
-            pnlUnidade.Location = new Point(0, 0);
-            pnlUnidade.Margin = new Padding(0);
-            pnlUnidade.Name = "pnlUnidade";
-            pnlUnidade.Size = new Size(200, 28);
-            pnlUnidade.TabIndex = 8;
+            this.pnlUnidade.Controls.Add(this.lblUnidade);
+            this.pnlUnidade.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUnidade.Location = new System.Drawing.Point(0, 0);
+            this.pnlUnidade.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlUnidade.Name = "pnlUnidade";
+            this.pnlUnidade.Size = new System.Drawing.Size(200, 28);
+            this.pnlUnidade.TabIndex = 8;
             // 
             // lblUnidade
             // 
-            lblUnidade.AutoSize = true;
-            lblUnidade.Dock = DockStyle.Left;
-            lblUnidade.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUnidade.Location = new Point(0, 0);
-            lblUnidade.Name = "lblUnidade";
-            lblUnidade.Padding = new Padding(3, 5, 0, 0);
-            lblUnidade.Size = new Size(3, 21);
-            lblUnidade.TabIndex = 7;
+            this.lblUnidade.AutoSize = true;
+            this.lblUnidade.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblUnidade.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUnidade.Location = new System.Drawing.Point(0, 0);
+            this.lblUnidade.Name = "lblUnidade";
+            this.lblUnidade.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
+            this.lblUnidade.Size = new System.Drawing.Size(3, 21);
+            this.lblUnidade.TabIndex = 7;
             // 
             // ptbFechar
             // 
-            ptbFechar.BackColor = Color.White;
-            ptbFechar.Cursor = Cursors.Hand;
-            ptbFechar.Image = Properties.Resources.Fechar;
-            ptbFechar.Location = new Point(1025, 7);
-            ptbFechar.Margin = new Padding(0);
-            ptbFechar.Name = "ptbFechar";
-            ptbFechar.Size = new Size(40, 38);
-            ptbFechar.TabIndex = 2;
-            ptbFechar.TabStop = false;
-            ptbFechar.Click += ptbFechar_Click;
+            this.ptbFechar.BackColor = System.Drawing.Color.White;
+            this.ptbFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbFechar.Image = global::InventarioTI.Properties.Resources.Fechar;
+            this.ptbFechar.Location = new System.Drawing.Point(1025, 7);
+            this.ptbFechar.Margin = new System.Windows.Forms.Padding(0);
+            this.ptbFechar.Name = "ptbFechar";
+            this.ptbFechar.Size = new System.Drawing.Size(40, 38);
+            this.ptbFechar.TabIndex = 2;
+            this.ptbFechar.TabStop = false;
+            this.ptbFechar.Click += new System.EventHandler(this.ptbFechar_Click);
             // 
             // ptbMinimizar
             // 
-            ptbMinimizar.BackColor = Color.White;
-            ptbMinimizar.Cursor = Cursors.Hand;
-            ptbMinimizar.Image = Properties.Resources.Minimizar;
-            ptbMinimizar.Location = new Point(975, 7);
-            ptbMinimizar.Margin = new Padding(0);
-            ptbMinimizar.Name = "ptbMinimizar";
-            ptbMinimizar.Size = new Size(40, 38);
-            ptbMinimizar.TabIndex = 3;
-            ptbMinimizar.TabStop = false;
-            ptbMinimizar.Click += ptbMinimizar_Click;
+            this.ptbMinimizar.BackColor = System.Drawing.Color.White;
+            this.ptbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbMinimizar.Image = global::InventarioTI.Properties.Resources.Minimizar;
+            this.ptbMinimizar.Location = new System.Drawing.Point(975, 7);
+            this.ptbMinimizar.Margin = new System.Windows.Forms.Padding(0);
+            this.ptbMinimizar.Name = "ptbMinimizar";
+            this.ptbMinimizar.Size = new System.Drawing.Size(40, 38);
+            this.ptbMinimizar.TabIndex = 3;
+            this.ptbMinimizar.TabStop = false;
+            this.ptbMinimizar.Click += new System.EventHandler(this.ptbMinimizar_Click);
             // 
             // uctSobre
             // 
-            uctSobre.BackColor = Color.White;
-            uctSobre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            uctSobre.Location = new Point(727, 11);
-            uctSobre.Margin = new Padding(3, 2, 3, 2);
-            uctSobre.Name = "uctSobre";
-            uctSobre.Size = new Size(336, 262);
-            uctSobre.TabIndex = 4;
+            this.uctSobre.BackColor = System.Drawing.Color.White;
+            this.uctSobre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uctSobre.Location = new System.Drawing.Point(727, 11);
+            this.uctSobre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uctSobre.Name = "uctSobre";
+            this.uctSobre.Size = new System.Drawing.Size(336, 262);
+            this.uctSobre.TabIndex = 4;
             // 
             // uctAjustes
             // 
-            uctAjustes.BackColor = Color.White;
-            uctAjustes.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            uctAjustes.Location = new Point(444, 7);
-            uctAjustes.Margin = new Padding(0);
-            uctAjustes.Name = "uctAjustes";
-            uctAjustes.Size = new Size(300, 300);
-            uctAjustes.TabIndex = 5;
+            this.uctAjustes.BackColor = System.Drawing.Color.White;
+            this.uctAjustes.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uctAjustes.Location = new System.Drawing.Point(444, 7);
+            this.uctAjustes.Margin = new System.Windows.Forms.Padding(0);
+            this.uctAjustes.Name = "uctAjustes";
+            this.uctAjustes.Size = new System.Drawing.Size(300, 300);
+            this.uctAjustes.TabIndex = 5;
             // 
             // uctHome
             // 
-            uctHome.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            uctHome.Location = new Point(93, 6);
-            uctHome.Name = "uctHome";
-            uctHome.Size = new Size(300, 300);
-            uctHome.TabIndex = 6;
+            this.uctHome.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uctHome.Location = new System.Drawing.Point(93, 6);
+            this.uctHome.Name = "uctHome";
+            this.uctHome.Size = new System.Drawing.Size(300, 300);
+            this.uctHome.TabIndex = 6;
             // 
             // FormInventario
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.White;
-            ClientSize = new Size(1075, 338);
-            Controls.Add(pnlButton);
-            Controls.Add(ptbMinimizar);
-            Controls.Add(ptbFechar);
-            Controls.Add(uctHome);
-            Controls.Add(uctAjustes);
-            Controls.Add(pnlLateral);
-            Controls.Add(uctSobre);
-            Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "FormInventario";
-            Text = "InventarioTI";
-            Load += FormInventario_Load;
-            pnlLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)ptbSobre).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbAjustes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbHome).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbPrograma).EndInit();
-            pnlButton.ResumeLayout(false);
-            tlbBotton.ResumeLayout(false);
-            pnlDeskAtivo.ResumeLayout(false);
-            pnlDeskAtivo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            pnlBotton3.ResumeLayout(false);
-            pnlBotton3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbBotton3).EndInit();
-            pnlBotton0.ResumeLayout(false);
-            pnlBotton0.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbBotton0).EndInit();
-            pnlBotton1.ResumeLayout(false);
-            pnlBotton1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbBotton1).EndInit();
-            pnlBotton2.ResumeLayout(false);
-            pnlBotton2.PerformLayout();
-            pnlUnidade.ResumeLayout(false);
-            pnlUnidade.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbFechar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbMinimizar).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1075, 338);
+            this.Controls.Add(this.pnlButton);
+            this.Controls.Add(this.ptbMinimizar);
+            this.Controls.Add(this.ptbFechar);
+            this.Controls.Add(this.uctHome);
+            this.Controls.Add(this.uctAjustes);
+            this.Controls.Add(this.pnlLateral);
+            this.Controls.Add(this.uctSobre);
+            this.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FormInventario";
+            this.Text = "InventarioTI";
+            this.Load += new System.EventHandler(this.FormInventario_Load);
+            this.pnlLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSobre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAjustes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrograma)).EndInit();
+            this.pnlButton.ResumeLayout(false);
+            this.tlbBotton.ResumeLayout(false);
+            this.pnlDeskAtivo.ResumeLayout(false);
+            this.pnlDeskAtivo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlBotton3.ResumeLayout(false);
+            this.pnlBotton3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBotton3)).EndInit();
+            this.pnlBotton0.ResumeLayout(false);
+            this.pnlBotton0.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBotton0)).EndInit();
+            this.pnlBotton1.ResumeLayout(false);
+            this.pnlBotton1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBotton1)).EndInit();
+            this.pnlBotton2.ResumeLayout(false);
+            this.pnlBotton2.PerformLayout();
+            this.pnlUnidade.ResumeLayout(false);
+            this.pnlUnidade.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMinimizar)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

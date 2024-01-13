@@ -1,13 +1,9 @@
 ﻿using InventarioTI.Entites;
 using InventarioTI.Extencions;
 using InventarioTI.Services;
-using System;
 using System.Data;
-using InventarioTI.Entites.Emuns;
-using System.Linq;
 using InventarioTI.Entites.Exceptions;
-using DocumentFormat.OpenXml.Spreadsheet;
-using System.Diagnostics;
+using InventarioTI.Entites.emuns;
 
 namespace InventarioTI.View
 {
@@ -16,8 +12,6 @@ namespace InventarioTI.View
         public uctAjustes()
         {
             InitializeComponent();
-
-
         }
 
         public void Preencher()
@@ -58,7 +52,6 @@ namespace InventarioTI.View
         }
         public void Atualizar()
         {
-
             dgvTMM.Estilo();
             dgvTMM.DataSource = Base.TableTMMs;
             dgvProcessadores.Estilo();
@@ -95,12 +88,13 @@ namespace InventarioTI.View
                     Validar.ExistenciaPastasArquivos(fbdPasta.SelectedPath);
                     txbPasta.Text = fbdPasta.SelectedPath;
                     Properties.Settings.Default.Path = fbdPasta.SelectedPath;
+                    
                     Base.Atualizar();
                     cbxUnidade.Items.AddRange(Base.Unidades.Select(x => x.Sigla).ToArray());
                     cbxUnidade.Text = "";
 
                     Preencher();
-
+                   
                 }
                 catch (DomainException ex) { MessageBox.Show(ex.Message); }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -129,11 +123,12 @@ namespace InventarioTI.View
 
         private void uctAjustes_Load(object sender, EventArgs e)
         {
+
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Path))
             {
                 Base.Atualizar();
                 Preencher();
-            }           
+            }
         }
 
         private void ptbTMM_Click(object sender, EventArgs e)
@@ -186,7 +181,6 @@ namespace InventarioTI.View
         {
             if (dgvUnidade.Columns[e.ColumnIndex] == dgvUnidade.Columns["ExU"] && e.RowIndex != -1)
             {
-
                 Base.RemoveBase(new List<Unidade> { new Unidade() }, null, e.RowIndex);
                 Preencher();
             }
@@ -194,7 +188,7 @@ namespace InventarioTI.View
 
         private void cbxUnidade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cbxUnidade.Text))
+            if (!string.IsNullOrEmpty(cbxUnidade.Text) && Base.Unidade != cbxUnidade.Text)
             {
                 Properties.Settings.Default.Unidade = cbxUnidade.Text;
 
@@ -204,7 +198,6 @@ namespace InventarioTI.View
 
                 Base.Atualizar();
             }
-
         }
     }
 }

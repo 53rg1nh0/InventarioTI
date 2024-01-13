@@ -1,5 +1,4 @@
-﻿using ClosedXML.Excel;
-using InventarioTI.Entites;
+﻿using InventarioTI.Entites.emuns;
 using InventarioTI.Entites.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -49,12 +48,28 @@ namespace InventarioTI.Services
 
         public static void BD()
         {
-                    
-            ExcelFechado();
-            using (var wb = new XLWorkbook(Arquivo + @"\BD.xlsx"))
+
+            
+            //ExcelFechado();
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+
+            using (OleDbConnection Conexao = new OleDbConnection(new Conection<Inventario>(new Inventario()).String))
             {
-                var ws = wb.Worksheet("Inventario");
-                DataTable dt = ws.RangeUsed().AsTable().AsNativeDataTable();
+                string Sql = "SELECT * FROM [Inventario$]";
+
+                OleDbCommand Comandos = new OleDbCommand(Sql, Conexao);
+
+
+                Conexao.Open();
+
+                OleDbDataAdapter adp = new OleDbDataAdapter(Comandos);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+
                 foreach (DataColumn c in dt.Columns)
                 {
                     if (!(c.ColumnName == "QUANT" || c.ColumnName == "UND" || c.ColumnName == "UF" || c.ColumnName == "FUNCIONARIO" || c.ColumnName == "USERID"
@@ -63,7 +78,30 @@ namespace InventarioTI.Services
                         throw new Exception("Planilha BD fora do Padrão!");
                 }
                 Inv = dt;
+
+                Conexao.Close();
+
+
             }
+
+
+            //using (var wb = new XLWorkbook(Arquivo + @"\BD.xlsx"))
+            //{
+            //    var ws = wb.Worksheet("Inventario");
+            //    DataTable dt = ws.RangeUsed().AsTable().AsNativeDataTable();
+            //    foreach (DataColumn c in dt.Columns)
+            //    {
+            //        if (!(c.ColumnName == "QUANT" || c.ColumnName == "UND" || c.ColumnName == "UF" || c.ColumnName == "FUNCIONARIO" || c.ColumnName == "USERID"
+            //            || c.ColumnName == "CARGO" || c.ColumnName == "AREA" || c.ColumnName == "EQUIPAMENTO" || c.ColumnName == "MARCA" || c.ColumnName == "MODELO"
+            //             || c.ColumnName == "PROCESSADOR" || c.ColumnName == "PATRIMONIO" || c.ColumnName == "NOMENCLATURA" || c.ColumnName == "SERIE" || c.ColumnName == "MEMORIA"))
+            //            throw new Exception("Planilha BD fora do Padrão!");
+            //    }
+            //    Inv = dt;
+            //}
+
+            stopwatch.Stop();
+
+            MessageBox.Show("O processo levou " + stopwatch.ElapsedMilliseconds + " milissegundos para executar.");
         }
 
     }

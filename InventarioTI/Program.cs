@@ -1,11 +1,5 @@
-using ClosedXML.Excel;
-using InventarioTI.Entites;
 using InventarioTI.Entites.Exceptions;
-using InventarioTI.Services;
-using System.Data;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-//using Microsoft.Office.Interop.Excel;
+
 
 namespace InventarioTI
 {

@@ -10,19 +10,18 @@ namespace InventarioTI.Services
         public string Path { get; }
         public string String { get; }
 
-        public Conection(T t, string unidade = null)
+        public Conection(T t)
         {
 
             if (t is Inventario)
             {
                 Inventario i = t as Inventario;
-                if (unidade == null) unidade = Base.Unidades.FirstOrDefault(u => u.Nome == i.UND).Sigla;
-                this.Path = Properties.Settings.Default.Path + @"\" + t.GetType().Name + "_" + unidade + ".xlsx";
+                this.Path = Properties.Settings.Default.Path + @"\BD.xlsx";
                 String = @"provider =Microsoft.ACE.OLEDB.12.0;Data Source= " + this.Path + " ;Extended Properties=Excel 12.0";
             }
             else
             {
-                this.Path = Properties.Settings.Default.Path + @"\Info\" + (t is Movimentacoes ? t.GetType().Name : "Ajustes") + ".xlsx";
+                this.Path = Properties.Settings.Default.Path + @"\Info\" + ((t is Movimentacoes) ? t.GetType().Name : "Ajustes") + ".xlsx";
                 String = @"provider =Microsoft.ACE.OLEDB.12.0;Data Source= " + this.Path + " ;Extended Properties=Excel 12.0";
             }
         }

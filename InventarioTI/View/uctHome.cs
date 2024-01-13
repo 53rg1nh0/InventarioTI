@@ -23,7 +23,7 @@ namespace InventarioTI.View
 
         public void Atualizar()
         {
-             _filtro = Base.TMMs;
+            _filtro = Base.TMMs;
 
             AutoComplete();
 
@@ -36,7 +36,7 @@ namespace InventarioTI.View
             {
                 txbUserID.AutoCompleteCustomSource.Clear();
                 txbUserID.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txbUserID.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x=> x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(c => c.USERID).Distinct().ToArray());
+                txbUserID.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(c => c.USERID).Distinct().ToArray());
 
                 txbNome.AutoCompleteCustomSource.Clear();
                 txbNome.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -53,7 +53,7 @@ namespace InventarioTI.View
         }
 
         public void Combos(string campo = null, string filtro = null)
-        {           
+        {
 
             if (_filtro.Count != 0)
             {
@@ -232,7 +232,7 @@ namespace InventarioTI.View
                 cbxTipo.Text = t.Tipo;
                 cbxMarca.Text = t.Marca;
                 cbxModelo.Text = aux;
-            }            
+            }
             else
             {
                 _filtro = Base.TMMs;
@@ -244,18 +244,18 @@ namespace InventarioTI.View
         {
             string aux1 = cbxTipo.Text;
             string aux2 = cbxMarca.Text;
-            if (!string.IsNullOrEmpty(cbxTipo.Text)) 
-            { 
+            if (!string.IsNullOrEmpty(cbxTipo.Text))
+            {
                 Combos("tipo", cbxTipo.Text);
                 cbxTipo.Text = aux1;
                 cbxMarca.Text = aux2;
-            } 
+            }
             else
             {
                 _filtro = Base.TMMs;
                 Combos();
             }
-            
+
         }
 
         private void cbxMarca_SelectionChangeCommitted(object sender, EventArgs e)
@@ -273,14 +273,56 @@ namespace InventarioTI.View
                 _filtro = Base.TMMs;
                 Combos();
             }
-            
+
         }
 
 
         private void ptbAdicionarEquipamento_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            try
+            {               
+                Unidade unidade = Base.Unidades.Where(u => u.Sigla == Base.Unidade).FirstOrDefault();
+                Inventario i = Base.GetBackup(new Inventario(), unidade);
+
+                i.PATRIMONIO = txbPatrimonio.Text.Length > 8 ? throw new DomainException("Patrimonio só pode cconter 8 ou menos caracteres!") : txbPatrimonio.Text;
+                i.EQUIPAMENTO = cbxTipo.Text;
+                i.SERIE = txbSerie.Text;
+                i.MARCA = cbxMarca.Text;
+                i.MODELO = cbxModelo.Text;
+                i.PROCESSADOR = cbxProcessador.Text;
+                i.MEMORIA = cbxMemoria.Text;
+                i.Nomenclatura();
+
+                Base.Atualizar(false,false);
+                foreach (var p in i.GetType().GetProperties())
+                {
+                    if (p.GetValue(i) is null)
+                    {
+                        throw new DomainException("Não pode haver campos vazios!");
+                    }
+                }
+                if (Base.Inv.Select(a => a.PATRIMONIO).Contains(i.PATRIMONIO) ||
+                    Base.Inv.Select(a => a.NOMENCLATURA).Contains(i.NOMENCLATURA) ||
+                    Base.Inv.Select(a => a.SERIE).Contains(i.SERIE))
+                {
+                    throw new DomainException("Equipamento já existe!");
+                }
+                else
+                {
+                    Base.InsertBase(new List<Inventario> { i });
+                    Base.Inv.Where(x => x.UND == unidade.Nome).ToList().Add(i);
+
+                    Task.Run(() => { MessageBox.Show("Equipamento Adicionado com sucesso!"); });
+
+                    txbPatrimonio_KeyDown(sender, new KeyEventArgs(Keys.Enter));
+                }
+                Cache.Equipamento = txbPatrimonio.Text;
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+
 
         private void ptbEditarCliente_Click(object sender, EventArgs e)
         {
