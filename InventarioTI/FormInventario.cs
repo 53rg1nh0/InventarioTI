@@ -19,7 +19,7 @@ namespace InventarioTI
         }
 
         private void FormInventario_Load(object sender, EventArgs e)
-        {         
+        {
 
             Properties.Settings.Default.Resolucao = Properties.Settings.Default.Resolucao == 0 ? 144f : Properties.Settings.Default.Resolucao;
 
@@ -120,7 +120,7 @@ namespace InventarioTI
 
         private void ptbFechar_Click(object sender, EventArgs e)
         {
-            Excel.Fechar();
+            //Excel.Fechar();
             this.Close();
         }
 

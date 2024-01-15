@@ -30,19 +30,33 @@ namespace InventarioTI.Services
 
         }
 
-        public static void ExcelFechado()
+        public static bool ExcelFechado()
         {
-            try
-            {
+            Process[] processes = Process.GetProcessesByName("Excel");
 
-                using (FileStream fileStream = File.Open(Arquivo + @"\BD.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
-                //using (FileStream fileStream = File.Open(Arquivo + @"\Info\Ajustes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
-                //using (FileStream fileStream = File.Open(Arquivo + @"\Info\Movimentacoes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
-            }
-            catch
+            // Maior do que 1, porque a instância atual também conta
+            if (processes.Length >= 1)
             {
-                throw new DomainException("Feche as bases excel para o funcionamento do Programa!");
+                return false;
             }
+            else
+            {
+                return true;
+            }
+
+            //try
+            //{
+
+            //    using (FileStream fileStream = File.Open(Arquivo + @"\BD.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
+            //    //using (FileStream fileStream = File.Open(Arquivo + @"\Info\Ajustes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
+            //    //using (FileStream fileStream = File.Open(Arquivo + @"\Info\Movimentacoes.xlsx", FileMode.Open, FileAccess.ReadWrite, FileShare.None)) { }
+
+            //}
+            //catch
+            //{
+            //    throw new DomainException("Feche as bases excel para o funcionamento do Programa!");
+
+            //}
 
         }
 
@@ -52,8 +66,8 @@ namespace InventarioTI.Services
             
             //ExcelFechado();
 
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
+            //Stopwatch stopwatch = new Stopwatch();
+            //stopwatch.Start();
 
 
             using (OleDbConnection Conexao = new OleDbConnection(new Conection().String))
@@ -99,9 +113,8 @@ namespace InventarioTI.Services
             //    Inv = dt;
             //}
 
-            stopwatch.Stop();
-
-            MessageBox.Show("O processo levou " + stopwatch.ElapsedMilliseconds + " milissegundos para executar.");
+            //stopwatch.Stop();
+            //MessageBox.Show("O processo levou " + stopwatch.ElapsedMilliseconds + " milissegundos para executar.");
         }
 
     }

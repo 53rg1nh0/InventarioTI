@@ -7,6 +7,7 @@ using System.Data;
 using DataTable = System.Data.DataTable;
 using InventarioTI.Entites.emuns;
 using System.Data.OleDb;
+using Microsoft.Office.Interop.Excel;
 
 namespace InventarioTI.Services
 {
@@ -30,7 +31,6 @@ namespace InventarioTI.Services
 
         public static void Atualizar(bool ajuste = false, bool home = false)
         {
-
             var tmmsAnterior = TMMs as IDisposable;
             var memoriasAnterior = Memorias as IDisposable;
             var processadoresAnterior = Processadores as IDisposable;
@@ -76,6 +76,7 @@ namespace InventarioTI.Services
 
             try
             {
+                Excel.EsperarFechar();
                 Validar.BD();
                 TableInv = Validar.Inv;
                 Inv = TableInv.AsEnumerable().Select(x => new Inventario
@@ -235,6 +236,7 @@ namespace InventarioTI.Services
         public static void InsertBase<T>(List<T> list)
         {
             //Realizar tratamento caso aplicativo excel esteja aberto.
+            Excel.EsperarFechar();
 
             try
             {
@@ -332,6 +334,7 @@ namespace InventarioTI.Services
                             finally
                             {
                                 conexao.Close();
+                                Thread.Sleep(3000);
                                 Excel.Fechar();
                             }
                         }
@@ -339,7 +342,7 @@ namespace InventarioTI.Services
                 }
                 catch (DomainException ex) { MessageBox.Show(ex.Message); }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
-            });         
+            });
         }
 
 
