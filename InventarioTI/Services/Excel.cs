@@ -32,17 +32,17 @@ namespace InventarioTI.Services
 
             foreach (Process process in processes)
             {
-                process.Kill();
+                //process.Kill();
                 //process.Close();
 
             }
 
-            //if (_pasta != null)
-            //{
-            //    _pasta.Save();
-            //    _pasta.Close();
-            //    _app.Quit();
-            //}
+            if (_pasta != null)
+            {
+                _pasta.Save();
+                _pasta.Close();
+                _app.Quit();
+            }
         }
 
         public static bool Aberto()

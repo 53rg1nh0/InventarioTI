@@ -8,7 +8,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace InventarioTI.Services
 {
-    public static class FecharBase
+    public static class Fechar
+
     {
         public static void Excel()
         {

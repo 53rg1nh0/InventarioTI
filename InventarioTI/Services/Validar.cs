@@ -72,7 +72,11 @@ namespace InventarioTI.Services
 
             using (OleDbConnection Conexao = new OleDbConnection(new Conection().String))
             {
-                string Sql = "SELECT * FROM [Inventario$]";
+                string Sql;
+                Sql = "SELECT QUANT, UND, UF, FUNCIONARIO, USERID, CARGO, AREA, EQUIPAMENTO, MARCA, MODELO, PROCESSADOR, PATRIMONIO, NOMENCLATURA, SERIE, MEMORIA "
+                    + "FROM [Movimentacao$] " 
+                    + "GROUP BY QUANT, UND, UF, FUNCIONARIO, USERID, CARGO, AREA, EQUIPAMENTO, MARCA, MODELO, PROCESSADOR, PATRIMONIO, NOMENCLATURA, SERIE, MEMORIA, DATA "
+                    + "HAVING DATA = MAX(DATA)";
 
                 OleDbCommand Comandos = new OleDbCommand(Sql, Conexao);
 

@@ -1,5 +1,4 @@
 ﻿using InventarioTI.Entites;
-using InventarioTI.Entites.Emuns;
 using ClosedXML.Excel;
 using InventarioTI.Entites.Exceptions;
 using System.Diagnostics;
@@ -42,7 +41,7 @@ namespace InventarioTI.Services
             var tableprocessadoresAnterior = TableProcessadores as IDisposable;
             var tableunidadesAnterior = TableUnidades as IDisposable;
             var tableadmsAnterior = TableAdms as IDisposable;
-            var tabeinvAterior = Inv as IDisposable;
+            var tableinvsAterior = Inv as IDisposable;
 
             //if (Inv is IDisposable invdAterior) invdAterior.Dispose();
             invAterior?.Dispose();
@@ -52,7 +51,7 @@ namespace InventarioTI.Services
             unidadesAnterior?.Dispose();
             admsAnterior?.Dispose();
             //if (TableInv is IDisposable tableinvdAterior) tableinvdAterior.Dispose();
-            tabeinvAterior?.Dispose();
+            tableinvsAterior?.Dispose();
             tabletmmsAnterior?.Dispose();
             tablememoriasAnterior?.Dispose();
             tableprocessadoresAnterior?.Dispose();
@@ -157,62 +156,8 @@ namespace InventarioTI.Services
                     Conexao.Close();
                 }
 
+                Quantidade.Calucular();
 
-                //using (var wb = new XLWorkbook(Validar.Arquivo + @"\Info\Ajustes.xlsx"))
-                //{
-                //TableTMMs = wb.Worksheet("TMM").RangeUsed().AsTable().AsNativeDataTable();
-                //TMMs = TableTMMs.AsEnumerable().Select(x => new TMM
-                //{
-                //    Tipo = x.Field<string>("TIPO"),
-                //    Marca = x.Field<string>("MARCA"),
-                //    Modelo = x.Field<string>("MODELO")
-
-                //}).ToList();
-                //TableProcessadores = wb.Worksheet("Processador").RangeUsed().AsTable().AsNativeDataTable();
-                //Processadores = TableProcessadores.AsEnumerable().Select(x => new Processador
-                //{
-                //    Tipo = x.Field<string>("TIPO")
-                //}).ToList();
-                //TableMemorias = wb.Worksheet("Memoria").RangeUsed().AsTable().AsNativeDataTable();
-                //Memorias = TableMemorias.AsEnumerable().AsEnumerable().Select(x => new Memoria
-                //{
-                //    Ram = x.Field<string>("RAM")
-                //}).ToList();
-                //TableUnidades = wb.Worksheet("Unidade").RangeUsed().AsTable().AsNativeDataTable();
-                //Unidades = TableUnidades.AsEnumerable().Select(x => new Unidade
-                //{
-                //    Regiao = x.Field<string>("REGIAO"),
-                //    UF = x.Field<string>("UF"),
-                //    Nome = x.Field<string>("NOME"),
-                //    Sigla = x.Field<string>("SIGLA")
-
-                //}).ToList();
-                //TableAdms = wb.Worksheet("Adm").RangeUsed().AsTable().AsNativeDataTable();
-                //Adms = TableAdms.AsEnumerable().Select(x => new Adm
-                //{
-                //    matricula = x.Field<object>("MATRICULA").ToString()
-
-                //}).ToList();
-                //}
-                if (!string.IsNullOrEmpty(Unidade))
-                {
-                    Quantidade.DesAtv = Inv.Where(e => e.FUNCIONARIO != "Backup TI" && e.FUNCIONARIO != "Estoque TI" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Where(e => e.EQUIPAMENTO == "Desktop").Count();
-                    Quantidade.NotAtv = Inv.Where(e => e.FUNCIONARIO != "Backup TI" && e.FUNCIONARIO != "Estoque TI" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Where(e => e.EQUIPAMENTO == "Notebook").Count();
-                    if (Unidade == "MRC")
-                    {
-                        Quantidade.DesBkp = Inv.Where(e => e.FUNCIONARIO == "Backup TI").Where(e => e.EQUIPAMENTO == "Desktop" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Count();
-                        Quantidade.NotBkp = Inv.Where(e => e.FUNCIONARIO == "Backup TI").Where(e => e.EQUIPAMENTO == "Notebook" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Count();
-                        Quantidade.DesEst = Inv.Where(e => e.FUNCIONARIO == "Estoque TI").Where(e => e.EQUIPAMENTO == "Desktop" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Count();
-                        Quantidade.NotEst = Inv.Where(e => e.FUNCIONARIO == "Estoque TI").Where(e => e.EQUIPAMENTO == "Notebook" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Count();
-                    }
-                    else
-                    {
-                        Quantidade.DesBkp = 0;
-                        Quantidade.NotBkp = 0;
-                        Quantidade.DesEst = Inv.Where(e => e.FUNCIONARIO == "Backup TI" || e.FUNCIONARIO == "Estoque TI").Where(e => e.EQUIPAMENTO == "Desktop" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Count();
-                        Quantidade.NotEst = Inv.Where(e => e.FUNCIONARIO == "Backup TI" || e.FUNCIONARIO == "Estoque TI").Where(e => e.EQUIPAMENTO == "Notebook" && e.UND == Unidades.Where(x => x.Sigla == Unidade).Select(x => x.Nome).First()).Count();
-                    }
-                }
                 FI.Atualizar();
                 if (ajuste) FI.uctAjustes.Atualizar();
                 if (home) FI.uctHome.Atualizar();
@@ -220,6 +165,32 @@ namespace InventarioTI.Services
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        //private static List<T> TableToList<T>(DataTable tabela) where T : new()
+        //{
+        //    T t = new T();
+        //    List<T> list = new List<T>();
+        //    var p = t.GetType().GetProperties();
+            
+        //    for(int i=0; i < p.Length; i++)
+        //    {
+        //        p[i].SetValue(.Field<object>(p[i].Name), i);
+        //    }
+
+        //    list = tabela.AsEnumerable().Select(x => inv(x)).ToList();
+        //    return list;
+        //}
+
+        //private static T inv<T>(DataRow x) where T : new()
+        //{
+        //    T t = new T();
+        //    var p = t.GetType().GetProperties();
+        //    for (int i = 0; i < p.Length; i++)
+        //    {
+        //        p[i].SetValue(x.Field<object>(p[i].Name), i);
+        //    }
+        //    return t;
+        //}
 
         public static Inventario GetBackup(Inventario i, Unidade u)
         {
@@ -236,113 +207,148 @@ namespace InventarioTI.Services
         public static void InsertBase<T>(List<T> list)
         {
             //Realizar tratamento caso aplicativo excel esteja aberto.
-            Excel.EsperarFechar();
+            //Excel.EsperarFechar();
+
+            //try
+            //{
+            //    if (list[0] is Inventario)
+            //    {
+            //        foreach (var item in list)
+            //        {
+            //            Inv.Add(item as Inventario);
+            //        }
+            //    }
+            //    else if (list[0] is TMM)
+            //    {
+            //        foreach (var item in list)
+            //        {
+            //            TMMs.Add(item as TMM);
+            //        }
+            //    }
+            //    else if (list[0] is Processador)
+            //    {
+            //        foreach (var item in list)
+            //        {
+            //            Processadores.Add(item as Processador);
+            //        }
+            //    }
+            //    else if (list[0] is Memoria)
+            //    {
+            //        foreach (var item in list)
+            //        {
+            //            Memorias.Add(item as Memoria);
+            //        }
+            //    }
+            //    else if (list[0] is Adm)
+            //    {
+            //        foreach (var item in list)
+            //        {
+            //            Adms.Add(item as Adm);
+            //        }
+            //    }
+            //    else if (list[0] is Unidade)
+            //    {
+            //        foreach (var item in list)
+            //        {
+            //            Unidades.Add(item as Unidade);
+            //        }
+            //    }
+            //    FI.uctHome.Atualizar();
+            //}
+            //catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            //catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             try
             {
-                if (list[0] is Inventario)
+                //Excel.Abrir(new Conection().Path);
+
+                T t = list[0];
+                using (OleDbConnection conexao = new OleDbConnection(new Conection().String))
                 {
                     foreach (var item in list)
                     {
-                        Inv.Add(item as Inventario);
-                    }
-                }
-                else if (list[0] is Movimentacoes)
-                {
-                    foreach (var item in list)
-                    {
+                        var p = item.GetType().GetProperties(); 
+                        string sql = "", val = "", par = "";
 
-                    }
-                }
-                else if (list[0] is TMM)
-                {
-                    foreach (var item in list)
-                    {
+                        OleDbCommand Comandos = new OleDbCommand();
 
-                    }
-                }
-                else if (list[0] is Processador)
-                {
-                    foreach (var item in list)
-                    {
-
-                    }
-                }
-                else if (list[0] is Memoria)
-                {
-                    foreach (var item in list)
-                    {
-
-                    }
-                }
-                else if (list[0] is Adm)
-                {
-                    foreach (var item in list)
-                    {
-
-                    }
-                }
-                else if (list[0] is Unidade)
-                {
-                    foreach (var item in list)
-                    {
-
-                    }
-                }
-                FI.uctHome.Atualizar();
-            }
-            catch (DomainException ex) { MessageBox.Show(ex.Message); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-
-            Task.Run(() =>
-            {
-                try
-                {
-                    Excel.Abrir(new Conection().Path);
-
-                    T t = list[0];
-                    using (OleDbConnection conexao = new OleDbConnection(new Conection().String))
-                    {
-                        foreach (var item in list)
+                        for (int i = 0; i < p.Length; i++)
                         {
-                            var p = item.GetType().GetProperties();
-                            string sql = "", val = "", par = "";
+                            if (i == 0) val += "(" + p[i].Name + ", ";
+                            else if (i < p.Length - 1) val += p[i].Name + ", ";
+                            else val += p[i].Name + ")";
 
-                            OleDbCommand Comandos = new OleDbCommand();
+                            Comandos.Parameters.AddWithValue("@" + p[i].Name, (p[i].Name == "QUANT" || p[i].Name == "PATRIMONIO") ? p[i].GetValue(item) : p[i].GetValue(item).ToString());
+                        }
+                        par = val.Replace("(", "(@").Replace(" ", " @");
+                        sql = "INSERT INTO [" + t.GetType().Name + "$] " + val + " VALUES " + par;
+                        Comandos.CommandText = sql;
+                        Comandos.Connection = conexao;
+                        conexao.Open();
+                        try
+                        {
+                            Comandos.ExecuteNonQuery();
 
-                            for (int i = 0; i < p.Length; i++)
+                            if (list[0] is Movimentacao)
                             {
-                                if (i == 0) val += "(" + p[i].Name + ", ";
-                                else if (i < p.Length - 1) val += p[i].Name + ", ";
-                                else val += p[i].Name + ")";
-
-                                Comandos.Parameters.AddWithValue("@" + p[i].Name, p[i].GetValue(item).ToString());
+                                foreach (var i in list)
+                                {
+                                    Inv.Add((i as Movimentacao).GetInventario());
+                                }
                             }
-                            par = val.Replace("(", "(@").Replace(" ", " @");
-                            sql = "INSERT INTO [" + t.GetType().Name + "$] " + val + " VALUES " + par;
-                            Comandos.CommandText = sql;
-                            Comandos.Connection = conexao;
-                            conexao.Open();
-                            try
+                            else if (list[0] is TMM)
                             {
-                                Comandos.ExecuteNonQuery();
+                                foreach (var i in list)
+                                {
+                                    TMMs.Add(i as TMM);
+                                }
                             }
-                            catch
+                            else if (list[0] is Processador)
                             {
-                                throw new DomainException("Ocorreu um erro ao Inserir os Dados!");
+                                foreach (var i in list)
+                                {
+                                    Processadores.Add(i as Processador);
+                                }
                             }
-                            finally
+                            else if (list[0] is Memoria)
                             {
-                                conexao.Close();
-                                Thread.Sleep(3000);
-                                Excel.Fechar();
+                                foreach (var i in list)
+                                {
+                                    Memorias.Add(i as Memoria);
+                                }
                             }
+                            else if (list[0] is Adm)
+                            {
+                                foreach (var i in list)
+                                {
+                                    Adms.Add(i as Adm);
+                                }
+                            }
+                            else if (list[0] is Unidade)
+                            {
+                                foreach (var i in list)
+                                {
+                                    Unidades.Add(i as Unidade);
+                                }
+                            }
+                            Quantidade.Calucular();
+                            FI.Atualizar();
+                        }
+                        catch
+                        {
+                            throw new DomainException("Ocorreu um erro ao Inserir os Dados!");
+                        }
+                        finally
+                        {
+                            conexao.Close();
+                            //Thread.Sleep(3000);
+                            //Excel.Fechar();
                         }
                     }
                 }
-                catch (DomainException ex) { MessageBox.Show(ex.Message); }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
-            });
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
 

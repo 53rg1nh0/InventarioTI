@@ -312,7 +312,7 @@ namespace InventarioTI.View
                 }
                 else
                 {
-                    Base.InsertBase(new List<Inventario> { i });
+                    Base.InsertBase(new List<Movimentacao> { new Movimentacao("adicionado",i) });
                     //Base.Inv.Where(x => x.UND == unidade.Nome).ToList().Add(i);
 
                     Task.Run(() => { MessageBox.Show("Equipamento Adicionado com sucesso!"); });
