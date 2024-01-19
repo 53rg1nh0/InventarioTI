@@ -53,13 +53,13 @@ namespace InventarioTI.View
         public void Atualizar()
         {
             dgvTMM.Estilo();
-            dgvTMM.DataSource = Base.TableTMMs;
+            dgvTMM.DataSource = Base.Ta[typeof(TMM)];
             dgvProcessadores.Estilo();
-            dgvProcessadores.DataSource = Base.TableProcessadores;
+            dgvProcessadores.DataSource = Base.Ta[typeof(Processador)];
             dgvMemorias.Estilo();
-            dgvMemorias.DataSource = Base.TableMemorias;
+            dgvMemorias.DataSource = Base.Ta[typeof(Memoria)];
             dgvUnidade.Estilo();
-            dgvUnidade.DataSource = Base.TableUnidades;
+            dgvUnidade.DataSource = Base.Ta[typeof(Unidade)];
 
             AtivarEdicao();
         }

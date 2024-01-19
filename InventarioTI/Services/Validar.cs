@@ -15,8 +15,6 @@ namespace InventarioTI.Services
     {
         public static string Arquivo { get; set; } = Properties.Settings.Default.Path;
 
-        public static DataTable Inv { get; set; }
-
         public static void ExistenciaPastasArquivos(string path)
         {
             string p = /*@"C:\Users\sesousa\OneDrive - SOLAR BEBIDAS S.A\Desktop\InventarioTI - Copia - Copia"*/ path;
@@ -95,7 +93,7 @@ namespace InventarioTI.Services
                          || c.ColumnName == "PROCESSADOR" || c.ColumnName == "PATRIMONIO" || c.ColumnName == "NOMENCLATURA" || c.ColumnName == "SERIE" || c.ColumnName == "MEMORIA"))
                         throw new Exception("Planilha BD fora do Padrão!");
                 }
-                Inv = dt;
+                Base.Ta[typeof(Inventario)] = dt;
 
                 Conexao.Close();
 

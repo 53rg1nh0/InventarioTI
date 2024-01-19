@@ -7,18 +7,23 @@ using DataTable = System.Data.DataTable;
 using InventarioTI.Entites.emuns;
 using System.Data.OleDb;
 using Microsoft.Office.Interop.Excel;
+using Org.BouncyCastle.Asn1.X509.Qualified;
+using System.Runtime.Intrinsics.X86;
 
 namespace InventarioTI.Services
 {
     static class Base
-    {         
-        public static Dictionary<Type,DataTable> Table = new Dictionary<Type,DataTable>();
-        public static DataTable TableInv { get; set; } = new DataTable();
-        public static DataTable TableTMMs { get; set; } = new DataTable();
-        public static DataTable TableMemorias { get; set; } = new DataTable();
-        public static DataTable TableProcessadores { get; set; } = new DataTable();
-        public static DataTable TableUnidades { get; set; } = new DataTable();
-        public static DataTable TableAdms { get; set; } = new DataTable();
+    {
+        public static Dictionary<Type, DataTable> Ta { get; set; } = new Dictionary<Type, DataTable>();
+
+        public static Dictionary<Type, object> Li { get; set; } = new Dictionary<Type, object>();
+        //public static DataTable TableInv { get; set; } = new DataTable();
+        //public static DataTable TableTMMs { get; set; } = new DataTable();
+        //public static DataTable TableMemorias { get; set; } = new DataTable();
+        //public static DataTable TableProcessadores { get; set; } = new DataTable();
+        //public static DataTable TableUnidades { get; set; } = new DataTable();
+        //public static DataTable TableAdms { get; set; } = new DataTable();
+
         public static List<Inventario> Inv { get; set; } = new List<Inventario>();
         public static List<TMM> TMMs { get; set; } = new List<TMM>();
         public static List<Memoria> Memorias { get; set; } = new List<Memoria>();
@@ -31,19 +36,21 @@ namespace InventarioTI.Services
 
         public static void Atualizar(bool ajuste = false, bool home = false)
         {
-            
+
             var tmmsAnterior = TMMs as IDisposable;
             var memoriasAnterior = Memorias as IDisposable;
             var processadoresAnterior = Processadores as IDisposable;
             var unidadesAnterior = Unidades as IDisposable;
             var invAterior = Inv as IDisposable;
             var admsAnterior = Adms as IDisposable;
-            var tabletmmsAnterior = TableTMMs as IDisposable;
-            var tablememoriasAnterior = TableMemorias as IDisposable;
-            var tableprocessadoresAnterior = TableProcessadores as IDisposable;
-            var tableunidadesAnterior = TableUnidades as IDisposable;
-            var tableadmsAnterior = TableAdms as IDisposable;
-            var tableinvsAterior = Inv as IDisposable;
+            var tableAnterior = Ta as IDisposable;
+            var listAnteriot = Li as IDisposable;
+            //var tabletmmsAnterior = TableTMMs as IDisposable;
+            //var tablememoriasAnterior = TableMemorias as IDisposable;
+            //var tableprocessadoresAnterior = TableProcessadores as IDisposable;
+            //var tableunidadesAnterior = TableUnidades as IDisposable;
+            //var tableadmsAnterior = TableAdms as IDisposable;
+            //var tableinvsAterior = Inv as IDisposable;
 
             //if (Inv is IDisposable invdAterior) invdAterior.Dispose();
             invAterior?.Dispose();
@@ -52,13 +59,18 @@ namespace InventarioTI.Services
             processadoresAnterior?.Dispose();
             unidadesAnterior?.Dispose();
             admsAnterior?.Dispose();
+            Ta.Clear();
+            Li.Clear();
+
+            tableAnterior?.Dispose();
+            listAnteriot?.Dispose();
             //if (TableInv is IDisposable tableinvdAterior) tableinvdAterior.Dispose();
-            tableinvsAterior?.Dispose();
-            tabletmmsAnterior?.Dispose();
-            tablememoriasAnterior?.Dispose();
-            tableprocessadoresAnterior?.Dispose();
-            tableunidadesAnterior?.Dispose();
-            tableadmsAnterior?.Dispose();
+            //tableinvsAterior?.Dispose();
+            //tabletmmsAnterior?.Dispose();
+            //tablememoriasAnterior?.Dispose();
+            //tableprocessadoresAnterior?.Dispose();
+            //tableunidadesAnterior?.Dispose();
+            //tableadmsAnterior?.Dispose();
 
             Inv = new List<Inventario>();
             TMMs = new List<TMM>();
@@ -66,23 +78,39 @@ namespace InventarioTI.Services
             Processadores = new List<Processador>();
             Unidades = new List<Unidade>();
             Adms = new List<Adm>();
-            TableInv = new DataTable();
-            TableTMMs = new DataTable();
-            TableMemorias = new DataTable();
-            TableProcessadores = new DataTable();
-            TableUnidades = new DataTable();
-            TableAdms = new DataTable();
 
 
+            Ta.Add(typeof(Inventario), new DataTable());
+            Ta.Add(typeof(TMM), new DataTable());
+            Ta.Add(typeof(Memoria), new DataTable());
+            Ta.Add(typeof(Processador), new DataTable());
+            Ta.Add(typeof(Unidade), new DataTable());
+            Ta.Add(typeof(Adm), new DataTable());
+
+            Li.Add(typeof(Inventario), new List<Inventario>());
+            Li.Add(typeof(TMM), new List<TMM>());
+            Li.Add(typeof(Memoria), new List<Memoria>());
+            Li.Add(typeof(Processador), new List<Processador>());
+            Li.Add(typeof(Unidade), new List<Unidade>());
+            Li.Add(typeof(Adm), new List<Adm>());
+
+
+            //TableInv = new DataTable();
+            //TableTMMs = new DataTable();
+            //TableMemorias = new DataTable();
+            //TableProcessadores = new DataTable();
+            //TableUnidades = new DataTable();
+            //TableAdms = new DataTable();
 
             try
             {
-                Excel.EsperarFechar();
-                Validar.BD();
-                TableInv = Validar.Inv;
-                Table[typeof(Inventario)] = Validar.Inv;
+                //Excel.EsperarFechar();
+                Validar.BD();// -->função já coloca a tabela inventário dentro de Dictionary
 
-                Inv = TableToList<Inventario>(Table[typeof(Inventario)]);
+                Inv = TableToList<Inventario>(Ta[typeof(Inventario)]);
+
+                Li[typeof(Inventario)] = TableToList<Inventario>(Ta[typeof(Inventario)]);
+
 
                 //Inv = TableInv.AsEnumerable().Select(x => new Inventario
                 //{
@@ -107,11 +135,31 @@ namespace InventarioTI.Services
                 {
 
                     Conexao.Open();
-                    string Sql = "SELECT * FROM [TMM$]";
-                    OleDbCommand Comandos = new OleDbCommand(Sql, Conexao);
-                    OleDbDataAdapter adp = new OleDbDataAdapter(new OleDbCommand("SELECT * FROM [TMM$]", Conexao));
-                    adp.Fill(TableTMMs);
-                    TMMs = TableToList<TMM>(TableTMMs);
+                    string Sql;
+                    OleDbCommand Comandos = new OleDbCommand();
+                    OleDbDataAdapter adp = new OleDbDataAdapter();
+                    foreach (var t in Ta)
+                    {
+                        if (t.Key != typeof(Inventario))
+                        {
+                            Sql = "SELECT * FROM [" + t.Key.Name + "$]";
+                            Comandos = new OleDbCommand(Sql, Conexao);
+                            adp = new OleDbDataAdapter(Comandos);
+                            adp.Fill(Ta[t.Key]);
+                        }
+                    }
+                    Inv = TableToList<Inventario>(Ta[typeof(Inventario)]);
+                    TMMs = TableToList<TMM>(Ta[typeof(TMM)]);
+                    Processadores = TableToList<Processador>(Ta[typeof(Processador)]);
+                    Memorias = TableToList<Memoria>(Ta[typeof(Memoria)]);
+                    Unidades = TableToList<Entites.Unidade>(Ta[typeof(Entites.Unidade)]);
+                    Adms = TableToList<Adm>(Ta[typeof(Adm)]);
+
+                    //string Sql = "SELECT * FROM [TMM$]";
+                    //OleDbCommand Comandos = new OleDbCommand(Sql, Conexao);
+                    //OleDbDataAdapter adp = new OleDbDataAdapter(new OleDbCommand("SELECT * FROM [TMM$]", Conexao));
+                    //adp.Fill(TableTMMs);
+                    //TMMs = TableToList<TMM>(TableTMMs);
                     //TMMs = TableTMMs.AsEnumerable().Select(x => new TMM
                     //{
                     //    Tipo = x.Field<string>("TIPO"),
@@ -120,31 +168,31 @@ namespace InventarioTI.Services
 
                     //}).ToList();
 
-                    Sql = "SELECT * FROM [Processador$]";
-                    Comandos = new OleDbCommand(Sql, Conexao);
-                    adp = new OleDbDataAdapter(Comandos);
-                    adp.Fill(TableProcessadores);
-                    Processadores = TableToList<Processador>(TableProcessadores);
+                    //Sql = "SELECT * FROM [Processador$]";
+                    //Comandos = new OleDbCommand(Sql, Conexao);
+                    //adp = new OleDbDataAdapter(Comandos);
+                    //adp.Fill(TableProcessadores);
+                    //Processadores = TableToList<Processador>(TableProcessadores);
                     //Processadores = TableProcessadores.AsEnumerable().Select(x => new Processador
                     //{
                     //    Tipo = x.Field<string>("TIPO")
                     //}).ToList();
 
-                    Sql = "SELECT * FROM [Memoria$]";
-                    Comandos = new OleDbCommand(Sql, Conexao);
-                    adp = new OleDbDataAdapter(Comandos);
-                    adp.Fill(TableMemorias);
-                    Memorias = TableToList<Memoria>(TableMemorias);
+                    //Sql = "SELECT * FROM [Memoria$]";
+                    //Comandos = new OleDbCommand(Sql, Conexao);
+                    //adp = new OleDbDataAdapter(Comandos);
+                    //adp.Fill(TableMemorias);
+                    //Memorias = TableToList<Memoria>(TableMemorias);
                     //Memorias = TableMemorias.AsEnumerable().AsEnumerable().Select(x => new Memoria
                     //{
                     //    Ram = x.Field<string>("RAM")
                     //}).ToList();
 
-                    Sql = "SELECT * FROM [Unidade$]";
-                    Comandos = new OleDbCommand(Sql, Conexao);
-                    adp = new OleDbDataAdapter(Comandos);
-                    adp.Fill(TableUnidades);
-                    Unidades = TableToList<Unidade>(TableUnidades);
+                    //Sql = "SELECT * FROM [Unidade$]";
+                    //Comandos = new OleDbCommand(Sql, Conexao);
+                    //adp = new OleDbDataAdapter(Comandos);
+                    //adp.Fill(TableUnidades);
+                    //Unidades = TableToList<Unidade>(TableUnidades);
                     //Unidades = TableUnidades.AsEnumerable().Select(x => new Unidade
                     //{
                     //    Regiao = x.Field<string>("REGIAO"),
@@ -154,11 +202,11 @@ namespace InventarioTI.Services
 
                     //}).ToList();
 
-                    Sql = "SELECT * FROM [Adm$]";
-                    Comandos = new OleDbCommand(Sql, Conexao);
-                    adp = new OleDbDataAdapter(Comandos);
-                    adp.Fill(TableAdms);
-                    Adms = TableToList<Adm>(TableAdms);
+                    //Sql = "SELECT * FROM [Adm$]";
+                    //Comandos = new OleDbCommand(Sql, Conexao);
+                    //adp = new OleDbDataAdapter(Comandos);
+                    //adp.Fill(TableAdms);
+                    //Adms = TableToList<Adm>(TableAdms);
                     //Adms = TableAdms.AsEnumerable().Select(x => new Adm
                     //{
                     //    matricula = x.Field<object>("MATRICULA").ToString()
@@ -178,13 +226,14 @@ namespace InventarioTI.Services
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+
         private static List<T> TableToList<T>(DataTable tabela) where T : new()
         {
             T t = new T();
             List<T> list = new List<T>();
             var p = t.GetType().GetProperties();
 
-            list = tabela.AsEnumerable().Select(x=> x.RowToType<T>()).ToList();
+            list = tabela.AsEnumerable().Select(x => x.RowToType<T>()).ToList();
             return list;
         }
 
@@ -194,17 +243,17 @@ namespace InventarioTI.Services
             var p = t.GetType().GetProperties();
             for (int i = 0; i < p.Length; i++)
             {
-                p[i].SetValue(t,x.Field<object>(p[i].Name).ToString());
+                p[i].SetValue(t, x.Field<object>(p[i].Name).ToString());
             }
             return t;
         }
 
-        private static DataRow TypeToRow<T>(this T t,DataTable dt)
+        private static DataRow TypeToRow<T>(this T t, DataTable dt)
         {
             DataRow row = dt.NewRow();
             var p = t.GetType().GetProperties();
 
-            foreach(var prop in p)
+            foreach (var prop in p)
             {
                 row.SetField(dt.Columns[prop.Name], prop.GetValue(t));
             }
@@ -255,54 +304,26 @@ namespace InventarioTI.Services
                     {
                         Comandos.ExecuteNonQuery();
 
-                        if (list[0] is Movimentacao)
+                        foreach (var i in list)
                         {
-                            foreach (var i in list)
+                            if (i is Movimentacao)
                             {
-                                Inv.Add((i as Movimentacao).GetInventario());
-                                TableInv.Rows.Add((i as Movimentacao).GetInventario().TypeToRow(TableInv));
+                                Inventario aux = (i as Movimentacao).GetInventario();
+                                Inv.Add(aux);
+                                Ta[aux.GetType()].Rows.Add(aux.TypeToRow(Ta[aux.GetType()]));
+                            }
+                            else
+                            {
+                                if (i is TMM) TMMs.Add((i as TMM));
+                                else if (i is Processador) Processadores.Add(i as Processador);
+                                else if (i is Memoria) Memorias.Add(i as Memoria);
+                                else if (i is Adm) Adms.Add(i as Adm);
+                                else if (i is Unidade) Unidades.Add(i as Unidade);
+
+                                Ta[i.GetType()].Rows.Add(i.TypeToRow(Ta[i.GetType()]));
                             }
                         }
-                        else if (list[0] is TMM)
-                        {
-                            foreach (var i in list)
-                            {
-                                TMMs.Add((i as TMM));
-                                TableTMMs.Rows.Add((i as TMM).TypeToRow(TableTMMs));
-                            }
-                        }
-                        else if (list[0] is Processador)
-                        {
-                            foreach (var i in list)
-                            {
-                                Processadores.Add(i as Processador);
-                                TableProcessadores.Rows.Add((i as Processador).TypeToRow(TableProcessadores));
-                            }
-                        }
-                        else if (list[0] is Memoria)
-                        {
-                            foreach (var i in list)
-                            {
-                                Memorias.Add(i as Memoria);
-                                TableMemorias.Rows.Add(i as Memoria).TypeToRow(TableMemorias);
-                            }
-                        }
-                        else if (list[0] is Adm)
-                        {
-                            foreach (var i in list)
-                            {
-                                Adms.Add(i as Adm);
-                                TableAdms.Rows.Add((i as Adm).TypeToRow(TableAdms));
-                            }
-                        }
-                        else if (list[0] is Unidade)
-                        {
-                            foreach (var i in list)
-                            {
-                                Unidades.Add(i as Unidade);
-                                TableUnidades.Rows.Add((i as Unidade).TypeToRow(TableUnidades));
-                            }
-                        }
+
                         FI.Atualizar();
                     }
                     catch
