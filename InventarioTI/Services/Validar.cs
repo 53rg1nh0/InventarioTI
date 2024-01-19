@@ -63,7 +63,7 @@ namespace InventarioTI.Services
         public static void BD()
         {
 
-            
+
             //ExcelFechado();
 
             //Stopwatch stopwatch = new Stopwatch();
@@ -74,7 +74,7 @@ namespace InventarioTI.Services
             {
                 string Sql;
                 Sql = "SELECT QUANT, UND, UF, FUNCIONARIO, USERID, CARGO, AREA, EQUIPAMENTO, MARCA, MODELO, PROCESSADOR, PATRIMONIO, NOMENCLATURA, SERIE, MEMORIA "
-                    + "FROM [Movimentacao$] " 
+                    + "FROM [Movimentacao$] "
                     + "GROUP BY QUANT, UND, UF, FUNCIONARIO, USERID, CARGO, AREA, EQUIPAMENTO, MARCA, MODELO, PROCESSADOR, PATRIMONIO, NOMENCLATURA, SERIE, MEMORIA, DATA "
                     + "HAVING DATA = MAX(DATA)";
 
@@ -102,6 +102,8 @@ namespace InventarioTI.Services
 
             }
 
+            //Stopwatch stopwatch = new Stopwatch();
+            //stopwatch.Start();
 
             //using (var wb = new XLWorkbook(Arquivo + @"\BD.xlsx"))
             //{

@@ -36,19 +36,19 @@ namespace InventarioTI.View
             {
                 txbUserID.AutoCompleteCustomSource.Clear();
                 txbUserID.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txbUserID.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(c => c.USERID).Distinct().ToArray());
+                txbUserID.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First() && x.USERID != "obs").Select(c => c.USERID).Distinct().ToArray());
 
                 txbNome.AutoCompleteCustomSource.Clear();
                 txbNome.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txbNome.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(c => c.FUNCIONARIO).Distinct().ToArray());
+                txbNome.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First() && x.USERID != "obs").Select(c => c.FUNCIONARIO).Distinct().ToArray());
 
                 txbPatrimonio.AutoCompleteCustomSource.Clear();
                 txbPatrimonio.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txbPatrimonio.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(c => c.PATRIMONIO).ToArray());
+                txbPatrimonio.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First() && x.USERID != "obs").Select(c => c.PATRIMONIO).ToArray());
 
                 txbSerie.AutoCompleteCustomSource.Clear();
                 txbSerie.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txbSerie.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(c => c.SERIE).ToArray());
+                txbSerie.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First() && x.USERID != "obs").Select(c => c.SERIE).ToArray());
             }
         }
 
@@ -281,8 +281,6 @@ namespace InventarioTI.View
         {
             try
             {
-                
-
                 Unidade unidade = Base.Unidades.Where(u => u.Sigla == Base.Unidade).FirstOrDefault();
                 Inventario i = Base.GetBackup(new Inventario(), unidade);
 
@@ -304,6 +302,16 @@ namespace InventarioTI.View
                         throw new DomainException("Não pode haver campos vazios!");
                     }
                 }
+                if (Base.Inv.Where(x=>x.USERID == "obs").Select(a => a.PATRIMONIO).Contains(i.PATRIMONIO) ||
+                    Base.Inv.Where(x => x.USERID == "obs").Select(a => a.NOMENCLATURA).Contains(i.NOMENCLATURA) ||
+                    Base.Inv.Where(x => x.USERID == "obs").Select(a => a.SERIE).Contains(i.SERIE))
+                {
+                    MessageBox.Show("Equipamento está como obsoleto! Deseja reativa-lo?","Obsoleto",MessageBoxButtons.YesNo);
+
+                    //tratativa
+
+                    return;
+                }
                 if (Base.Inv.Select(a => a.PATRIMONIO).Contains(i.PATRIMONIO) ||
                     Base.Inv.Select(a => a.NOMENCLATURA).Contains(i.NOMENCLATURA) ||
                     Base.Inv.Select(a => a.SERIE).Contains(i.SERIE))
@@ -313,7 +321,6 @@ namespace InventarioTI.View
                 else
                 {
                     Base.InsertBase(new List<Movimentacao> { new Movimentacao("adicionado",i) });
-                    //Base.Inv.Where(x => x.UND == unidade.Nome).ToList().Add(i);
 
                     Task.Run(() => { MessageBox.Show("Equipamento Adicionado com sucesso!"); });
 

@@ -88,13 +88,13 @@ namespace InventarioTI.View
                     Validar.ExistenciaPastasArquivos(fbdPasta.SelectedPath);
                     txbPasta.Text = fbdPasta.SelectedPath;
                     Properties.Settings.Default.Path = fbdPasta.SelectedPath;
-                    
+
                     Base.Atualizar();
                     cbxUnidade.Items.AddRange(Base.Unidades.Select(x => x.Sigla).ToArray());
                     cbxUnidade.Text = "";
 
                     Preencher();
-                   
+
                 }
                 catch (DomainException ex) { MessageBox.Show(ex.Message); }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -123,17 +123,11 @@ namespace InventarioTI.View
 
         private void uctAjustes_Load(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Path))
             {
                 Base.Atualizar();
                 Preencher();
             }
-        }
-
-        private void ptbTMM_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvTMM_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -145,25 +139,6 @@ namespace InventarioTI.View
             }
         }
 
-        private void ptbMemoria_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvMemorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvMemorias.Columns[e.ColumnIndex] == dgvMemorias.Columns["ExM"] && e.RowIndex != -1)
-            {
-                Base.RemoveBase(new List<Memoria> { new Memoria() }, null, e.RowIndex);
-                Preencher();
-            }
-        }
-
-        private void ptbProcessador_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvProcessadores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvProcessadores.Columns[e.ColumnIndex] == dgvProcessadores.Columns["ExP"] && e.RowIndex != -1)
@@ -173,8 +148,13 @@ namespace InventarioTI.View
             }
         }
 
-        private void ptbUnidade_Click(object sender, EventArgs e)
+        private void dgvMemorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvMemorias.Columns[e.ColumnIndex] == dgvMemorias.Columns["ExM"] && e.RowIndex != -1)
+            {
+                Base.RemoveBase(new List<Memoria> { new Memoria() }, null, e.RowIndex);
+                Preencher();
+            }
         }
 
         private void dgvUnidade_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -197,6 +177,27 @@ namespace InventarioTI.View
                 if (!string.IsNullOrEmpty(Properties.Settings.Default.Path)) Preencher();
 
                 Base.Atualizar();
+            }
+        }
+
+        private void ptbTMM_Click(object sender, EventArgs e)
+        {
+            TMM tmm = new TMM { Tipo = txbTipo.Text, Marca = txbMarca.Text, Modelo = txbModelo.Text };
+            if (!(string.IsNullOrEmpty(tmm.Tipo) || string.IsNullOrEmpty(tmm.Marca) || string.IsNullOrEmpty(tmm.Modelo)))
+            {
+                if (Base.TMMs.Select(c => c.Tipo + c.Marca + c.Modelo).Contains(tmm.Tipo + tmm.Marca + tmm.Modelo)) MessageBox.Show("Equipamento já existe!");
+                else
+                {
+                    Base.InsertBase(new List<TMM> { tmm });
+                    Preencher();
+                    txbTipo.Clear();
+                    txbMarca.Clear();
+                    txbModelo.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não pode conter campos vazios!");
             }
         }
     }

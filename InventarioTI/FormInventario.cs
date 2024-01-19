@@ -97,6 +97,7 @@ namespace InventarioTI
         {
             if (!string.IsNullOrEmpty(Base.Unidade))
             {
+                Quantidade.Calucular();
                 lblUnidade.Text = Base.Unidades.FirstOrDefault(u => u.Sigla == Base.Unidade).Nome;
                 if (Properties.Settings.Default.Unidade == "MRC")
                 {
