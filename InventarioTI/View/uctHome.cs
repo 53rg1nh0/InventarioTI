@@ -44,7 +44,7 @@ namespace InventarioTI.View
 
                 txbPatrimonio.AutoCompleteCustomSource.Clear();
                 txbPatrimonio.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                txbPatrimonio.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First() && x.USERID != "obs").Select(c => c.PATRIMONIO).ToArray());
+                txbPatrimonio.AutoCompleteCustomSource.AddRange(Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First() && x.USERID != "obs" ).Select(c => c.PATRIMONIO).ToArray());
 
                 txbSerie.AutoCompleteCustomSource.Clear();
                 txbSerie.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -320,6 +320,7 @@ namespace InventarioTI.View
                 }
                 else
                 {
+                    Base.InsertBase(new List<Inventario> { i });
                     Base.InsertBase(new List<Movimentacao> { new Movimentacao("adicionado",i) });
 
                     Task.Run(() => { MessageBox.Show("Equipamento Adicionado com sucesso!"); });
@@ -341,7 +342,28 @@ namespace InventarioTI.View
 
         private void ptbRemoverEquipamento_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Base.Atualizar();
+                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new Exception("Incira o equipamento que deseja escluir!");
+                if (!Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Select(a => a.PATRIMONIO).Contains(Cache.Equipamento)) throw new Exception("Somente equipamentos da unidade podem ser removidos!");
+                if (Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Where(a => a.PATRIMONIO == Cache.Equipamento).FirstOrDefault().USERID != "bkp") throw new Exception("Só pode ser removidos equipamentos Bakup!");
 
+                Inventario inventario = Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).Where(a => a.PATRIMONIO == Cache.Equipamento).FirstOrDefault();
+                int index = Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).ToList().IndexOf(inventario);
+
+                Base.InsertBase(new List<Movimentacao> { new Movimentacao("obsoleto", inventario) });
+                //Base.RemoveBase(new List<Inventario> { inventario }, Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First()).ToList());
+
+                Task.Run(() => { MessageBox.Show("Equipamento removido!"); });
+
+                ptbApagarEquipamento_Click(sender, e);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ptbEditarEquipamento_Click(object sender, EventArgs e)

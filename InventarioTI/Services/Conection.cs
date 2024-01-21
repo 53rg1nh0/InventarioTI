@@ -2,6 +2,7 @@
 using InventarioTI.Entites.emuns;
 using InventarioTI.Entites.Emuns;
 using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace InventarioTI.Services
 {
@@ -10,9 +11,9 @@ namespace InventarioTI.Services
         public string Path { get; }
         public string String { get; }
 
-        public Conection()
+        public Conection(object o)
         {
-            this.Path = Properties.Settings.Default.Path + @"\BD.xlsx";
+            this.Path = Properties.Settings.Default.Path + ((o is Inventario) ? @"\BD.xlsx" : @"\AjustesBD.xlsx");
             String = @"provider =Microsoft.ACE.OLEDB.12.0;Data Source= " + this.Path + " ;Extended Properties=Excel 12.0";
 
             //if (t is Inventario)

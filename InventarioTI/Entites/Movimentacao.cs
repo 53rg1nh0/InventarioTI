@@ -62,28 +62,5 @@ namespace InventarioTI.Entites
                     break;
             }
         }
-       
-        public Inventario GetInventario()
-        {
-            Inventario inventario = new Inventario();
-
-            inventario.QUANT = QUANT;
-            inventario.UND = UND;
-            inventario.UF = UF;
-            inventario.FUNCIONARIO = FUNCIONARIO ;
-            inventario.USERID = USERID;
-            inventario.CARGO = CARGO;
-            inventario.AREA = AREA;
-            inventario.EQUIPAMENTO = EQUIPAMENTO;
-            inventario.MARCA = MARCA;
-            inventario.MODELO = MODELO;
-            inventario.PROCESSADOR = PROCESSADOR;
-            inventario.PATRIMONIO = PATRIMONIO;
-            inventario.NOMENCLATURA = NOMENCLATURA;
-            inventario.SERIE = SERIE;
-            inventario.MEMORIA = MEMORIA;
-
-            return inventario;
-        }
     }
 }

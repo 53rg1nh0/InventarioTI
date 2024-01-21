@@ -134,7 +134,7 @@ namespace InventarioTI.View
         {
             if (dgvTMM.Columns[e.ColumnIndex] == dgvTMM.Columns["ExT"] && e.RowIndex != -1)
             {
-                Base.RemoveBase(new List<TMM> { new TMM() }, null, e.RowIndex);
+                Base.RemoveBase(new TMM(), e.RowIndex);
                 Preencher();
             }
         }
@@ -143,7 +143,7 @@ namespace InventarioTI.View
         {
             if (dgvProcessadores.Columns[e.ColumnIndex] == dgvProcessadores.Columns["ExP"] && e.RowIndex != -1)
             {
-                Base.RemoveBase(new List<Processador> { new Processador() }, null, e.RowIndex);
+                //Base.RemoveBase(new List<Processador> { new Processador() }, null, e.RowIndex);
                 Preencher();
             }
         }
@@ -152,7 +152,7 @@ namespace InventarioTI.View
         {
             if (dgvMemorias.Columns[e.ColumnIndex] == dgvMemorias.Columns["ExM"] && e.RowIndex != -1)
             {
-                Base.RemoveBase(new List<Memoria> { new Memoria() }, null, e.RowIndex);
+                //Base.RemoveBase(new List<Memoria> { new Memoria() }, null, e.RowIndex);
                 Preencher();
             }
         }
@@ -161,7 +161,7 @@ namespace InventarioTI.View
         {
             if (dgvUnidade.Columns[e.ColumnIndex] == dgvUnidade.Columns["ExU"] && e.RowIndex != -1)
             {
-                Base.RemoveBase(new List<Unidade> { new Unidade() }, null, e.RowIndex);
+                //Base.RemoveBase(new List<Unidade> { new Unidade() }, null, e.RowIndex);
                 Preencher();
             }
         }
