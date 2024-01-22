@@ -292,6 +292,7 @@ namespace InventarioTI.View
             this.ptbProcessador.Size = new System.Drawing.Size(44, 40);
             this.ptbProcessador.TabIndex = 16;
             this.ptbProcessador.TabStop = false;
+            this.ptbProcessador.Click += new System.EventHandler(this.ptbProcessador_Click);
             // 
             // ptbMemoria
             // 
@@ -305,6 +306,7 @@ namespace InventarioTI.View
             this.ptbMemoria.Size = new System.Drawing.Size(44, 40);
             this.ptbMemoria.TabIndex = 19;
             this.ptbMemoria.TabStop = false;
+            this.ptbMemoria.Click += new System.EventHandler(this.ptbMemoria_Click);
             // 
             // txbMemorias
             // 
@@ -751,6 +753,7 @@ namespace InventarioTI.View
             this.ptbUnidade.Size = new System.Drawing.Size(53, 40);
             this.ptbUnidade.TabIndex = 26;
             this.ptbUnidade.TabStop = false;
+            this.ptbUnidade.Click += new System.EventHandler(this.ptbUnidade_Click);
             // 
             // tlpBotton2
             // 

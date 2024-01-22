@@ -143,7 +143,7 @@ namespace InventarioTI.View
         {
             if (dgvProcessadores.Columns[e.ColumnIndex] == dgvProcessadores.Columns["ExP"] && e.RowIndex != -1)
             {
-                //Base.RemoveBase(new List<Processador> { new Processador() }, null, e.RowIndex);
+                Base.RemoveBase(new Processador(), e.RowIndex);
                 Preencher();
             }
         }
@@ -152,7 +152,7 @@ namespace InventarioTI.View
         {
             if (dgvMemorias.Columns[e.ColumnIndex] == dgvMemorias.Columns["ExM"] && e.RowIndex != -1)
             {
-                //Base.RemoveBase(new List<Memoria> { new Memoria() }, null, e.RowIndex);
+                Base.RemoveBase(new Memoria(), e.RowIndex);
                 Preencher();
             }
         }
@@ -161,7 +161,7 @@ namespace InventarioTI.View
         {
             if (dgvUnidade.Columns[e.ColumnIndex] == dgvUnidade.Columns["ExU"] && e.RowIndex != -1)
             {
-                //Base.RemoveBase(new List<Unidade> { new Unidade() }, null, e.RowIndex);
+                Base.RemoveBase(new Unidade(), e.RowIndex);
                 Preencher();
             }
         }
@@ -183,22 +183,70 @@ namespace InventarioTI.View
         private void ptbTMM_Click(object sender, EventArgs e)
         {
             TMM tmm = new TMM { Tipo = txbTipo.Text, Marca = txbMarca.Text, Modelo = txbModelo.Text };
-            if (!(string.IsNullOrEmpty(tmm.Tipo) || string.IsNullOrEmpty(tmm.Marca) || string.IsNullOrEmpty(tmm.Modelo)))
+            try
             {
-                if (Base.TMMs.Select(c => c.Tipo + c.Marca + c.Modelo).Contains(tmm.Tipo + tmm.Marca + tmm.Modelo)) MessageBox.Show("Equipamento já existe!");
-                else
-                {
-                    Base.InsertBase(new List<TMM> { tmm });
-                    Preencher();
-                    txbTipo.Clear();
-                    txbMarca.Clear();
-                    txbModelo.Clear();
-                }
+                if ((string.IsNullOrEmpty(tmm.Tipo) || string.IsNullOrEmpty(tmm.Marca) || string.IsNullOrEmpty(tmm.Modelo))) throw new DomainException("Não pode conter campos vazios!");
+                if (Base.TMMs.Select(c => c.Tipo + c.Marca + c.Modelo).Contains(tmm.Tipo + tmm.Marca + tmm.Modelo)) throw new DomainException("Equipamento já existe!");
+                
+                Base.InsertBase(new List<TMM> { tmm });
+                Preencher();
+                txbTipo.Clear();
+                txbMarca.Clear();
+                txbModelo.Clear();
             }
-            else
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }         
+        }
+
+        private void ptbProcessador_Click(object sender, EventArgs e)
+        {
+            Processador pro = new Processador {  Tipo = txbProcessadores.Text };
+            try
             {
-                MessageBox.Show("Não pode conter campos vazios!");
+                if (string.IsNullOrEmpty(pro.Tipo)) throw new DomainException("Não pode conter campos vazios!");
+                if (Base.Processadores.Select(c => c.Tipo).Contains(pro.Tipo)) throw new DomainException("Equipamento já existe!");
+
+                Base.InsertBase(new List<Processador> { pro });
+                Preencher();
+                txbProcessadores.Clear();
             }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void ptbMemoria_Click(object sender, EventArgs e)
+        {
+            Memoria mem = new Memoria { Ram= txbMemorias.Text };
+            try
+            {
+                if (string.IsNullOrEmpty(mem.Ram)) throw new DomainException("Não pode conter campos vazios!");
+                if (Base.Processadores.Select(c => c.Tipo).Contains(mem.Ram)) throw new DomainException("Equipamento já existe!");
+
+                Base.InsertBase(new List<Memoria> { mem });
+                Preencher();
+                txbMemorias.Clear();
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void ptbUnidade_Click(object sender, EventArgs e)
+        {
+            Unidade uni = new Unidade { Regiao = txbRegiao.Text, UF= txbUF.Text, Nome = txbNome.Text, Sigla = txbSigla.Text };
+            try
+            {
+                if (string.IsNullOrEmpty(uni.Regiao) || string.IsNullOrEmpty(uni.UF) || string.IsNullOrEmpty(uni.Nome) || string.IsNullOrEmpty(uni.Sigla)) throw new DomainException("Não pode conter campos vazios!");
+                if (Base.Unidades.Select(c => c.Sigla).Contains(uni.Sigla)) throw new DomainException("Equipamento já existe!");
+
+                Base.InsertBase(new List<Unidade> { uni });
+                Preencher();
+                txbRegiao.Clear();
+                txbUF.Clear();
+                txbNome.Clear();
+                txbSigla.Clear();
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

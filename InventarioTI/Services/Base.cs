@@ -164,7 +164,7 @@ namespace InventarioTI.Services
 
                         for (int i = 0; i < p.Length; i++)
                         {
-                            if (i == 0) val += "(" + p[i].Name + ", ";
+                            if (i == 0) val += "(" + p[i].Name + ((p.Length > 1) ? ", " : ")");
                             else if (i < p.Length - 1) val += p[i].Name + ", ";
                             else val += p[i].Name + ")";
 
@@ -241,7 +241,7 @@ namespace InventarioTI.Services
             try
             {
                 using (var workbook = new XLWorkbook(new Conection(new TMM()).Path))
-                {                   
+                {
                     var worksheet = workbook.Worksheet(o.GetType().Name);
                     worksheet.Row(index + 2).Delete();
                     Ta[o.GetType()].Rows.RemoveAt(index);
