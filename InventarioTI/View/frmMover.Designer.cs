@@ -28,136 +28,144 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            lblMover = new Label();
-            btnMover = new Button();
-            btnCamcel = new Button();
-            dgvMover = new DataGridView();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            uFDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Sigla = new DataGridViewTextBoxColumn();
-            Chek = new DataGridViewCheckBoxColumn();
-            unidadeBindingSource = new BindingSource(components);
-            pnlMover = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dgvMover).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)unidadeBindingSource).BeginInit();
-            pnlMover.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMover));
+            this.lblMover = new System.Windows.Forms.Label();
+            this.btnMover = new System.Windows.Forms.Button();
+            this.btnCamcel = new System.Windows.Forms.Button();
+            this.dgvMover = new System.Windows.Forms.DataGridView();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Chek = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.unidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlMover = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMover)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unidadeBindingSource)).BeginInit();
+            this.pnlMover.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lblMover
             // 
-            lblMover.AutoSize = true;
-            lblMover.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMover.Location = new Point(12, 9);
-            lblMover.Name = "lblMover";
-            lblMover.Size = new Size(341, 23);
-            lblMover.TabIndex = 3;
-            lblMover.Text = "SELECIONE A UNIDADE PARA MOVER";
+            this.lblMover.AutoSize = true;
+            this.lblMover.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMover.Location = new System.Drawing.Point(25, 9);
+            this.lblMover.Name = "lblMover";
+            this.lblMover.Size = new System.Drawing.Size(341, 23);
+            this.lblMover.TabIndex = 3;
+            this.lblMover.Text = "SELECIONE A UNIDADE PARA MOVER";
             // 
             // btnMover
             // 
-            btnMover.BackColor = Color.FromArgb(196, 0, 6);
-            btnMover.BackgroundImageLayout = ImageLayout.None;
-            btnMover.FlatStyle = FlatStyle.Flat;
-            btnMover.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMover.Location = new Point(305, 127);
-            btnMover.Margin = new Padding(0);
-            btnMover.Name = "btnMover";
-            btnMover.Size = new Size(75, 26);
-            btnMover.TabIndex = 1;
-            btnMover.Text = "Mover";
-            btnMover.UseVisualStyleBackColor = false;
-            btnMover.Click += btnMover_Click;
+            this.btnMover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.btnMover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMover.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMover.Location = new System.Drawing.Point(305, 127);
+            this.btnMover.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMover.Name = "btnMover";
+            this.btnMover.Size = new System.Drawing.Size(75, 26);
+            this.btnMover.TabIndex = 1;
+            this.btnMover.Text = "Mover";
+            this.btnMover.UseVisualStyleBackColor = false;
+            this.btnMover.Click += new System.EventHandler(this.btnMover_Click);
             // 
             // btnCamcel
             // 
-            btnCamcel.BackColor = Color.FromArgb(196, 0, 6);
-            btnCamcel.BackgroundImageLayout = ImageLayout.None;
-            btnCamcel.FlatAppearance.BorderSize = 0;
-            btnCamcel.FlatStyle = FlatStyle.Flat;
-            btnCamcel.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCamcel.Location = new Point(226, 127);
-            btnCamcel.Margin = new Padding(0);
-            btnCamcel.Name = "btnCamcel";
-            btnCamcel.Size = new Size(75, 26);
-            btnCamcel.TabIndex = 2;
-            btnCamcel.Text = "Cancel";
-            btnCamcel.UseVisualStyleBackColor = false;
-            btnCamcel.Click += btnCamcel_Click;
+            this.btnCamcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.btnCamcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCamcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCamcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCamcel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCamcel.Location = new System.Drawing.Point(226, 127);
+            this.btnCamcel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCamcel.Name = "btnCamcel";
+            this.btnCamcel.Size = new System.Drawing.Size(75, 26);
+            this.btnCamcel.TabIndex = 2;
+            this.btnCamcel.Text = "Cancel";
+            this.btnCamcel.UseVisualStyleBackColor = false;
+            this.btnCamcel.Click += new System.EventHandler(this.btnCamcel_Click);
             // 
             // dgvMover
             // 
-            dgvMover.AutoGenerateColumns = false;
-            dgvMover.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMover.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, uFDataGridViewTextBoxColumn, Sigla, Chek });
-            dgvMover.DataSource = unidadeBindingSource;
-            dgvMover.Location = new Point(12, 42);
-            dgvMover.Name = "dgvMover";
-            dgvMover.RowTemplate.Height = 25;
-            dgvMover.Size = new Size(368, 75);
-            dgvMover.TabIndex = 0;
-            dgvMover.CellContentClick += dgvMover_CellContentClick;
+            this.dgvMover.AutoGenerateColumns = false;
+            this.dgvMover.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMover.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomeDataGridViewTextBoxColumn,
+            this.uFDataGridViewTextBoxColumn,
+            this.Sigla,
+            this.Chek});
+            this.dgvMover.DataSource = this.unidadeBindingSource;
+            this.dgvMover.Location = new System.Drawing.Point(11, 42);
+            this.dgvMover.Name = "dgvMover";
+            this.dgvMover.RowTemplate.Height = 25;
+            this.dgvMover.Size = new System.Drawing.Size(368, 75);
+            this.dgvMover.TabIndex = 0;
+            this.dgvMover.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMover_CellContentClick);
             // 
             // nomeDataGridViewTextBoxColumn
             // 
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             // 
             // uFDataGridViewTextBoxColumn
             // 
-            uFDataGridViewTextBoxColumn.DataPropertyName = "UF";
-            uFDataGridViewTextBoxColumn.HeaderText = "UF";
-            uFDataGridViewTextBoxColumn.Name = "uFDataGridViewTextBoxColumn";
+            this.uFDataGridViewTextBoxColumn.DataPropertyName = "UF";
+            this.uFDataGridViewTextBoxColumn.HeaderText = "UF";
+            this.uFDataGridViewTextBoxColumn.Name = "uFDataGridViewTextBoxColumn";
             // 
             // Sigla
             // 
-            Sigla.DataPropertyName = "Sigla";
-            Sigla.HeaderText = "SIGLA";
-            Sigla.Name = "Sigla";
+            this.Sigla.DataPropertyName = "Sigla";
+            this.Sigla.HeaderText = "SIGLA";
+            this.Sigla.Name = "Sigla";
             // 
             // Chek
             // 
-            Chek.HeaderText = "SELECIONE";
-            Chek.Name = "Chek";
-            Chek.Resizable = DataGridViewTriState.True;
-            Chek.SortMode = DataGridViewColumnSortMode.Automatic;
+            this.Chek.HeaderText = "SELECIONE";
+            this.Chek.Name = "Chek";
+            this.Chek.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Chek.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // unidadeBindingSource
             // 
-            unidadeBindingSource.DataSource = typeof(Entites.Unidade);
+            this.unidadeBindingSource.DataSource = typeof(InventarioTI.Entites.Unidade);
             // 
             // pnlMover
             // 
-            pnlMover.BorderStyle = BorderStyle.FixedSingle;
-            pnlMover.Controls.Add(lblMover);
-            pnlMover.Controls.Add(btnMover);
-            pnlMover.Controls.Add(btnCamcel);
-            pnlMover.Controls.Add(dgvMover);
-            pnlMover.Dock = DockStyle.Fill;
-            pnlMover.Location = new Point(0, 0);
-            pnlMover.Margin = new Padding(0);
-            pnlMover.Name = "pnlMover";
-            pnlMover.Size = new Size(392, 163);
-            pnlMover.TabIndex = 5;
+            this.pnlMover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMover.Controls.Add(this.lblMover);
+            this.pnlMover.Controls.Add(this.btnMover);
+            this.pnlMover.Controls.Add(this.btnCamcel);
+            this.pnlMover.Controls.Add(this.dgvMover);
+            this.pnlMover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMover.Location = new System.Drawing.Point(0, 0);
+            this.pnlMover.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlMover.Name = "pnlMover";
+            this.pnlMover.Size = new System.Drawing.Size(392, 163);
+            this.pnlMover.TabIndex = 5;
             // 
             // frmMover
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(392, 163);
-            Controls.Add(pnlMover);
-            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "frmMover";
-            Text = "frmMover";
-            Load += frmMover_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvMover).EndInit();
-            ((System.ComponentModel.ISupportInitialize)unidadeBindingSource).EndInit();
-            pnlMover.ResumeLayout(false);
-            pnlMover.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(392, 163);
+            this.Controls.Add(this.pnlMover);
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmMover";
+            this.Text = "frmMover";
+            this.Load += new System.EventHandler(this.frmMover_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMover)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unidadeBindingSource)).EndInit();
+            this.pnlMover.ResumeLayout(false);
+            this.pnlMover.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

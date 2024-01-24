@@ -188,7 +188,7 @@ namespace InventarioTI.View
                 if ((string.IsNullOrEmpty(tmm.Tipo) || string.IsNullOrEmpty(tmm.Marca) || string.IsNullOrEmpty(tmm.Modelo))) throw new DomainException("Não pode conter campos vazios!");
                 if (Base.TMMs.Select(c => c.Tipo + c.Marca + c.Modelo).Contains(tmm.Tipo + tmm.Marca + tmm.Modelo)) throw new DomainException("Equipamento já existe!");
                 
-                Base.InsertBase(new List<TMM> { tmm });
+                Base.InsertBase(tmm);
                 Preencher();
                 txbTipo.Clear();
                 txbMarca.Clear();
@@ -206,7 +206,7 @@ namespace InventarioTI.View
                 if (string.IsNullOrEmpty(pro.Tipo)) throw new DomainException("Não pode conter campos vazios!");
                 if (Base.Processadores.Select(c => c.Tipo).Contains(pro.Tipo)) throw new DomainException("Equipamento já existe!");
 
-                Base.InsertBase(new List<Processador> { pro });
+                Base.InsertBase(pro);
                 Preencher();
                 txbProcessadores.Clear();
             }
@@ -222,7 +222,7 @@ namespace InventarioTI.View
                 if (string.IsNullOrEmpty(mem.Ram)) throw new DomainException("Não pode conter campos vazios!");
                 if (Base.Processadores.Select(c => c.Tipo).Contains(mem.Ram)) throw new DomainException("Equipamento já existe!");
 
-                Base.InsertBase(new List<Memoria> { mem });
+                Base.InsertBase(mem);
                 Preencher();
                 txbMemorias.Clear();
             }
@@ -238,7 +238,7 @@ namespace InventarioTI.View
                 if (string.IsNullOrEmpty(uni.Regiao) || string.IsNullOrEmpty(uni.UF) || string.IsNullOrEmpty(uni.Nome) || string.IsNullOrEmpty(uni.Sigla)) throw new DomainException("Não pode conter campos vazios!");
                 if (Base.Unidades.Select(c => c.Sigla).Contains(uni.Sigla)) throw new DomainException("Equipamento já existe!");
 
-                Base.InsertBase(new List<Unidade> { uni });
+                Base.InsertBase(uni);
                 Preencher();
                 txbRegiao.Clear();
                 txbUF.Clear();

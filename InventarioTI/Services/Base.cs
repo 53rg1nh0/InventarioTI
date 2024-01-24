@@ -97,12 +97,11 @@ namespace InventarioTI.Services
 
                 FI.Atualizar();
                 if (ajuste) FI.uctAjustes.Atualizar();
-                if (home) FI.uctHome.Atualizar();
+                //if (home) FI.uctHome.Atualizar();
             }
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
 
         private static List<T> TableToList<T>(DataTable tabela) where T : new()
         {
@@ -137,6 +136,30 @@ namespace InventarioTI.Services
             return row;
         }
 
+        public static Inventario GetEstoque(Inventario i, Unidade u)
+        {
+            i.USERID = "est";
+            i.FUNCIONARIO = "Estoque TI";
+            i.AREA = "est";
+            i.CARGO = "est";
+            i.UF = u.UF;
+            i.UND = u.Nome;
+            i.QUANT = "1";
+            return i;
+        }
+
+        public static Inventario GetObsoleto(Inventario i, Unidade u)
+        {
+            i.USERID = "obs";
+            i.FUNCIONARIO = "Obsoleto";
+            i.AREA = "obs";
+            i.CARGO = "obs";
+            i.UF = u.UF;
+            i.UND = u.Nome;
+            i.QUANT = "1";
+            return i;
+        }
+
         public static Inventario GetBackup(Inventario i, Unidade u)
         {
             i.USERID = "bkp";
@@ -149,91 +172,81 @@ namespace InventarioTI.Services
             return i;
         }
 
-        public static void InsertBase<T>(List<T> list)
+        public static void InsertBase<T>(T generic)
         {
-            using (OleDbConnection conexao = new OleDbConnection(new Conection(list[0]).String))
+            using (OleDbConnection conexao = new OleDbConnection(new Conection(generic).String))
             {
                 try
                 {
-                    foreach (var item in list)
+                    var p = generic.GetType().GetProperties();
+                    string sql = "", val = "", par = "";
+
+                    OleDbCommand Comandos = new OleDbCommand();
+
+                    for (int i = 0; i < p.Length; i++)
                     {
-                        var p = item.GetType().GetProperties();
-                        string sql = "", val = "", par = "";
+                        if (i == 0) val += "(" + p[i].Name + ((p.Length > 1) ? ", " : ")");
+                        else if (i < p.Length - 1) val += p[i].Name + ", ";
+                        else val += p[i].Name + ")";
 
-                        OleDbCommand Comandos = new OleDbCommand();
-
-                        for (int i = 0; i < p.Length; i++)
-                        {
-                            if (i == 0) val += "(" + p[i].Name + ((p.Length > 1) ? ", " : ")");
-                            else if (i < p.Length - 1) val += p[i].Name + ", ";
-                            else val += p[i].Name + ")";
-
-                            Comandos.Parameters.AddWithValue("@" + p[i].Name, (p[i].Name == "QUANT" || p[i].Name == "PATRIMONIO") ? p[i].GetValue(item) : p[i].GetValue(item).ToString());
-                        }
-                        par = val.Replace("(", "(@").Replace(" ", " @");
-                        sql = "INSERT INTO [" + item.GetType().Name + "$] " + val + " VALUES " + par;
-                        Comandos.CommandText = sql;
-                        Comandos.Connection = conexao;
-                        conexao.Open();
-
-                        Comandos.ExecuteNonQuery();
-
-                        if (item.GetType().Name == "Inventario") Inv.Add(item as Inventario);
-                        else if (item is TMM) TMMs.Add(item as TMM);
-                        else if (item is Processador) Processadores.Add(item as Processador);
-                        else if (item is Memoria) Memorias.Add(item as Memoria);
-                        else if (item is Adm) Adms.Add(item as Adm);
-                        else if (item is Unidade) Unidades.Add(item as Unidade);
-
-                        if (item.GetType().Name != "Movimentacao") Ta[item.GetType()].Rows.Add(item.TypeToRow(Ta[item.GetType()]));
+                        Comandos.Parameters.AddWithValue("@" + p[i].Name, (p[i].Name == "QUANT" || p[i].Name == "PATRIMONIO") ? p[i].GetValue(generic) : p[i].GetValue(generic).ToString());
                     }
-                    FI.Atualizar();
+                    par = val.Replace("(", "(@").Replace(" ", " @");
+                    sql = "INSERT INTO [" + generic.GetType().Name + "$] " + val + " VALUES " + par;
+                    Comandos.CommandText = sql;
+                    Comandos.Connection = conexao;
+                    conexao.Open();
+
+                    Comandos.ExecuteNonQuery();
+
+                    if (generic.GetType().Name == "Inventario") Inv.Add(generic as Inventario);
+                    else if (generic is TMM) TMMs.Add(generic as TMM);
+                    else if (generic is Processador) Processadores.Add(generic as Processador);
+                    else if (generic is Memoria) Memorias.Add(generic as Memoria);
+                    else if (generic is Adm) Adms.Add(generic as Adm);
+                    else if (generic is Unidade) Unidades.Add(generic as Unidade);
+
+                    if (generic.GetType().Name != "Movimentacao") Ta[generic.GetType()].Rows.Add(generic.TypeToRow(Ta[generic.GetType()]));
+
+                    if (generic is Movimentacao) FI.Atualizar();
                 }
                 catch { throw new DomainException("Ocorreu um erro ao Inserir os Dados!"); }
                 finally { conexao.Close(); }
             }
         }
 
-
-        public static void UpdateBase<T>(List<T> alterados, List<T> geral)
+        public static void UpdateBase(Inventario i, bool equipamento = true)
         {
-            //try
-            //{
-            //    using var workbook = new XLWorkbook(new Conection().Path);
-            //    var worksheet = workbook.Worksheet(alterados.FirstOrDefault().GetType().Name);
-            //    var headerRow = worksheet.FirstRow();
-            //    worksheet.AutoFilter.Clear();
-            //    var tabela = worksheet.RangeUsed().AsTable();
+            using (OleDbConnection conexao = new OleDbConnection(new Conection(i).String))
+            {
+                try
+                {
+                    string sql = "UPDATE [Inventario$] SET"
+                        + " UND = '" + i.UND + "', "
+                        + " UF = '" + i.UF + "', "
+                        + " FUNCIONARIO = '" + i.FUNCIONARIO + "', "
+                        + " USERID = '" + i.USERID + "', "
+                        + " CARGO = '" + i.CARGO + "', "
+                        + " AREA = '" + i.AREA + "', "
+                        + " EQUIPAMENTO = '" + i.EQUIPAMENTO + "', "
+                        + " MARCA = '" + i.MARCA + "', "
+                        + " MODELO = '" + i.MODELO + "', "
+                        + " PROCESSADOR = '" + i.PROCESSADOR + "', "
+                        + " PATRIMONIO = " + i.PATRIMONIO +", "
+                        + " NOMENCLATURA = '" + i.NOMENCLATURA + "', "
+                        + " SERIE = '" + i.SERIE + "', "
+                        + " MEMORIA = '" + i.MEMORIA + "'"
+                        + (equipamento ? " WHERE PATRIMONIO = " + i.PATRIMONIO : " WHERE USERID = '" + i.USERID + "'");
 
-            //    foreach (var alterado in alterados)
-            //    {
-            //        var properties = alterado.GetType().GetProperties();
-            //        foreach (var p in properties)
-            //        {
-            //            int c = headerRow.CellsUsed(c => c.Value.ToString() == p.Name.ToUpper()).FirstOrDefault().WorksheetColumn().ColumnNumber();
-            //            int l = geral.IndexOf(alterado) + 2;
-            //            worksheet.Cell(l, c).Value = (c == 1 || c == 12) ? int.Parse(p.GetValue(alterado).ToString()) : p.GetValue(alterado).ToString();
-            //        }
-            //    }
+                    conexao.Open();
 
-            //    if (double.TryParse(tabela.LastRow().Cell(1).Value.ToString(), out double valorNumerico1))
-            //    {
-            //        tabela.LastRow().Cell(1).SetValue(valorNumerico1);
-            //    }
+                    new OleDbCommand(sql, conexao).ExecuteNonQuery();
 
-            //    if (double.TryParse(tabela.LastRow().Cell(12).Value.ToString(), out double valorNumerico12))
-            //    {
-            //        tabela.LastRow().Cell(12).SetValue(valorNumerico12);
-            //    }
-
-            //    worksheet.RangeUsed().SetAutoFilter();
-            //    worksheet.AutoFilter.Sort(4, XLSortOrder.Ascending, false, true);
-
-            //    workbook.Save();
-            //    workbook.Dispose();
-            //}
-            //catch (DomainException ex) { MessageBox.Show(ex.Message); }
-            //catch (Exception ex) { MessageBox.Show(ex.Message); }
+                    FI.Atualizar();
+                }
+                catch { throw new DomainException("Ocorreu um erro ao Inserir os Dados!"); }
+                finally { conexao.Close(); }
+            }      
         }
 
         public static void RemoveBase(object o, int index)
@@ -266,8 +279,7 @@ namespace InventarioTI.Services
                     workbook.Dispose();
                 }
             }
-            catch (DomainException ex) { MessageBox.Show(ex.Message); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch { throw new DomainException("Ocorreu um erro ao remover dados! Reinicie o computador e tente novamente!");}
         }
     }
 }

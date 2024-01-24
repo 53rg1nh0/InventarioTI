@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Math;
 using InventarioTI.Entites;
+using InventarioTI.Entites.emuns;
 using InventarioTI.Extencions;
 using InventarioTI.Services;
 using System;
@@ -17,14 +18,19 @@ namespace InventarioTI.View
 {
     public partial class frmMover : Form
     {
-        public FormInventario FI { get; set; } 
-        private string _u { get; set; }
-        public frmMover(List<Unidade> unidades)
+        private string _u;
+        private List<Unidade> _list = new List<Unidade>();
+        public frmMover(Inventario i)
         {
             InitializeComponent();
-            dgvMover.DataSource = unidades;
-            dgvMover.Estilo();
-            dgvMover.ScrollBars = ScrollBars.Vertical;
+            if (Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).Contains(i.UND))
+            {
+                _list = Base.Unidades.Where(x => x.Sigla != Base.Unidade).ToList();
+            }
+            else
+            {
+                _list = Base.Unidades.Where(x => x.Sigla == Base.Unidade).ToList();
+            }
         }
 
         private void btnCamcel_Click(object sender, EventArgs e)
@@ -32,12 +38,10 @@ namespace InventarioTI.View
             this.Close();
         }
 
-        private void frmMover_Load(object sender, EventArgs e)
+        private void btnMover_Click(object sender, EventArgs e)
         {
-            Location = new Point(FI.Location.X + 350, FI.Location.Y + 55);
-            this.Arrastar();
-            this.Escala();
-
+            //tratativa
+            this.Close();
         }
 
         private void dgvMover_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,10 +60,12 @@ namespace InventarioTI.View
             }
         }
 
-        private void btnMover_Click(object sender, EventArgs e)
+        private void frmMover_Load(object sender, EventArgs e)
         {
-
-            this.Close();
+            this.Location = new Point(Base.FI.Location.X + 375, Base.FI.Location.Y + 82);
+            dgvMover.DataSource = _list;
+            dgvMover.Estilo();
+            dgvMover.ScrollBars = ScrollBars.Vertical;
         }
     }
 }
