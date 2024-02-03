@@ -111,6 +111,12 @@ namespace InventarioTI.View
             cbxMarca.SelectionChangeCommitted -= cbxMarca_SelectionChangeCommitted;
             cbxTipo.SelectionChangeCommitted -= cbxTipo_SelectionChangeCommitted;
 
+            if (string.IsNullOrEmpty(cbxModelo.Text))
+            {
+                cbxMarca.Text = "";
+                cbxTipo.Text = "";
+            }
+
             Combos();
 
             cbxMarca.SelectionChangeCommitted += cbxMarca_SelectionChangeCommitted;
@@ -167,12 +173,13 @@ namespace InventarioTI.View
         {
             if (b)
             {
+                cbxModelo.Text = "";
+                cbxMarca.Text = "";
+                cbxTipo.Text = "";
                 txbPatrimonio.Text = e.Patrimonio;
                 txbSerie.Text = e.Serie;
-                cbxTipo.Text = e.Tipo;
-                cbxMarca.Text = e.Marca;
                 cbxModelo.Text = e.Modelo;
-                Combos();
+                cbxModelo_SelectionChangeCommitted(new object(), new EventArgs());
                 cbxProcessador.Text = e.Processador;
                 cbxMemoria.Text = e.Memoria;
 
@@ -254,7 +261,6 @@ namespace InventarioTI.View
             cbxModelo.Text = string.Empty;
             cbxProcessador.Text = string.Empty;
             cbxMemoria.Text = string.Empty;
-            _filtro = Base.TMMs;
             Combos();
 
             dgvEquipamento.Visible = false;
@@ -405,6 +411,8 @@ namespace InventarioTI.View
                 txbUserID_KeyDown(sender, new KeyEventArgs(Keys.Enter));
 
                 Cache.Cliente = i.USERID;
+
+                ptbGerarTermo_Click(new object(), new EventArgs());
             }
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -444,32 +452,95 @@ namespace InventarioTI.View
 
         private void MoverCliente_Click(object sender, EventArgs e)
         {
+            Base.Atualizar(false, false);
             frmMover m = new frmMover(Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault());
             m.ShowDialog();
+            txbUserID_KeyDown(new object(), new KeyEventArgs(Keys.Enter));
         }
 
+        private void ptbMoverEquipamento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Base.Atualizar(false, false);
+                if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault().USERID != "bkp") throw new DomainException("Somente equipamentos Backups pode ser movidos!");
+                frmMover m = new frmMover(Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault());
+                m.ShowDialog();
+                txbPatrimonio_KeyDown(new object(), new KeyEventArgs(Keys.Enter));
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
 
-        //private void uctHome_Load(object sender, EventArgs e)
-        //{
-        //    //Atualizar();
-        //}
+        private void ptbTrocar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Base.Atualizar(false, false);
+                if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento && x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault().Nome).
+                FirstOrDefault().USERID != "bkp") throw new DomainException("Somente equipamentos Backups da unidade podem trocar equipamento de cliente!");
+
+                Inventario antigo = Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault();
+                Inventario novo = Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault();
+                Cliente cliente = new Cliente { UserID = antigo.USERID, Nome = antigo.FUNCIONARIO, Area = antigo.AREA, Cargo = antigo.CARGO, Unidade = antigo.UND, UF = antigo.UF };
+
+                novo.UND = cliente.Unidade;
+                novo.UF = cliente.UF;
+                novo.FUNCIONARIO = cliente.Nome;
+                novo.USERID = cliente.UserID;
+                novo.AREA = cliente.Area;
+                novo.CARGO = cliente.Cargo;
+
+                if (Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault().UND != Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault().Nome)
+                {
+                    string origem = antigo.UND;
+                    Base.GetBackup(antigo, Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault());
+                    antigo.Nomenclatura();
+                    Base.InsertBase(new Movimentacao("movido", antigo, origem));
+                    Base.UpdateBase(antigo);
+
+                    origem = novo.UND;
+
+                    novo.Nomenclatura();
+                    Base.InsertBase(new Movimentacao("movido", novo, origem));
+                    Base.UpdateBase(novo);
+
+                    Base.InsertBase(new Movimentacao("troca", novo, antigo.PATRIMONIO));
+                }
+                else
+                {
+                    Base.GetBackup(antigo, Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault());
+                    Base.UpdateBase(antigo);
+                    Base.UpdateBase(novo);
+                    Base.InsertBase(new Movimentacao("troca", novo, antigo.PATRIMONIO));
+                }
+
+                ptbGerarTermo_Click(new object(), new EventArgs());
+
+                txbUserID_KeyDown(new object(), new KeyEventArgs(Keys.Enter));
+                txbPatrimonio.Text = antigo.PATRIMONIO;
+                txbPatrimonio_KeyDown(new object(), new KeyEventArgs(Keys.Enter));
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void ptbGerarTermo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Termo.PDF(Base.Inv.Where(x => x.USERID == Cache.Cliente).ToList(), "teste");
+                if (string.IsNullOrEmpty(Cache.Cliente)) throw new DomainException("Escolha o cliente para fazer o termo!");
+
+                frmAcessorios a = new frmAcessorios((Base.Inv.Where(x => x.USERID == Cache.Cliente).Select(x => x.EQUIPAMENTO).Contains("Notebook")) ? "Notebook" : "Desktop");
+                a.ShowDialog();
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
 
-        //private void ptbTrocar_Click(object sender, EventArgs e)
-        //{
+        }
 
-        //}      
-
-        //private void ptbMoverEquipamento_Click(object sender, EventArgs e)
-        //{
-
-
-        //}
-
-        //private void ptbGerarTermo_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
+        
     }
 }

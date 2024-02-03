@@ -36,8 +36,8 @@
             ckbTeclado = new CheckBox();
             ckbMochila = new CheckBox();
             ckbCarregador = new CheckBox();
-            ckbComputador = new CheckBox();
             btnCancel = new Button();
+            lblMensagem = new Label();
             SuspendLayout();
             // 
             // lblAcessorio
@@ -125,16 +125,6 @@
             ckbCarregador.Text = "Carregador";
             ckbCarregador.UseVisualStyleBackColor = true;
             // 
-            // ckbComputador
-            // 
-            ckbComputador.AutoSize = true;
-            ckbComputador.Location = new Point(12, 94);
-            ckbComputador.Name = "ckbComputador";
-            ckbComputador.Size = new Size(103, 21);
-            ckbComputador.TabIndex = 14;
-            ckbComputador.Text = "Computador";
-            ckbComputador.UseVisualStyleBackColor = true;
-            // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.FromArgb(196, 0, 6);
@@ -150,13 +140,23 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
+            // lblMensagem
+            // 
+            lblMensagem.AutoSize = true;
+            lblMensagem.Location = new Point(12, 97);
+            lblMensagem.Name = "lblMensagem";
+            lblMensagem.Size = new Size(84, 17);
+            lblMensagem.TabIndex = 16;
+            lblMensagem.Text = "Termo Salvo!";
+            lblMensagem.Visible = false;
+            // 
             // frmAcessorios
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(293, 129);
+            Controls.Add(lblMensagem);
             Controls.Add(btnCancel);
-            Controls.Add(ckbComputador);
             Controls.Add(ckbCarregador);
             Controls.Add(ckbMochila);
             Controls.Add(ckbTeclado);
@@ -186,7 +186,7 @@
         private CheckBox ckbMochila;
         private CheckBox ckbCarregador;
         private Button btnCancel;
-        public CheckBox ckbComputador;
         private Button btnAcessorio;
+        private Label lblMensagem;
     }
 }

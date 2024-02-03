@@ -1,4 +1,5 @@
-﻿using InventarioTI.Extencions;
+﻿using InventarioTI.Entites.Exceptions;
+using InventarioTI.Extencions;
 using InventarioTI.Services;
 using System.Data;
 
@@ -13,13 +14,36 @@ namespace InventarioTI.View
             Computador = computador;
             InitializeComponent();
             btnCancel.Visible = cancel;
-            ckbComputador.Visible = false;
         }
 
         private void btnAcessorio_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                Termo.PDF(Base.Inv.Where(x => x.USERID == Cache.Cliente).ToList(), ListaAcessorio());
+                lblMensagem.Visible = true;
 
+                Task.Run(() =>
+                {
+                    Thread.Sleep(1600);
+                    this.Close();
+                });
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private string ListaAcessorio()
+        {
+            string acessorios = "";
+            foreach (Control item in this.Controls)
+            {
+                if (item is CheckBox && (item as CheckBox).Checked)
+                {
+                    acessorios += item.Text + ", ";
+                }
+            }
+            return acessorios.Trim(' ').Trim(',');
         }
 
         private void frmAcessorios_Load(object sender, EventArgs e)
@@ -29,11 +53,7 @@ namespace InventarioTI.View
             ckbMochila.Visible = Computador == "Notebook";
             ckbMouse.Visible = Computador == "Notebook";
             ckbTeclado.Visible = Computador == "Notebook";
-
-            ckbComputador.Checked = true;
-            ckbComputador.Enabled = false;
-
-            btnAcessorio.Text = "Aplicar";
+            this.Location = new Point(Base.FI.Location.X + 375, Base.FI.Location.Y + 82);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

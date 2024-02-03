@@ -28,891 +28,879 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tlphome = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlEquipamentoTop = new System.Windows.Forms.Panel();
-            this.ptbTrocar = new System.Windows.Forms.PictureBox();
-            this.lblTituloEquipamento = new System.Windows.Forms.Label();
-            this.ptbMoverEquipamento = new System.Windows.Forms.PictureBox();
-            this.ptbApagarEquipamento = new System.Windows.Forms.PictureBox();
-            this.ptbRemoverEquipamento = new System.Windows.Forms.PictureBox();
-            this.ptbEditarEquipamento = new System.Windows.Forms.PictureBox();
-            this.ptbAdicionarEquipamento = new System.Windows.Forms.PictureBox();
-            this.pnlCLienteTop = new System.Windows.Forms.Panel();
-            this.lblTituloCLiente = new System.Windows.Forms.Label();
-            this.ptbGerarTermo = new System.Windows.Forms.PictureBox();
-            this.MoverCliente = new System.Windows.Forms.PictureBox();
-            this.ptbApagarCampoCliente = new System.Windows.Forms.PictureBox();
-            this.ptbRemoverCliente = new System.Windows.Forms.PictureBox();
-            this.ptbEditarCliente = new System.Windows.Forms.PictureBox();
-            this.ptbAdicionarCLinete = new System.Windows.Forms.PictureBox();
-            this.pnlCliente = new System.Windows.Forms.Panel();
-            this.ptbLupaNome = new System.Windows.Forms.PictureBox();
-            this.ptbLupaUserID = new System.Windows.Forms.PictureBox();
-            this.lblUnidade = new System.Windows.Forms.Label();
-            this.txbUnidade = new System.Windows.Forms.TextBox();
-            this.txbCargo = new System.Windows.Forms.TextBox();
-            this.txbMatricula = new System.Windows.Forms.TextBox();
-            this.txbNome = new System.Windows.Forms.TextBox();
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.patrimonioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomenclaturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.processadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblMatricula = new System.Windows.Forms.Label();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.lblArea = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblUserID = new System.Windows.Forms.Label();
-            this.txbArea = new System.Windows.Forms.TextBox();
-            this.txbUserID = new System.Windows.Forms.TextBox();
-            this.pnlEquipamento = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ptbLupaPatrimonio = new System.Windows.Forms.PictureBox();
-            this.cbxModelo = new System.Windows.Forms.ComboBox();
-            this.cbxMarca = new System.Windows.Forms.ComboBox();
-            this.cbxMemoria = new System.Windows.Forms.ComboBox();
-            this.cbxProcessador = new System.Windows.Forms.ComboBox();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.lblModelo = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.txbSerie = new System.Windows.Forms.TextBox();
-            this.lblSerie = new System.Windows.Forms.Label();
-            this.txbPatrimonio = new System.Windows.Forms.TextBox();
-            this.lblRam = new System.Windows.Forms.Label();
-            this.lblProcessador = new System.Windows.Forms.Label();
-            this.lblPatrimonio = new System.Windows.Forms.Label();
-            this.lblMicrocomputador = new System.Windows.Forms.Label();
-            this.dgvEquipamento = new System.Windows.Forms.DataGridView();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.lblEquipamento = new System.Windows.Forms.Label();
-            this.tlphome.SuspendLayout();
-            this.pnlEquipamentoTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbTrocar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMoverEquipamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbApagarEquipamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbRemoverEquipamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEditarEquipamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAdicionarEquipamento)).BeginInit();
-            this.pnlCLienteTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbGerarTermo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MoverCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbApagarCampoCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbRemoverCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEditarCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAdicionarCLinete)).BeginInit();
-            this.pnlCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLupaNome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLupaUserID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipamentoBindingSource)).BeginInit();
-            this.pnlEquipamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLupaPatrimonio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            tlphome = new TableLayoutPanel();
+            pnlEquipamentoTop = new Panel();
+            ptbTrocar = new PictureBox();
+            lblTituloEquipamento = new Label();
+            ptbMoverEquipamento = new PictureBox();
+            ptbApagarEquipamento = new PictureBox();
+            ptbRemoverEquipamento = new PictureBox();
+            ptbEditarEquipamento = new PictureBox();
+            ptbAdicionarEquipamento = new PictureBox();
+            pnlCLienteTop = new Panel();
+            lblTituloCLiente = new Label();
+            ptbGerarTermo = new PictureBox();
+            MoverCliente = new PictureBox();
+            ptbApagarCampoCliente = new PictureBox();
+            ptbRemoverCliente = new PictureBox();
+            ptbEditarCliente = new PictureBox();
+            ptbAdicionarCLinete = new PictureBox();
+            pnlCliente = new Panel();
+            ptbLupaNome = new PictureBox();
+            ptbLupaUserID = new PictureBox();
+            lblUnidade = new Label();
+            txbUnidade = new TextBox();
+            txbCargo = new TextBox();
+            txbMatricula = new TextBox();
+            txbNome = new TextBox();
+            dgvCliente = new DataGridView();
+            patrimonioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomenclaturaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Serie = new DataGridViewTextBoxColumn();
+            marcaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            modeloDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            processadorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            memoriaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            equipamentoBindingSource = new BindingSource(components);
+            lblMatricula = new Label();
+            lblCargo = new Label();
+            lblArea = new Label();
+            lblNome = new Label();
+            lblUserID = new Label();
+            txbArea = new TextBox();
+            txbUserID = new TextBox();
+            pnlEquipamento = new Panel();
+            pictureBox1 = new PictureBox();
+            ptbLupaPatrimonio = new PictureBox();
+            cbxModelo = new ComboBox();
+            cbxMarca = new ComboBox();
+            cbxMemoria = new ComboBox();
+            cbxProcessador = new ComboBox();
+            lblModelo = new Label();
+            lblMarca = new Label();
+            txbSerie = new TextBox();
+            lblSerie = new Label();
+            cbxTipo = new ComboBox();
+            txbPatrimonio = new TextBox();
+            lblMicrocomputador = new Label();
+            lblRam = new Label();
+            lblProcessador = new Label();
+            lblPatrimonio = new Label();
+            dgvEquipamento = new DataGridView();
+            userIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            areaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            clienteBindingSource = new BindingSource(components);
+            lblCliente = new Label();
+            lblEquipamento = new Label();
+            tlphome.SuspendLayout();
+            pnlEquipamentoTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbTrocar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbMoverEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbApagarEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbRemoverEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbEditarEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbAdicionarEquipamento).BeginInit();
+            pnlCLienteTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbGerarTermo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MoverCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbApagarCampoCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbRemoverCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbEditarCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbAdicionarCLinete).BeginInit();
+            pnlCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbLupaNome).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbLupaUserID).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)equipamentoBindingSource).BeginInit();
+            pnlEquipamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbLupaPatrimonio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
+            SuspendLayout();
             // 
             // tlphome
             // 
-            this.tlphome.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlphome.BackColor = System.Drawing.Color.White;
-            this.tlphome.ColumnCount = 1;
-            this.tlphome.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlphome.Controls.Add(this.pnlEquipamentoTop, 0, 2);
-            this.tlphome.Controls.Add(this.pnlCLienteTop, 0, 0);
-            this.tlphome.Controls.Add(this.pnlCliente, 0, 1);
-            this.tlphome.Controls.Add(this.pnlEquipamento, 0, 3);
-            this.tlphome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlphome.Location = new System.Drawing.Point(0, 0);
-            this.tlphome.Margin = new System.Windows.Forms.Padding(0);
-            this.tlphome.Name = "tlphome";
-            this.tlphome.RowCount = 5;
-            this.tlphome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlphome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlphome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlphome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlphome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlphome.Size = new System.Drawing.Size(1007, 367);
-            this.tlphome.TabIndex = 0;
+            tlphome.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tlphome.BackColor = Color.White;
+            tlphome.ColumnCount = 1;
+            tlphome.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlphome.Controls.Add(pnlEquipamentoTop, 0, 2);
+            tlphome.Controls.Add(pnlCLienteTop, 0, 0);
+            tlphome.Controls.Add(pnlCliente, 0, 1);
+            tlphome.Controls.Add(pnlEquipamento, 0, 3);
+            tlphome.Dock = DockStyle.Fill;
+            tlphome.Location = new Point(0, 0);
+            tlphome.Margin = new Padding(0);
+            tlphome.Name = "tlphome";
+            tlphome.RowCount = 5;
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlphome.Size = new Size(1007, 367);
+            tlphome.TabIndex = 0;
             // 
             // pnlEquipamentoTop
             // 
-            this.pnlEquipamentoTop.Controls.Add(this.ptbTrocar);
-            this.pnlEquipamentoTop.Controls.Add(this.lblTituloEquipamento);
-            this.pnlEquipamentoTop.Controls.Add(this.ptbMoverEquipamento);
-            this.pnlEquipamentoTop.Controls.Add(this.ptbApagarEquipamento);
-            this.pnlEquipamentoTop.Controls.Add(this.ptbRemoverEquipamento);
-            this.pnlEquipamentoTop.Controls.Add(this.ptbEditarEquipamento);
-            this.pnlEquipamentoTop.Controls.Add(this.ptbAdicionarEquipamento);
-            this.pnlEquipamentoTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEquipamentoTop.Location = new System.Drawing.Point(0, 168);
-            this.pnlEquipamentoTop.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlEquipamentoTop.Name = "pnlEquipamentoTop";
-            this.pnlEquipamentoTop.Size = new System.Drawing.Size(1007, 50);
-            this.pnlEquipamentoTop.TabIndex = 2;
+            pnlEquipamentoTop.Controls.Add(ptbTrocar);
+            pnlEquipamentoTop.Controls.Add(lblTituloEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbMoverEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbApagarEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbRemoverEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbEditarEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbAdicionarEquipamento);
+            pnlEquipamentoTop.Dock = DockStyle.Fill;
+            pnlEquipamentoTop.Location = new Point(0, 168);
+            pnlEquipamentoTop.Margin = new Padding(0);
+            pnlEquipamentoTop.Name = "pnlEquipamentoTop";
+            pnlEquipamentoTop.Size = new Size(1007, 50);
+            pnlEquipamentoTop.TabIndex = 2;
             // 
             // ptbTrocar
             // 
-            this.ptbTrocar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbTrocar.Image = global::InventarioTI.Properties.Resources.Trocar;
-            this.ptbTrocar.Location = new System.Drawing.Point(370, 7);
-            this.ptbTrocar.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbTrocar.Name = "ptbTrocar";
-            this.ptbTrocar.Size = new System.Drawing.Size(40, 40);
-            this.ptbTrocar.TabIndex = 6;
-            this.ptbTrocar.TabStop = false;
+            ptbTrocar.Cursor = Cursors.Hand;
+            ptbTrocar.Image = Properties.Resources.Trocar;
+            ptbTrocar.Location = new Point(370, 7);
+            ptbTrocar.Margin = new Padding(0);
+            ptbTrocar.Name = "ptbTrocar";
+            ptbTrocar.Size = new Size(40, 40);
+            ptbTrocar.TabIndex = 6;
+            ptbTrocar.TabStop = false;
+            ptbTrocar.Click += ptbTrocar_Click;
             // 
             // lblTituloEquipamento
             // 
-            this.lblTituloEquipamento.AutoSize = true;
-            this.lblTituloEquipamento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTituloEquipamento.Location = new System.Drawing.Point(423, 18);
-            this.lblTituloEquipamento.Name = "lblTituloEquipamento";
-            this.lblTituloEquipamento.Size = new System.Drawing.Size(114, 19);
-            this.lblTituloEquipamento.TabIndex = 9;
-            this.lblTituloEquipamento.Text = "Equipamento";
+            lblTituloEquipamento.AutoSize = true;
+            lblTituloEquipamento.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTituloEquipamento.Location = new Point(423, 18);
+            lblTituloEquipamento.Name = "lblTituloEquipamento";
+            lblTituloEquipamento.Size = new Size(114, 19);
+            lblTituloEquipamento.TabIndex = 9;
+            lblTituloEquipamento.Text = "Equipamento";
             // 
             // ptbMoverEquipamento
             // 
-            this.ptbMoverEquipamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMoverEquipamento.Image = global::InventarioTI.Properties.Resources.Mover;
-            this.ptbMoverEquipamento.Location = new System.Drawing.Point(301, 8);
-            this.ptbMoverEquipamento.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbMoverEquipamento.Name = "ptbMoverEquipamento";
-            this.ptbMoverEquipamento.Size = new System.Drawing.Size(40, 40);
-            this.ptbMoverEquipamento.TabIndex = 5;
-            this.ptbMoverEquipamento.TabStop = false;
+            ptbMoverEquipamento.Cursor = Cursors.Hand;
+            ptbMoverEquipamento.Image = Properties.Resources.Mover;
+            ptbMoverEquipamento.Location = new Point(301, 8);
+            ptbMoverEquipamento.Margin = new Padding(0);
+            ptbMoverEquipamento.Name = "ptbMoverEquipamento";
+            ptbMoverEquipamento.Size = new Size(40, 40);
+            ptbMoverEquipamento.TabIndex = 5;
+            ptbMoverEquipamento.TabStop = false;
+            ptbMoverEquipamento.Click += ptbMoverEquipamento_Click;
             // 
             // ptbApagarEquipamento
             // 
-            this.ptbApagarEquipamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbApagarEquipamento.Image = global::InventarioTI.Properties.Resources.Borracha;
-            this.ptbApagarEquipamento.Location = new System.Drawing.Point(232, 8);
-            this.ptbApagarEquipamento.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbApagarEquipamento.Name = "ptbApagarEquipamento";
-            this.ptbApagarEquipamento.Size = new System.Drawing.Size(40, 40);
-            this.ptbApagarEquipamento.TabIndex = 4;
-            this.ptbApagarEquipamento.TabStop = false;
-            this.ptbApagarEquipamento.Click += new System.EventHandler(this.ptbApagarEquipamento_Click);
+            ptbApagarEquipamento.Cursor = Cursors.Hand;
+            ptbApagarEquipamento.Image = Properties.Resources.Borracha;
+            ptbApagarEquipamento.Location = new Point(232, 8);
+            ptbApagarEquipamento.Margin = new Padding(0);
+            ptbApagarEquipamento.Name = "ptbApagarEquipamento";
+            ptbApagarEquipamento.Size = new Size(40, 40);
+            ptbApagarEquipamento.TabIndex = 4;
+            ptbApagarEquipamento.TabStop = false;
+            ptbApagarEquipamento.Click += ptbApagarEquipamento_Click;
             // 
             // ptbRemoverEquipamento
             // 
-            this.ptbRemoverEquipamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbRemoverEquipamento.Image = global::InventarioTI.Properties.Resources.RemoverEquipamento;
-            this.ptbRemoverEquipamento.Location = new System.Drawing.Point(163, 8);
-            this.ptbRemoverEquipamento.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbRemoverEquipamento.Name = "ptbRemoverEquipamento";
-            this.ptbRemoverEquipamento.Size = new System.Drawing.Size(40, 40);
-            this.ptbRemoverEquipamento.TabIndex = 3;
-            this.ptbRemoverEquipamento.TabStop = false;
+            ptbRemoverEquipamento.Cursor = Cursors.Hand;
+            ptbRemoverEquipamento.Image = Properties.Resources.RemoverEquipamento;
+            ptbRemoverEquipamento.Location = new Point(163, 8);
+            ptbRemoverEquipamento.Margin = new Padding(0);
+            ptbRemoverEquipamento.Name = "ptbRemoverEquipamento";
+            ptbRemoverEquipamento.Size = new Size(40, 40);
+            ptbRemoverEquipamento.TabIndex = 3;
+            ptbRemoverEquipamento.TabStop = false;
             // 
             // ptbEditarEquipamento
             // 
-            this.ptbEditarEquipamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbEditarEquipamento.Image = global::InventarioTI.Properties.Resources.EditarEquipamento;
-            this.ptbEditarEquipamento.Location = new System.Drawing.Point(94, 8);
-            this.ptbEditarEquipamento.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbEditarEquipamento.Name = "ptbEditarEquipamento";
-            this.ptbEditarEquipamento.Size = new System.Drawing.Size(40, 40);
-            this.ptbEditarEquipamento.TabIndex = 2;
-            this.ptbEditarEquipamento.TabStop = false;
-            this.ptbEditarEquipamento.Click += new System.EventHandler(this.ptbEditarEquipamento_Click);
+            ptbEditarEquipamento.Cursor = Cursors.Hand;
+            ptbEditarEquipamento.Image = Properties.Resources.EditarEquipamento;
+            ptbEditarEquipamento.Location = new Point(94, 8);
+            ptbEditarEquipamento.Margin = new Padding(0);
+            ptbEditarEquipamento.Name = "ptbEditarEquipamento";
+            ptbEditarEquipamento.Size = new Size(40, 40);
+            ptbEditarEquipamento.TabIndex = 2;
+            ptbEditarEquipamento.TabStop = false;
+            ptbEditarEquipamento.Click += ptbEditarEquipamento_Click;
             // 
             // ptbAdicionarEquipamento
             // 
-            this.ptbAdicionarEquipamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbAdicionarEquipamento.Image = global::InventarioTI.Properties.Resources.AdicionarEquipamento;
-            this.ptbAdicionarEquipamento.Location = new System.Drawing.Point(25, 8);
-            this.ptbAdicionarEquipamento.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbAdicionarEquipamento.Name = "ptbAdicionarEquipamento";
-            this.ptbAdicionarEquipamento.Size = new System.Drawing.Size(40, 40);
-            this.ptbAdicionarEquipamento.TabIndex = 1;
-            this.ptbAdicionarEquipamento.TabStop = false;
-            this.ptbAdicionarEquipamento.Click += new System.EventHandler(this.ptbAdicionarEquipamento_Click);
+            ptbAdicionarEquipamento.Cursor = Cursors.Hand;
+            ptbAdicionarEquipamento.Image = Properties.Resources.AdicionarEquipamento;
+            ptbAdicionarEquipamento.Location = new Point(25, 8);
+            ptbAdicionarEquipamento.Margin = new Padding(0);
+            ptbAdicionarEquipamento.Name = "ptbAdicionarEquipamento";
+            ptbAdicionarEquipamento.Size = new Size(40, 40);
+            ptbAdicionarEquipamento.TabIndex = 1;
+            ptbAdicionarEquipamento.TabStop = false;
+            ptbAdicionarEquipamento.Click += ptbAdicionarEquipamento_Click;
             // 
             // pnlCLienteTop
             // 
-            this.pnlCLienteTop.Controls.Add(this.lblTituloCLiente);
-            this.pnlCLienteTop.Controls.Add(this.ptbGerarTermo);
-            this.pnlCLienteTop.Controls.Add(this.MoverCliente);
-            this.pnlCLienteTop.Controls.Add(this.ptbApagarCampoCliente);
-            this.pnlCLienteTop.Controls.Add(this.ptbRemoverCliente);
-            this.pnlCLienteTop.Controls.Add(this.ptbEditarCliente);
-            this.pnlCLienteTop.Controls.Add(this.ptbAdicionarCLinete);
-            this.pnlCLienteTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCLienteTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlCLienteTop.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCLienteTop.Name = "pnlCLienteTop";
-            this.pnlCLienteTop.Size = new System.Drawing.Size(1007, 50);
-            this.pnlCLienteTop.TabIndex = 0;
+            pnlCLienteTop.Controls.Add(lblTituloCLiente);
+            pnlCLienteTop.Controls.Add(ptbGerarTermo);
+            pnlCLienteTop.Controls.Add(MoverCliente);
+            pnlCLienteTop.Controls.Add(ptbApagarCampoCliente);
+            pnlCLienteTop.Controls.Add(ptbRemoverCliente);
+            pnlCLienteTop.Controls.Add(ptbEditarCliente);
+            pnlCLienteTop.Controls.Add(ptbAdicionarCLinete);
+            pnlCLienteTop.Dock = DockStyle.Fill;
+            pnlCLienteTop.Location = new Point(0, 0);
+            pnlCLienteTop.Margin = new Padding(0);
+            pnlCLienteTop.Name = "pnlCLienteTop";
+            pnlCLienteTop.Size = new Size(1007, 50);
+            pnlCLienteTop.TabIndex = 0;
             // 
             // lblTituloCLiente
             // 
-            this.lblTituloCLiente.AutoSize = true;
-            this.lblTituloCLiente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTituloCLiente.Location = new System.Drawing.Point(448, 18);
-            this.lblTituloCLiente.Name = "lblTituloCLiente";
-            this.lblTituloCLiente.Size = new System.Drawing.Size(63, 19);
-            this.lblTituloCLiente.TabIndex = 9;
-            this.lblTituloCLiente.Text = "Cliente";
+            lblTituloCLiente.AutoSize = true;
+            lblTituloCLiente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTituloCLiente.Location = new Point(448, 18);
+            lblTituloCLiente.Name = "lblTituloCLiente";
+            lblTituloCLiente.Size = new Size(63, 19);
+            lblTituloCLiente.TabIndex = 9;
+            lblTituloCLiente.Text = "Cliente";
             // 
             // ptbGerarTermo
             // 
-            this.ptbGerarTermo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbGerarTermo.Image = global::InventarioTI.Properties.Resources.termo;
-            this.ptbGerarTermo.Location = new System.Drawing.Point(370, 9);
-            this.ptbGerarTermo.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbGerarTermo.Name = "ptbGerarTermo";
-            this.ptbGerarTermo.Size = new System.Drawing.Size(40, 40);
-            this.ptbGerarTermo.TabIndex = 6;
-            this.ptbGerarTermo.TabStop = false;
+            ptbGerarTermo.Cursor = Cursors.Hand;
+            ptbGerarTermo.Image = Properties.Resources.termo;
+            ptbGerarTermo.Location = new Point(370, 9);
+            ptbGerarTermo.Margin = new Padding(0);
+            ptbGerarTermo.Name = "ptbGerarTermo";
+            ptbGerarTermo.Size = new Size(40, 40);
+            ptbGerarTermo.TabIndex = 6;
+            ptbGerarTermo.TabStop = false;
             // 
             // MoverCliente
             // 
-            this.MoverCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MoverCliente.Image = global::InventarioTI.Properties.Resources.Mover;
-            this.MoverCliente.Location = new System.Drawing.Point(301, 9);
-            this.MoverCliente.Margin = new System.Windows.Forms.Padding(0);
-            this.MoverCliente.Name = "MoverCliente";
-            this.MoverCliente.Size = new System.Drawing.Size(40, 40);
-            this.MoverCliente.TabIndex = 5;
-            this.MoverCliente.TabStop = false;
-            this.MoverCliente.Click += new System.EventHandler(this.MoverCliente_Click);
+            MoverCliente.Cursor = Cursors.Hand;
+            MoverCliente.Image = Properties.Resources.Mover;
+            MoverCliente.Location = new Point(301, 9);
+            MoverCliente.Margin = new Padding(0);
+            MoverCliente.Name = "MoverCliente";
+            MoverCliente.Size = new Size(40, 40);
+            MoverCliente.TabIndex = 5;
+            MoverCliente.TabStop = false;
+            MoverCliente.Click += MoverCliente_Click;
             // 
             // ptbApagarCampoCliente
             // 
-            this.ptbApagarCampoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbApagarCampoCliente.Image = global::InventarioTI.Properties.Resources.Borracha;
-            this.ptbApagarCampoCliente.Location = new System.Drawing.Point(232, 9);
-            this.ptbApagarCampoCliente.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbApagarCampoCliente.Name = "ptbApagarCampoCliente";
-            this.ptbApagarCampoCliente.Size = new System.Drawing.Size(40, 40);
-            this.ptbApagarCampoCliente.TabIndex = 4;
-            this.ptbApagarCampoCliente.TabStop = false;
-            this.ptbApagarCampoCliente.Click += new System.EventHandler(this.ptbApagarCampoCliente_Click);
+            ptbApagarCampoCliente.Cursor = Cursors.Hand;
+            ptbApagarCampoCliente.Image = Properties.Resources.Borracha;
+            ptbApagarCampoCliente.Location = new Point(232, 9);
+            ptbApagarCampoCliente.Margin = new Padding(0);
+            ptbApagarCampoCliente.Name = "ptbApagarCampoCliente";
+            ptbApagarCampoCliente.Size = new Size(40, 40);
+            ptbApagarCampoCliente.TabIndex = 4;
+            ptbApagarCampoCliente.TabStop = false;
+            ptbApagarCampoCliente.Click += ptbApagarCampoCliente_Click;
             // 
             // ptbRemoverCliente
             // 
-            this.ptbRemoverCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbRemoverCliente.Image = global::InventarioTI.Properties.Resources.RemoverCliente;
-            this.ptbRemoverCliente.Location = new System.Drawing.Point(163, 9);
-            this.ptbRemoverCliente.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbRemoverCliente.Name = "ptbRemoverCliente";
-            this.ptbRemoverCliente.Size = new System.Drawing.Size(40, 40);
-            this.ptbRemoverCliente.TabIndex = 3;
-            this.ptbRemoverCliente.TabStop = false;
-            this.ptbRemoverCliente.Click += new System.EventHandler(this.ptbRemoverCliente_Click);
+            ptbRemoverCliente.Cursor = Cursors.Hand;
+            ptbRemoverCliente.Image = Properties.Resources.RemoverCliente;
+            ptbRemoverCliente.Location = new Point(163, 9);
+            ptbRemoverCliente.Margin = new Padding(0);
+            ptbRemoverCliente.Name = "ptbRemoverCliente";
+            ptbRemoverCliente.Size = new Size(40, 40);
+            ptbRemoverCliente.TabIndex = 3;
+            ptbRemoverCliente.TabStop = false;
+            ptbRemoverCliente.Click += ptbRemoverCliente_Click;
             // 
             // ptbEditarCliente
             // 
-            this.ptbEditarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbEditarCliente.Image = global::InventarioTI.Properties.Resources.EditarUsuário;
-            this.ptbEditarCliente.Location = new System.Drawing.Point(94, 9);
-            this.ptbEditarCliente.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbEditarCliente.Name = "ptbEditarCliente";
-            this.ptbEditarCliente.Size = new System.Drawing.Size(40, 40);
-            this.ptbEditarCliente.TabIndex = 2;
-            this.ptbEditarCliente.TabStop = false;
-            this.ptbEditarCliente.Click += new System.EventHandler(this.ptbEditarCliente_Click);
+            ptbEditarCliente.Cursor = Cursors.Hand;
+            ptbEditarCliente.Image = Properties.Resources.EditarUsuário;
+            ptbEditarCliente.Location = new Point(94, 9);
+            ptbEditarCliente.Margin = new Padding(0);
+            ptbEditarCliente.Name = "ptbEditarCliente";
+            ptbEditarCliente.Size = new Size(40, 40);
+            ptbEditarCliente.TabIndex = 2;
+            ptbEditarCliente.TabStop = false;
+            ptbEditarCliente.Click += ptbEditarCliente_Click;
             // 
             // ptbAdicionarCLinete
             // 
-            this.ptbAdicionarCLinete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbAdicionarCLinete.Image = global::InventarioTI.Properties.Resources.AdicionarCliente;
-            this.ptbAdicionarCLinete.Location = new System.Drawing.Point(25, 9);
-            this.ptbAdicionarCLinete.Margin = new System.Windows.Forms.Padding(0);
-            this.ptbAdicionarCLinete.Name = "ptbAdicionarCLinete";
-            this.ptbAdicionarCLinete.Size = new System.Drawing.Size(40, 40);
-            this.ptbAdicionarCLinete.TabIndex = 1;
-            this.ptbAdicionarCLinete.TabStop = false;
-            this.ptbAdicionarCLinete.Click += new System.EventHandler(this.ptbAdicionarCLinete_Click);
+            ptbAdicionarCLinete.Cursor = Cursors.Hand;
+            ptbAdicionarCLinete.Image = Properties.Resources.AdicionarCliente;
+            ptbAdicionarCLinete.Location = new Point(25, 9);
+            ptbAdicionarCLinete.Margin = new Padding(0);
+            ptbAdicionarCLinete.Name = "ptbAdicionarCLinete";
+            ptbAdicionarCLinete.Size = new Size(40, 40);
+            ptbAdicionarCLinete.TabIndex = 1;
+            ptbAdicionarCLinete.TabStop = false;
+            ptbAdicionarCLinete.Click += ptbAdicionarCLinete_Click;
             // 
             // pnlCliente
             // 
-            this.pnlCliente.BackColor = System.Drawing.Color.White;
-            this.pnlCliente.Controls.Add(this.ptbLupaNome);
-            this.pnlCliente.Controls.Add(this.ptbLupaUserID);
-            this.pnlCliente.Controls.Add(this.lblUnidade);
-            this.pnlCliente.Controls.Add(this.txbUnidade);
-            this.pnlCliente.Controls.Add(this.txbCargo);
-            this.pnlCliente.Controls.Add(this.txbMatricula);
-            this.pnlCliente.Controls.Add(this.txbNome);
-            this.pnlCliente.Controls.Add(this.dgvCliente);
-            this.pnlCliente.Controls.Add(this.lblMatricula);
-            this.pnlCliente.Controls.Add(this.lblCargo);
-            this.pnlCliente.Controls.Add(this.lblArea);
-            this.pnlCliente.Controls.Add(this.lblNome);
-            this.pnlCliente.Controls.Add(this.lblUserID);
-            this.pnlCliente.Controls.Add(this.txbArea);
-            this.pnlCliente.Controls.Add(this.txbUserID);
-            this.pnlCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCliente.Location = new System.Drawing.Point(0, 50);
-            this.pnlCliente.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCliente.Name = "pnlCliente";
-            this.pnlCliente.Size = new System.Drawing.Size(1007, 118);
-            this.pnlCliente.TabIndex = 1;
+            pnlCliente.BackColor = Color.White;
+            pnlCliente.Controls.Add(ptbLupaNome);
+            pnlCliente.Controls.Add(ptbLupaUserID);
+            pnlCliente.Controls.Add(lblUnidade);
+            pnlCliente.Controls.Add(txbUnidade);
+            pnlCliente.Controls.Add(txbCargo);
+            pnlCliente.Controls.Add(txbMatricula);
+            pnlCliente.Controls.Add(txbNome);
+            pnlCliente.Controls.Add(dgvCliente);
+            pnlCliente.Controls.Add(lblMatricula);
+            pnlCliente.Controls.Add(lblCargo);
+            pnlCliente.Controls.Add(lblArea);
+            pnlCliente.Controls.Add(lblNome);
+            pnlCliente.Controls.Add(lblUserID);
+            pnlCliente.Controls.Add(txbArea);
+            pnlCliente.Controls.Add(txbUserID);
+            pnlCliente.Dock = DockStyle.Fill;
+            pnlCliente.Location = new Point(0, 50);
+            pnlCliente.Margin = new Padding(0);
+            pnlCliente.Name = "pnlCliente";
+            pnlCliente.Size = new Size(1007, 118);
+            pnlCliente.TabIndex = 1;
             // 
             // ptbLupaNome
             // 
-            this.ptbLupaNome.Image = global::InventarioTI.Properties.Resources.Lupa;
-            this.ptbLupaNome.Location = new System.Drawing.Point(459, 25);
-            this.ptbLupaNome.Name = "ptbLupaNome";
-            this.ptbLupaNome.Size = new System.Drawing.Size(20, 20);
-            this.ptbLupaNome.TabIndex = 19;
-            this.ptbLupaNome.TabStop = false;
+            ptbLupaNome.Image = Properties.Resources.Lupa;
+            ptbLupaNome.Location = new Point(459, 25);
+            ptbLupaNome.Name = "ptbLupaNome";
+            ptbLupaNome.Size = new Size(20, 20);
+            ptbLupaNome.TabIndex = 19;
+            ptbLupaNome.TabStop = false;
             // 
             // ptbLupaUserID
             // 
-            this.ptbLupaUserID.Image = global::InventarioTI.Properties.Resources.Lupa;
-            this.ptbLupaUserID.Location = new System.Drawing.Point(91, 25);
-            this.ptbLupaUserID.Name = "ptbLupaUserID";
-            this.ptbLupaUserID.Size = new System.Drawing.Size(20, 20);
-            this.ptbLupaUserID.TabIndex = 10;
-            this.ptbLupaUserID.TabStop = false;
+            ptbLupaUserID.Image = Properties.Resources.Lupa;
+            ptbLupaUserID.Location = new Point(91, 25);
+            ptbLupaUserID.Name = "ptbLupaUserID";
+            ptbLupaUserID.Size = new Size(20, 20);
+            ptbLupaUserID.TabIndex = 10;
+            ptbLupaUserID.TabStop = false;
             // 
             // lblUnidade
             // 
-            this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Location = new System.Drawing.Point(486, 4);
-            this.lblUnidade.Name = "lblUnidade";
-            this.lblUnidade.Size = new System.Drawing.Size(58, 17);
-            this.lblUnidade.TabIndex = 18;
-            this.lblUnidade.Text = "Unidade";
+            lblUnidade.AutoSize = true;
+            lblUnidade.Location = new Point(486, 4);
+            lblUnidade.Name = "lblUnidade";
+            lblUnidade.Size = new Size(58, 17);
+            lblUnidade.TabIndex = 18;
+            lblUnidade.Text = "Unidade";
             // 
             // txbUnidade
             // 
-            this.txbUnidade.BackColor = System.Drawing.Color.White;
-            this.txbUnidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbUnidade.Enabled = false;
-            this.txbUnidade.Location = new System.Drawing.Point(486, 24);
-            this.txbUnidade.Name = "txbUnidade";
-            this.txbUnidade.Size = new System.Drawing.Size(59, 22);
-            this.txbUnidade.TabIndex = 3;
+            txbUnidade.BackColor = Color.White;
+            txbUnidade.BorderStyle = BorderStyle.FixedSingle;
+            txbUnidade.Enabled = false;
+            txbUnidade.Location = new Point(486, 24);
+            txbUnidade.Name = "txbUnidade";
+            txbUnidade.Size = new Size(59, 22);
+            txbUnidade.TabIndex = 3;
             // 
             // txbCargo
             // 
-            this.txbCargo.BackColor = System.Drawing.Color.White;
-            this.txbCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbCargo.Location = new System.Drawing.Point(717, 24);
-            this.txbCargo.Name = "txbCargo";
-            this.txbCargo.Size = new System.Drawing.Size(195, 22);
-            this.txbCargo.TabIndex = 5;
+            txbCargo.BackColor = Color.White;
+            txbCargo.BorderStyle = BorderStyle.FixedSingle;
+            txbCargo.Location = new Point(717, 24);
+            txbCargo.Name = "txbCargo";
+            txbCargo.Size = new Size(195, 22);
+            txbCargo.TabIndex = 5;
             // 
             // txbMatricula
             // 
-            this.txbMatricula.BackColor = System.Drawing.Color.White;
-            this.txbMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbMatricula.Location = new System.Drawing.Point(918, 24);
-            this.txbMatricula.Name = "txbMatricula";
-            this.txbMatricula.Size = new System.Drawing.Size(80, 22);
-            this.txbMatricula.TabIndex = 6;
+            txbMatricula.BackColor = Color.White;
+            txbMatricula.BorderStyle = BorderStyle.FixedSingle;
+            txbMatricula.Location = new Point(918, 24);
+            txbMatricula.Name = "txbMatricula";
+            txbMatricula.Size = new Size(80, 22);
+            txbMatricula.TabIndex = 6;
             // 
             // txbNome
             // 
-            this.txbNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txbNome.BackColor = System.Drawing.Color.White;
-            this.txbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbNome.Location = new System.Drawing.Point(118, 24);
-            this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(362, 22);
-            this.txbNome.TabIndex = 2;
-            this.txbNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbNome_KeyDown);
+            txbNome.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txbNome.BackColor = Color.White;
+            txbNome.BorderStyle = BorderStyle.FixedSingle;
+            txbNome.Location = new Point(118, 24);
+            txbNome.Name = "txbNome";
+            txbNome.Size = new Size(362, 22);
+            txbNome.TabIndex = 2;
+            txbNome.KeyDown += txbNome_KeyDown;
             // 
             // dgvCliente
             // 
-            this.dgvCliente.AllowUserToAddRows = false;
-            this.dgvCliente.AllowUserToDeleteRows = false;
-            this.dgvCliente.AutoGenerateColumns = false;
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.patrimonioDataGridViewTextBoxColumn,
-            this.nomenclaturaDataGridViewTextBoxColumn,
-            this.Serie,
-            this.marcaDataGridViewTextBoxColumn,
-            this.modeloDataGridViewTextBoxColumn,
-            this.processadorDataGridViewTextBoxColumn,
-            this.memoriaDataGridViewTextBoxColumn});
-            this.dgvCliente.DataSource = this.equipamentoBindingSource;
-            this.dgvCliente.Location = new System.Drawing.Point(14, 52);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.ReadOnly = true;
-            this.dgvCliente.RowHeadersWidth = 62;
-            this.dgvCliente.RowTemplate.Height = 25;
-            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(984, 50);
-            this.dgvCliente.TabIndex = 13;
-            this.dgvCliente.Visible = false;
+            dgvCliente.AllowUserToAddRows = false;
+            dgvCliente.AllowUserToDeleteRows = false;
+            dgvCliente.AutoGenerateColumns = false;
+            dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { patrimonioDataGridViewTextBoxColumn, nomenclaturaDataGridViewTextBoxColumn, Serie, marcaDataGridViewTextBoxColumn, modeloDataGridViewTextBoxColumn, processadorDataGridViewTextBoxColumn, memoriaDataGridViewTextBoxColumn });
+            dgvCliente.DataSource = equipamentoBindingSource;
+            dgvCliente.Location = new Point(14, 52);
+            dgvCliente.Name = "dgvCliente";
+            dgvCliente.ReadOnly = true;
+            dgvCliente.RowHeadersWidth = 62;
+            dgvCliente.RowTemplate.Height = 25;
+            dgvCliente.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dgvCliente.Size = new Size(984, 50);
+            dgvCliente.TabIndex = 13;
+            dgvCliente.Visible = false;
             // 
             // patrimonioDataGridViewTextBoxColumn
             // 
-            this.patrimonioDataGridViewTextBoxColumn.DataPropertyName = "Patrimonio";
-            this.patrimonioDataGridViewTextBoxColumn.HeaderText = "     PATRIMÔNIO";
-            this.patrimonioDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.patrimonioDataGridViewTextBoxColumn.Name = "patrimonioDataGridViewTextBoxColumn";
-            this.patrimonioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.patrimonioDataGridViewTextBoxColumn.Width = 150;
+            patrimonioDataGridViewTextBoxColumn.DataPropertyName = "Patrimonio";
+            patrimonioDataGridViewTextBoxColumn.HeaderText = "     PATRIMÔNIO";
+            patrimonioDataGridViewTextBoxColumn.MinimumWidth = 8;
+            patrimonioDataGridViewTextBoxColumn.Name = "patrimonioDataGridViewTextBoxColumn";
+            patrimonioDataGridViewTextBoxColumn.ReadOnly = true;
+            patrimonioDataGridViewTextBoxColumn.Width = 150;
             // 
             // nomenclaturaDataGridViewTextBoxColumn
             // 
-            this.nomenclaturaDataGridViewTextBoxColumn.DataPropertyName = "Nomenclatura";
-            this.nomenclaturaDataGridViewTextBoxColumn.HeaderText = "NOMENCLATURA";
-            this.nomenclaturaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomenclaturaDataGridViewTextBoxColumn.Name = "nomenclaturaDataGridViewTextBoxColumn";
-            this.nomenclaturaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomenclaturaDataGridViewTextBoxColumn.Width = 150;
+            nomenclaturaDataGridViewTextBoxColumn.DataPropertyName = "Nomenclatura";
+            nomenclaturaDataGridViewTextBoxColumn.HeaderText = "NOMENCLATURA";
+            nomenclaturaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nomenclaturaDataGridViewTextBoxColumn.Name = "nomenclaturaDataGridViewTextBoxColumn";
+            nomenclaturaDataGridViewTextBoxColumn.ReadOnly = true;
+            nomenclaturaDataGridViewTextBoxColumn.Width = 150;
             // 
             // Serie
             // 
-            this.Serie.DataPropertyName = "Serie";
-            this.Serie.HeaderText = "    SÉRIE";
-            this.Serie.Name = "Serie";
-            this.Serie.ReadOnly = true;
+            Serie.DataPropertyName = "Serie";
+            Serie.HeaderText = "    SÉRIE";
+            Serie.Name = "Serie";
+            Serie.ReadOnly = true;
             // 
             // marcaDataGridViewTextBoxColumn
             // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "    MARCA";
-            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.marcaDataGridViewTextBoxColumn.Width = 150;
+            marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            marcaDataGridViewTextBoxColumn.HeaderText = "    MARCA";
+            marcaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            marcaDataGridViewTextBoxColumn.Width = 150;
             // 
             // modeloDataGridViewTextBoxColumn
             // 
-            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.HeaderText = "    MODELO";
-            this.modeloDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
-            this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modeloDataGridViewTextBoxColumn.Width = 150;
+            modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            modeloDataGridViewTextBoxColumn.HeaderText = "    MODELO";
+            modeloDataGridViewTextBoxColumn.MinimumWidth = 8;
+            modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            modeloDataGridViewTextBoxColumn.ReadOnly = true;
+            modeloDataGridViewTextBoxColumn.Width = 150;
             // 
             // processadorDataGridViewTextBoxColumn
             // 
-            this.processadorDataGridViewTextBoxColumn.DataPropertyName = "Processador";
-            this.processadorDataGridViewTextBoxColumn.HeaderText = "  PROCESSADOR";
-            this.processadorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.processadorDataGridViewTextBoxColumn.Name = "processadorDataGridViewTextBoxColumn";
-            this.processadorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.processadorDataGridViewTextBoxColumn.Width = 150;
+            processadorDataGridViewTextBoxColumn.DataPropertyName = "Processador";
+            processadorDataGridViewTextBoxColumn.HeaderText = "  PROCESSADOR";
+            processadorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            processadorDataGridViewTextBoxColumn.Name = "processadorDataGridViewTextBoxColumn";
+            processadorDataGridViewTextBoxColumn.ReadOnly = true;
+            processadorDataGridViewTextBoxColumn.Width = 150;
             // 
             // memoriaDataGridViewTextBoxColumn
             // 
-            this.memoriaDataGridViewTextBoxColumn.DataPropertyName = "Memoria";
-            this.memoriaDataGridViewTextBoxColumn.HeaderText = " MEMÓRIA";
-            this.memoriaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.memoriaDataGridViewTextBoxColumn.Name = "memoriaDataGridViewTextBoxColumn";
-            this.memoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.memoriaDataGridViewTextBoxColumn.Width = 150;
+            memoriaDataGridViewTextBoxColumn.DataPropertyName = "Memoria";
+            memoriaDataGridViewTextBoxColumn.HeaderText = " MEMÓRIA";
+            memoriaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            memoriaDataGridViewTextBoxColumn.Name = "memoriaDataGridViewTextBoxColumn";
+            memoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            memoriaDataGridViewTextBoxColumn.Width = 150;
             // 
             // equipamentoBindingSource
             // 
-            this.equipamentoBindingSource.DataSource = typeof(InventarioTI.Entites.Equipamento);
+            equipamentoBindingSource.DataSource = typeof(Entites.Equipamento);
             // 
             // lblMatricula
             // 
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Location = new System.Drawing.Point(918, 4);
-            this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(65, 17);
-            this.lblMatricula.TabIndex = 12;
-            this.lblMatricula.Text = "Matrícula";
+            lblMatricula.AutoSize = true;
+            lblMatricula.Location = new Point(918, 4);
+            lblMatricula.Name = "lblMatricula";
+            lblMatricula.Size = new Size(65, 17);
+            lblMatricula.TabIndex = 12;
+            lblMatricula.Text = "Matrícula";
             // 
             // lblCargo
             // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(717, 4);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(45, 17);
-            this.lblCargo.TabIndex = 11;
-            this.lblCargo.Text = "Cargo";
+            lblCargo.AutoSize = true;
+            lblCargo.Location = new Point(717, 4);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(45, 17);
+            lblCargo.TabIndex = 11;
+            lblCargo.Text = "Cargo";
             // 
             // lblArea
             // 
-            this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(551, 4);
-            this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(37, 17);
-            this.lblArea.TabIndex = 10;
-            this.lblArea.Text = "Área";
+            lblArea.AutoSize = true;
+            lblArea.Location = new Point(551, 4);
+            lblArea.Name = "lblArea";
+            lblArea.Size = new Size(37, 17);
+            lblArea.TabIndex = 10;
+            lblArea.Text = "Área";
             // 
             // lblNome
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(118, 4);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(44, 17);
-            this.lblNome.TabIndex = 9;
-            this.lblNome.Text = "Nome";
+            lblNome.AutoSize = true;
+            lblNome.Location = new Point(118, 4);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(44, 17);
+            lblNome.TabIndex = 9;
+            lblNome.Text = "Nome";
             // 
             // lblUserID
             // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(14, 4);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(45, 17);
-            this.lblUserID.TabIndex = 8;
-            this.lblUserID.Text = "UserID";
+            lblUserID.AutoSize = true;
+            lblUserID.Location = new Point(14, 4);
+            lblUserID.Name = "lblUserID";
+            lblUserID.Size = new Size(45, 17);
+            lblUserID.TabIndex = 8;
+            lblUserID.Text = "UserID";
             // 
             // txbArea
             // 
-            this.txbArea.BackColor = System.Drawing.Color.White;
-            this.txbArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbArea.Location = new System.Drawing.Point(551, 24);
-            this.txbArea.Name = "txbArea";
-            this.txbArea.Size = new System.Drawing.Size(160, 22);
-            this.txbArea.TabIndex = 4;
+            txbArea.BackColor = Color.White;
+            txbArea.BorderStyle = BorderStyle.FixedSingle;
+            txbArea.Location = new Point(551, 24);
+            txbArea.Name = "txbArea";
+            txbArea.Size = new Size(160, 22);
+            txbArea.TabIndex = 4;
             // 
             // txbUserID
             // 
-            this.txbUserID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.txbUserID.BackColor = System.Drawing.Color.White;
-            this.txbUserID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbUserID.Location = new System.Drawing.Point(14, 24);
-            this.txbUserID.Name = "txbUserID";
-            this.txbUserID.Size = new System.Drawing.Size(98, 22);
-            this.txbUserID.TabIndex = 1;
-            this.txbUserID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbUserID_KeyDown);
+            txbUserID.AutoCompleteMode = AutoCompleteMode.Append;
+            txbUserID.BackColor = Color.White;
+            txbUserID.BorderStyle = BorderStyle.FixedSingle;
+            txbUserID.Location = new Point(14, 24);
+            txbUserID.Name = "txbUserID";
+            txbUserID.Size = new Size(98, 22);
+            txbUserID.TabIndex = 1;
+            txbUserID.KeyDown += txbUserID_KeyDown;
             // 
             // pnlEquipamento
             // 
-            this.pnlEquipamento.Controls.Add(this.pictureBox1);
-            this.pnlEquipamento.Controls.Add(this.ptbLupaPatrimonio);
-            this.pnlEquipamento.Controls.Add(this.cbxModelo);
-            this.pnlEquipamento.Controls.Add(this.cbxMarca);
-            this.pnlEquipamento.Controls.Add(this.cbxMemoria);
-            this.pnlEquipamento.Controls.Add(this.cbxProcessador);
-            this.pnlEquipamento.Controls.Add(this.cbxTipo);
-            this.pnlEquipamento.Controls.Add(this.lblModelo);
-            this.pnlEquipamento.Controls.Add(this.lblMarca);
-            this.pnlEquipamento.Controls.Add(this.txbSerie);
-            this.pnlEquipamento.Controls.Add(this.lblSerie);
-            this.pnlEquipamento.Controls.Add(this.txbPatrimonio);
-            this.pnlEquipamento.Controls.Add(this.lblRam);
-            this.pnlEquipamento.Controls.Add(this.lblProcessador);
-            this.pnlEquipamento.Controls.Add(this.lblPatrimonio);
-            this.pnlEquipamento.Controls.Add(this.lblMicrocomputador);
-            this.pnlEquipamento.Controls.Add(this.dgvEquipamento);
-            this.pnlEquipamento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEquipamento.Location = new System.Drawing.Point(0, 218);
-            this.pnlEquipamento.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlEquipamento.Name = "pnlEquipamento";
-            this.pnlEquipamento.Size = new System.Drawing.Size(1007, 118);
-            this.pnlEquipamento.TabIndex = 3;
+            pnlEquipamento.Controls.Add(pictureBox1);
+            pnlEquipamento.Controls.Add(ptbLupaPatrimonio);
+            pnlEquipamento.Controls.Add(cbxModelo);
+            pnlEquipamento.Controls.Add(cbxMarca);
+            pnlEquipamento.Controls.Add(cbxMemoria);
+            pnlEquipamento.Controls.Add(cbxProcessador);
+            pnlEquipamento.Controls.Add(lblModelo);
+            pnlEquipamento.Controls.Add(lblMarca);
+            pnlEquipamento.Controls.Add(txbSerie);
+            pnlEquipamento.Controls.Add(lblSerie);
+            pnlEquipamento.Controls.Add(cbxTipo);
+            pnlEquipamento.Controls.Add(txbPatrimonio);
+            pnlEquipamento.Controls.Add(lblMicrocomputador);
+            pnlEquipamento.Controls.Add(lblRam);
+            pnlEquipamento.Controls.Add(lblProcessador);
+            pnlEquipamento.Controls.Add(lblPatrimonio);
+            pnlEquipamento.Controls.Add(dgvEquipamento);
+            pnlEquipamento.Dock = DockStyle.Fill;
+            pnlEquipamento.Location = new Point(0, 218);
+            pnlEquipamento.Margin = new Padding(0);
+            pnlEquipamento.Name = "pnlEquipamento";
+            pnlEquipamento.Size = new Size(1007, 118);
+            pnlEquipamento.TabIndex = 3;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::InventarioTI.Properties.Resources.Lupa;
-            this.pictureBox1.Location = new System.Drawing.Point(311, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.Lupa;
+            pictureBox1.Location = new Point(311, 24);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(20, 20);
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
             // 
             // ptbLupaPatrimonio
             // 
-            this.ptbLupaPatrimonio.Image = global::InventarioTI.Properties.Resources.Lupa;
-            this.ptbLupaPatrimonio.Location = new System.Drawing.Point(91, 24);
-            this.ptbLupaPatrimonio.Name = "ptbLupaPatrimonio";
-            this.ptbLupaPatrimonio.Size = new System.Drawing.Size(20, 20);
-            this.ptbLupaPatrimonio.TabIndex = 20;
-            this.ptbLupaPatrimonio.TabStop = false;
+            ptbLupaPatrimonio.Image = Properties.Resources.Lupa;
+            ptbLupaPatrimonio.Location = new Point(91, 24);
+            ptbLupaPatrimonio.Name = "ptbLupaPatrimonio";
+            ptbLupaPatrimonio.Size = new Size(20, 20);
+            ptbLupaPatrimonio.TabIndex = 20;
+            ptbLupaPatrimonio.TabStop = false;
             // 
             // cbxModelo
             // 
-            this.cbxModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxModelo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxModelo.FormattingEnabled = true;
-            this.cbxModelo.Location = new System.Drawing.Point(599, 22);
-            this.cbxModelo.Name = "cbxModelo";
-            this.cbxModelo.Size = new System.Drawing.Size(207, 23);
-            this.cbxModelo.TabIndex = 11;
-            this.cbxModelo.SelectionChangeCommitted += new System.EventHandler(this.cbxModelo_SelectionChangeCommitted);
+            cbxModelo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxModelo.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxModelo.FormattingEnabled = true;
+            cbxModelo.Location = new Point(337, 22);
+            cbxModelo.Name = "cbxModelo";
+            cbxModelo.Size = new Size(207, 23);
+            cbxModelo.TabIndex = 11;
+            cbxModelo.SelectionChangeCommitted += cbxModelo_SelectionChangeCommitted;
             // 
             // cbxMarca
             // 
-            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMarca.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(464, 22);
-            this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(129, 23);
-            this.cbxMarca.TabIndex = 10;
-            this.cbxMarca.SelectionChangeCommitted += new System.EventHandler(this.cbxMarca_SelectionChangeCommitted);
+            cbxMarca.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxMarca.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxMarca.FormattingEnabled = true;
+            cbxMarca.Location = new Point(677, 22);
+            cbxMarca.Name = "cbxMarca";
+            cbxMarca.Size = new Size(129, 23);
+            cbxMarca.TabIndex = 10;
+            cbxMarca.SelectionChangeCommitted += cbxMarca_SelectionChangeCommitted;
             // 
             // cbxMemoria
             // 
-            this.cbxMemoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMemoria.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxMemoria.FormattingEnabled = true;
-            this.cbxMemoria.Location = new System.Drawing.Point(938, 23);
-            this.cbxMemoria.Name = "cbxMemoria";
-            this.cbxMemoria.Size = new System.Drawing.Size(60, 23);
-            this.cbxMemoria.TabIndex = 13;
+            cbxMemoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxMemoria.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxMemoria.FormattingEnabled = true;
+            cbxMemoria.Location = new Point(938, 22);
+            cbxMemoria.Name = "cbxMemoria";
+            cbxMemoria.Size = new Size(60, 23);
+            cbxMemoria.TabIndex = 13;
             // 
             // cbxProcessador
             // 
-            this.cbxProcessador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxProcessador.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxProcessador.FormattingEnabled = true;
-            this.cbxProcessador.ItemHeight = 15;
-            this.cbxProcessador.Location = new System.Drawing.Point(812, 23);
-            this.cbxProcessador.Name = "cbxProcessador";
-            this.cbxProcessador.Size = new System.Drawing.Size(120, 23);
-            this.cbxProcessador.TabIndex = 12;
-            // 
-            // cbxTipo
-            // 
-            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(338, 22);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(120, 23);
-            this.cbxTipo.TabIndex = 9;
-            this.cbxTipo.SelectionChangeCommitted += new System.EventHandler(this.cbxTipo_SelectionChangeCommitted);
+            cbxProcessador.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxProcessador.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxProcessador.FormattingEnabled = true;
+            cbxProcessador.ItemHeight = 15;
+            cbxProcessador.Location = new Point(812, 22);
+            cbxProcessador.Name = "cbxProcessador";
+            cbxProcessador.Size = new Size(120, 23);
+            cbxProcessador.TabIndex = 12;
             // 
             // lblModelo
             // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(599, 6);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(54, 17);
-            this.lblModelo.TabIndex = 32;
-            this.lblModelo.Text = "Modelo";
+            lblModelo.AutoSize = true;
+            lblModelo.Location = new Point(337, 6);
+            lblModelo.Name = "lblModelo";
+            lblModelo.Size = new Size(54, 17);
+            lblModelo.TabIndex = 32;
+            lblModelo.Text = "Modelo";
             // 
             // lblMarca
             // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(464, 5);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(47, 17);
-            this.lblMarca.TabIndex = 30;
-            this.lblMarca.Text = "Marca";
+            lblMarca.AutoSize = true;
+            lblMarca.Location = new Point(677, 5);
+            lblMarca.Name = "lblMarca";
+            lblMarca.Size = new Size(47, 17);
+            lblMarca.TabIndex = 30;
+            lblMarca.Text = "Marca";
             // 
             // txbSerie
             // 
-            this.txbSerie.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txbSerie.BackColor = System.Drawing.Color.White;
-            this.txbSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbSerie.Location = new System.Drawing.Point(118, 23);
-            this.txbSerie.Name = "txbSerie";
-            this.txbSerie.Size = new System.Drawing.Size(214, 22);
-            this.txbSerie.TabIndex = 8;
-            this.txbSerie.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbSerie_KeyDown);
+            txbSerie.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txbSerie.BackColor = Color.White;
+            txbSerie.BorderStyle = BorderStyle.FixedSingle;
+            txbSerie.Location = new Point(118, 23);
+            txbSerie.Name = "txbSerie";
+            txbSerie.Size = new Size(214, 22);
+            txbSerie.TabIndex = 8;
+            txbSerie.KeyDown += txbSerie_KeyDown;
             // 
             // lblSerie
             // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(118, 4);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(38, 17);
-            this.lblSerie.TabIndex = 28;
-            this.lblSerie.Text = "Série";
+            lblSerie.AutoSize = true;
+            lblSerie.Location = new Point(118, 4);
+            lblSerie.Name = "lblSerie";
+            lblSerie.Size = new Size(38, 17);
+            lblSerie.TabIndex = 28;
+            lblSerie.Text = "Série";
+            // 
+            // cbxTipo
+            // 
+            cbxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxTipo.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxTipo.FormattingEnabled = true;
+            cbxTipo.Location = new Point(550, 22);
+            cbxTipo.Name = "cbxTipo";
+            cbxTipo.Size = new Size(120, 23);
+            cbxTipo.TabIndex = 9;
+            cbxTipo.SelectionChangeCommitted += cbxTipo_SelectionChangeCommitted;
             // 
             // txbPatrimonio
             // 
-            this.txbPatrimonio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txbPatrimonio.BackColor = System.Drawing.Color.White;
-            this.txbPatrimonio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbPatrimonio.Location = new System.Drawing.Point(12, 23);
-            this.txbPatrimonio.Name = "txbPatrimonio";
-            this.txbPatrimonio.Size = new System.Drawing.Size(100, 22);
-            this.txbPatrimonio.TabIndex = 7;
-            this.txbPatrimonio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbPatrimonio_KeyDown);
-            // 
-            // lblRam
-            // 
-            this.lblRam.AutoSize = true;
-            this.lblRam.Location = new System.Drawing.Point(938, 6);
-            this.lblRam.Name = "lblRam";
-            this.lblRam.Size = new System.Drawing.Size(34, 17);
-            this.lblRam.TabIndex = 22;
-            this.lblRam.Text = "Ram";
-            // 
-            // lblProcessador
-            // 
-            this.lblProcessador.AutoSize = true;
-            this.lblProcessador.Location = new System.Drawing.Point(812, 5);
-            this.lblProcessador.Name = "lblProcessador";
-            this.lblProcessador.Size = new System.Drawing.Size(81, 17);
-            this.lblProcessador.TabIndex = 21;
-            this.lblProcessador.Text = "Processador";
-            // 
-            // lblPatrimonio
-            // 
-            this.lblPatrimonio.AutoSize = true;
-            this.lblPatrimonio.Location = new System.Drawing.Point(11, 5);
-            this.lblPatrimonio.Name = "lblPatrimonio";
-            this.lblPatrimonio.Size = new System.Drawing.Size(72, 17);
-            this.lblPatrimonio.TabIndex = 20;
-            this.lblPatrimonio.Text = "Patrimonio";
+            txbPatrimonio.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txbPatrimonio.BackColor = Color.White;
+            txbPatrimonio.BorderStyle = BorderStyle.FixedSingle;
+            txbPatrimonio.Location = new Point(12, 23);
+            txbPatrimonio.Name = "txbPatrimonio";
+            txbPatrimonio.Size = new Size(100, 22);
+            txbPatrimonio.TabIndex = 7;
+            txbPatrimonio.KeyDown += txbPatrimonio_KeyDown;
             // 
             // lblMicrocomputador
             // 
-            this.lblMicrocomputador.AutoSize = true;
-            this.lblMicrocomputador.Location = new System.Drawing.Point(338, 5);
-            this.lblMicrocomputador.Name = "lblMicrocomputador";
-            this.lblMicrocomputador.Size = new System.Drawing.Size(32, 17);
-            this.lblMicrocomputador.TabIndex = 19;
-            this.lblMicrocomputador.Text = "Tipo";
+            lblMicrocomputador.AutoSize = true;
+            lblMicrocomputador.Location = new Point(550, 5);
+            lblMicrocomputador.Name = "lblMicrocomputador";
+            lblMicrocomputador.Size = new Size(32, 17);
+            lblMicrocomputador.TabIndex = 19;
+            lblMicrocomputador.Text = "Tipo";
+            // 
+            // lblRam
+            // 
+            lblRam.AutoSize = true;
+            lblRam.Location = new Point(938, 5);
+            lblRam.Name = "lblRam";
+            lblRam.Size = new Size(34, 17);
+            lblRam.TabIndex = 22;
+            lblRam.Text = "Ram";
+            // 
+            // lblProcessador
+            // 
+            lblProcessador.AutoSize = true;
+            lblProcessador.Location = new Point(812, 4);
+            lblProcessador.Name = "lblProcessador";
+            lblProcessador.Size = new Size(81, 17);
+            lblProcessador.TabIndex = 21;
+            lblProcessador.Text = "Processador";
+            // 
+            // lblPatrimonio
+            // 
+            lblPatrimonio.AutoSize = true;
+            lblPatrimonio.Location = new Point(11, 5);
+            lblPatrimonio.Name = "lblPatrimonio";
+            lblPatrimonio.Size = new Size(72, 17);
+            lblPatrimonio.TabIndex = 20;
+            lblPatrimonio.Text = "Patrimonio";
             // 
             // dgvEquipamento
             // 
-            this.dgvEquipamento.AllowUserToAddRows = false;
-            this.dgvEquipamento.AllowUserToDeleteRows = false;
-            this.dgvEquipamento.AutoGenerateColumns = false;
-            this.dgvEquipamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEquipamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIDDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.areaDataGridViewTextBoxColumn,
-            this.cargoDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dgvEquipamento.DataSource = this.clienteBindingSource;
-            this.dgvEquipamento.Location = new System.Drawing.Point(12, 53);
-            this.dgvEquipamento.Name = "dgvEquipamento";
-            this.dgvEquipamento.ReadOnly = true;
-            this.dgvEquipamento.RowHeadersWidth = 62;
-            this.dgvEquipamento.RowTemplate.Height = 25;
-            this.dgvEquipamento.Size = new System.Drawing.Size(986, 50);
-            this.dgvEquipamento.TabIndex = 24;
-            this.dgvEquipamento.Visible = false;
+            dgvEquipamento.AllowUserToAddRows = false;
+            dgvEquipamento.AllowUserToDeleteRows = false;
+            dgvEquipamento.AutoGenerateColumns = false;
+            dgvEquipamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEquipamento.Columns.AddRange(new DataGridViewColumn[] { userIDDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, areaDataGridViewTextBoxColumn, cargoDataGridViewTextBoxColumn, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            dgvEquipamento.DataSource = clienteBindingSource;
+            dgvEquipamento.Location = new Point(12, 53);
+            dgvEquipamento.Name = "dgvEquipamento";
+            dgvEquipamento.ReadOnly = true;
+            dgvEquipamento.RowHeadersWidth = 62;
+            dgvEquipamento.RowTemplate.Height = 25;
+            dgvEquipamento.Size = new Size(986, 50);
+            dgvEquipamento.TabIndex = 24;
+            dgvEquipamento.Visible = false;
             // 
             // userIDDataGridViewTextBoxColumn
             // 
-            this.userIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "USERID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.userIDDataGridViewTextBoxColumn.Width = 80;
+            userIDDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            userIDDataGridViewTextBoxColumn.HeaderText = "USERID";
+            userIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            userIDDataGridViewTextBoxColumn.ReadOnly = true;
+            userIDDataGridViewTextBoxColumn.Width = 80;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
-            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.FillWeight = 50F;
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.FillWeight = 50F;
+            nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
+            nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // areaDataGridViewTextBoxColumn
             // 
-            this.areaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.areaDataGridViewTextBoxColumn.DataPropertyName = "Area";
-            this.areaDataGridViewTextBoxColumn.FillWeight = 25F;
-            this.areaDataGridViewTextBoxColumn.HeaderText = "AREA";
-            this.areaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
-            this.areaDataGridViewTextBoxColumn.ReadOnly = true;
+            areaDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            areaDataGridViewTextBoxColumn.DataPropertyName = "Area";
+            areaDataGridViewTextBoxColumn.FillWeight = 25F;
+            areaDataGridViewTextBoxColumn.HeaderText = "AREA";
+            areaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
+            areaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cargoDataGridViewTextBoxColumn
             // 
-            this.cargoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cargoDataGridViewTextBoxColumn.DataPropertyName = "Cargo";
-            this.cargoDataGridViewTextBoxColumn.FillWeight = 25F;
-            this.cargoDataGridViewTextBoxColumn.HeaderText = "CARGO";
-            this.cargoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
-            this.cargoDataGridViewTextBoxColumn.ReadOnly = true;
+            cargoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            cargoDataGridViewTextBoxColumn.DataPropertyName = "Cargo";
+            cargoDataGridViewTextBoxColumn.FillWeight = 25F;
+            cargoDataGridViewTextBoxColumn.HeaderText = "CARGO";
+            cargoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
+            cargoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "UF";
-            this.dataGridViewTextBoxColumn1.HeaderText = "UF";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 30;
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewTextBoxColumn1.DataPropertyName = "UF";
+            dataGridViewTextBoxColumn1.HeaderText = "UF";
+            dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 30;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Unidade";
-            this.dataGridViewTextBoxColumn2.HeaderText = "UNIDADE";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewTextBoxColumn2.DataPropertyName = "Unidade";
+            dataGridViewTextBoxColumn2.HeaderText = "UNIDADE";
+            dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 150;
             // 
             // clienteBindingSource
             // 
-            this.clienteBindingSource.DataSource = typeof(InventarioTI.Entites.Cliente);
+            clienteBindingSource.DataSource = typeof(Entites.Cliente);
             // 
             // lblCliente
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCliente.Location = new System.Drawing.Point(66, 13);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(63, 19);
-            this.lblCliente.TabIndex = 0;
-            this.lblCliente.Text = "Cliente";
+            lblCliente.AutoSize = true;
+            lblCliente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCliente.Location = new Point(66, 13);
+            lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(63, 19);
+            lblCliente.TabIndex = 0;
+            lblCliente.Text = "Cliente";
             // 
             // lblEquipamento
             // 
-            this.lblEquipamento.AutoSize = true;
-            this.lblEquipamento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEquipamento.Location = new System.Drawing.Point(40, 15);
-            this.lblEquipamento.Name = "lblEquipamento";
-            this.lblEquipamento.Size = new System.Drawing.Size(114, 19);
-            this.lblEquipamento.TabIndex = 1;
-            this.lblEquipamento.Text = "Equipamento";
+            lblEquipamento.AutoSize = true;
+            lblEquipamento.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEquipamento.Location = new Point(40, 15);
+            lblEquipamento.Name = "lblEquipamento";
+            lblEquipamento.Size = new Size(114, 19);
+            lblEquipamento.TabIndex = 1;
+            lblEquipamento.Text = "Equipamento";
             // 
             // uctHome
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.tlphome);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "uctHome";
-            this.Size = new System.Drawing.Size(1007, 367);
-            this.tlphome.ResumeLayout(false);
-            this.pnlEquipamentoTop.ResumeLayout(false);
-            this.pnlEquipamentoTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbTrocar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMoverEquipamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbApagarEquipamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbRemoverEquipamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEditarEquipamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAdicionarEquipamento)).EndInit();
-            this.pnlCLienteTop.ResumeLayout(false);
-            this.pnlCLienteTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbGerarTermo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MoverCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbApagarCampoCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbRemoverCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbEditarCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAdicionarCLinete)).EndInit();
-            this.pnlCliente.ResumeLayout(false);
-            this.pnlCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLupaNome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLupaUserID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipamentoBindingSource)).EndInit();
-            this.pnlEquipamento.ResumeLayout(false);
-            this.pnlEquipamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLupaPatrimonio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleMode = AutoScaleMode.None;
+            Controls.Add(tlphome);
+            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "uctHome";
+            Size = new Size(1007, 367);
+            tlphome.ResumeLayout(false);
+            pnlEquipamentoTop.ResumeLayout(false);
+            pnlEquipamentoTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbTrocar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbMoverEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbApagarEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbRemoverEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbEditarEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbAdicionarEquipamento).EndInit();
+            pnlCLienteTop.ResumeLayout(false);
+            pnlCLienteTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbGerarTermo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MoverCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbApagarCampoCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbRemoverCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbEditarCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbAdicionarCLinete).EndInit();
+            pnlCliente.ResumeLayout(false);
+            pnlCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbLupaNome).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbLupaUserID).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)equipamentoBindingSource).EndInit();
+            pnlEquipamento.ResumeLayout(false);
+            pnlEquipamento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbLupaPatrimonio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)clienteBindingSource).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

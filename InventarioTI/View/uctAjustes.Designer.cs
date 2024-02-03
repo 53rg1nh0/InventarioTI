@@ -30,1057 +30,1043 @@ namespace InventarioTI.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUnidade = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblMatricula = new System.Windows.Forms.Label();
-            this.cbxUnidade = new System.Windows.Forms.ComboBox();
-            this.txbResponsavel = new System.Windows.Forms.TextBox();
-            this.txbMatricula = new System.Windows.Forms.TextBox();
-            this.txbPasta = new System.Windows.Forms.TextBox();
-            this.lblPasta = new System.Windows.Forms.Label();
-            this.ckxImpressoraPadrão = new System.Windows.Forms.CheckBox();
-            this.ptbPasta = new System.Windows.Forms.PictureBox();
-            this.ptbSalvar = new System.Windows.Forms.PictureBox();
-            this.txbProcessadores = new System.Windows.Forms.TextBox();
-            this.lblProcessador = new System.Windows.Forms.Label();
-            this.ptbProcessador = new System.Windows.Forms.PictureBox();
-            this.ptbMemoria = new System.Windows.Forms.PictureBox();
-            this.txbMemorias = new System.Windows.Forms.TextBox();
-            this.lblMemoria = new System.Windows.Forms.Label();
-            this.txbTipo = new System.Windows.Forms.TextBox();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.txbMarca = new System.Windows.Forms.TextBox();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.txbModelo = new System.Windows.Forms.TextBox();
-            this.lblModelo = new System.Windows.Forms.Label();
-            this.ptbTMM = new System.Windows.Forms.PictureBox();
-            this.fbdPasta = new System.Windows.Forms.FolderBrowserDialog();
-            this.dgvProcessadores = new System.Windows.Forms.DataGridView();
-            this.ProcessadorP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExP = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvMemorias = new System.Windows.Forms.DataGridView();
-            this.memoriaM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExM = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tlpBak0 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpMeio = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvUnidade = new System.Windows.Forms.DataGridView();
-            this.regiaoUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ufUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siglaUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExU = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tlpBottonU = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBottonU1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblUF = new System.Windows.Forms.Label();
-            this.txbUF = new System.Windows.Forms.TextBox();
-            this.tlpBottonU0 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblRegiao = new System.Windows.Forms.Label();
-            this.txbRegiao = new System.Windows.Forms.TextBox();
-            this.tlpBottonU3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSigla = new System.Windows.Forms.Label();
-            this.txbSigla = new System.Windows.Forms.TextBox();
-            this.tlpBottonU2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNomeU = new System.Windows.Forms.Label();
-            this.txbNome = new System.Windows.Forms.TextBox();
-            this.ptbUnidade = new System.Windows.Forms.PictureBox();
-            this.tlpBotton2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBottonM = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBotton0 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBottonT0 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBottonT2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBottonT1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBotton1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpBottonP = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvTMM = new System.Windows.Forms.DataGridView();
-            this.tipoTMM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaTMM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modeloTMM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tlpTop = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpTopResposavel = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpTop3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpTop1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpTop0 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPasta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSalvar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbProcessador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMemoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbTMM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcessadores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMemorias)).BeginInit();
-            this.tlpBak0.SuspendLayout();
-            this.tlpMeio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnidade)).BeginInit();
-            this.tlpBottonU.SuspendLayout();
-            this.tlpBottonU1.SuspendLayout();
-            this.tlpBottonU0.SuspendLayout();
-            this.tlpBottonU3.SuspendLayout();
-            this.tlpBottonU2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbUnidade)).BeginInit();
-            this.tlpBotton2.SuspendLayout();
-            this.tlpBottonM.SuspendLayout();
-            this.tlpBotton0.SuspendLayout();
-            this.tlpBottonT0.SuspendLayout();
-            this.tlpBottonT2.SuspendLayout();
-            this.tlpBottonT1.SuspendLayout();
-            this.tlpBotton1.SuspendLayout();
-            this.tlpBottonP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTMM)).BeginInit();
-            this.tlpTop.SuspendLayout();
-            this.tlpTopResposavel.SuspendLayout();
-            this.tlpTop3.SuspendLayout();
-            this.tlpTop1.SuspendLayout();
-            this.tlpTop0.SuspendLayout();
-            this.SuspendLayout();
+            lblUnidade = new Label();
+            lblNome = new Label();
+            lblMatricula = new Label();
+            cbxUnidade = new ComboBox();
+            txbResponsavel = new TextBox();
+            txbMatricula = new TextBox();
+            txbPasta = new TextBox();
+            lblPasta = new Label();
+            ckxImpressoraPadrão = new CheckBox();
+            ptbPasta = new PictureBox();
+            ptbSalvar = new PictureBox();
+            txbProcessadores = new TextBox();
+            lblProcessador = new Label();
+            ptbProcessador = new PictureBox();
+            ptbMemoria = new PictureBox();
+            txbMemorias = new TextBox();
+            lblMemoria = new Label();
+            txbTipo = new TextBox();
+            lblTipo = new Label();
+            txbMarca = new TextBox();
+            lblMarca = new Label();
+            txbModelo = new TextBox();
+            lblModelo = new Label();
+            ptbTMM = new PictureBox();
+            fbdPasta = new FolderBrowserDialog();
+            dgvProcessadores = new DataGridView();
+            ProcessadorP = new DataGridViewTextBoxColumn();
+            ExP = new DataGridViewImageColumn();
+            dgvMemorias = new DataGridView();
+            memoriaM = new DataGridViewTextBoxColumn();
+            ExM = new DataGridViewImageColumn();
+            tlpBak0 = new TableLayoutPanel();
+            tlpMeio = new TableLayoutPanel();
+            dgvUnidade = new DataGridView();
+            regiaoUnidade = new DataGridViewTextBoxColumn();
+            ufUnidade = new DataGridViewTextBoxColumn();
+            nomeUnidade = new DataGridViewTextBoxColumn();
+            siglaUnidade = new DataGridViewTextBoxColumn();
+            ExU = new DataGridViewImageColumn();
+            tlpBottonU = new TableLayoutPanel();
+            tlpBottonU1 = new TableLayoutPanel();
+            lblUF = new Label();
+            txbUF = new TextBox();
+            tlpBottonU0 = new TableLayoutPanel();
+            lblRegiao = new Label();
+            txbRegiao = new TextBox();
+            tlpBottonU3 = new TableLayoutPanel();
+            lblSigla = new Label();
+            txbSigla = new TextBox();
+            tlpBottonU2 = new TableLayoutPanel();
+            lblNomeU = new Label();
+            txbNome = new TextBox();
+            ptbUnidade = new PictureBox();
+            tlpBotton2 = new TableLayoutPanel();
+            tlpBottonM = new TableLayoutPanel();
+            tlpBotton0 = new TableLayoutPanel();
+            tlpBottonT0 = new TableLayoutPanel();
+            tlpBottonT2 = new TableLayoutPanel();
+            tlpBottonT1 = new TableLayoutPanel();
+            tlpBotton1 = new TableLayoutPanel();
+            tlpBottonP = new TableLayoutPanel();
+            dgvTMM = new DataGridView();
+            tipoTMM = new DataGridViewTextBoxColumn();
+            marcaTMM = new DataGridViewTextBoxColumn();
+            modeloTMM = new DataGridViewTextBoxColumn();
+            ExT = new DataGridViewImageColumn();
+            tlpTop = new TableLayoutPanel();
+            tlpTopResposavel = new TableLayoutPanel();
+            tlpTop3 = new TableLayoutPanel();
+            tlpTop1 = new TableLayoutPanel();
+            tlpTop0 = new TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)ptbPasta).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbSalvar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbProcessador).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbMemoria).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbTMM).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProcessadores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMemorias).BeginInit();
+            tlpBak0.SuspendLayout();
+            tlpMeio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUnidade).BeginInit();
+            tlpBottonU.SuspendLayout();
+            tlpBottonU1.SuspendLayout();
+            tlpBottonU0.SuspendLayout();
+            tlpBottonU3.SuspendLayout();
+            tlpBottonU2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbUnidade).BeginInit();
+            tlpBotton2.SuspendLayout();
+            tlpBottonM.SuspendLayout();
+            tlpBotton0.SuspendLayout();
+            tlpBottonT0.SuspendLayout();
+            tlpBottonT2.SuspendLayout();
+            tlpBottonT1.SuspendLayout();
+            tlpBotton1.SuspendLayout();
+            tlpBottonP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTMM).BeginInit();
+            tlpTop.SuspendLayout();
+            tlpTopResposavel.SuspendLayout();
+            tlpTop3.SuspendLayout();
+            tlpTop1.SuspendLayout();
+            tlpTop0.SuspendLayout();
+            SuspendLayout();
             // 
             // lblUnidade
             // 
-            this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUnidade.Location = new System.Drawing.Point(3, 20);
-            this.lblUnidade.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.lblUnidade.Name = "lblUnidade";
-            this.lblUnidade.Size = new System.Drawing.Size(67, 15);
-            this.lblUnidade.TabIndex = 0;
-            this.lblUnidade.Text = "Unidade";
+            lblUnidade.AutoSize = true;
+            lblUnidade.Dock = DockStyle.Bottom;
+            lblUnidade.Location = new Point(3, 20);
+            lblUnidade.Margin = new Padding(3, 0, 0, 0);
+            lblUnidade.Name = "lblUnidade";
+            lblUnidade.Size = new Size(67, 15);
+            lblUnidade.TabIndex = 0;
+            lblUnidade.Text = "Unidade";
             // 
             // lblNome
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblNome.Location = new System.Drawing.Point(3, 20);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(297, 15);
-            this.lblNome.TabIndex = 1;
-            this.lblNome.Text = "Responsável";
+            lblNome.AutoSize = true;
+            lblNome.Dock = DockStyle.Bottom;
+            lblNome.Location = new Point(3, 20);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(297, 15);
+            lblNome.TabIndex = 1;
+            lblNome.Text = "Responsável";
             // 
             // lblMatricula
             // 
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblMatricula.Location = new System.Drawing.Point(3, 20);
-            this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(95, 15);
-            this.lblMatricula.TabIndex = 2;
-            this.lblMatricula.Text = "Matrícula";
+            lblMatricula.AutoSize = true;
+            lblMatricula.Dock = DockStyle.Bottom;
+            lblMatricula.Location = new Point(3, 20);
+            lblMatricula.Name = "lblMatricula";
+            lblMatricula.Size = new Size(95, 15);
+            lblMatricula.TabIndex = 2;
+            lblMatricula.Text = "Matrícula";
             // 
             // cbxUnidade
             // 
-            this.cbxUnidade.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbxUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxUnidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxUnidade.FormattingEnabled = true;
-            this.cbxUnidade.Location = new System.Drawing.Point(3, 35);
-            this.cbxUnidade.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.cbxUnidade.Name = "cbxUnidade";
-            this.cbxUnidade.Size = new System.Drawing.Size(64, 23);
-            this.cbxUnidade.TabIndex = 2;
-            this.cbxUnidade.SelectedIndexChanged += new System.EventHandler(this.cbxUnidade_SelectedIndexChanged);
+            cbxUnidade.Dock = DockStyle.Fill;
+            cbxUnidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxUnidade.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxUnidade.FormattingEnabled = true;
+            cbxUnidade.Location = new Point(3, 35);
+            cbxUnidade.Margin = new Padding(3, 0, 3, 0);
+            cbxUnidade.Name = "cbxUnidade";
+            cbxUnidade.Size = new Size(64, 23);
+            cbxUnidade.TabIndex = 2;
+            cbxUnidade.SelectedIndexChanged += cbxUnidade_SelectedIndexChanged;
             // 
             // txbResponsavel
             // 
-            this.txbResponsavel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbResponsavel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbResponsavel.Location = new System.Drawing.Point(3, 35);
-            this.txbResponsavel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbResponsavel.Name = "txbResponsavel";
-            this.txbResponsavel.Size = new System.Drawing.Size(297, 23);
-            this.txbResponsavel.TabIndex = 3;
+            txbResponsavel.BorderStyle = BorderStyle.FixedSingle;
+            txbResponsavel.Dock = DockStyle.Fill;
+            txbResponsavel.Location = new Point(3, 35);
+            txbResponsavel.Margin = new Padding(3, 0, 3, 0);
+            txbResponsavel.Name = "txbResponsavel";
+            txbResponsavel.Size = new Size(297, 23);
+            txbResponsavel.TabIndex = 3;
             // 
             // txbMatricula
             // 
-            this.txbMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbMatricula.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbMatricula.Location = new System.Drawing.Point(3, 35);
-            this.txbMatricula.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbMatricula.Name = "txbMatricula";
-            this.txbMatricula.Size = new System.Drawing.Size(95, 23);
-            this.txbMatricula.TabIndex = 4;
+            txbMatricula.BorderStyle = BorderStyle.FixedSingle;
+            txbMatricula.Dock = DockStyle.Fill;
+            txbMatricula.Location = new Point(3, 35);
+            txbMatricula.Margin = new Padding(3, 0, 3, 0);
+            txbMatricula.Name = "txbMatricula";
+            txbMatricula.Size = new Size(95, 23);
+            txbMatricula.TabIndex = 4;
             // 
             // txbPasta
             // 
-            this.txbPasta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbPasta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbPasta.Enabled = false;
-            this.txbPasta.Location = new System.Drawing.Point(20, 35);
-            this.txbPasta.Margin = new System.Windows.Forms.Padding(20, 0, 3, 0);
-            this.txbPasta.Name = "txbPasta";
-            this.txbPasta.Size = new System.Drawing.Size(280, 23);
-            this.txbPasta.TabIndex = 1;
-            this.txbPasta.TabStop = false;
+            txbPasta.BorderStyle = BorderStyle.FixedSingle;
+            txbPasta.Dock = DockStyle.Fill;
+            txbPasta.Enabled = false;
+            txbPasta.Location = new Point(20, 35);
+            txbPasta.Margin = new Padding(20, 0, 3, 0);
+            txbPasta.Name = "txbPasta";
+            txbPasta.Size = new Size(280, 23);
+            txbPasta.TabIndex = 1;
+            txbPasta.TabStop = false;
             // 
             // lblPasta
             // 
-            this.lblPasta.AutoSize = true;
-            this.lblPasta.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblPasta.Location = new System.Drawing.Point(20, 20);
-            this.lblPasta.Margin = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.lblPasta.Name = "lblPasta";
-            this.lblPasta.Size = new System.Drawing.Size(283, 15);
-            this.lblPasta.TabIndex = 6;
-            this.lblPasta.Text = "Caminho Pasta Inventário";
+            lblPasta.AutoSize = true;
+            lblPasta.Dock = DockStyle.Bottom;
+            lblPasta.Location = new Point(20, 20);
+            lblPasta.Margin = new Padding(20, 0, 0, 0);
+            lblPasta.Name = "lblPasta";
+            lblPasta.Size = new Size(283, 15);
+            lblPasta.TabIndex = 6;
+            lblPasta.Text = "Caminho Pasta Inventário";
             // 
             // ckxImpressoraPadrão
             // 
-            this.ckxImpressoraPadrão.AutoSize = true;
-            this.ckxImpressoraPadrão.Location = new System.Drawing.Point(20, 60);
-            this.ckxImpressoraPadrão.Margin = new System.Windows.Forms.Padding(20, 3, 0, 0);
-            this.ckxImpressoraPadrão.Name = "ckxImpressoraPadrão";
-            this.ckxImpressoraPadrão.Size = new System.Drawing.Size(257, 19);
-            this.ckxImpressoraPadrão.TabIndex = 1;
-            this.ckxImpressoraPadrão.Text = "Imprimir documento na impressora  padrão\r\n";
-            this.ckxImpressoraPadrão.UseVisualStyleBackColor = true;
+            ckxImpressoraPadrão.AutoSize = true;
+            ckxImpressoraPadrão.Location = new Point(20, 60);
+            ckxImpressoraPadrão.Margin = new Padding(20, 3, 0, 0);
+            ckxImpressoraPadrão.Name = "ckxImpressoraPadrão";
+            ckxImpressoraPadrão.Size = new Size(257, 19);
+            ckxImpressoraPadrão.TabIndex = 1;
+            ckxImpressoraPadrão.Text = "Imprimir documento na impressora  padrão\r\n";
+            ckxImpressoraPadrão.UseVisualStyleBackColor = true;
             // 
             // ptbPasta
             // 
-            this.ptbPasta.BackColor = System.Drawing.Color.White;
-            this.ptbPasta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbPasta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbPasta.Image = global::InventarioTI.Properties.Resources.Pasta;
-            this.ptbPasta.Location = new System.Drawing.Point(303, 25);
-            this.ptbPasta.Margin = new System.Windows.Forms.Padding(0, 25, 0, 0);
-            this.ptbPasta.Name = "ptbPasta";
-            this.ptbPasta.Size = new System.Drawing.Size(70, 55);
-            this.ptbPasta.TabIndex = 12;
-            this.ptbPasta.TabStop = false;
-            this.ptbPasta.Click += new System.EventHandler(this.ptbPasta_Click);
+            ptbPasta.BackColor = Color.White;
+            ptbPasta.Cursor = Cursors.Hand;
+            ptbPasta.Dock = DockStyle.Fill;
+            ptbPasta.Image = Properties.Resources.Pasta;
+            ptbPasta.Location = new Point(303, 25);
+            ptbPasta.Margin = new Padding(0, 25, 0, 0);
+            ptbPasta.Name = "ptbPasta";
+            ptbPasta.Size = new Size(70, 55);
+            ptbPasta.TabIndex = 12;
+            ptbPasta.TabStop = false;
+            ptbPasta.Click += ptbPasta_Click;
             // 
             // ptbSalvar
             // 
-            this.ptbSalvar.BackColor = System.Drawing.Color.White;
-            this.ptbSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbSalvar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbSalvar.Image = global::InventarioTI.Properties.Resources.Salvar;
-            this.ptbSalvar.Location = new System.Drawing.Point(853, 9);
-            this.ptbSalvar.Margin = new System.Windows.Forms.Padding(6, 9, 3, 3);
-            this.ptbSalvar.Name = "ptbSalvar";
-            this.ptbSalvar.Size = new System.Drawing.Size(157, 68);
-            this.ptbSalvar.TabIndex = 13;
-            this.ptbSalvar.TabStop = false;
-            this.ptbSalvar.Click += new System.EventHandler(this.ptbSalvar_Click);
+            ptbSalvar.BackColor = Color.White;
+            ptbSalvar.Cursor = Cursors.Hand;
+            ptbSalvar.Dock = DockStyle.Fill;
+            ptbSalvar.Image = Properties.Resources.Salvar;
+            ptbSalvar.Location = new Point(853, 9);
+            ptbSalvar.Margin = new Padding(6, 9, 3, 3);
+            ptbSalvar.Name = "ptbSalvar";
+            ptbSalvar.Size = new Size(157, 68);
+            ptbSalvar.TabIndex = 13;
+            ptbSalvar.TabStop = false;
+            ptbSalvar.Click += ptbSalvar_Click;
             // 
             // txbProcessadores
             // 
-            this.txbProcessadores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbProcessadores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbProcessadores.Location = new System.Drawing.Point(10, 29);
-            this.txbProcessadores.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.txbProcessadores.Name = "txbProcessadores";
-            this.txbProcessadores.Size = new System.Drawing.Size(109, 23);
-            this.txbProcessadores.TabIndex = 10;
+            txbProcessadores.BorderStyle = BorderStyle.FixedSingle;
+            txbProcessadores.Dock = DockStyle.Fill;
+            txbProcessadores.Location = new Point(10, 29);
+            txbProcessadores.Margin = new Padding(10, 0, 3, 0);
+            txbProcessadores.Name = "txbProcessadores";
+            txbProcessadores.Size = new Size(109, 23);
+            txbProcessadores.TabIndex = 10;
             // 
             // lblProcessador
             // 
-            this.lblProcessador.AutoSize = true;
-            this.lblProcessador.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblProcessador.Location = new System.Drawing.Point(10, 14);
-            this.lblProcessador.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.lblProcessador.Name = "lblProcessador";
-            this.lblProcessador.Size = new System.Drawing.Size(109, 15);
-            this.lblProcessador.TabIndex = 14;
-            this.lblProcessador.Text = "Processador";
+            lblProcessador.AutoSize = true;
+            lblProcessador.Dock = DockStyle.Bottom;
+            lblProcessador.Location = new Point(10, 14);
+            lblProcessador.Margin = new Padding(10, 0, 3, 0);
+            lblProcessador.Name = "lblProcessador";
+            lblProcessador.Size = new Size(109, 15);
+            lblProcessador.TabIndex = 14;
+            lblProcessador.Text = "Processador";
             // 
             // ptbProcessador
             // 
-            this.ptbProcessador.BackColor = System.Drawing.Color.White;
-            this.ptbProcessador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbProcessador.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ptbProcessador.Enabled = false;
-            this.ptbProcessador.Image = global::InventarioTI.Properties.Resources.AdicionarEquipamento;
-            this.ptbProcessador.Location = new System.Drawing.Point(125, 16);
-            this.ptbProcessador.Name = "ptbProcessador";
-            this.ptbProcessador.Size = new System.Drawing.Size(44, 40);
-            this.ptbProcessador.TabIndex = 16;
-            this.ptbProcessador.TabStop = false;
-            this.ptbProcessador.Click += new System.EventHandler(this.ptbProcessador_Click);
+            ptbProcessador.BackColor = Color.White;
+            ptbProcessador.Cursor = Cursors.Hand;
+            ptbProcessador.Dock = DockStyle.Bottom;
+            ptbProcessador.Enabled = false;
+            ptbProcessador.Image = Properties.Resources.AdicionarEquipamento;
+            ptbProcessador.Location = new Point(125, 16);
+            ptbProcessador.Name = "ptbProcessador";
+            ptbProcessador.Size = new Size(44, 40);
+            ptbProcessador.TabIndex = 16;
+            ptbProcessador.TabStop = false;
+            ptbProcessador.Click += ptbProcessador_Click;
             // 
             // ptbMemoria
             // 
-            this.ptbMemoria.BackColor = System.Drawing.Color.White;
-            this.ptbMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbMemoria.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ptbMemoria.Enabled = false;
-            this.ptbMemoria.Image = global::InventarioTI.Properties.Resources.AdicionarEquipamento;
-            this.ptbMemoria.Location = new System.Drawing.Point(84, 16);
-            this.ptbMemoria.Name = "ptbMemoria";
-            this.ptbMemoria.Size = new System.Drawing.Size(44, 40);
-            this.ptbMemoria.TabIndex = 19;
-            this.ptbMemoria.TabStop = false;
-            this.ptbMemoria.Click += new System.EventHandler(this.ptbMemoria_Click);
+            ptbMemoria.BackColor = Color.White;
+            ptbMemoria.Cursor = Cursors.Hand;
+            ptbMemoria.Dock = DockStyle.Bottom;
+            ptbMemoria.Enabled = false;
+            ptbMemoria.Image = Properties.Resources.AdicionarEquipamento;
+            ptbMemoria.Location = new Point(84, 16);
+            ptbMemoria.Name = "ptbMemoria";
+            ptbMemoria.Size = new Size(44, 40);
+            ptbMemoria.TabIndex = 19;
+            ptbMemoria.TabStop = false;
+            ptbMemoria.Click += ptbMemoria_Click;
             // 
             // txbMemorias
             // 
-            this.txbMemorias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbMemorias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbMemorias.Location = new System.Drawing.Point(10, 29);
-            this.txbMemorias.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.txbMemorias.Name = "txbMemorias";
-            this.txbMemorias.Size = new System.Drawing.Size(68, 23);
-            this.txbMemorias.TabIndex = 11;
+            txbMemorias.BorderStyle = BorderStyle.FixedSingle;
+            txbMemorias.Dock = DockStyle.Fill;
+            txbMemorias.Location = new Point(10, 29);
+            txbMemorias.Margin = new Padding(10, 0, 3, 0);
+            txbMemorias.Name = "txbMemorias";
+            txbMemorias.Size = new Size(68, 23);
+            txbMemorias.TabIndex = 11;
             // 
             // lblMemoria
             // 
-            this.lblMemoria.AutoSize = true;
-            this.lblMemoria.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblMemoria.Location = new System.Drawing.Point(10, 14);
-            this.lblMemoria.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.lblMemoria.Name = "lblMemoria";
-            this.lblMemoria.Size = new System.Drawing.Size(68, 15);
-            this.lblMemoria.TabIndex = 17;
-            this.lblMemoria.Text = "Memória";
+            lblMemoria.AutoSize = true;
+            lblMemoria.Dock = DockStyle.Bottom;
+            lblMemoria.Location = new Point(10, 14);
+            lblMemoria.Margin = new Padding(10, 0, 3, 0);
+            lblMemoria.Name = "lblMemoria";
+            lblMemoria.Size = new Size(68, 15);
+            lblMemoria.TabIndex = 17;
+            lblMemoria.Text = "Memória";
             // 
             // txbTipo
             // 
-            this.txbTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbTipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbTipo.Location = new System.Drawing.Point(20, 29);
-            this.txbTipo.Margin = new System.Windows.Forms.Padding(20, 0, 3, 0);
-            this.txbTipo.Name = "txbTipo";
-            this.txbTipo.Size = new System.Drawing.Size(83, 23);
-            this.txbTipo.TabIndex = 7;
+            txbTipo.BorderStyle = BorderStyle.FixedSingle;
+            txbTipo.Dock = DockStyle.Fill;
+            txbTipo.Location = new Point(20, 29);
+            txbTipo.Margin = new Padding(20, 0, 3, 0);
+            txbTipo.Name = "txbTipo";
+            txbTipo.Size = new Size(83, 23);
+            txbTipo.TabIndex = 7;
             // 
             // lblTipo
             // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblTipo.Location = new System.Drawing.Point(20, 14);
-            this.lblTipo.Margin = new System.Windows.Forms.Padding(20, 0, 3, 0);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(83, 15);
-            this.lblTipo.TabIndex = 20;
-            this.lblTipo.Text = "Tipo";
+            lblTipo.AutoSize = true;
+            lblTipo.Dock = DockStyle.Bottom;
+            lblTipo.Location = new Point(20, 14);
+            lblTipo.Margin = new Padding(20, 0, 3, 0);
+            lblTipo.Name = "lblTipo";
+            lblTipo.Size = new Size(83, 15);
+            lblTipo.TabIndex = 20;
+            lblTipo.Text = "Tipo";
             // 
             // txbMarca
             // 
-            this.txbMarca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbMarca.Location = new System.Drawing.Point(3, 29);
-            this.txbMarca.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbMarca.Name = "txbMarca";
-            this.txbMarca.Size = new System.Drawing.Size(93, 23);
-            this.txbMarca.TabIndex = 8;
+            txbMarca.BorderStyle = BorderStyle.FixedSingle;
+            txbMarca.Dock = DockStyle.Fill;
+            txbMarca.Location = new Point(3, 29);
+            txbMarca.Margin = new Padding(3, 0, 3, 0);
+            txbMarca.Name = "txbMarca";
+            txbMarca.Size = new Size(93, 23);
+            txbMarca.TabIndex = 8;
             // 
             // lblMarca
             // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblMarca.Location = new System.Drawing.Point(3, 14);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(93, 15);
-            this.lblMarca.TabIndex = 22;
-            this.lblMarca.Text = "Marca";
+            lblMarca.AutoSize = true;
+            lblMarca.Dock = DockStyle.Bottom;
+            lblMarca.Location = new Point(3, 14);
+            lblMarca.Name = "lblMarca";
+            lblMarca.Size = new Size(93, 15);
+            lblMarca.TabIndex = 22;
+            lblMarca.Text = "Marca";
             // 
             // txbModelo
             // 
-            this.txbModelo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbModelo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbModelo.Location = new System.Drawing.Point(3, 29);
-            this.txbModelo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbModelo.Name = "txbModelo";
-            this.txbModelo.Size = new System.Drawing.Size(93, 23);
-            this.txbModelo.TabIndex = 9;
+            txbModelo.BorderStyle = BorderStyle.FixedSingle;
+            txbModelo.Dock = DockStyle.Fill;
+            txbModelo.Location = new Point(3, 29);
+            txbModelo.Margin = new Padding(3, 0, 3, 0);
+            txbModelo.Name = "txbModelo";
+            txbModelo.Size = new Size(93, 23);
+            txbModelo.TabIndex = 9;
             // 
             // lblModelo
             // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblModelo.Location = new System.Drawing.Point(3, 14);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(93, 15);
-            this.lblModelo.TabIndex = 24;
-            this.lblModelo.Text = "Modelo";
+            lblModelo.AutoSize = true;
+            lblModelo.Dock = DockStyle.Bottom;
+            lblModelo.Location = new Point(3, 14);
+            lblModelo.Name = "lblModelo";
+            lblModelo.Size = new Size(93, 15);
+            lblModelo.TabIndex = 24;
+            lblModelo.Text = "Modelo";
             // 
             // ptbTMM
             // 
-            this.ptbTMM.BackColor = System.Drawing.Color.White;
-            this.ptbTMM.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbTMM.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ptbTMM.Enabled = false;
-            this.ptbTMM.Image = global::InventarioTI.Properties.Resources.AdicionarEquipamento;
-            this.ptbTMM.Location = new System.Drawing.Point(307, 16);
-            this.ptbTMM.Name = "ptbTMM";
-            this.ptbTMM.Size = new System.Drawing.Size(44, 40);
-            this.ptbTMM.TabIndex = 26;
-            this.ptbTMM.TabStop = false;
-            this.ptbTMM.Click += new System.EventHandler(this.ptbTMM_Click);
+            ptbTMM.BackColor = Color.White;
+            ptbTMM.Cursor = Cursors.Hand;
+            ptbTMM.Dock = DockStyle.Bottom;
+            ptbTMM.Enabled = false;
+            ptbTMM.Image = Properties.Resources.AdicionarEquipamento;
+            ptbTMM.Location = new Point(307, 16);
+            ptbTMM.Name = "ptbTMM";
+            ptbTMM.Size = new Size(44, 40);
+            ptbTMM.TabIndex = 26;
+            ptbTMM.TabStop = false;
+            ptbTMM.Click += ptbTMM_Click;
             // 
             // dgvProcessadores
             // 
-            this.dgvProcessadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProcessadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProcessadorP,
-            this.ExP});
-            this.dgvProcessadores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProcessadores.Enabled = false;
-            this.dgvProcessadores.Location = new System.Drawing.Point(364, 62);
-            this.dgvProcessadores.Margin = new System.Windows.Forms.Padding(10, 3, 10, 51);
-            this.dgvProcessadores.Name = "dgvProcessadores";
-            this.dgvProcessadores.RowHeadersWidth = 62;
-            this.dgvProcessadores.RowTemplate.Height = 25;
-            this.dgvProcessadores.Size = new System.Drawing.Size(152, 117);
-            this.dgvProcessadores.TabIndex = 28;
-            this.dgvProcessadores.TabStop = false;
-            this.dgvProcessadores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcessadores_CellContentClick);
+            dgvProcessadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProcessadores.Columns.AddRange(new DataGridViewColumn[] { ProcessadorP, ExP });
+            dgvProcessadores.Dock = DockStyle.Fill;
+            dgvProcessadores.Enabled = false;
+            dgvProcessadores.Location = new Point(364, 62);
+            dgvProcessadores.Margin = new Padding(10, 3, 10, 51);
+            dgvProcessadores.Name = "dgvProcessadores";
+            dgvProcessadores.RowHeadersWidth = 62;
+            dgvProcessadores.RowTemplate.Height = 25;
+            dgvProcessadores.Size = new Size(152, 117);
+            dgvProcessadores.TabIndex = 28;
+            dgvProcessadores.TabStop = false;
+            dgvProcessadores.CellContentClick += dgvProcessadores_CellContentClick;
             // 
             // ProcessadorP
             // 
-            this.ProcessadorP.DataPropertyName = "TIPO";
-            this.ProcessadorP.HeaderText = "PROCESSADOR";
-            this.ProcessadorP.Name = "ProcessadorP";
+            ProcessadorP.DataPropertyName = "TIPO";
+            ProcessadorP.HeaderText = "PROCESSADOR";
+            ProcessadorP.Name = "ProcessadorP";
             // 
             // ExP
             // 
-            this.ExP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ExP.HeaderText = "EXCLUIR";
-            this.ExP.Image = global::InventarioTI.Properties.Resources.Lixeira20;
-            this.ExP.MinimumWidth = 8;
-            this.ExP.Name = "ExP";
-            this.ExP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ExP.Width = 60;
+            ExP.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ExP.HeaderText = "EXCLUIR";
+            ExP.Image = Properties.Resources.Lixeira20;
+            ExP.MinimumWidth = 8;
+            ExP.Name = "ExP";
+            ExP.Resizable = DataGridViewTriState.True;
+            ExP.SortMode = DataGridViewColumnSortMode.Automatic;
+            ExP.Width = 60;
             // 
             // dgvMemorias
             // 
-            this.dgvMemorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMemorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.memoriaM,
-            this.ExM});
-            this.dgvMemorias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMemorias.Enabled = false;
-            this.dgvMemorias.Location = new System.Drawing.Point(536, 62);
-            this.dgvMemorias.Margin = new System.Windows.Forms.Padding(10, 3, 10, 51);
-            this.dgvMemorias.Name = "dgvMemorias";
-            this.dgvMemorias.RowHeadersWidth = 62;
-            this.dgvMemorias.RowTemplate.Height = 25;
-            this.dgvMemorias.Size = new System.Drawing.Size(111, 117);
-            this.dgvMemorias.TabIndex = 29;
-            this.dgvMemorias.TabStop = false;
-            this.dgvMemorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemorias_CellContentClick);
+            dgvMemorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMemorias.Columns.AddRange(new DataGridViewColumn[] { memoriaM, ExM });
+            dgvMemorias.Dock = DockStyle.Fill;
+            dgvMemorias.Enabled = false;
+            dgvMemorias.Location = new Point(536, 62);
+            dgvMemorias.Margin = new Padding(10, 3, 10, 51);
+            dgvMemorias.Name = "dgvMemorias";
+            dgvMemorias.RowHeadersWidth = 62;
+            dgvMemorias.RowTemplate.Height = 25;
+            dgvMemorias.Size = new Size(111, 117);
+            dgvMemorias.TabIndex = 29;
+            dgvMemorias.TabStop = false;
+            dgvMemorias.CellContentClick += dgvMemorias_CellContentClick;
             // 
             // memoriaM
             // 
-            this.memoriaM.DataPropertyName = "RAM";
-            this.memoriaM.HeaderText = "MEMÓRIA";
-            this.memoriaM.Name = "memoriaM";
+            memoriaM.DataPropertyName = "RAM";
+            memoriaM.HeaderText = "MEMÓRIA";
+            memoriaM.Name = "memoriaM";
             // 
             // ExM
             // 
-            this.ExM.HeaderText = "EXCLUIR";
-            this.ExM.Image = global::InventarioTI.Properties.Resources.Lixeira20;
-            this.ExM.MinimumWidth = 8;
-            this.ExM.Name = "ExM";
-            this.ExM.Width = 150;
+            ExM.HeaderText = "EXCLUIR";
+            ExM.Image = Properties.Resources.Lixeira20;
+            ExM.MinimumWidth = 8;
+            ExM.Name = "ExM";
+            ExM.Width = 150;
             // 
             // tlpBak0
             // 
-            this.tlpBak0.ColumnCount = 1;
-            this.tlpBak0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBak0.Controls.Add(this.tlpMeio, 0, 1);
-            this.tlpBak0.Controls.Add(this.tlpTop, 0, 0);
-            this.tlpBak0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBak0.Location = new System.Drawing.Point(0, 0);
-            this.tlpBak0.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBak0.Name = "tlpBak0";
-            this.tlpBak0.RowCount = 2;
-            this.tlpBak0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
-            this.tlpBak0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74F));
-            this.tlpBak0.Size = new System.Drawing.Size(1013, 310);
-            this.tlpBak0.TabIndex = 1;
+            tlpBak0.ColumnCount = 1;
+            tlpBak0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBak0.Controls.Add(tlpMeio, 0, 1);
+            tlpBak0.Controls.Add(tlpTop, 0, 0);
+            tlpBak0.Dock = DockStyle.Fill;
+            tlpBak0.Location = new Point(0, 0);
+            tlpBak0.Margin = new Padding(0);
+            tlpBak0.Name = "tlpBak0";
+            tlpBak0.RowCount = 2;
+            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
+            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 74F));
+            tlpBak0.Size = new Size(1013, 310);
+            tlpBak0.TabIndex = 1;
             // 
             // tlpMeio
             // 
-            this.tlpMeio.ColumnCount = 4;
-            this.tlpMeio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tlpMeio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
-            this.tlpMeio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
-            this.tlpMeio.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tlpMeio.Controls.Add(this.dgvUnidade, 3, 1);
-            this.tlpMeio.Controls.Add(this.tlpBottonU, 3, 0);
-            this.tlpMeio.Controls.Add(this.tlpBotton2, 2, 0);
-            this.tlpMeio.Controls.Add(this.tlpBotton0, 0, 0);
-            this.tlpMeio.Controls.Add(this.tlpBotton1, 1, 0);
-            this.tlpMeio.Controls.Add(this.dgvMemorias, 2, 1);
-            this.tlpMeio.Controls.Add(this.dgvProcessadores, 1, 1);
-            this.tlpMeio.Controls.Add(this.dgvTMM, 0, 1);
-            this.tlpMeio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMeio.Location = new System.Drawing.Point(0, 80);
-            this.tlpMeio.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpMeio.Name = "tlpMeio";
-            this.tlpMeio.RowCount = 2;
-            this.tlpMeio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
-            this.tlpMeio.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74F));
-            this.tlpMeio.Size = new System.Drawing.Size(1013, 230);
-            this.tlpMeio.TabIndex = 1;
+            tlpMeio.ColumnCount = 4;
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tlpMeio.Controls.Add(dgvUnidade, 3, 1);
+            tlpMeio.Controls.Add(tlpBottonU, 3, 0);
+            tlpMeio.Controls.Add(tlpBotton2, 2, 0);
+            tlpMeio.Controls.Add(tlpBotton0, 0, 0);
+            tlpMeio.Controls.Add(tlpBotton1, 1, 0);
+            tlpMeio.Controls.Add(dgvMemorias, 2, 1);
+            tlpMeio.Controls.Add(dgvProcessadores, 1, 1);
+            tlpMeio.Controls.Add(dgvTMM, 0, 1);
+            tlpMeio.Dock = DockStyle.Fill;
+            tlpMeio.Location = new Point(0, 80);
+            tlpMeio.Margin = new Padding(0);
+            tlpMeio.Name = "tlpMeio";
+            tlpMeio.RowCount = 2;
+            tlpMeio.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
+            tlpMeio.RowStyles.Add(new RowStyle(SizeType.Percent, 74F));
+            tlpMeio.Size = new Size(1013, 230);
+            tlpMeio.TabIndex = 1;
             // 
             // dgvUnidade
             // 
-            this.dgvUnidade.AllowUserToAddRows = false;
-            this.dgvUnidade.AllowUserToDeleteRows = false;
-            this.dgvUnidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUnidade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.regiaoUnidade,
-            this.ufUnidade,
-            this.nomeUnidade,
-            this.siglaUnidade,
-            this.ExU});
-            this.dgvUnidade.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUnidade.Enabled = false;
-            this.dgvUnidade.Location = new System.Drawing.Point(667, 62);
-            this.dgvUnidade.Margin = new System.Windows.Forms.Padding(10, 3, 20, 51);
-            this.dgvUnidade.Name = "dgvUnidade";
-            this.dgvUnidade.ReadOnly = true;
-            this.dgvUnidade.RowHeadersWidth = 62;
-            this.dgvUnidade.RowTemplate.Height = 25;
-            this.dgvUnidade.Size = new System.Drawing.Size(326, 117);
-            this.dgvUnidade.TabIndex = 28;
-            this.dgvUnidade.TabStop = false;
-            this.dgvUnidade.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnidade_CellContentClick);
+            dgvUnidade.AllowUserToAddRows = false;
+            dgvUnidade.AllowUserToDeleteRows = false;
+            dgvUnidade.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUnidade.Columns.AddRange(new DataGridViewColumn[] { regiaoUnidade, ufUnidade, nomeUnidade, siglaUnidade, ExU });
+            dgvUnidade.Dock = DockStyle.Fill;
+            dgvUnidade.Enabled = false;
+            dgvUnidade.Location = new Point(667, 62);
+            dgvUnidade.Margin = new Padding(10, 3, 20, 51);
+            dgvUnidade.Name = "dgvUnidade";
+            dgvUnidade.ReadOnly = true;
+            dgvUnidade.RowHeadersWidth = 62;
+            dgvUnidade.RowTemplate.Height = 25;
+            dgvUnidade.Size = new Size(326, 117);
+            dgvUnidade.TabIndex = 28;
+            dgvUnidade.TabStop = false;
+            dgvUnidade.CellContentClick += dgvUnidade_CellContentClick;
             // 
             // regiaoUnidade
             // 
-            this.regiaoUnidade.DataPropertyName = "REGIAO";
-            this.regiaoUnidade.HeaderText = "REGIÃO";
-            this.regiaoUnidade.Name = "regiaoUnidade";
-            this.regiaoUnidade.ReadOnly = true;
+            regiaoUnidade.DataPropertyName = "REGIAO";
+            regiaoUnidade.HeaderText = "REGIÃO";
+            regiaoUnidade.Name = "regiaoUnidade";
+            regiaoUnidade.ReadOnly = true;
             // 
             // ufUnidade
             // 
-            this.ufUnidade.DataPropertyName = "UF";
-            this.ufUnidade.HeaderText = "UF";
-            this.ufUnidade.Name = "ufUnidade";
-            this.ufUnidade.ReadOnly = true;
+            ufUnidade.DataPropertyName = "UF";
+            ufUnidade.HeaderText = "UF";
+            ufUnidade.Name = "ufUnidade";
+            ufUnidade.ReadOnly = true;
             // 
             // nomeUnidade
             // 
-            this.nomeUnidade.DataPropertyName = "NOME";
-            this.nomeUnidade.HeaderText = "NOME";
-            this.nomeUnidade.Name = "nomeUnidade";
-            this.nomeUnidade.ReadOnly = true;
+            nomeUnidade.DataPropertyName = "NOME";
+            nomeUnidade.HeaderText = "NOME";
+            nomeUnidade.Name = "nomeUnidade";
+            nomeUnidade.ReadOnly = true;
             // 
             // siglaUnidade
             // 
-            this.siglaUnidade.DataPropertyName = "SIGLA";
-            this.siglaUnidade.HeaderText = "SIGLA";
-            this.siglaUnidade.Name = "siglaUnidade";
-            this.siglaUnidade.ReadOnly = true;
+            siglaUnidade.DataPropertyName = "SIGLA";
+            siglaUnidade.HeaderText = "SIGLA";
+            siglaUnidade.Name = "siglaUnidade";
+            siglaUnidade.ReadOnly = true;
             // 
             // ExU
             // 
-            this.ExU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ExU.HeaderText = "EXCLUIR";
-            this.ExU.Image = global::InventarioTI.Properties.Resources.Lixeira20;
-            this.ExU.MinimumWidth = 8;
-            this.ExU.Name = "ExU";
-            this.ExU.ReadOnly = true;
-            this.ExU.Width = 60;
+            ExU.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ExU.HeaderText = "EXCLUIR";
+            ExU.Image = Properties.Resources.Lixeira20;
+            ExU.MinimumWidth = 8;
+            ExU.Name = "ExU";
+            ExU.ReadOnly = true;
+            ExU.Width = 60;
             // 
             // tlpBottonU
             // 
-            this.tlpBottonU.ColumnCount = 5;
-            this.tlpBottonU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24F));
-            this.tlpBottonU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpBottonU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tlpBottonU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tlpBottonU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tlpBottonU.Controls.Add(this.tlpBottonU1, 0, 0);
-            this.tlpBottonU.Controls.Add(this.tlpBottonU0, 0, 0);
-            this.tlpBottonU.Controls.Add(this.tlpBottonU3, 2, 0);
-            this.tlpBottonU.Controls.Add(this.tlpBottonU2, 1, 0);
-            this.tlpBottonU.Controls.Add(this.ptbUnidade, 4, 0);
-            this.tlpBottonU.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonU.Location = new System.Drawing.Point(657, 0);
-            this.tlpBottonU.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonU.Name = "tlpBottonU";
-            this.tlpBottonU.RowCount = 1;
-            this.tlpBottonU.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU.Size = new System.Drawing.Size(356, 59);
-            this.tlpBottonU.TabIndex = 1;
+            tlpBottonU.ColumnCount = 5;
+            tlpBottonU.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24F));
+            tlpBottonU.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tlpBottonU.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34F));
+            tlpBottonU.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16F));
+            tlpBottonU.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16F));
+            tlpBottonU.Controls.Add(tlpBottonU1, 0, 0);
+            tlpBottonU.Controls.Add(tlpBottonU0, 0, 0);
+            tlpBottonU.Controls.Add(tlpBottonU3, 2, 0);
+            tlpBottonU.Controls.Add(tlpBottonU2, 1, 0);
+            tlpBottonU.Controls.Add(ptbUnidade, 4, 0);
+            tlpBottonU.Dock = DockStyle.Fill;
+            tlpBottonU.Location = new Point(657, 0);
+            tlpBottonU.Margin = new Padding(0);
+            tlpBottonU.Name = "tlpBottonU";
+            tlpBottonU.RowCount = 1;
+            tlpBottonU.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonU.Size = new Size(356, 59);
+            tlpBottonU.TabIndex = 1;
             // 
             // tlpBottonU1
             // 
-            this.tlpBottonU1.ColumnCount = 1;
-            this.tlpBottonU1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU1.Controls.Add(this.lblUF, 0, 0);
-            this.tlpBottonU1.Controls.Add(this.txbUF, 0, 1);
-            this.tlpBottonU1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonU1.Location = new System.Drawing.Point(85, 0);
-            this.tlpBottonU1.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonU1.Name = "tlpBottonU1";
-            this.tlpBottonU1.RowCount = 2;
-            this.tlpBottonU1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonU1.Size = new System.Drawing.Size(35, 59);
-            this.tlpBottonU1.TabIndex = 1;
+            tlpBottonU1.ColumnCount = 1;
+            tlpBottonU1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonU1.Controls.Add(lblUF, 0, 0);
+            tlpBottonU1.Controls.Add(txbUF, 0, 1);
+            tlpBottonU1.Dock = DockStyle.Fill;
+            tlpBottonU1.Location = new Point(85, 0);
+            tlpBottonU1.Margin = new Padding(0);
+            tlpBottonU1.Name = "tlpBottonU1";
+            tlpBottonU1.RowCount = 2;
+            tlpBottonU1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonU1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonU1.Size = new Size(35, 59);
+            tlpBottonU1.TabIndex = 1;
             // 
             // lblUF
             // 
-            this.lblUF.AutoSize = true;
-            this.lblUF.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUF.Location = new System.Drawing.Point(3, 14);
-            this.lblUF.Name = "lblUF";
-            this.lblUF.Size = new System.Drawing.Size(29, 15);
-            this.lblUF.TabIndex = 24;
-            this.lblUF.Text = "UF";
+            lblUF.AutoSize = true;
+            lblUF.Dock = DockStyle.Bottom;
+            lblUF.Location = new Point(3, 14);
+            lblUF.Name = "lblUF";
+            lblUF.Size = new Size(29, 15);
+            lblUF.TabIndex = 24;
+            lblUF.Text = "UF";
             // 
             // txbUF
             // 
-            this.txbUF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbUF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbUF.Location = new System.Drawing.Point(3, 29);
-            this.txbUF.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbUF.Name = "txbUF";
-            this.txbUF.Size = new System.Drawing.Size(29, 23);
-            this.txbUF.TabIndex = 13;
+            txbUF.BorderStyle = BorderStyle.FixedSingle;
+            txbUF.Dock = DockStyle.Fill;
+            txbUF.Location = new Point(3, 29);
+            txbUF.Margin = new Padding(3, 0, 3, 0);
+            txbUF.Name = "txbUF";
+            txbUF.Size = new Size(29, 23);
+            txbUF.TabIndex = 13;
             // 
             // tlpBottonU0
             // 
-            this.tlpBottonU0.ColumnCount = 1;
-            this.tlpBottonU0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU0.Controls.Add(this.lblRegiao, 0, 0);
-            this.tlpBottonU0.Controls.Add(this.txbRegiao, 0, 1);
-            this.tlpBottonU0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonU0.Location = new System.Drawing.Point(0, 0);
-            this.tlpBottonU0.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonU0.Name = "tlpBottonU0";
-            this.tlpBottonU0.RowCount = 2;
-            this.tlpBottonU0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonU0.Size = new System.Drawing.Size(85, 59);
-            this.tlpBottonU0.TabIndex = 1;
+            tlpBottonU0.ColumnCount = 1;
+            tlpBottonU0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonU0.Controls.Add(lblRegiao, 0, 0);
+            tlpBottonU0.Controls.Add(txbRegiao, 0, 1);
+            tlpBottonU0.Dock = DockStyle.Fill;
+            tlpBottonU0.Location = new Point(0, 0);
+            tlpBottonU0.Margin = new Padding(0);
+            tlpBottonU0.Name = "tlpBottonU0";
+            tlpBottonU0.RowCount = 2;
+            tlpBottonU0.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonU0.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonU0.Size = new Size(85, 59);
+            tlpBottonU0.TabIndex = 1;
             // 
             // lblRegiao
             // 
-            this.lblRegiao.AutoSize = true;
-            this.lblRegiao.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblRegiao.Location = new System.Drawing.Point(10, 14);
-            this.lblRegiao.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.lblRegiao.Name = "lblRegiao";
-            this.lblRegiao.Size = new System.Drawing.Size(72, 15);
-            this.lblRegiao.TabIndex = 20;
-            this.lblRegiao.Text = "Região";
+            lblRegiao.AutoSize = true;
+            lblRegiao.Dock = DockStyle.Bottom;
+            lblRegiao.Location = new Point(10, 14);
+            lblRegiao.Margin = new Padding(10, 0, 3, 0);
+            lblRegiao.Name = "lblRegiao";
+            lblRegiao.Size = new Size(72, 15);
+            lblRegiao.TabIndex = 20;
+            lblRegiao.Text = "Região";
             // 
             // txbRegiao
             // 
-            this.txbRegiao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbRegiao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbRegiao.Location = new System.Drawing.Point(10, 29);
-            this.txbRegiao.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.txbRegiao.Name = "txbRegiao";
-            this.txbRegiao.Size = new System.Drawing.Size(72, 23);
-            this.txbRegiao.TabIndex = 12;
+            txbRegiao.BorderStyle = BorderStyle.FixedSingle;
+            txbRegiao.Dock = DockStyle.Fill;
+            txbRegiao.Location = new Point(10, 29);
+            txbRegiao.Margin = new Padding(10, 0, 3, 0);
+            txbRegiao.Name = "txbRegiao";
+            txbRegiao.Size = new Size(72, 23);
+            txbRegiao.TabIndex = 12;
             // 
             // tlpBottonU3
             // 
-            this.tlpBottonU3.ColumnCount = 1;
-            this.tlpBottonU3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU3.Controls.Add(this.lblSigla, 0, 0);
-            this.tlpBottonU3.Controls.Add(this.txbSigla, 0, 1);
-            this.tlpBottonU3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonU3.Location = new System.Drawing.Point(241, 0);
-            this.tlpBottonU3.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonU3.Name = "tlpBottonU3";
-            this.tlpBottonU3.RowCount = 2;
-            this.tlpBottonU3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonU3.Size = new System.Drawing.Size(56, 59);
-            this.tlpBottonU3.TabIndex = 1;
+            tlpBottonU3.ColumnCount = 1;
+            tlpBottonU3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonU3.Controls.Add(lblSigla, 0, 0);
+            tlpBottonU3.Controls.Add(txbSigla, 0, 1);
+            tlpBottonU3.Dock = DockStyle.Fill;
+            tlpBottonU3.Location = new Point(241, 0);
+            tlpBottonU3.Margin = new Padding(0);
+            tlpBottonU3.Name = "tlpBottonU3";
+            tlpBottonU3.RowCount = 2;
+            tlpBottonU3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonU3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonU3.Size = new Size(56, 59);
+            tlpBottonU3.TabIndex = 1;
             // 
             // lblSigla
             // 
-            this.lblSigla.AutoSize = true;
-            this.lblSigla.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblSigla.Location = new System.Drawing.Point(3, 14);
-            this.lblSigla.Name = "lblSigla";
-            this.lblSigla.Size = new System.Drawing.Size(50, 15);
-            this.lblSigla.TabIndex = 24;
-            this.lblSigla.Text = "Sigla";
+            lblSigla.AutoSize = true;
+            lblSigla.Dock = DockStyle.Bottom;
+            lblSigla.Location = new Point(3, 14);
+            lblSigla.Name = "lblSigla";
+            lblSigla.Size = new Size(50, 15);
+            lblSigla.TabIndex = 24;
+            lblSigla.Text = "Sigla";
             // 
             // txbSigla
             // 
-            this.txbSigla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbSigla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbSigla.Location = new System.Drawing.Point(3, 29);
-            this.txbSigla.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbSigla.Name = "txbSigla";
-            this.txbSigla.Size = new System.Drawing.Size(50, 23);
-            this.txbSigla.TabIndex = 15;
+            txbSigla.BorderStyle = BorderStyle.FixedSingle;
+            txbSigla.Dock = DockStyle.Fill;
+            txbSigla.Location = new Point(3, 29);
+            txbSigla.Margin = new Padding(3, 0, 3, 0);
+            txbSigla.Name = "txbSigla";
+            txbSigla.Size = new Size(50, 23);
+            txbSigla.TabIndex = 15;
             // 
             // tlpBottonU2
             // 
-            this.tlpBottonU2.ColumnCount = 1;
-            this.tlpBottonU2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU2.Controls.Add(this.lblNomeU, 0, 0);
-            this.tlpBottonU2.Controls.Add(this.txbNome, 0, 1);
-            this.tlpBottonU2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonU2.Location = new System.Drawing.Point(120, 0);
-            this.tlpBottonU2.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonU2.Name = "tlpBottonU2";
-            this.tlpBottonU2.RowCount = 2;
-            this.tlpBottonU2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonU2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonU2.Size = new System.Drawing.Size(121, 59);
-            this.tlpBottonU2.TabIndex = 1;
+            tlpBottonU2.ColumnCount = 1;
+            tlpBottonU2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonU2.Controls.Add(lblNomeU, 0, 0);
+            tlpBottonU2.Controls.Add(txbNome, 0, 1);
+            tlpBottonU2.Dock = DockStyle.Fill;
+            tlpBottonU2.Location = new Point(120, 0);
+            tlpBottonU2.Margin = new Padding(0);
+            tlpBottonU2.Name = "tlpBottonU2";
+            tlpBottonU2.RowCount = 2;
+            tlpBottonU2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonU2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonU2.Size = new Size(121, 59);
+            tlpBottonU2.TabIndex = 1;
             // 
             // lblNomeU
             // 
-            this.lblNomeU.AutoSize = true;
-            this.lblNomeU.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblNomeU.Location = new System.Drawing.Point(3, 14);
-            this.lblNomeU.Name = "lblNomeU";
-            this.lblNomeU.Size = new System.Drawing.Size(115, 15);
-            this.lblNomeU.TabIndex = 22;
-            this.lblNomeU.Text = "Nome";
+            lblNomeU.AutoSize = true;
+            lblNomeU.Dock = DockStyle.Bottom;
+            lblNomeU.Location = new Point(3, 14);
+            lblNomeU.Name = "lblNomeU";
+            lblNomeU.Size = new Size(115, 15);
+            lblNomeU.TabIndex = 22;
+            lblNomeU.Text = "Nome";
             // 
             // txbNome
             // 
-            this.txbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbNome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txbNome.Location = new System.Drawing.Point(3, 29);
-            this.txbNome.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(115, 23);
-            this.txbNome.TabIndex = 14;
+            txbNome.BorderStyle = BorderStyle.FixedSingle;
+            txbNome.Dock = DockStyle.Fill;
+            txbNome.Location = new Point(3, 29);
+            txbNome.Margin = new Padding(3, 0, 3, 0);
+            txbNome.Name = "txbNome";
+            txbNome.Size = new Size(115, 23);
+            txbNome.TabIndex = 14;
             // 
             // ptbUnidade
             // 
-            this.ptbUnidade.BackColor = System.Drawing.Color.White;
-            this.ptbUnidade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbUnidade.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ptbUnidade.Enabled = false;
-            this.ptbUnidade.Image = global::InventarioTI.Properties.Resources.AdicionarEquipamento;
-            this.ptbUnidade.Location = new System.Drawing.Point(300, 16);
-            this.ptbUnidade.Name = "ptbUnidade";
-            this.ptbUnidade.Size = new System.Drawing.Size(53, 40);
-            this.ptbUnidade.TabIndex = 26;
-            this.ptbUnidade.TabStop = false;
-            this.ptbUnidade.Click += new System.EventHandler(this.ptbUnidade_Click);
+            ptbUnidade.BackColor = Color.White;
+            ptbUnidade.Cursor = Cursors.Hand;
+            ptbUnidade.Dock = DockStyle.Bottom;
+            ptbUnidade.Enabled = false;
+            ptbUnidade.Image = Properties.Resources.AdicionarEquipamento;
+            ptbUnidade.Location = new Point(300, 16);
+            ptbUnidade.Name = "ptbUnidade";
+            ptbUnidade.Size = new Size(53, 40);
+            ptbUnidade.TabIndex = 26;
+            ptbUnidade.TabStop = false;
+            ptbUnidade.Click += ptbUnidade_Click;
             // 
             // tlpBotton2
             // 
-            this.tlpBotton2.ColumnCount = 2;
-            this.tlpBotton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62F));
-            this.tlpBotton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
-            this.tlpBotton2.Controls.Add(this.tlpBottonM, 0, 0);
-            this.tlpBotton2.Controls.Add(this.ptbMemoria, 1, 0);
-            this.tlpBotton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBotton2.Location = new System.Drawing.Point(526, 0);
-            this.tlpBotton2.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBotton2.Name = "tlpBotton2";
-            this.tlpBotton2.RowCount = 1;
-            this.tlpBotton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBotton2.Size = new System.Drawing.Size(131, 59);
-            this.tlpBotton2.TabIndex = 1;
+            tlpBotton2.ColumnCount = 2;
+            tlpBotton2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 62F));
+            tlpBotton2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38F));
+            tlpBotton2.Controls.Add(tlpBottonM, 0, 0);
+            tlpBotton2.Controls.Add(ptbMemoria, 1, 0);
+            tlpBotton2.Dock = DockStyle.Fill;
+            tlpBotton2.Location = new Point(526, 0);
+            tlpBotton2.Margin = new Padding(0);
+            tlpBotton2.Name = "tlpBotton2";
+            tlpBotton2.RowCount = 1;
+            tlpBotton2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBotton2.Size = new Size(131, 59);
+            tlpBotton2.TabIndex = 1;
             // 
             // tlpBottonM
             // 
-            this.tlpBottonM.ColumnCount = 1;
-            this.tlpBottonM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonM.Controls.Add(this.txbMemorias, 0, 1);
-            this.tlpBottonM.Controls.Add(this.lblMemoria, 0, 0);
-            this.tlpBottonM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonM.Location = new System.Drawing.Point(0, 0);
-            this.tlpBottonM.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonM.Name = "tlpBottonM";
-            this.tlpBottonM.RowCount = 2;
-            this.tlpBottonM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonM.Size = new System.Drawing.Size(81, 59);
-            this.tlpBottonM.TabIndex = 1;
+            tlpBottonM.ColumnCount = 1;
+            tlpBottonM.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonM.Controls.Add(txbMemorias, 0, 1);
+            tlpBottonM.Controls.Add(lblMemoria, 0, 0);
+            tlpBottonM.Dock = DockStyle.Fill;
+            tlpBottonM.Location = new Point(0, 0);
+            tlpBottonM.Margin = new Padding(0);
+            tlpBottonM.Name = "tlpBottonM";
+            tlpBottonM.RowCount = 2;
+            tlpBottonM.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonM.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonM.Size = new Size(81, 59);
+            tlpBottonM.TabIndex = 1;
             // 
             // tlpBotton0
             // 
-            this.tlpBotton0.ColumnCount = 4;
-            this.tlpBotton0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpBotton0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpBotton0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpBotton0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
-            this.tlpBotton0.Controls.Add(this.ptbTMM, 3, 0);
-            this.tlpBotton0.Controls.Add(this.tlpBottonT0, 0, 0);
-            this.tlpBotton0.Controls.Add(this.tlpBottonT2, 2, 0);
-            this.tlpBotton0.Controls.Add(this.tlpBottonT1, 1, 0);
-            this.tlpBotton0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBotton0.Location = new System.Drawing.Point(0, 0);
-            this.tlpBotton0.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBotton0.Name = "tlpBotton0";
-            this.tlpBotton0.RowCount = 1;
-            this.tlpBotton0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBotton0.Size = new System.Drawing.Size(354, 59);
-            this.tlpBotton0.TabIndex = 1;
+            tlpBotton0.ColumnCount = 4;
+            tlpBotton0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpBotton0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28F));
+            tlpBotton0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28F));
+            tlpBotton0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14F));
+            tlpBotton0.Controls.Add(ptbTMM, 3, 0);
+            tlpBotton0.Controls.Add(tlpBottonT0, 0, 0);
+            tlpBotton0.Controls.Add(tlpBottonT2, 2, 0);
+            tlpBotton0.Controls.Add(tlpBottonT1, 1, 0);
+            tlpBotton0.Dock = DockStyle.Fill;
+            tlpBotton0.Location = new Point(0, 0);
+            tlpBotton0.Margin = new Padding(0);
+            tlpBotton0.Name = "tlpBotton0";
+            tlpBotton0.RowCount = 1;
+            tlpBotton0.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBotton0.Size = new Size(354, 59);
+            tlpBotton0.TabIndex = 1;
             // 
             // tlpBottonT0
             // 
-            this.tlpBottonT0.ColumnCount = 1;
-            this.tlpBottonT0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonT0.Controls.Add(this.lblTipo, 0, 0);
-            this.tlpBottonT0.Controls.Add(this.txbTipo, 0, 1);
-            this.tlpBottonT0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonT0.Location = new System.Drawing.Point(0, 0);
-            this.tlpBottonT0.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonT0.Name = "tlpBottonT0";
-            this.tlpBottonT0.RowCount = 2;
-            this.tlpBottonT0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonT0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonT0.Size = new System.Drawing.Size(106, 59);
-            this.tlpBottonT0.TabIndex = 1;
+            tlpBottonT0.ColumnCount = 1;
+            tlpBottonT0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonT0.Controls.Add(lblTipo, 0, 0);
+            tlpBottonT0.Controls.Add(txbTipo, 0, 1);
+            tlpBottonT0.Dock = DockStyle.Fill;
+            tlpBottonT0.Location = new Point(0, 0);
+            tlpBottonT0.Margin = new Padding(0);
+            tlpBottonT0.Name = "tlpBottonT0";
+            tlpBottonT0.RowCount = 2;
+            tlpBottonT0.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonT0.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonT0.Size = new Size(106, 59);
+            tlpBottonT0.TabIndex = 1;
             // 
             // tlpBottonT2
             // 
-            this.tlpBottonT2.ColumnCount = 1;
-            this.tlpBottonT2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonT2.Controls.Add(this.lblModelo, 0, 0);
-            this.tlpBottonT2.Controls.Add(this.txbModelo, 0, 1);
-            this.tlpBottonT2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonT2.Location = new System.Drawing.Point(205, 0);
-            this.tlpBottonT2.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonT2.Name = "tlpBottonT2";
-            this.tlpBottonT2.RowCount = 2;
-            this.tlpBottonT2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonT2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonT2.Size = new System.Drawing.Size(99, 59);
-            this.tlpBottonT2.TabIndex = 3;
+            tlpBottonT2.ColumnCount = 1;
+            tlpBottonT2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonT2.Controls.Add(lblModelo, 0, 0);
+            tlpBottonT2.Controls.Add(txbModelo, 0, 1);
+            tlpBottonT2.Dock = DockStyle.Fill;
+            tlpBottonT2.Location = new Point(205, 0);
+            tlpBottonT2.Margin = new Padding(0);
+            tlpBottonT2.Name = "tlpBottonT2";
+            tlpBottonT2.RowCount = 2;
+            tlpBottonT2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonT2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonT2.Size = new Size(99, 59);
+            tlpBottonT2.TabIndex = 3;
             // 
             // tlpBottonT1
             // 
-            this.tlpBottonT1.ColumnCount = 1;
-            this.tlpBottonT1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonT1.Controls.Add(this.lblMarca, 0, 0);
-            this.tlpBottonT1.Controls.Add(this.txbMarca, 0, 1);
-            this.tlpBottonT1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonT1.Location = new System.Drawing.Point(106, 0);
-            this.tlpBottonT1.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonT1.Name = "tlpBottonT1";
-            this.tlpBottonT1.RowCount = 2;
-            this.tlpBottonT1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonT1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonT1.Size = new System.Drawing.Size(99, 59);
-            this.tlpBottonT1.TabIndex = 1;
+            tlpBottonT1.ColumnCount = 1;
+            tlpBottonT1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonT1.Controls.Add(lblMarca, 0, 0);
+            tlpBottonT1.Controls.Add(txbMarca, 0, 1);
+            tlpBottonT1.Dock = DockStyle.Fill;
+            tlpBottonT1.Location = new Point(106, 0);
+            tlpBottonT1.Margin = new Padding(0);
+            tlpBottonT1.Name = "tlpBottonT1";
+            tlpBottonT1.RowCount = 2;
+            tlpBottonT1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonT1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonT1.Size = new Size(99, 59);
+            tlpBottonT1.TabIndex = 1;
             // 
             // tlpBotton1
             // 
-            this.tlpBotton1.ColumnCount = 2;
-            this.tlpBotton1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71F));
-            this.tlpBotton1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29F));
-            this.tlpBotton1.Controls.Add(this.ptbProcessador, 1, 0);
-            this.tlpBotton1.Controls.Add(this.tlpBottonP, 0, 0);
-            this.tlpBotton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBotton1.Location = new System.Drawing.Point(354, 0);
-            this.tlpBotton1.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBotton1.Name = "tlpBotton1";
-            this.tlpBotton1.RowCount = 1;
-            this.tlpBotton1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBotton1.Size = new System.Drawing.Size(172, 59);
-            this.tlpBotton1.TabIndex = 1;
+            tlpBotton1.ColumnCount = 2;
+            tlpBotton1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 71F));
+            tlpBotton1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29F));
+            tlpBotton1.Controls.Add(ptbProcessador, 1, 0);
+            tlpBotton1.Controls.Add(tlpBottonP, 0, 0);
+            tlpBotton1.Dock = DockStyle.Fill;
+            tlpBotton1.Location = new Point(354, 0);
+            tlpBotton1.Margin = new Padding(0);
+            tlpBotton1.Name = "tlpBotton1";
+            tlpBotton1.RowCount = 1;
+            tlpBotton1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBotton1.Size = new Size(172, 59);
+            tlpBotton1.TabIndex = 1;
             // 
             // tlpBottonP
             // 
-            this.tlpBottonP.ColumnCount = 1;
-            this.tlpBottonP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonP.Controls.Add(this.txbProcessadores, 0, 1);
-            this.tlpBottonP.Controls.Add(this.lblProcessador, 0, 0);
-            this.tlpBottonP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottonP.Location = new System.Drawing.Point(0, 0);
-            this.tlpBottonP.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpBottonP.Name = "tlpBottonP";
-            this.tlpBottonP.RowCount = 2;
-            this.tlpBottonP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottonP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpBottonP.Size = new System.Drawing.Size(122, 59);
-            this.tlpBottonP.TabIndex = 1;
+            tlpBottonP.ColumnCount = 1;
+            tlpBottonP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBottonP.Controls.Add(txbProcessadores, 0, 1);
+            tlpBottonP.Controls.Add(lblProcessador, 0, 0);
+            tlpBottonP.Dock = DockStyle.Fill;
+            tlpBottonP.Location = new Point(0, 0);
+            tlpBottonP.Margin = new Padding(0);
+            tlpBottonP.Name = "tlpBottonP";
+            tlpBottonP.RowCount = 2;
+            tlpBottonP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpBottonP.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpBottonP.Size = new Size(122, 59);
+            tlpBottonP.TabIndex = 1;
             // 
             // dgvTMM
             // 
-            this.dgvTMM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTMM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tipoTMM,
-            this.marcaTMM,
-            this.modeloTMM,
-            this.ExT});
-            this.dgvTMM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTMM.Enabled = false;
-            this.dgvTMM.Location = new System.Drawing.Point(20, 62);
-            this.dgvTMM.Margin = new System.Windows.Forms.Padding(20, 3, 10, 51);
-            this.dgvTMM.Name = "dgvTMM";
-            this.dgvTMM.RowHeadersWidth = 62;
-            this.dgvTMM.RowTemplate.Height = 25;
-            this.dgvTMM.Size = new System.Drawing.Size(324, 117);
-            this.dgvTMM.TabIndex = 33;
-            this.dgvTMM.TabStop = false;
-            this.dgvTMM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTMM_CellContentClick);
+            dgvTMM.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTMM.Columns.AddRange(new DataGridViewColumn[] { tipoTMM, marcaTMM, modeloTMM, ExT });
+            dgvTMM.Dock = DockStyle.Fill;
+            dgvTMM.Enabled = false;
+            dgvTMM.Location = new Point(20, 62);
+            dgvTMM.Margin = new Padding(20, 3, 10, 51);
+            dgvTMM.Name = "dgvTMM";
+            dgvTMM.RowHeadersWidth = 62;
+            dgvTMM.RowTemplate.Height = 25;
+            dgvTMM.Size = new Size(324, 117);
+            dgvTMM.TabIndex = 33;
+            dgvTMM.TabStop = false;
+            dgvTMM.CellContentClick += dgvTMM_CellContentClick;
             // 
             // tipoTMM
             // 
-            this.tipoTMM.DataPropertyName = "TIPO";
-            this.tipoTMM.HeaderText = "TIPO";
-            this.tipoTMM.Name = "tipoTMM";
+            tipoTMM.DataPropertyName = "TIPO";
+            tipoTMM.HeaderText = "TIPO";
+            tipoTMM.Name = "tipoTMM";
             // 
             // marcaTMM
             // 
-            this.marcaTMM.DataPropertyName = "MARCA";
-            this.marcaTMM.HeaderText = "MARCA";
-            this.marcaTMM.Name = "marcaTMM";
+            marcaTMM.DataPropertyName = "MARCA";
+            marcaTMM.HeaderText = "MARCA";
+            marcaTMM.Name = "marcaTMM";
             // 
             // modeloTMM
             // 
-            this.modeloTMM.DataPropertyName = "MODELO";
-            this.modeloTMM.HeaderText = "MODELO";
-            this.modeloTMM.Name = "modeloTMM";
+            modeloTMM.DataPropertyName = "MODELO";
+            modeloTMM.HeaderText = "MODELO";
+            modeloTMM.Name = "modeloTMM";
             // 
             // ExT
             // 
-            this.ExT.HeaderText = "EXCLUIR";
-            this.ExT.Image = global::InventarioTI.Properties.Resources.Lixeira20;
-            this.ExT.MinimumWidth = 8;
-            this.ExT.Name = "ExT";
-            this.ExT.Width = 150;
+            ExT.HeaderText = "EXCLUIR";
+            ExT.Image = Properties.Resources.Lixeira20;
+            ExT.MinimumWidth = 8;
+            ExT.Name = "ExT";
+            ExT.Width = 150;
             // 
             // tlpTop
             // 
-            this.tlpTop.ColumnCount = 6;
-            this.tlpTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.tlpTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7F));
-            this.tlpTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tlpTop.Controls.Add(this.ptbSalvar, 5, 0);
-            this.tlpTop.Controls.Add(this.tlpTopResposavel, 3, 0);
-            this.tlpTop.Controls.Add(this.tlpTop3, 4, 0);
-            this.tlpTop.Controls.Add(this.tlpTop1, 2, 0);
-            this.tlpTop.Controls.Add(this.tlpTop0, 0, 0);
-            this.tlpTop.Controls.Add(this.ptbPasta, 1, 0);
-            this.tlpTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTop.Location = new System.Drawing.Point(0, 0);
-            this.tlpTop.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTop.Name = "tlpTop";
-            this.tlpTop.RowCount = 1;
-            this.tlpTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTop.Size = new System.Drawing.Size(1013, 80);
-            this.tlpTop.TabIndex = 1;
+            tlpTop.ColumnCount = 6;
+            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
+            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
+            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16F));
+            tlpTop.Controls.Add(ptbSalvar, 5, 0);
+            tlpTop.Controls.Add(tlpTopResposavel, 3, 0);
+            tlpTop.Controls.Add(tlpTop3, 4, 0);
+            tlpTop.Controls.Add(tlpTop1, 2, 0);
+            tlpTop.Controls.Add(tlpTop0, 0, 0);
+            tlpTop.Controls.Add(ptbPasta, 1, 0);
+            tlpTop.Dock = DockStyle.Fill;
+            tlpTop.Location = new Point(0, 0);
+            tlpTop.Margin = new Padding(0);
+            tlpTop.Name = "tlpTop";
+            tlpTop.RowCount = 1;
+            tlpTop.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpTop.Size = new Size(1013, 80);
+            tlpTop.TabIndex = 1;
             // 
             // tlpTopResposavel
             // 
-            this.tlpTopResposavel.ColumnCount = 1;
-            this.tlpTopResposavel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTopResposavel.Controls.Add(this.lblNome, 0, 0);
-            this.tlpTopResposavel.Controls.Add(this.txbResponsavel, 0, 1);
-            this.tlpTopResposavel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTopResposavel.Location = new System.Drawing.Point(443, 0);
-            this.tlpTopResposavel.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTopResposavel.Name = "tlpTopResposavel";
-            this.tlpTopResposavel.RowCount = 3;
-            this.tlpTopResposavel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44F));
-            this.tlpTopResposavel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTopResposavel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTopResposavel.Size = new System.Drawing.Size(303, 80);
-            this.tlpTopResposavel.TabIndex = 1;
+            tlpTopResposavel.ColumnCount = 1;
+            tlpTopResposavel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpTopResposavel.Controls.Add(lblNome, 0, 0);
+            tlpTopResposavel.Controls.Add(txbResponsavel, 0, 1);
+            tlpTopResposavel.Dock = DockStyle.Fill;
+            tlpTopResposavel.Location = new Point(443, 0);
+            tlpTopResposavel.Margin = new Padding(0);
+            tlpTopResposavel.Name = "tlpTopResposavel";
+            tlpTopResposavel.RowCount = 3;
+            tlpTopResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
+            tlpTopResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTopResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTopResposavel.Size = new Size(303, 80);
+            tlpTopResposavel.TabIndex = 1;
             // 
             // tlpTop3
             // 
-            this.tlpTop3.ColumnCount = 1;
-            this.tlpTop3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTop3.Controls.Add(this.lblMatricula, 0, 0);
-            this.tlpTop3.Controls.Add(this.txbMatricula, 0, 1);
-            this.tlpTop3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTop3.Location = new System.Drawing.Point(746, 0);
-            this.tlpTop3.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTop3.Name = "tlpTop3";
-            this.tlpTop3.RowCount = 3;
-            this.tlpTop3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44F));
-            this.tlpTop3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTop3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTop3.Size = new System.Drawing.Size(101, 80);
-            this.tlpTop3.TabIndex = 1;
+            tlpTop3.ColumnCount = 1;
+            tlpTop3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpTop3.Controls.Add(lblMatricula, 0, 0);
+            tlpTop3.Controls.Add(txbMatricula, 0, 1);
+            tlpTop3.Dock = DockStyle.Fill;
+            tlpTop3.Location = new Point(746, 0);
+            tlpTop3.Margin = new Padding(0);
+            tlpTop3.Name = "tlpTop3";
+            tlpTop3.RowCount = 3;
+            tlpTop3.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
+            tlpTop3.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTop3.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTop3.Size = new Size(101, 80);
+            tlpTop3.TabIndex = 1;
             // 
             // tlpTop1
             // 
-            this.tlpTop1.ColumnCount = 1;
-            this.tlpTop1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTop1.Controls.Add(this.lblUnidade, 0, 0);
-            this.tlpTop1.Controls.Add(this.cbxUnidade, 0, 1);
-            this.tlpTop1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTop1.Location = new System.Drawing.Point(373, 0);
-            this.tlpTop1.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTop1.Name = "tlpTop1";
-            this.tlpTop1.RowCount = 3;
-            this.tlpTop1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44F));
-            this.tlpTop1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTop1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTop1.Size = new System.Drawing.Size(70, 80);
-            this.tlpTop1.TabIndex = 1;
+            tlpTop1.ColumnCount = 1;
+            tlpTop1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpTop1.Controls.Add(lblUnidade, 0, 0);
+            tlpTop1.Controls.Add(cbxUnidade, 0, 1);
+            tlpTop1.Dock = DockStyle.Fill;
+            tlpTop1.Location = new Point(373, 0);
+            tlpTop1.Margin = new Padding(0);
+            tlpTop1.Name = "tlpTop1";
+            tlpTop1.RowCount = 3;
+            tlpTop1.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
+            tlpTop1.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTop1.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTop1.Size = new Size(70, 80);
+            tlpTop1.TabIndex = 1;
             // 
             // tlpTop0
             // 
-            this.tlpTop0.ColumnCount = 1;
-            this.tlpTop0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTop0.Controls.Add(this.lblPasta, 0, 0);
-            this.tlpTop0.Controls.Add(this.txbPasta, 0, 1);
-            this.tlpTop0.Controls.Add(this.ckxImpressoraPadrão, 0, 2);
-            this.tlpTop0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTop0.Location = new System.Drawing.Point(0, 0);
-            this.tlpTop0.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpTop0.Name = "tlpTop0";
-            this.tlpTop0.RowCount = 3;
-            this.tlpTop0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44F));
-            this.tlpTop0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTop0.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tlpTop0.Size = new System.Drawing.Size(303, 80);
-            this.tlpTop0.TabIndex = 1;
+            tlpTop0.ColumnCount = 1;
+            tlpTop0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpTop0.Controls.Add(lblPasta, 0, 0);
+            tlpTop0.Controls.Add(txbPasta, 0, 1);
+            tlpTop0.Controls.Add(ckxImpressoraPadrão, 0, 2);
+            tlpTop0.Dock = DockStyle.Fill;
+            tlpTop0.Location = new Point(0, 0);
+            tlpTop0.Margin = new Padding(0);
+            tlpTop0.Name = "tlpTop0";
+            tlpTop0.RowCount = 3;
+            tlpTop0.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
+            tlpTop0.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTop0.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
+            tlpTop0.Size = new Size(303, 80);
+            tlpTop0.TabIndex = 1;
             // 
             // uctAjustes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.tlpBak0);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "uctAjustes";
-            this.Size = new System.Drawing.Size(1013, 310);
-            this.Load += new System.EventHandler(this.uctAjustes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPasta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbSalvar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbProcessador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMemoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbTMM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProcessadores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMemorias)).EndInit();
-            this.tlpBak0.ResumeLayout(false);
-            this.tlpMeio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUnidade)).EndInit();
-            this.tlpBottonU.ResumeLayout(false);
-            this.tlpBottonU1.ResumeLayout(false);
-            this.tlpBottonU1.PerformLayout();
-            this.tlpBottonU0.ResumeLayout(false);
-            this.tlpBottonU0.PerformLayout();
-            this.tlpBottonU3.ResumeLayout(false);
-            this.tlpBottonU3.PerformLayout();
-            this.tlpBottonU2.ResumeLayout(false);
-            this.tlpBottonU2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbUnidade)).EndInit();
-            this.tlpBotton2.ResumeLayout(false);
-            this.tlpBottonM.ResumeLayout(false);
-            this.tlpBottonM.PerformLayout();
-            this.tlpBotton0.ResumeLayout(false);
-            this.tlpBottonT0.ResumeLayout(false);
-            this.tlpBottonT0.PerformLayout();
-            this.tlpBottonT2.ResumeLayout(false);
-            this.tlpBottonT2.PerformLayout();
-            this.tlpBottonT1.ResumeLayout(false);
-            this.tlpBottonT1.PerformLayout();
-            this.tlpBotton1.ResumeLayout(false);
-            this.tlpBottonP.ResumeLayout(false);
-            this.tlpBottonP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTMM)).EndInit();
-            this.tlpTop.ResumeLayout(false);
-            this.tlpTopResposavel.ResumeLayout(false);
-            this.tlpTopResposavel.PerformLayout();
-            this.tlpTop3.ResumeLayout(false);
-            this.tlpTop3.PerformLayout();
-            this.tlpTop1.ResumeLayout(false);
-            this.tlpTop1.PerformLayout();
-            this.tlpTop0.ResumeLayout(false);
-            this.tlpTop0.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            Controls.Add(tlpBak0);
+            Margin = new Padding(0);
+            Name = "uctAjustes";
+            Size = new Size(1013, 310);
+            Load += uctAjustes_Load;
+            ((System.ComponentModel.ISupportInitialize)ptbPasta).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbSalvar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbProcessador).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbMemoria).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbTMM).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProcessadores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMemorias).EndInit();
+            tlpBak0.ResumeLayout(false);
+            tlpMeio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUnidade).EndInit();
+            tlpBottonU.ResumeLayout(false);
+            tlpBottonU1.ResumeLayout(false);
+            tlpBottonU1.PerformLayout();
+            tlpBottonU0.ResumeLayout(false);
+            tlpBottonU0.PerformLayout();
+            tlpBottonU3.ResumeLayout(false);
+            tlpBottonU3.PerformLayout();
+            tlpBottonU2.ResumeLayout(false);
+            tlpBottonU2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbUnidade).EndInit();
+            tlpBotton2.ResumeLayout(false);
+            tlpBottonM.ResumeLayout(false);
+            tlpBottonM.PerformLayout();
+            tlpBotton0.ResumeLayout(false);
+            tlpBottonT0.ResumeLayout(false);
+            tlpBottonT0.PerformLayout();
+            tlpBottonT2.ResumeLayout(false);
+            tlpBottonT2.PerformLayout();
+            tlpBottonT1.ResumeLayout(false);
+            tlpBottonT1.PerformLayout();
+            tlpBotton1.ResumeLayout(false);
+            tlpBottonP.ResumeLayout(false);
+            tlpBottonP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTMM).EndInit();
+            tlpTop.ResumeLayout(false);
+            tlpTopResposavel.ResumeLayout(false);
+            tlpTopResposavel.PerformLayout();
+            tlpTop3.ResumeLayout(false);
+            tlpTop3.PerformLayout();
+            tlpTop1.ResumeLayout(false);
+            tlpTop1.PerformLayout();
+            tlpTop0.ResumeLayout(false);
+            tlpTop0.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -19,10 +19,8 @@ namespace InventarioTI.Services
         {
             string p = /*@"C:\Users\sesousa\OneDrive - SOLAR BEBIDAS S.A\Desktop\InventarioTI - Copia - Copia"*/ path;
             if (!Directory.Exists(p)) throw new DomainException("Pasta não existe!");
-            if (!Directory.Exists(p + @"\Info")) throw new DomainException("Pasta Info não existe!");
             if (!File.Exists(p + @"\BD.xlsx")) throw new DomainException("Pasta não contem intentário!");
-            if (!File.Exists(p + @"\Info\Ajustes.xlsx")) throw new DomainException("Pasta Info não contem Ajustes!");
-            if (!File.Exists(p + @"\Info\Movimentacoes.xlsx")) throw new DomainException("Pasta Info não contem Movimentações!");
+            if (!File.Exists(p + @"\AjustesBD.xlsx")) throw new DomainException("Pasta não contem banco de dados de Ajustes!");
 
             Arquivo = /*p*/ path;
 

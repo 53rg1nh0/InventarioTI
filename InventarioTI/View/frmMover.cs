@@ -1,17 +1,8 @@
-﻿using DocumentFormat.OpenXml.Math;
-using InventarioTI.Entites;
+﻿using InventarioTI.Entites;
 using InventarioTI.Entites.emuns;
+using InventarioTI.Entites.Exceptions;
 using InventarioTI.Extencions;
-using InventarioTI.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Base = InventarioTI.Services.Base;
 
 namespace InventarioTI.View
@@ -20,9 +11,11 @@ namespace InventarioTI.View
     {
         private string _u;
         private List<Unidade> _list = new List<Unidade>();
+        private Inventario _i;
         public frmMover(Inventario i)
         {
             InitializeComponent();
+            _i = i;
             if (Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).Contains(i.UND))
             {
                 _list = Base.Unidades.Where(x => x.Sigla != Base.Unidade).ToList();
@@ -35,13 +28,30 @@ namespace InventarioTI.View
 
         private void btnCamcel_Click(object sender, EventArgs e)
         {
+
+
             this.Close();
         }
 
         private void btnMover_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrEmpty(_u)) throw new DomainException("Selecione a Unidade destino!");
+                Unidade u = Base.Unidades.Where(x => x.Sigla == _u).FirstOrDefault();
+                string origem = _i.UND;
+                _i.UND = u.Nome;
+                _i.UF = u.UF;
+                _i.Nomenclatura();
+                Base.UpdateBase(_i);
+                Base.InsertBase(new Movimentacao("movido", _i, origem));
+                MessageBox.Show("Equipamento movido com sucesso!");
+                this.Close();
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
             //tratativa
-            this.Close();
+
         }
 
         private void dgvMover_CellContentClick(object sender, DataGridViewCellEventArgs e)
