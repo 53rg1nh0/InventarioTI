@@ -219,6 +219,7 @@
             ptbRemoverEquipamento.Size = new Size(40, 40);
             ptbRemoverEquipamento.TabIndex = 3;
             ptbRemoverEquipamento.TabStop = false;
+            ptbRemoverEquipamento.Click += ptbRemoverEquipamento_Click;
             // 
             // ptbEditarEquipamento
             // 

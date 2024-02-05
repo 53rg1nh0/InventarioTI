@@ -525,6 +525,33 @@ namespace InventarioTI.View
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        private void ptbRemoverEquipamento_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+                if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento && x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault().Nome).
+                FirstOrDefault().USERID != "bkp") throw new DomainException("Somente equipamentos Backups da unidade ser obsoletos!");
+
+                Inventario obsoleto = Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault();
+
+                Base.GetObsoleto(obsoleto,Base.Unidades.Where(x=>x.Nome == obsoleto.UND).FirstOrDefault());
+
+                frmObs obs = new frmObs();    
+                obs.ShowDialog();
+
+                Base.InsertBase(new Movimentacao("obsoleto", obsoleto,Cache.Obs));
+                Base.UpdateBase(obsoleto);
+
+                Cache.Equipamento = null;
+
+                ptbApagarEquipamento_Click(new object(), new EventArgs());
+
+                MessageBox.Show("Equipamento removido com sucesso!");
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
         private void ptbGerarTermo_Click(object sender, EventArgs e)
         {
             try
@@ -537,10 +564,6 @@ namespace InventarioTI.View
             }
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-
-
-        }
-
-        
+        }       
     }
 }

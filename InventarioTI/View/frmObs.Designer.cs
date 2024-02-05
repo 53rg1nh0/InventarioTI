@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObs));
             lblObs = new Label();
             txtObs = new TextBox();
             lblTitulo = new Label();
@@ -40,7 +41,7 @@
             lblObs.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblObs.Location = new Point(203, 9);
             lblObs.Name = "lblObs";
-            lblObs.Size = new Size(212, 36);
+            lblObs.Size = new Size(140, 23);
             lblObs.TabIndex = 8;
             lblObs.Text = "OBSERVAÇÃO";
             // 
@@ -48,7 +49,7 @@
             // 
             txtObs.Location = new Point(12, 35);
             txtObs.Name = "txtObs";
-            txtObs.Size = new Size(548, 30);
+            txtObs.Size = new Size(548, 22);
             txtObs.TabIndex = 9;
             // 
             // lblTitulo
@@ -56,7 +57,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Location = new Point(12, 60);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(428, 21);
+            lblTitulo.Size = new Size(286, 17);
             lblTitulo.TabIndex = 10;
             lblTitulo.Text = "Infome o motivo da remoção do equipamento";
             // 
@@ -64,6 +65,7 @@
             // 
             btnObs.BackColor = Color.FromArgb(196, 0, 6);
             btnObs.BackgroundImageLayout = ImageLayout.None;
+            btnObs.Cursor = Cursors.Hand;
             btnObs.FlatStyle = FlatStyle.Flat;
             btnObs.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnObs.Location = new Point(485, 60);
@@ -77,8 +79,9 @@
             // 
             // frmObs
             // 
-            AutoScaleDimensions = new SizeF(11F, 21F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(572, 99);
             Controls.Add(btnObs);
             Controls.Add(lblTitulo);
@@ -86,9 +89,10 @@
             Controls.Add(lblObs);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmObs";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Form1";
+            Text = "frmObs";
             Load += frmObs_Load;
             ResumeLayout(false);
             PerformLayout();

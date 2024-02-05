@@ -28,6 +28,7 @@ namespace InventarioTI.View
         private void frmObs_Load(object sender, EventArgs e)
         {
             this.Escala();
+            this.Location = new Point(Base.FI.Location.X + 250, Base.FI.Location.Y + 100);
         }
     }
 }
