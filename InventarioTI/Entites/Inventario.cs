@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace InventarioTI.Entites.emuns
 {
@@ -23,5 +19,6 @@ namespace InventarioTI.Entites.emuns
         public string NOMENCLATURA { get; set; }
         public string SERIE { get; set; }
         public string MEMORIA { get; set; }
+        public string DATA { get; set; }
     }
 }

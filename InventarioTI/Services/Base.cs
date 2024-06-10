@@ -215,7 +215,7 @@ namespace InventarioTI.Services
             }
         }
 
-        public static void UpdateBase(Inventario i, bool equipamento = true)
+        public static void UpdateBaseEdit(Inventario i, bool equipamento = true)
         {
             using (OleDbConnection conexao = new OleDbConnection(new Conection(i).String))
             {
@@ -235,8 +235,11 @@ namespace InventarioTI.Services
                         + " PATRIMONIO = " + i.PATRIMONIO +", "
                         + " NOMENCLATURA = '" + i.NOMENCLATURA + "', "
                         + " SERIE = '" + i.SERIE + "', "
-                        + " MEMORIA = '" + i.MEMORIA + "'"
+                        + " MEMORIA = '" + i.MEMORIA + "',"
+                        + " DATA = '" + DateTime.Now.ToString("G") + "'"
                         + (equipamento ? " WHERE PATRIMONIO = " + i.PATRIMONIO : " WHERE USERID = '" + i.USERID + "'");
+
+                    Base.Inv[Base.Inv.FindIndex(x => x.PATRIMONIO == Cache.Equipamento)] = i;
 
                     conexao.Open();
 
@@ -247,6 +250,43 @@ namespace InventarioTI.Services
                 catch { throw new DomainException("Ocorreu um erro ao Inserir os Dados!"); }
                 finally { conexao.Close(); }
             }      
+        }
+
+        public static void UpdateBase(Inventario i, bool equipamento = true)
+        {
+            using (OleDbConnection conexao = new OleDbConnection(new Conection(i).String))
+            {
+                try
+                {
+                    string sql = "UPDATE [Inventario$] SET"
+                        + " UND = '" + i.UND + "', "
+                        + " UF = '" + i.UF + "', "
+                        + " FUNCIONARIO = '" + i.FUNCIONARIO + "', "
+                        + " USERID = '" + i.USERID + "', "
+                        + " CARGO = '" + i.CARGO + "', "
+                        + " AREA = '" + i.AREA + "', "
+                        + " EQUIPAMENTO = '" + i.EQUIPAMENTO + "', "
+                        + " MARCA = '" + i.MARCA + "', "
+                        + " MODELO = '" + i.MODELO + "', "
+                        + " PROCESSADOR = '" + i.PROCESSADOR + "', "
+                        + " PATRIMONIO = " + i.PATRIMONIO + ", "
+                        + " NOMENCLATURA = '" + i.NOMENCLATURA + "', "
+                        + " SERIE = '" + i.SERIE + "', "
+                        + " MEMORIA = '" + i.MEMORIA + "',"
+                        + " DATA = '" + DateTime.Now.ToString("G") + "'"
+                        + (equipamento ? " WHERE PATRIMONIO = " + i.PATRIMONIO : " WHERE USERID = '" + i.USERID + "'");
+
+                    Base.Inv[Base.Inv.FindIndex(x => x.PATRIMONIO == i.PATRIMONIO)] = i;
+
+                    conexao.Open();
+
+                    new OleDbCommand(sql, conexao).ExecuteNonQuery();
+
+                    FI.Atualizar();
+                }
+                catch { throw new DomainException("Ocorreu um erro ao Inserir os Dados!"); }
+                finally { conexao.Close(); }
+            }
         }
 
         public static void RemoveBase(object o, int index)

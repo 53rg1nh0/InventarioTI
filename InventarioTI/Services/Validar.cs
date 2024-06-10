@@ -82,7 +82,7 @@ namespace InventarioTI.Services
 
                 foreach (DataColumn c in dt.Columns)
                 {
-                    if (!(c.ColumnName == "QUANT" || c.ColumnName == "UND" || c.ColumnName == "UF" || c.ColumnName == "FUNCIONARIO" || c.ColumnName == "USERID"
+                    if (!(c.ColumnName == "QUANT" || c.ColumnName == "UND" || c.ColumnName == "UF" || c.ColumnName == "FUNCIONARIO" || c.ColumnName == "USERID" || c.ColumnName == "DATA"
                         || c.ColumnName == "CARGO" || c.ColumnName == "AREA" || c.ColumnName == "EQUIPAMENTO" || c.ColumnName == "MARCA" || c.ColumnName == "MODELO"
                          || c.ColumnName == "PROCESSADOR" || c.ColumnName == "PATRIMONIO" || c.ColumnName == "NOMENCLATURA" || c.ColumnName == "SERIE" || c.ColumnName == "MEMORIA"))
                         throw new Exception("Planilha BD fora do Padrão!");

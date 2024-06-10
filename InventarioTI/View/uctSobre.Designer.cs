@@ -40,7 +40,7 @@
             // 
             lblSobre.AutoSize = true;
             lblSobre.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSobre.Location = new Point(381, 20);
+            lblSobre.Location = new Point(381, 61);
             lblSobre.Name = "lblSobre";
             lblSobre.Size = new Size(667, 231);
             lblSobre.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             ptbSobre.BackgroundImage = Properties.Resources.Programa;
             ptbSobre.BackgroundImageLayout = ImageLayout.Stretch;
-            ptbSobre.Location = new Point(88, 20);
+            ptbSobre.Location = new Point(88, 61);
             ptbSobre.Name = "ptbSobre";
             ptbSobre.Size = new Size(290, 290);
             ptbSobre.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             ptbSobreSolar.BackgroundImage = Properties.Resources.SolarCocaCola;
             ptbSobreSolar.BackgroundImageLayout = ImageLayout.Stretch;
-            ptbSobreSolar.Location = new Point(770, 216);
+            ptbSobreSolar.Location = new Point(770, 257);
             ptbSobreSolar.Name = "ptbSobreSolar";
             ptbSobreSolar.Size = new Size(278, 94);
             ptbSobreSolar.TabIndex = 2;
@@ -76,7 +76,7 @@
             Controls.Add(lblSobre);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "uctSobre";
-            Size = new Size(1084, 373);
+            Size = new Size(1084, 473);
             ((System.ComponentModel.ISupportInitialize)ptbSobre).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbSobreSolar).EndInit();
             ResumeLayout(false);

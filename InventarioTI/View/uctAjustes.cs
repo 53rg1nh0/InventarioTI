@@ -187,7 +187,7 @@ namespace InventarioTI.View
             {
                 if ((string.IsNullOrEmpty(tmm.Tipo) || string.IsNullOrEmpty(tmm.Marca) || string.IsNullOrEmpty(tmm.Modelo))) throw new DomainException("Não pode conter campos vazios!");
                 if (Base.TMMs.Select(c => c.Tipo + c.Marca + c.Modelo).Contains(tmm.Tipo + tmm.Marca + tmm.Modelo)) throw new DomainException("Equipamento já existe!");
-                
+
                 Base.InsertBase(tmm);
                 Preencher();
                 txbTipo.Clear();
@@ -195,12 +195,12 @@ namespace InventarioTI.View
                 txbModelo.Clear();
             }
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }         
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void ptbProcessador_Click(object sender, EventArgs e)
         {
-            Processador pro = new Processador {  Tipo = txbProcessadores.Text };
+            Processador pro = new Processador { Tipo = txbProcessadores.Text };
             try
             {
                 if (string.IsNullOrEmpty(pro.Tipo)) throw new DomainException("Não pode conter campos vazios!");
@@ -216,7 +216,7 @@ namespace InventarioTI.View
 
         private void ptbMemoria_Click(object sender, EventArgs e)
         {
-            Memoria mem = new Memoria { Ram= txbMemorias.Text };
+            Memoria mem = new Memoria { Ram = txbMemorias.Text };
             try
             {
                 if (string.IsNullOrEmpty(mem.Ram)) throw new DomainException("Não pode conter campos vazios!");
@@ -232,7 +232,7 @@ namespace InventarioTI.View
 
         private void ptbUnidade_Click(object sender, EventArgs e)
         {
-            Unidade uni = new Unidade { Regiao = txbRegiao.Text, UF= txbUF.Text, Nome = txbNome.Text, Sigla = txbSigla.Text };
+            Unidade uni = new Unidade { Regiao = txbRegiao.Text, UF = txbUF.Text, Nome = txbNome.Text, Sigla = txbSigla.Text };
             try
             {
                 if (string.IsNullOrEmpty(uni.Regiao) || string.IsNullOrEmpty(uni.UF) || string.IsNullOrEmpty(uni.Nome) || string.IsNullOrEmpty(uni.Sigla)) throw new DomainException("Não pode conter campos vazios!");

@@ -123,6 +123,16 @@ namespace InventarioTI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Check20 {
+            get {
+                object obj = ResourceManager.GetObject("Check20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Desktop {
             get {
                 object obj = ResourceManager.GetObject("Desktop", resourceCulture);
@@ -176,6 +186,26 @@ namespace InventarioTI.Properties {
         internal static System.Drawing.Bitmap HomeAnimado {
             get {
                 object obj = ResourceManager.GetObject("HomeAnimado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inventario {
+            get {
+                object obj = ResourceManager.GetObject("Inventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InventarioAnimado {
+            get {
+                object obj = ResourceManager.GetObject("InventarioAnimado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

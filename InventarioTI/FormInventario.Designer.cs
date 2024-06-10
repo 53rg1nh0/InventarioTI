@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventario));
             pnlLateral = new Panel();
+            ptbInventario = new PictureBox();
             cbxResolucao = new ComboBox();
             ptbSobre = new PictureBox();
             ptbAjustes = new PictureBox();
@@ -65,7 +66,9 @@
             uctSobre = new View.uctSobre();
             uctAjustes = new View.uctAjustes();
             uctHome = new View.uctHome();
+            uctInventario = new View.uctInventario();
             pnlLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbInventario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbSobre).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbAjustes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbHome).BeginInit();
@@ -89,6 +92,7 @@
             // pnlLateral
             // 
             pnlLateral.BackColor = Color.FromArgb(196, 0, 6);
+            pnlLateral.Controls.Add(ptbInventario);
             pnlLateral.Controls.Add(cbxResolucao);
             pnlLateral.Controls.Add(ptbSobre);
             pnlLateral.Controls.Add(ptbAjustes);
@@ -98,8 +102,23 @@
             pnlLateral.Location = new Point(0, 0);
             pnlLateral.Margin = new Padding(3, 2, 3, 2);
             pnlLateral.Name = "pnlLateral";
-            pnlLateral.Size = new Size(65, 338);
+            pnlLateral.Size = new Size(65, 438);
             pnlLateral.TabIndex = 0;
+            // 
+            // ptbInventario
+            // 
+            ptbInventario.BackColor = Color.FromArgb(196, 0, 6);
+            ptbInventario.BackgroundImageLayout = ImageLayout.Center;
+            ptbInventario.Cursor = Cursors.Hand;
+            ptbInventario.Image = Properties.Resources.Inventario;
+            ptbInventario.Location = new Point(0, 165);
+            ptbInventario.Margin = new Padding(3, 2, 3, 2);
+            ptbInventario.Name = "ptbInventario";
+            ptbInventario.Padding = new Padding(7, 2, 5, 2);
+            ptbInventario.Size = new Size(65, 52);
+            ptbInventario.TabIndex = 8;
+            ptbInventario.TabStop = false;
+            ptbInventario.Click += ptbInventario_Click;
             // 
             // cbxResolucao
             // 
@@ -120,7 +139,7 @@
             ptbSobre.BackgroundImageLayout = ImageLayout.Center;
             ptbSobre.Cursor = Cursors.Hand;
             ptbSobre.Image = Properties.Resources.Sobre;
-            ptbSobre.Location = new Point(0, 259);
+            ptbSobre.Location = new Point(0, 337);
             ptbSobre.Margin = new Padding(3, 2, 3, 2);
             ptbSobre.Name = "ptbSobre";
             ptbSobre.Padding = new Padding(7, 2, 5, 2);
@@ -135,7 +154,7 @@
             ptbAjustes.BackgroundImageLayout = ImageLayout.Center;
             ptbAjustes.Cursor = Cursors.Hand;
             ptbAjustes.Image = Properties.Resources.Ajustes;
-            ptbAjustes.Location = new Point(0, 168);
+            ptbAjustes.Location = new Point(0, 251);
             ptbAjustes.Margin = new Padding(3, 2, 3, 2);
             ptbAjustes.Name = "ptbAjustes";
             ptbAjustes.Padding = new Padding(7, 2, 5, 2);
@@ -150,7 +169,7 @@
             ptbHome.BackgroundImageLayout = ImageLayout.Center;
             ptbHome.Cursor = Cursors.Hand;
             ptbHome.Image = Properties.Resources.Home;
-            ptbHome.Location = new Point(0, 77);
+            ptbHome.Location = new Point(0, 79);
             ptbHome.Margin = new Padding(3, 2, 3, 2);
             ptbHome.Name = "ptbHome";
             ptbHome.Padding = new Padding(7, 2, 5, 2);
@@ -177,7 +196,7 @@
             pnlButton.BackColor = Color.Black;
             pnlButton.Controls.Add(tlbBotton);
             pnlButton.ForeColor = Color.White;
-            pnlButton.Location = new Point(0, 311);
+            pnlButton.Location = new Point(0, 410);
             pnlButton.Margin = new Padding(3, 2, 3, 2);
             pnlButton.Name = "pnlButton";
             pnlButton.Size = new Size(1075, 28);
@@ -493,36 +512,43 @@
             // 
             uctSobre.BackColor = Color.White;
             uctSobre.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            uctSobre.Location = new Point(727, 11);
+            uctSobre.Location = new Point(839, 108);
             uctSobre.Margin = new Padding(3, 2, 3, 2);
             uctSobre.Name = "uctSobre";
-            uctSobre.Size = new Size(336, 262);
+            uctSobre.Size = new Size(200, 200);
             uctSobre.TabIndex = 4;
             // 
             // uctAjustes
             // 
             uctAjustes.BackColor = Color.White;
             uctAjustes.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            uctAjustes.Location = new Point(444, 7);
+            uctAjustes.Location = new Point(587, 108);
             uctAjustes.Margin = new Padding(0);
             uctAjustes.Name = "uctAjustes";
-            uctAjustes.Size = new Size(300, 300);
+            uctAjustes.Size = new Size(200, 200);
             uctAjustes.TabIndex = 5;
             // 
             // uctHome
             // 
             uctHome.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            uctHome.Location = new Point(93, 6);
+            uctHome.Location = new Point(83, 108);
             uctHome.Name = "uctHome";
-            uctHome.Size = new Size(300, 300);
+            uctHome.Size = new Size(200, 200);
             uctHome.TabIndex = 6;
+            // 
+            // uctInventario
+            // 
+            uctInventario.Location = new Point(335, 108);
+            uctInventario.Name = "uctInventario";
+            uctInventario.Size = new Size(200, 200);
+            uctInventario.TabIndex = 7;
             // 
             // FormInventario
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
-            ClientSize = new Size(1075, 338);
+            ClientSize = new Size(1075, 438);
             Controls.Add(pnlButton);
             Controls.Add(ptbMinimizar);
             Controls.Add(ptbFechar);
@@ -530,6 +556,7 @@
             Controls.Add(uctAjustes);
             Controls.Add(pnlLateral);
             Controls.Add(uctSobre);
+            Controls.Add(uctInventario);
             Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -538,6 +565,7 @@
             Text = "InventarioTI";
             Load += FormInventario_Load;
             pnlLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ptbInventario).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbSobre).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbAjustes).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbHome).EndInit();
@@ -602,5 +630,7 @@
         private Label lblUnidade;
         private PictureBox ptbBotton1;
         private ComboBox cbxResolucao;
+        private PictureBox ptbInventario;
+        public View.uctInventario uctInventario;
     }
 }

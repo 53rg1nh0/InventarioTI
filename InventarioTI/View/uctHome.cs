@@ -236,7 +236,7 @@ namespace InventarioTI.View
         {
             if (e.KeyCode == Keys.Enter)
             {
-                PreencherEquipamento(Base.Inv.Select(c => c.PATRIMONIO).Contains(txbPatrimonio.Text),
+                PreencherEquipamento(Base.Inv.Where(x => x.USERID != "obs").Select(c => c.PATRIMONIO).Contains(txbPatrimonio.Text),
                     Transformar.GetEquipamento(Base.Inv.Where(c => c.PATRIMONIO == txbPatrimonio.Text).FirstOrDefault()));
             }
         }
@@ -273,7 +273,6 @@ namespace InventarioTI.View
         {
             try
             {
-                Base.Atualizar(false, false);
                 Unidade unidade = Base.Unidades.Where(u => u.Sigla == Base.Unidade).FirstOrDefault();
                 Inventario i = Base.GetBackup(new Inventario(), unidade);
 
@@ -284,22 +283,38 @@ namespace InventarioTI.View
                 i.MODELO = cbxModelo.Text;
                 i.PROCESSADOR = cbxProcessador.Text;
                 i.MEMORIA = cbxMemoria.Text;
+                i.DATA = DateTime.Now.ToString("G");
                 i.Nomenclatura();
+
 
                 foreach (var p in i.GetType().GetProperties())
                 {
-                    if (p.GetValue(i) is null)
+                    if (p.GetValue(i) is null || string.IsNullOrEmpty(p.GetValue(i).ToString()))
                     {
                         throw new DomainException("Não pode haver campos vazios!");
                     }
                 }
+
+                Base.Atualizar(false, false);
+
+
                 if (Base.Inv.Where(x => x.USERID == "obs").Select(a => a.PATRIMONIO).Contains(i.PATRIMONIO) ||
                     Base.Inv.Where(x => x.USERID == "obs").Select(a => a.NOMENCLATURA).Contains(i.NOMENCLATURA) ||
                     Base.Inv.Where(x => x.USERID == "obs").Select(a => a.SERIE).Contains(i.SERIE))
                 {
-                    MessageBox.Show("Equipamento está como obsoleto! Deseja reativa-lo?", "Obsoleto", MessageBoxButtons.YesNo);
+                    if (MessageBox.Show("Equipamento está como obsoleto! Deseja reativa-lo?", "Obsoleto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Cache.Equipamento = txbPatrimonio.Text;
+                        Base.GetBackup(i, Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault());
+                        Base.UpdateBase(i);
+                        Base.InsertBase(new Movimentacao("adicionado", i));
 
-                    //tratativa
+                        Task.Run(() => { MessageBox.Show("Equipamento Adicionado com sucesso!"); });
+
+                        txbPatrimonio_KeyDown(sender, new KeyEventArgs(Keys.Enter));
+
+                        Cache.Equipamento = txbPatrimonio.Text;
+                    }
 
                     return;
                 }
@@ -327,9 +342,9 @@ namespace InventarioTI.View
         {
             try
             {
+                if (string.IsNullOrEmpty(Cache.Cliente)) throw new Exception("Incira o cliente que deseja Editar!");
                 Base.Atualizar(false, false);
                 Inventario i = Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault();
-                if (string.IsNullOrEmpty(Cache.Cliente)) throw new Exception("Incira o cliente que deseja Editar!");
                 if (!Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First())
                     .Select(x => x.USERID).Contains(Cache.Cliente)) throw new DomainException("So podem ser editados equipamentos da unidade!");
                 if (string.IsNullOrEmpty(txbUserID.Text) || string.IsNullOrEmpty(txbNome.Text) || string.IsNullOrEmpty(txbArea.Text) ||
@@ -354,9 +369,9 @@ namespace InventarioTI.View
         {
             try
             {
+                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new Exception("Incira o equipamento que deseja Editar!");
                 Base.Atualizar(false, false);
                 Inventario i = Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault();
-                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new Exception("Incira o equipamento que deseja Editar!");
                 if (!Base.Inv.Where(x => x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).Select(x => x.Nome).First())
                     .Select(x => x.PATRIMONIO).Contains(Cache.Equipamento)) throw new DomainException("So podem ser editados equipamentos da unidade!");
                 if (string.IsNullOrEmpty(txbPatrimonio.Text) || string.IsNullOrEmpty(txbSerie.Text) || string.IsNullOrEmpty(cbxTipo.Text) ||
@@ -373,7 +388,7 @@ namespace InventarioTI.View
                 i.PROCESSADOR = cbxProcessador.Text;
                 i.MEMORIA = cbxMemoria.Text;
 
-                Base.UpdateBase(i);
+                Base.UpdateBaseEdit(i);
                 Base.InsertBase(new Movimentacao("editado", i));
 
                 Task.Run(() => { MessageBox.Show("Equipamento Editado com sucesso!"); });
@@ -386,11 +401,11 @@ namespace InventarioTI.View
         {
             try
             {
+                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new DomainException("Procure equipamento para cadastrar cliente!");
                 Base.Atualizar(false, false);
                 if (Base.Inv.Select(x => x.USERID).Contains(txbUserID.Text)) throw new DomainException("Cliente já existe no banco!");
                 if (string.IsNullOrEmpty(txbUserID.Text) || string.IsNullOrEmpty(txbNome.Text) || string.IsNullOrEmpty(txbArea.Text) ||
                     string.IsNullOrEmpty(txbCargo.Text)) throw new DomainException("Não podem haver campos vazios!");
-                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new DomainException("Procure equipamento para cadastrar cliente!");
                 if (!Base.Inv.Select(x => x.PATRIMONIO).Contains(Cache.Equipamento)) throw new DomainException("Equipamento não existe mais!");
                 if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento && x.USERID == "bkp" && x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).
                 Select(x => x.Nome).First()).Count() == 0) throw new DomainException("Equipamento deve ser backup da unidade pada cadastra cliente");
@@ -422,8 +437,8 @@ namespace InventarioTI.View
         {
             try
             {
-                Base.Atualizar(false, false);
                 if (string.IsNullOrEmpty(Cache.Cliente)) throw new DomainException("Escolha o cliente que será desligado!");
+                Base.Atualizar(false, false);
 
                 Inventario i = Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault();
 
@@ -452,16 +467,26 @@ namespace InventarioTI.View
 
         private void MoverCliente_Click(object sender, EventArgs e)
         {
-            Base.Atualizar(false, false);
-            frmMover m = new frmMover(Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault());
-            m.ShowDialog();
-            txbUserID_KeyDown(new object(), new KeyEventArgs(Keys.Enter));
+            try
+            {
+                if (string.IsNullOrEmpty(Cache.Cliente)) throw new DomainException("Escolha o cliente que será movido!");
+
+                Base.Atualizar(false, false);
+                frmMover m = new frmMover(Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault());
+                m.ShowDialog();
+                txbUserID_KeyDown(new object(), new KeyEventArgs(Keys.Enter));
+
+            }
+            catch (DomainException ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
 
         private void ptbMoverEquipamento_Click(object sender, EventArgs e)
         {
             try
             {
+                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new DomainException("Escolha o Equipamento que será movido!");
                 Base.Atualizar(false, false);
                 if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault().USERID != "bkp") throw new DomainException("Somente equipamentos Backups pode ser movidos!");
                 frmMover m = new frmMover(Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault());
@@ -476,6 +501,7 @@ namespace InventarioTI.View
         {
             try
             {
+                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new DomainException("Escolha o equipamento backup para a troca!");
                 Base.Atualizar(false, false);
                 if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento && x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault().Nome).
                 FirstOrDefault().USERID != "bkp") throw new DomainException("Somente equipamentos Backups da unidade podem trocar equipamento de cliente!");
@@ -490,6 +516,8 @@ namespace InventarioTI.View
                 novo.USERID = cliente.UserID;
                 novo.AREA = cliente.Area;
                 novo.CARGO = cliente.Cargo;
+                novo.DATA = DateTime.Now.ToString("G");
+                antigo.DATA = DateTime.Now.ToString("G");
 
                 if (Base.Inv.Where(x => x.USERID == Cache.Cliente).FirstOrDefault().UND != Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault().Nome)
                 {
@@ -526,20 +554,21 @@ namespace InventarioTI.View
         }
 
         private void ptbRemoverEquipamento_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
+                if (string.IsNullOrEmpty(Cache.Equipamento)) throw new DomainException("Escolha o equipamento que será removido!");
                 if (Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento && x.UND == Base.Unidades.Where(x => x.Sigla == Base.Unidade).FirstOrDefault().Nome).
                 FirstOrDefault().USERID != "bkp") throw new DomainException("Somente equipamentos Backups da unidade ser obsoletos!");
 
                 Inventario obsoleto = Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault();
 
-                Base.GetObsoleto(obsoleto,Base.Unidades.Where(x=>x.Nome == obsoleto.UND).FirstOrDefault());
+                Base.GetObsoleto(obsoleto, Base.Unidades.Where(x => x.Nome == obsoleto.UND).FirstOrDefault());
 
-                frmObs obs = new frmObs();    
+                frmObs obs = new frmObs();
                 obs.ShowDialog();
 
-                Base.InsertBase(new Movimentacao("obsoleto", obsoleto,Cache.Obs));
+                Base.InsertBase(new Movimentacao("obsoleto", obsoleto, Cache.Obs));
                 Base.UpdateBase(obsoleto);
 
                 Cache.Equipamento = null;
@@ -564,6 +593,7 @@ namespace InventarioTI.View
             }
             catch (DomainException ex) { MessageBox.Show(ex.Message); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }       
+        }
+
     }
 }

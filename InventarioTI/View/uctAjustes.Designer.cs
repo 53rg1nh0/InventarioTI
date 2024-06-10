@@ -62,7 +62,7 @@ namespace InventarioTI.View
             memoriaM = new DataGridViewTextBoxColumn();
             ExM = new DataGridViewImageColumn();
             tlpBak0 = new TableLayoutPanel();
-            tlpMeio = new TableLayoutPanel();
+            tlpBotton = new TableLayoutPanel();
             dgvUnidade = new DataGridView();
             regiaoUnidade = new DataGridViewTextBoxColumn();
             ufUnidade = new DataGridViewTextBoxColumn();
@@ -96,11 +96,13 @@ namespace InventarioTI.View
             marcaTMM = new DataGridViewTextBoxColumn();
             modeloTMM = new DataGridViewTextBoxColumn();
             ExT = new DataGridViewImageColumn();
-            tlpTop = new TableLayoutPanel();
-            tlpTopResposavel = new TableLayoutPanel();
-            tlpTop3 = new TableLayoutPanel();
-            tlpTop1 = new TableLayoutPanel();
-            tlpTop0 = new TableLayoutPanel();
+            tlpMeio = new TableLayoutPanel();
+            tlpMeioResposavel = new TableLayoutPanel();
+            tlpMeio3 = new TableLayoutPanel();
+            tlpMeio1 = new TableLayoutPanel();
+            tlpMeio0 = new TableLayoutPanel();
+            pnlTop = new Panel();
+            lblTop = new Label();
             ((System.ComponentModel.ISupportInitialize)ptbPasta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbSalvar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbProcessador).BeginInit();
@@ -109,7 +111,7 @@ namespace InventarioTI.View
             ((System.ComponentModel.ISupportInitialize)dgvProcessadores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvMemorias).BeginInit();
             tlpBak0.SuspendLayout();
-            tlpMeio.SuspendLayout();
+            tlpBotton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUnidade).BeginInit();
             tlpBottonU.SuspendLayout();
             tlpBottonU1.SuspendLayout();
@@ -126,18 +128,19 @@ namespace InventarioTI.View
             tlpBotton1.SuspendLayout();
             tlpBottonP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTMM).BeginInit();
-            tlpTop.SuspendLayout();
-            tlpTopResposavel.SuspendLayout();
-            tlpTop3.SuspendLayout();
-            tlpTop1.SuspendLayout();
-            tlpTop0.SuspendLayout();
+            tlpMeio.SuspendLayout();
+            tlpMeioResposavel.SuspendLayout();
+            tlpMeio3.SuspendLayout();
+            tlpMeio1.SuspendLayout();
+            tlpMeio0.SuspendLayout();
+            pnlTop.SuspendLayout();
             SuspendLayout();
             // 
             // lblUnidade
             // 
             lblUnidade.AutoSize = true;
             lblUnidade.Dock = DockStyle.Bottom;
-            lblUnidade.Location = new Point(3, 20);
+            lblUnidade.Location = new Point(3, 9);
             lblUnidade.Margin = new Padding(3, 0, 0, 0);
             lblUnidade.Name = "lblUnidade";
             lblUnidade.Size = new Size(67, 15);
@@ -148,9 +151,9 @@ namespace InventarioTI.View
             // 
             lblNome.AutoSize = true;
             lblNome.Dock = DockStyle.Bottom;
-            lblNome.Location = new Point(3, 20);
+            lblNome.Location = new Point(3, 9);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(297, 15);
+            lblNome.Size = new Size(328, 15);
             lblNome.TabIndex = 1;
             lblNome.Text = "Responsável";
             // 
@@ -158,9 +161,9 @@ namespace InventarioTI.View
             // 
             lblMatricula.AutoSize = true;
             lblMatricula.Dock = DockStyle.Bottom;
-            lblMatricula.Location = new Point(3, 20);
+            lblMatricula.Location = new Point(3, 9);
             lblMatricula.Name = "lblMatricula";
-            lblMatricula.Size = new Size(95, 15);
+            lblMatricula.Size = new Size(118, 15);
             lblMatricula.TabIndex = 2;
             lblMatricula.Text = "Matrícula";
             // 
@@ -170,7 +173,7 @@ namespace InventarioTI.View
             cbxUnidade.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxUnidade.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbxUnidade.FormattingEnabled = true;
-            cbxUnidade.Location = new Point(3, 35);
+            cbxUnidade.Location = new Point(3, 24);
             cbxUnidade.Margin = new Padding(3, 0, 3, 0);
             cbxUnidade.Name = "cbxUnidade";
             cbxUnidade.Size = new Size(64, 23);
@@ -181,20 +184,20 @@ namespace InventarioTI.View
             // 
             txbResponsavel.BorderStyle = BorderStyle.FixedSingle;
             txbResponsavel.Dock = DockStyle.Fill;
-            txbResponsavel.Location = new Point(3, 35);
+            txbResponsavel.Location = new Point(3, 24);
             txbResponsavel.Margin = new Padding(3, 0, 3, 0);
             txbResponsavel.Name = "txbResponsavel";
-            txbResponsavel.Size = new Size(297, 23);
+            txbResponsavel.Size = new Size(328, 23);
             txbResponsavel.TabIndex = 3;
             // 
             // txbMatricula
             // 
             txbMatricula.BorderStyle = BorderStyle.FixedSingle;
             txbMatricula.Dock = DockStyle.Fill;
-            txbMatricula.Location = new Point(3, 35);
-            txbMatricula.Margin = new Padding(3, 0, 3, 0);
+            txbMatricula.Location = new Point(3, 24);
+            txbMatricula.Margin = new Padding(3, 0, 20, 0);
             txbMatricula.Name = "txbMatricula";
-            txbMatricula.Size = new Size(95, 23);
+            txbMatricula.Size = new Size(101, 23);
             txbMatricula.TabIndex = 4;
             // 
             // txbPasta
@@ -202,10 +205,10 @@ namespace InventarioTI.View
             txbPasta.BorderStyle = BorderStyle.FixedSingle;
             txbPasta.Dock = DockStyle.Fill;
             txbPasta.Enabled = false;
-            txbPasta.Location = new Point(20, 35);
+            txbPasta.Location = new Point(20, 24);
             txbPasta.Margin = new Padding(20, 0, 3, 0);
             txbPasta.Name = "txbPasta";
-            txbPasta.Size = new Size(280, 23);
+            txbPasta.Size = new Size(422, 23);
             txbPasta.TabIndex = 1;
             txbPasta.TabStop = false;
             // 
@@ -213,18 +216,18 @@ namespace InventarioTI.View
             // 
             lblPasta.AutoSize = true;
             lblPasta.Dock = DockStyle.Bottom;
-            lblPasta.Location = new Point(20, 20);
+            lblPasta.Location = new Point(20, 9);
             lblPasta.Margin = new Padding(20, 0, 0, 0);
             lblPasta.Name = "lblPasta";
-            lblPasta.Size = new Size(283, 15);
+            lblPasta.Size = new Size(425, 15);
             lblPasta.TabIndex = 6;
             lblPasta.Text = "Caminho Pasta Inventário";
             // 
             // ckxImpressoraPadrão
             // 
             ckxImpressoraPadrão.AutoSize = true;
-            ckxImpressoraPadrão.Location = new Point(20, 60);
-            ckxImpressoraPadrão.Margin = new Padding(20, 3, 0, 0);
+            ckxImpressoraPadrão.Location = new Point(20, 52);
+            ckxImpressoraPadrão.Margin = new Padding(20, 0, 0, 0);
             ckxImpressoraPadrão.Name = "ckxImpressoraPadrão";
             ckxImpressoraPadrão.Size = new Size(257, 19);
             ckxImpressoraPadrão.TabIndex = 1;
@@ -237,10 +240,10 @@ namespace InventarioTI.View
             ptbPasta.Cursor = Cursors.Hand;
             ptbPasta.Dock = DockStyle.Fill;
             ptbPasta.Image = Properties.Resources.Pasta;
-            ptbPasta.Location = new Point(303, 25);
-            ptbPasta.Margin = new Padding(0, 25, 0, 0);
+            ptbPasta.Location = new Point(445, 15);
+            ptbPasta.Margin = new Padding(0, 15, 0, 0);
             ptbPasta.Name = "ptbPasta";
-            ptbPasta.Size = new Size(70, 55);
+            ptbPasta.Size = new Size(40, 67);
             ptbPasta.TabIndex = 12;
             ptbPasta.TabStop = false;
             ptbPasta.Click += ptbPasta_Click;
@@ -249,12 +252,11 @@ namespace InventarioTI.View
             // 
             ptbSalvar.BackColor = Color.White;
             ptbSalvar.Cursor = Cursors.Hand;
-            ptbSalvar.Dock = DockStyle.Fill;
             ptbSalvar.Image = Properties.Resources.Salvar;
-            ptbSalvar.Location = new Point(853, 9);
+            ptbSalvar.Location = new Point(854, 9);
             ptbSalvar.Margin = new Padding(6, 9, 3, 3);
             ptbSalvar.Name = "ptbSalvar";
-            ptbSalvar.Size = new Size(157, 68);
+            ptbSalvar.Size = new Size(45, 45);
             ptbSalvar.TabIndex = 13;
             ptbSalvar.TabStop = false;
             ptbSalvar.Click += ptbSalvar_Click;
@@ -263,7 +265,7 @@ namespace InventarioTI.View
             // 
             txbProcessadores.BorderStyle = BorderStyle.FixedSingle;
             txbProcessadores.Dock = DockStyle.Fill;
-            txbProcessadores.Location = new Point(10, 29);
+            txbProcessadores.Location = new Point(10, 17);
             txbProcessadores.Margin = new Padding(10, 0, 3, 0);
             txbProcessadores.Name = "txbProcessadores";
             txbProcessadores.Size = new Size(109, 23);
@@ -273,7 +275,7 @@ namespace InventarioTI.View
             // 
             lblProcessador.AutoSize = true;
             lblProcessador.Dock = DockStyle.Bottom;
-            lblProcessador.Location = new Point(10, 14);
+            lblProcessador.Location = new Point(10, 2);
             lblProcessador.Margin = new Padding(10, 0, 3, 0);
             lblProcessador.Name = "lblProcessador";
             lblProcessador.Size = new Size(109, 15);
@@ -287,7 +289,7 @@ namespace InventarioTI.View
             ptbProcessador.Dock = DockStyle.Bottom;
             ptbProcessador.Enabled = false;
             ptbProcessador.Image = Properties.Resources.AdicionarEquipamento;
-            ptbProcessador.Location = new Point(125, 16);
+            ptbProcessador.Location = new Point(125, 4);
             ptbProcessador.Name = "ptbProcessador";
             ptbProcessador.Size = new Size(44, 40);
             ptbProcessador.TabIndex = 16;
@@ -301,7 +303,7 @@ namespace InventarioTI.View
             ptbMemoria.Dock = DockStyle.Bottom;
             ptbMemoria.Enabled = false;
             ptbMemoria.Image = Properties.Resources.AdicionarEquipamento;
-            ptbMemoria.Location = new Point(84, 16);
+            ptbMemoria.Location = new Point(84, 4);
             ptbMemoria.Name = "ptbMemoria";
             ptbMemoria.Size = new Size(44, 40);
             ptbMemoria.TabIndex = 19;
@@ -312,7 +314,7 @@ namespace InventarioTI.View
             // 
             txbMemorias.BorderStyle = BorderStyle.FixedSingle;
             txbMemorias.Dock = DockStyle.Fill;
-            txbMemorias.Location = new Point(10, 29);
+            txbMemorias.Location = new Point(10, 17);
             txbMemorias.Margin = new Padding(10, 0, 3, 0);
             txbMemorias.Name = "txbMemorias";
             txbMemorias.Size = new Size(68, 23);
@@ -322,7 +324,7 @@ namespace InventarioTI.View
             // 
             lblMemoria.AutoSize = true;
             lblMemoria.Dock = DockStyle.Bottom;
-            lblMemoria.Location = new Point(10, 14);
+            lblMemoria.Location = new Point(10, 2);
             lblMemoria.Margin = new Padding(10, 0, 3, 0);
             lblMemoria.Name = "lblMemoria";
             lblMemoria.Size = new Size(68, 15);
@@ -333,7 +335,7 @@ namespace InventarioTI.View
             // 
             txbTipo.BorderStyle = BorderStyle.FixedSingle;
             txbTipo.Dock = DockStyle.Fill;
-            txbTipo.Location = new Point(20, 29);
+            txbTipo.Location = new Point(20, 17);
             txbTipo.Margin = new Padding(20, 0, 3, 0);
             txbTipo.Name = "txbTipo";
             txbTipo.Size = new Size(83, 23);
@@ -343,7 +345,7 @@ namespace InventarioTI.View
             // 
             lblTipo.AutoSize = true;
             lblTipo.Dock = DockStyle.Bottom;
-            lblTipo.Location = new Point(20, 14);
+            lblTipo.Location = new Point(20, 2);
             lblTipo.Margin = new Padding(20, 0, 3, 0);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(83, 15);
@@ -354,7 +356,7 @@ namespace InventarioTI.View
             // 
             txbMarca.BorderStyle = BorderStyle.FixedSingle;
             txbMarca.Dock = DockStyle.Fill;
-            txbMarca.Location = new Point(3, 29);
+            txbMarca.Location = new Point(3, 17);
             txbMarca.Margin = new Padding(3, 0, 3, 0);
             txbMarca.Name = "txbMarca";
             txbMarca.Size = new Size(93, 23);
@@ -364,7 +366,7 @@ namespace InventarioTI.View
             // 
             lblMarca.AutoSize = true;
             lblMarca.Dock = DockStyle.Bottom;
-            lblMarca.Location = new Point(3, 14);
+            lblMarca.Location = new Point(3, 2);
             lblMarca.Name = "lblMarca";
             lblMarca.Size = new Size(93, 15);
             lblMarca.TabIndex = 22;
@@ -374,7 +376,7 @@ namespace InventarioTI.View
             // 
             txbModelo.BorderStyle = BorderStyle.FixedSingle;
             txbModelo.Dock = DockStyle.Fill;
-            txbModelo.Location = new Point(3, 29);
+            txbModelo.Location = new Point(3, 17);
             txbModelo.Margin = new Padding(3, 0, 3, 0);
             txbModelo.Name = "txbModelo";
             txbModelo.Size = new Size(93, 23);
@@ -384,7 +386,7 @@ namespace InventarioTI.View
             // 
             lblModelo.AutoSize = true;
             lblModelo.Dock = DockStyle.Bottom;
-            lblModelo.Location = new Point(3, 14);
+            lblModelo.Location = new Point(3, 2);
             lblModelo.Name = "lblModelo";
             lblModelo.Size = new Size(93, 15);
             lblModelo.TabIndex = 24;
@@ -397,7 +399,7 @@ namespace InventarioTI.View
             ptbTMM.Dock = DockStyle.Bottom;
             ptbTMM.Enabled = false;
             ptbTMM.Image = Properties.Resources.AdicionarEquipamento;
-            ptbTMM.Location = new Point(307, 16);
+            ptbTMM.Location = new Point(307, 4);
             ptbTMM.Name = "ptbTMM";
             ptbTMM.Size = new Size(44, 40);
             ptbTMM.TabIndex = 26;
@@ -410,12 +412,12 @@ namespace InventarioTI.View
             dgvProcessadores.Columns.AddRange(new DataGridViewColumn[] { ProcessadorP, ExP });
             dgvProcessadores.Dock = DockStyle.Fill;
             dgvProcessadores.Enabled = false;
-            dgvProcessadores.Location = new Point(364, 62);
-            dgvProcessadores.Margin = new Padding(10, 3, 10, 51);
+            dgvProcessadores.Location = new Point(364, 50);
+            dgvProcessadores.Margin = new Padding(10, 3, 10, 41);
             dgvProcessadores.Name = "dgvProcessadores";
             dgvProcessadores.RowHeadersWidth = 62;
             dgvProcessadores.RowTemplate.Height = 25;
-            dgvProcessadores.Size = new Size(152, 117);
+            dgvProcessadores.Size = new Size(152, 188);
             dgvProcessadores.TabIndex = 28;
             dgvProcessadores.TabStop = false;
             dgvProcessadores.CellContentClick += dgvProcessadores_CellContentClick;
@@ -443,12 +445,12 @@ namespace InventarioTI.View
             dgvMemorias.Columns.AddRange(new DataGridViewColumn[] { memoriaM, ExM });
             dgvMemorias.Dock = DockStyle.Fill;
             dgvMemorias.Enabled = false;
-            dgvMemorias.Location = new Point(536, 62);
-            dgvMemorias.Margin = new Padding(10, 3, 10, 51);
+            dgvMemorias.Location = new Point(536, 50);
+            dgvMemorias.Margin = new Padding(10, 3, 10, 41);
             dgvMemorias.Name = "dgvMemorias";
             dgvMemorias.RowHeadersWidth = 62;
             dgvMemorias.RowTemplate.Height = 25;
-            dgvMemorias.Size = new Size(111, 117);
+            dgvMemorias.Size = new Size(111, 188);
             dgvMemorias.TabIndex = 29;
             dgvMemorias.TabStop = false;
             dgvMemorias.CellContentClick += dgvMemorias_CellContentClick;
@@ -471,42 +473,44 @@ namespace InventarioTI.View
             // 
             tlpBak0.ColumnCount = 1;
             tlpBak0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpBak0.Controls.Add(tlpBotton, 0, 2);
             tlpBak0.Controls.Add(tlpMeio, 0, 1);
-            tlpBak0.Controls.Add(tlpTop, 0, 0);
+            tlpBak0.Controls.Add(pnlTop, 0, 0);
             tlpBak0.Dock = DockStyle.Fill;
             tlpBak0.Location = new Point(0, 0);
             tlpBak0.Margin = new Padding(0);
             tlpBak0.Name = "tlpBak0";
-            tlpBak0.RowCount = 2;
-            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
-            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 74F));
-            tlpBak0.Size = new Size(1013, 310);
+            tlpBak0.RowCount = 3;
+            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 12F));
+            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tlpBak0.RowStyles.Add(new RowStyle(SizeType.Percent, 68F));
+            tlpBak0.Size = new Size(1013, 410);
             tlpBak0.TabIndex = 1;
             // 
-            // tlpMeio
+            // tlpBotton
             // 
-            tlpMeio.ColumnCount = 4;
-            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
-            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
-            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            tlpMeio.Controls.Add(dgvUnidade, 3, 1);
-            tlpMeio.Controls.Add(tlpBottonU, 3, 0);
-            tlpMeio.Controls.Add(tlpBotton2, 2, 0);
-            tlpMeio.Controls.Add(tlpBotton0, 0, 0);
-            tlpMeio.Controls.Add(tlpBotton1, 1, 0);
-            tlpMeio.Controls.Add(dgvMemorias, 2, 1);
-            tlpMeio.Controls.Add(dgvProcessadores, 1, 1);
-            tlpMeio.Controls.Add(dgvTMM, 0, 1);
-            tlpMeio.Dock = DockStyle.Fill;
-            tlpMeio.Location = new Point(0, 80);
-            tlpMeio.Margin = new Padding(0);
-            tlpMeio.Name = "tlpMeio";
-            tlpMeio.RowCount = 2;
-            tlpMeio.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
-            tlpMeio.RowStyles.Add(new RowStyle(SizeType.Percent, 74F));
-            tlpMeio.Size = new Size(1013, 230);
-            tlpMeio.TabIndex = 1;
+            tlpBotton.ColumnCount = 4;
+            tlpBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tlpBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17F));
+            tlpBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13F));
+            tlpBotton.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tlpBotton.Controls.Add(dgvUnidade, 3, 1);
+            tlpBotton.Controls.Add(tlpBottonU, 3, 0);
+            tlpBotton.Controls.Add(tlpBotton2, 2, 0);
+            tlpBotton.Controls.Add(tlpBotton0, 0, 0);
+            tlpBotton.Controls.Add(tlpBotton1, 1, 0);
+            tlpBotton.Controls.Add(dgvMemorias, 2, 1);
+            tlpBotton.Controls.Add(dgvProcessadores, 1, 1);
+            tlpBotton.Controls.Add(dgvTMM, 0, 1);
+            tlpBotton.Dock = DockStyle.Fill;
+            tlpBotton.Location = new Point(0, 131);
+            tlpBotton.Margin = new Padding(0);
+            tlpBotton.Name = "tlpBotton";
+            tlpBotton.RowCount = 2;
+            tlpBotton.RowStyles.Add(new RowStyle(SizeType.Percent, 17F));
+            tlpBotton.RowStyles.Add(new RowStyle(SizeType.Percent, 83F));
+            tlpBotton.Size = new Size(1013, 279);
+            tlpBotton.TabIndex = 1;
             // 
             // dgvUnidade
             // 
@@ -516,13 +520,13 @@ namespace InventarioTI.View
             dgvUnidade.Columns.AddRange(new DataGridViewColumn[] { regiaoUnidade, ufUnidade, nomeUnidade, siglaUnidade, ExU });
             dgvUnidade.Dock = DockStyle.Fill;
             dgvUnidade.Enabled = false;
-            dgvUnidade.Location = new Point(667, 62);
-            dgvUnidade.Margin = new Padding(10, 3, 20, 51);
+            dgvUnidade.Location = new Point(667, 50);
+            dgvUnidade.Margin = new Padding(10, 3, 20, 41);
             dgvUnidade.Name = "dgvUnidade";
             dgvUnidade.ReadOnly = true;
             dgvUnidade.RowHeadersWidth = 62;
             dgvUnidade.RowTemplate.Height = 25;
-            dgvUnidade.Size = new Size(326, 117);
+            dgvUnidade.Size = new Size(326, 188);
             dgvUnidade.TabIndex = 28;
             dgvUnidade.TabStop = false;
             dgvUnidade.CellContentClick += dgvUnidade_CellContentClick;
@@ -584,7 +588,7 @@ namespace InventarioTI.View
             tlpBottonU.Name = "tlpBottonU";
             tlpBottonU.RowCount = 1;
             tlpBottonU.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBottonU.Size = new Size(356, 59);
+            tlpBottonU.Size = new Size(356, 47);
             tlpBottonU.TabIndex = 1;
             // 
             // tlpBottonU1
@@ -600,14 +604,14 @@ namespace InventarioTI.View
             tlpBottonU1.RowCount = 2;
             tlpBottonU1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonU1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonU1.Size = new Size(35, 59);
+            tlpBottonU1.Size = new Size(35, 47);
             tlpBottonU1.TabIndex = 1;
             // 
             // lblUF
             // 
             lblUF.AutoSize = true;
             lblUF.Dock = DockStyle.Bottom;
-            lblUF.Location = new Point(3, 14);
+            lblUF.Location = new Point(3, 2);
             lblUF.Name = "lblUF";
             lblUF.Size = new Size(29, 15);
             lblUF.TabIndex = 24;
@@ -617,7 +621,7 @@ namespace InventarioTI.View
             // 
             txbUF.BorderStyle = BorderStyle.FixedSingle;
             txbUF.Dock = DockStyle.Fill;
-            txbUF.Location = new Point(3, 29);
+            txbUF.Location = new Point(3, 17);
             txbUF.Margin = new Padding(3, 0, 3, 0);
             txbUF.Name = "txbUF";
             txbUF.Size = new Size(29, 23);
@@ -636,14 +640,14 @@ namespace InventarioTI.View
             tlpBottonU0.RowCount = 2;
             tlpBottonU0.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonU0.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonU0.Size = new Size(85, 59);
+            tlpBottonU0.Size = new Size(85, 47);
             tlpBottonU0.TabIndex = 1;
             // 
             // lblRegiao
             // 
             lblRegiao.AutoSize = true;
             lblRegiao.Dock = DockStyle.Bottom;
-            lblRegiao.Location = new Point(10, 14);
+            lblRegiao.Location = new Point(10, 2);
             lblRegiao.Margin = new Padding(10, 0, 3, 0);
             lblRegiao.Name = "lblRegiao";
             lblRegiao.Size = new Size(72, 15);
@@ -654,7 +658,7 @@ namespace InventarioTI.View
             // 
             txbRegiao.BorderStyle = BorderStyle.FixedSingle;
             txbRegiao.Dock = DockStyle.Fill;
-            txbRegiao.Location = new Point(10, 29);
+            txbRegiao.Location = new Point(10, 17);
             txbRegiao.Margin = new Padding(10, 0, 3, 0);
             txbRegiao.Name = "txbRegiao";
             txbRegiao.Size = new Size(72, 23);
@@ -673,14 +677,14 @@ namespace InventarioTI.View
             tlpBottonU3.RowCount = 2;
             tlpBottonU3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonU3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonU3.Size = new Size(56, 59);
+            tlpBottonU3.Size = new Size(56, 47);
             tlpBottonU3.TabIndex = 1;
             // 
             // lblSigla
             // 
             lblSigla.AutoSize = true;
             lblSigla.Dock = DockStyle.Bottom;
-            lblSigla.Location = new Point(3, 14);
+            lblSigla.Location = new Point(3, 2);
             lblSigla.Name = "lblSigla";
             lblSigla.Size = new Size(50, 15);
             lblSigla.TabIndex = 24;
@@ -690,7 +694,7 @@ namespace InventarioTI.View
             // 
             txbSigla.BorderStyle = BorderStyle.FixedSingle;
             txbSigla.Dock = DockStyle.Fill;
-            txbSigla.Location = new Point(3, 29);
+            txbSigla.Location = new Point(3, 17);
             txbSigla.Margin = new Padding(3, 0, 3, 0);
             txbSigla.Name = "txbSigla";
             txbSigla.Size = new Size(50, 23);
@@ -709,14 +713,14 @@ namespace InventarioTI.View
             tlpBottonU2.RowCount = 2;
             tlpBottonU2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonU2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonU2.Size = new Size(121, 59);
+            tlpBottonU2.Size = new Size(121, 47);
             tlpBottonU2.TabIndex = 1;
             // 
             // lblNomeU
             // 
             lblNomeU.AutoSize = true;
             lblNomeU.Dock = DockStyle.Bottom;
-            lblNomeU.Location = new Point(3, 14);
+            lblNomeU.Location = new Point(3, 2);
             lblNomeU.Name = "lblNomeU";
             lblNomeU.Size = new Size(115, 15);
             lblNomeU.TabIndex = 22;
@@ -726,7 +730,7 @@ namespace InventarioTI.View
             // 
             txbNome.BorderStyle = BorderStyle.FixedSingle;
             txbNome.Dock = DockStyle.Fill;
-            txbNome.Location = new Point(3, 29);
+            txbNome.Location = new Point(3, 17);
             txbNome.Margin = new Padding(3, 0, 3, 0);
             txbNome.Name = "txbNome";
             txbNome.Size = new Size(115, 23);
@@ -739,7 +743,7 @@ namespace InventarioTI.View
             ptbUnidade.Dock = DockStyle.Bottom;
             ptbUnidade.Enabled = false;
             ptbUnidade.Image = Properties.Resources.AdicionarEquipamento;
-            ptbUnidade.Location = new Point(300, 16);
+            ptbUnidade.Location = new Point(300, 4);
             ptbUnidade.Name = "ptbUnidade";
             ptbUnidade.Size = new Size(53, 40);
             ptbUnidade.TabIndex = 26;
@@ -759,7 +763,7 @@ namespace InventarioTI.View
             tlpBotton2.Name = "tlpBotton2";
             tlpBotton2.RowCount = 1;
             tlpBotton2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotton2.Size = new Size(131, 59);
+            tlpBotton2.Size = new Size(131, 47);
             tlpBotton2.TabIndex = 1;
             // 
             // tlpBottonM
@@ -775,7 +779,7 @@ namespace InventarioTI.View
             tlpBottonM.RowCount = 2;
             tlpBottonM.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonM.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonM.Size = new Size(81, 59);
+            tlpBottonM.Size = new Size(81, 47);
             tlpBottonM.TabIndex = 1;
             // 
             // tlpBotton0
@@ -795,7 +799,7 @@ namespace InventarioTI.View
             tlpBotton0.Name = "tlpBotton0";
             tlpBotton0.RowCount = 1;
             tlpBotton0.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotton0.Size = new Size(354, 59);
+            tlpBotton0.Size = new Size(354, 47);
             tlpBotton0.TabIndex = 1;
             // 
             // tlpBottonT0
@@ -811,7 +815,7 @@ namespace InventarioTI.View
             tlpBottonT0.RowCount = 2;
             tlpBottonT0.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonT0.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonT0.Size = new Size(106, 59);
+            tlpBottonT0.Size = new Size(106, 47);
             tlpBottonT0.TabIndex = 1;
             // 
             // tlpBottonT2
@@ -827,7 +831,7 @@ namespace InventarioTI.View
             tlpBottonT2.RowCount = 2;
             tlpBottonT2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonT2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonT2.Size = new Size(99, 59);
+            tlpBottonT2.Size = new Size(99, 47);
             tlpBottonT2.TabIndex = 3;
             // 
             // tlpBottonT1
@@ -843,7 +847,7 @@ namespace InventarioTI.View
             tlpBottonT1.RowCount = 2;
             tlpBottonT1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonT1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonT1.Size = new Size(99, 59);
+            tlpBottonT1.Size = new Size(99, 47);
             tlpBottonT1.TabIndex = 1;
             // 
             // tlpBotton1
@@ -859,7 +863,7 @@ namespace InventarioTI.View
             tlpBotton1.Name = "tlpBotton1";
             tlpBotton1.RowCount = 1;
             tlpBotton1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpBotton1.Size = new Size(172, 59);
+            tlpBotton1.Size = new Size(172, 47);
             tlpBotton1.TabIndex = 1;
             // 
             // tlpBottonP
@@ -875,7 +879,7 @@ namespace InventarioTI.View
             tlpBottonP.RowCount = 2;
             tlpBottonP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpBottonP.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpBottonP.Size = new Size(122, 59);
+            tlpBottonP.Size = new Size(122, 47);
             tlpBottonP.TabIndex = 1;
             // 
             // dgvTMM
@@ -884,12 +888,12 @@ namespace InventarioTI.View
             dgvTMM.Columns.AddRange(new DataGridViewColumn[] { tipoTMM, marcaTMM, modeloTMM, ExT });
             dgvTMM.Dock = DockStyle.Fill;
             dgvTMM.Enabled = false;
-            dgvTMM.Location = new Point(20, 62);
-            dgvTMM.Margin = new Padding(20, 3, 10, 51);
+            dgvTMM.Location = new Point(20, 50);
+            dgvTMM.Margin = new Padding(20, 3, 10, 41);
             dgvTMM.Name = "dgvTMM";
             dgvTMM.RowHeadersWidth = 62;
             dgvTMM.RowTemplate.Height = 25;
-            dgvTMM.Size = new Size(324, 117);
+            dgvTMM.Size = new Size(324, 188);
             dgvTMM.TabIndex = 33;
             dgvTMM.TabStop = false;
             dgvTMM.CellContentClick += dgvTMM_CellContentClick;
@@ -920,98 +924,116 @@ namespace InventarioTI.View
             ExT.Name = "ExT";
             ExT.Width = 150;
             // 
-            // tlpTop
+            // tlpMeio
             // 
-            tlpTop.ColumnCount = 6;
-            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
-            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
-            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
-            tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16F));
-            tlpTop.Controls.Add(ptbSalvar, 5, 0);
-            tlpTop.Controls.Add(tlpTopResposavel, 3, 0);
-            tlpTop.Controls.Add(tlpTop3, 4, 0);
-            tlpTop.Controls.Add(tlpTop1, 2, 0);
-            tlpTop.Controls.Add(tlpTop0, 0, 0);
-            tlpTop.Controls.Add(ptbPasta, 1, 0);
-            tlpTop.Dock = DockStyle.Fill;
-            tlpTop.Location = new Point(0, 0);
-            tlpTop.Margin = new Padding(0);
-            tlpTop.Name = "tlpTop";
-            tlpTop.RowCount = 1;
-            tlpTop.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpTop.Size = new Size(1013, 80);
-            tlpTop.TabIndex = 1;
+            tlpMeio.ColumnCount = 5;
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 44F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33F));
+            tlpMeio.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12F));
+            tlpMeio.Controls.Add(tlpMeioResposavel, 3, 0);
+            tlpMeio.Controls.Add(tlpMeio3, 4, 0);
+            tlpMeio.Controls.Add(tlpMeio1, 2, 0);
+            tlpMeio.Controls.Add(tlpMeio0, 0, 0);
+            tlpMeio.Controls.Add(ptbPasta, 1, 0);
+            tlpMeio.Dock = DockStyle.Fill;
+            tlpMeio.Location = new Point(0, 49);
+            tlpMeio.Margin = new Padding(0);
+            tlpMeio.Name = "tlpMeio";
+            tlpMeio.RowCount = 1;
+            tlpMeio.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMeio.Size = new Size(1013, 82);
+            tlpMeio.TabIndex = 1;
             // 
-            // tlpTopResposavel
+            // tlpMeioResposavel
             // 
-            tlpTopResposavel.ColumnCount = 1;
-            tlpTopResposavel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpTopResposavel.Controls.Add(lblNome, 0, 0);
-            tlpTopResposavel.Controls.Add(txbResponsavel, 0, 1);
-            tlpTopResposavel.Dock = DockStyle.Fill;
-            tlpTopResposavel.Location = new Point(443, 0);
-            tlpTopResposavel.Margin = new Padding(0);
-            tlpTopResposavel.Name = "tlpTopResposavel";
-            tlpTopResposavel.RowCount = 3;
-            tlpTopResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
-            tlpTopResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTopResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTopResposavel.Size = new Size(303, 80);
-            tlpTopResposavel.TabIndex = 1;
+            tlpMeioResposavel.ColumnCount = 1;
+            tlpMeioResposavel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMeioResposavel.Controls.Add(lblNome, 0, 0);
+            tlpMeioResposavel.Controls.Add(txbResponsavel, 0, 1);
+            tlpMeioResposavel.Dock = DockStyle.Fill;
+            tlpMeioResposavel.Location = new Point(555, 0);
+            tlpMeioResposavel.Margin = new Padding(0);
+            tlpMeioResposavel.Name = "tlpMeioResposavel";
+            tlpMeioResposavel.RowCount = 3;
+            tlpMeioResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tlpMeioResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeioResposavel.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeioResposavel.Size = new Size(334, 82);
+            tlpMeioResposavel.TabIndex = 1;
             // 
-            // tlpTop3
+            // tlpMeio3
             // 
-            tlpTop3.ColumnCount = 1;
-            tlpTop3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpTop3.Controls.Add(lblMatricula, 0, 0);
-            tlpTop3.Controls.Add(txbMatricula, 0, 1);
-            tlpTop3.Dock = DockStyle.Fill;
-            tlpTop3.Location = new Point(746, 0);
-            tlpTop3.Margin = new Padding(0);
-            tlpTop3.Name = "tlpTop3";
-            tlpTop3.RowCount = 3;
-            tlpTop3.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
-            tlpTop3.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTop3.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTop3.Size = new Size(101, 80);
-            tlpTop3.TabIndex = 1;
+            tlpMeio3.ColumnCount = 1;
+            tlpMeio3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMeio3.Controls.Add(lblMatricula, 0, 0);
+            tlpMeio3.Controls.Add(txbMatricula, 0, 1);
+            tlpMeio3.Dock = DockStyle.Fill;
+            tlpMeio3.Location = new Point(889, 0);
+            tlpMeio3.Margin = new Padding(0);
+            tlpMeio3.Name = "tlpMeio3";
+            tlpMeio3.RowCount = 3;
+            tlpMeio3.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tlpMeio3.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeio3.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeio3.Size = new Size(124, 82);
+            tlpMeio3.TabIndex = 1;
             // 
-            // tlpTop1
+            // tlpMeio1
             // 
-            tlpTop1.ColumnCount = 1;
-            tlpTop1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpTop1.Controls.Add(lblUnidade, 0, 0);
-            tlpTop1.Controls.Add(cbxUnidade, 0, 1);
-            tlpTop1.Dock = DockStyle.Fill;
-            tlpTop1.Location = new Point(373, 0);
-            tlpTop1.Margin = new Padding(0);
-            tlpTop1.Name = "tlpTop1";
-            tlpTop1.RowCount = 3;
-            tlpTop1.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
-            tlpTop1.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTop1.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTop1.Size = new Size(70, 80);
-            tlpTop1.TabIndex = 1;
+            tlpMeio1.ColumnCount = 1;
+            tlpMeio1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMeio1.Controls.Add(lblUnidade, 0, 0);
+            tlpMeio1.Controls.Add(cbxUnidade, 0, 1);
+            tlpMeio1.Dock = DockStyle.Fill;
+            tlpMeio1.Location = new Point(485, 0);
+            tlpMeio1.Margin = new Padding(0);
+            tlpMeio1.Name = "tlpMeio1";
+            tlpMeio1.RowCount = 3;
+            tlpMeio1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tlpMeio1.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeio1.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeio1.Size = new Size(70, 82);
+            tlpMeio1.TabIndex = 1;
             // 
-            // tlpTop0
+            // tlpMeio0
             // 
-            tlpTop0.ColumnCount = 1;
-            tlpTop0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpTop0.Controls.Add(lblPasta, 0, 0);
-            tlpTop0.Controls.Add(txbPasta, 0, 1);
-            tlpTop0.Controls.Add(ckxImpressoraPadrão, 0, 2);
-            tlpTop0.Dock = DockStyle.Fill;
-            tlpTop0.Location = new Point(0, 0);
-            tlpTop0.Margin = new Padding(0);
-            tlpTop0.Name = "tlpTop0";
-            tlpTop0.RowCount = 3;
-            tlpTop0.RowStyles.Add(new RowStyle(SizeType.Percent, 44F));
-            tlpTop0.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTop0.RowStyles.Add(new RowStyle(SizeType.Percent, 28F));
-            tlpTop0.Size = new Size(303, 80);
-            tlpTop0.TabIndex = 1;
+            tlpMeio0.ColumnCount = 1;
+            tlpMeio0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMeio0.Controls.Add(lblPasta, 0, 0);
+            tlpMeio0.Controls.Add(txbPasta, 0, 1);
+            tlpMeio0.Controls.Add(ckxImpressoraPadrão, 0, 2);
+            tlpMeio0.Location = new Point(0, 0);
+            tlpMeio0.Margin = new Padding(0);
+            tlpMeio0.Name = "tlpMeio0";
+            tlpMeio0.RowCount = 3;
+            tlpMeio0.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            tlpMeio0.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeio0.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
+            tlpMeio0.Size = new Size(445, 82);
+            tlpMeio0.TabIndex = 1;
+            // 
+            // pnlTop
+            // 
+            pnlTop.Controls.Add(lblTop);
+            pnlTop.Controls.Add(ptbSalvar);
+            pnlTop.Dock = DockStyle.Fill;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Margin = new Padding(0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new Size(1013, 49);
+            pnlTop.TabIndex = 2;
+            // 
+            // lblTop
+            // 
+            lblTop.AutoSize = true;
+            lblTop.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTop.Location = new Point(449, 15);
+            lblTop.Name = "lblTop";
+            lblTop.Size = new Size(74, 23);
+            lblTop.TabIndex = 14;
+            lblTop.Text = "Ajustes";
             // 
             // uctAjustes
             // 
@@ -1021,7 +1043,7 @@ namespace InventarioTI.View
             Controls.Add(tlpBak0);
             Margin = new Padding(0);
             Name = "uctAjustes";
-            Size = new Size(1013, 310);
+            Size = new Size(1013, 410);
             Load += uctAjustes_Load;
             ((System.ComponentModel.ISupportInitialize)ptbPasta).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbSalvar).EndInit();
@@ -1031,7 +1053,7 @@ namespace InventarioTI.View
             ((System.ComponentModel.ISupportInitialize)dgvProcessadores).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvMemorias).EndInit();
             tlpBak0.ResumeLayout(false);
-            tlpMeio.ResumeLayout(false);
+            tlpBotton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvUnidade).EndInit();
             tlpBottonU.ResumeLayout(false);
             tlpBottonU1.ResumeLayout(false);
@@ -1057,15 +1079,17 @@ namespace InventarioTI.View
             tlpBottonP.ResumeLayout(false);
             tlpBottonP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTMM).EndInit();
-            tlpTop.ResumeLayout(false);
-            tlpTopResposavel.ResumeLayout(false);
-            tlpTopResposavel.PerformLayout();
-            tlpTop3.ResumeLayout(false);
-            tlpTop3.PerformLayout();
-            tlpTop1.ResumeLayout(false);
-            tlpTop1.PerformLayout();
-            tlpTop0.ResumeLayout(false);
-            tlpTop0.PerformLayout();
+            tlpMeio.ResumeLayout(false);
+            tlpMeioResposavel.ResumeLayout(false);
+            tlpMeioResposavel.PerformLayout();
+            tlpMeio3.ResumeLayout(false);
+            tlpMeio3.PerformLayout();
+            tlpMeio1.ResumeLayout(false);
+            tlpMeio1.PerformLayout();
+            tlpMeio0.ResumeLayout(false);
+            tlpMeio0.PerformLayout();
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1096,12 +1120,12 @@ namespace InventarioTI.View
         private DataGridView dgvProcessadores;
         private DataGridView dgvMemorias;
         private TableLayoutPanel tlpBak0;
-        private TableLayoutPanel tlpTop;
         private TableLayoutPanel tlpMeio;
-        private TableLayoutPanel tlpTop0;
-        private TableLayoutPanel tlpTop1;
-        private TableLayoutPanel tlpTop3;
-        private TableLayoutPanel tlpTopResposavel;
+        private TableLayoutPanel tlpBotton;
+        private TableLayoutPanel tlpMeio0;
+        private TableLayoutPanel tlpMeio1;
+        private TableLayoutPanel tlpMeio3;
+        private TableLayoutPanel tlpMeioResposavel;
         private TableLayoutPanel tlpBotton0;
         private TableLayoutPanel tlpBotton2;
         private TableLayoutPanel tlpBotton1;
@@ -1142,5 +1166,7 @@ namespace InventarioTI.View
         private DataGridViewTextBoxColumn nomeUnidade;
         private DataGridViewTextBoxColumn siglaUnidade;
         private DataGridViewImageColumn ExU;
+        private Panel pnlTop;
+        private Label lblTop;
     }
 }

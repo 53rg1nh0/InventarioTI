@@ -30,14 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             tlphome = new TableLayoutPanel();
-            pnlEquipamentoTop = new Panel();
-            ptbTrocar = new PictureBox();
-            lblTituloEquipamento = new Label();
-            ptbMoverEquipamento = new PictureBox();
-            ptbApagarEquipamento = new PictureBox();
-            ptbRemoverEquipamento = new PictureBox();
-            ptbEditarEquipamento = new PictureBox();
-            ptbAdicionarEquipamento = new PictureBox();
             pnlCLienteTop = new Panel();
             lblTituloCLiente = new Label();
             ptbGerarTermo = new PictureBox();
@@ -71,7 +63,7 @@
             txbArea = new TextBox();
             txbUserID = new TextBox();
             pnlEquipamento = new Panel();
-            pictureBox1 = new PictureBox();
+            ptbSerie = new PictureBox();
             ptbLupaPatrimonio = new PictureBox();
             cbxModelo = new ComboBox();
             cbxMarca = new ComboBox();
@@ -95,16 +87,18 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             clienteBindingSource = new BindingSource(components);
+            pnlEquipamentoTop = new Panel();
+            pnlLinhaAbaixo = new Panel();
+            ptbTrocar = new PictureBox();
+            lblTituloEquipamento = new Label();
+            ptbMoverEquipamento = new PictureBox();
+            ptbApagarEquipamento = new PictureBox();
+            ptbRemoverEquipamento = new PictureBox();
+            ptbEditarEquipamento = new PictureBox();
+            ptbAdicionarEquipamento = new PictureBox();
             lblCliente = new Label();
             lblEquipamento = new Label();
             tlphome.SuspendLayout();
-            pnlEquipamentoTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbTrocar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbMoverEquipamento).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbApagarEquipamento).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbRemoverEquipamento).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbEditarEquipamento).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ptbAdicionarEquipamento).BeginInit();
             pnlCLienteTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptbGerarTermo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MoverCliente).BeginInit();
@@ -118,10 +112,17 @@
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)equipamentoBindingSource).BeginInit();
             pnlEquipamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbSerie).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbLupaPatrimonio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvEquipamento).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
+            pnlEquipamentoTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbTrocar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbMoverEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbApagarEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbRemoverEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbEditarEquipamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbAdicionarEquipamento).BeginInit();
             SuspendLayout();
             // 
             // tlphome
@@ -130,120 +131,22 @@
             tlphome.BackColor = Color.White;
             tlphome.ColumnCount = 1;
             tlphome.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlphome.Controls.Add(pnlEquipamentoTop, 0, 2);
             tlphome.Controls.Add(pnlCLienteTop, 0, 0);
             tlphome.Controls.Add(pnlCliente, 0, 1);
             tlphome.Controls.Add(pnlEquipamento, 0, 3);
+            tlphome.Controls.Add(pnlEquipamentoTop, 0, 2);
             tlphome.Dock = DockStyle.Fill;
             tlphome.Location = new Point(0, 0);
             tlphome.Margin = new Padding(0);
             tlphome.Name = "tlphome";
             tlphome.RowCount = 5;
-            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tlphome.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tlphome.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlphome.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlphome.Size = new Size(1007, 367);
+            tlphome.Size = new Size(1007, 467);
             tlphome.TabIndex = 0;
-            // 
-            // pnlEquipamentoTop
-            // 
-            pnlEquipamentoTop.Controls.Add(ptbTrocar);
-            pnlEquipamentoTop.Controls.Add(lblTituloEquipamento);
-            pnlEquipamentoTop.Controls.Add(ptbMoverEquipamento);
-            pnlEquipamentoTop.Controls.Add(ptbApagarEquipamento);
-            pnlEquipamentoTop.Controls.Add(ptbRemoverEquipamento);
-            pnlEquipamentoTop.Controls.Add(ptbEditarEquipamento);
-            pnlEquipamentoTop.Controls.Add(ptbAdicionarEquipamento);
-            pnlEquipamentoTop.Dock = DockStyle.Fill;
-            pnlEquipamentoTop.Location = new Point(0, 168);
-            pnlEquipamentoTop.Margin = new Padding(0);
-            pnlEquipamentoTop.Name = "pnlEquipamentoTop";
-            pnlEquipamentoTop.Size = new Size(1007, 50);
-            pnlEquipamentoTop.TabIndex = 2;
-            // 
-            // ptbTrocar
-            // 
-            ptbTrocar.Cursor = Cursors.Hand;
-            ptbTrocar.Image = Properties.Resources.Trocar;
-            ptbTrocar.Location = new Point(370, 7);
-            ptbTrocar.Margin = new Padding(0);
-            ptbTrocar.Name = "ptbTrocar";
-            ptbTrocar.Size = new Size(40, 40);
-            ptbTrocar.TabIndex = 6;
-            ptbTrocar.TabStop = false;
-            ptbTrocar.Click += ptbTrocar_Click;
-            // 
-            // lblTituloEquipamento
-            // 
-            lblTituloEquipamento.AutoSize = true;
-            lblTituloEquipamento.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTituloEquipamento.Location = new Point(423, 18);
-            lblTituloEquipamento.Name = "lblTituloEquipamento";
-            lblTituloEquipamento.Size = new Size(114, 19);
-            lblTituloEquipamento.TabIndex = 9;
-            lblTituloEquipamento.Text = "Equipamento";
-            // 
-            // ptbMoverEquipamento
-            // 
-            ptbMoverEquipamento.Cursor = Cursors.Hand;
-            ptbMoverEquipamento.Image = Properties.Resources.Mover;
-            ptbMoverEquipamento.Location = new Point(301, 8);
-            ptbMoverEquipamento.Margin = new Padding(0);
-            ptbMoverEquipamento.Name = "ptbMoverEquipamento";
-            ptbMoverEquipamento.Size = new Size(40, 40);
-            ptbMoverEquipamento.TabIndex = 5;
-            ptbMoverEquipamento.TabStop = false;
-            ptbMoverEquipamento.Click += ptbMoverEquipamento_Click;
-            // 
-            // ptbApagarEquipamento
-            // 
-            ptbApagarEquipamento.Cursor = Cursors.Hand;
-            ptbApagarEquipamento.Image = Properties.Resources.Borracha;
-            ptbApagarEquipamento.Location = new Point(232, 8);
-            ptbApagarEquipamento.Margin = new Padding(0);
-            ptbApagarEquipamento.Name = "ptbApagarEquipamento";
-            ptbApagarEquipamento.Size = new Size(40, 40);
-            ptbApagarEquipamento.TabIndex = 4;
-            ptbApagarEquipamento.TabStop = false;
-            ptbApagarEquipamento.Click += ptbApagarEquipamento_Click;
-            // 
-            // ptbRemoverEquipamento
-            // 
-            ptbRemoverEquipamento.Cursor = Cursors.Hand;
-            ptbRemoverEquipamento.Image = Properties.Resources.RemoverEquipamento;
-            ptbRemoverEquipamento.Location = new Point(163, 8);
-            ptbRemoverEquipamento.Margin = new Padding(0);
-            ptbRemoverEquipamento.Name = "ptbRemoverEquipamento";
-            ptbRemoverEquipamento.Size = new Size(40, 40);
-            ptbRemoverEquipamento.TabIndex = 3;
-            ptbRemoverEquipamento.TabStop = false;
-            ptbRemoverEquipamento.Click += ptbRemoverEquipamento_Click;
-            // 
-            // ptbEditarEquipamento
-            // 
-            ptbEditarEquipamento.Cursor = Cursors.Hand;
-            ptbEditarEquipamento.Image = Properties.Resources.EditarEquipamento;
-            ptbEditarEquipamento.Location = new Point(94, 8);
-            ptbEditarEquipamento.Margin = new Padding(0);
-            ptbEditarEquipamento.Name = "ptbEditarEquipamento";
-            ptbEditarEquipamento.Size = new Size(40, 40);
-            ptbEditarEquipamento.TabIndex = 2;
-            ptbEditarEquipamento.TabStop = false;
-            ptbEditarEquipamento.Click += ptbEditarEquipamento_Click;
-            // 
-            // ptbAdicionarEquipamento
-            // 
-            ptbAdicionarEquipamento.Cursor = Cursors.Hand;
-            ptbAdicionarEquipamento.Image = Properties.Resources.AdicionarEquipamento;
-            ptbAdicionarEquipamento.Location = new Point(25, 8);
-            ptbAdicionarEquipamento.Margin = new Padding(0);
-            ptbAdicionarEquipamento.Name = "ptbAdicionarEquipamento";
-            ptbAdicionarEquipamento.Size = new Size(40, 40);
-            ptbAdicionarEquipamento.TabIndex = 1;
-            ptbAdicionarEquipamento.TabStop = false;
-            ptbAdicionarEquipamento.Click += ptbAdicionarEquipamento_Click;
             // 
             // pnlCLienteTop
             // 
@@ -258,16 +161,17 @@
             pnlCLienteTop.Location = new Point(0, 0);
             pnlCLienteTop.Margin = new Padding(0);
             pnlCLienteTop.Name = "pnlCLienteTop";
-            pnlCLienteTop.Size = new Size(1007, 50);
+            pnlCLienteTop.Size = new Size(1007, 80);
             pnlCLienteTop.TabIndex = 0;
             // 
             // lblTituloCLiente
             // 
             lblTituloCLiente.AutoSize = true;
-            lblTituloCLiente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTituloCLiente.Location = new Point(448, 18);
+            lblTituloCLiente.BackColor = Color.White;
+            lblTituloCLiente.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTituloCLiente.Location = new Point(457, 15);
             lblTituloCLiente.Name = "lblTituloCLiente";
-            lblTituloCLiente.Size = new Size(63, 19);
+            lblTituloCLiente.Size = new Size(76, 23);
             lblTituloCLiente.TabIndex = 9;
             lblTituloCLiente.Text = "Cliente";
             // 
@@ -275,7 +179,7 @@
             // 
             ptbGerarTermo.Cursor = Cursors.Hand;
             ptbGerarTermo.Image = Properties.Resources.termo;
-            ptbGerarTermo.Location = new Point(370, 9);
+            ptbGerarTermo.Location = new Point(359, 35);
             ptbGerarTermo.Margin = new Padding(0);
             ptbGerarTermo.Name = "ptbGerarTermo";
             ptbGerarTermo.Size = new Size(40, 40);
@@ -286,7 +190,7 @@
             // 
             MoverCliente.Cursor = Cursors.Hand;
             MoverCliente.Image = Properties.Resources.Mover;
-            MoverCliente.Location = new Point(301, 9);
+            MoverCliente.Location = new Point(290, 35);
             MoverCliente.Margin = new Padding(0);
             MoverCliente.Name = "MoverCliente";
             MoverCliente.Size = new Size(40, 40);
@@ -298,7 +202,7 @@
             // 
             ptbApagarCampoCliente.Cursor = Cursors.Hand;
             ptbApagarCampoCliente.Image = Properties.Resources.Borracha;
-            ptbApagarCampoCliente.Location = new Point(232, 9);
+            ptbApagarCampoCliente.Location = new Point(221, 35);
             ptbApagarCampoCliente.Margin = new Padding(0);
             ptbApagarCampoCliente.Name = "ptbApagarCampoCliente";
             ptbApagarCampoCliente.Size = new Size(40, 40);
@@ -310,7 +214,7 @@
             // 
             ptbRemoverCliente.Cursor = Cursors.Hand;
             ptbRemoverCliente.Image = Properties.Resources.RemoverCliente;
-            ptbRemoverCliente.Location = new Point(163, 9);
+            ptbRemoverCliente.Location = new Point(152, 35);
             ptbRemoverCliente.Margin = new Padding(0);
             ptbRemoverCliente.Name = "ptbRemoverCliente";
             ptbRemoverCliente.Size = new Size(40, 40);
@@ -322,7 +226,7 @@
             // 
             ptbEditarCliente.Cursor = Cursors.Hand;
             ptbEditarCliente.Image = Properties.Resources.EditarUsuário;
-            ptbEditarCliente.Location = new Point(94, 9);
+            ptbEditarCliente.Location = new Point(83, 35);
             ptbEditarCliente.Margin = new Padding(0);
             ptbEditarCliente.Name = "ptbEditarCliente";
             ptbEditarCliente.Size = new Size(40, 40);
@@ -334,7 +238,7 @@
             // 
             ptbAdicionarCLinete.Cursor = Cursors.Hand;
             ptbAdicionarCLinete.Image = Properties.Resources.AdicionarCliente;
-            ptbAdicionarCLinete.Location = new Point(25, 9);
+            ptbAdicionarCLinete.Location = new Point(14, 35);
             ptbAdicionarCLinete.Margin = new Padding(0);
             ptbAdicionarCLinete.Name = "ptbAdicionarCLinete";
             ptbAdicionarCLinete.Size = new Size(40, 40);
@@ -361,10 +265,10 @@
             pnlCliente.Controls.Add(txbArea);
             pnlCliente.Controls.Add(txbUserID);
             pnlCliente.Dock = DockStyle.Fill;
-            pnlCliente.Location = new Point(0, 50);
+            pnlCliente.Location = new Point(0, 80);
             pnlCliente.Margin = new Padding(0);
             pnlCliente.Name = "pnlCliente";
-            pnlCliente.Size = new Size(1007, 118);
+            pnlCliente.Size = new Size(1007, 138);
             pnlCliente.TabIndex = 1;
             // 
             // ptbLupaNome
@@ -441,7 +345,7 @@
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCliente.Columns.AddRange(new DataGridViewColumn[] { patrimonioDataGridViewTextBoxColumn, nomenclaturaDataGridViewTextBoxColumn, Serie, marcaDataGridViewTextBoxColumn, modeloDataGridViewTextBoxColumn, processadorDataGridViewTextBoxColumn, memoriaDataGridViewTextBoxColumn });
             dgvCliente.DataSource = equipamentoBindingSource;
-            dgvCliente.Location = new Point(14, 52);
+            dgvCliente.Location = new Point(14, 58);
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersWidth = 62;
@@ -583,7 +487,7 @@
             // 
             // pnlEquipamento
             // 
-            pnlEquipamento.Controls.Add(pictureBox1);
+            pnlEquipamento.Controls.Add(ptbSerie);
             pnlEquipamento.Controls.Add(ptbLupaPatrimonio);
             pnlEquipamento.Controls.Add(cbxModelo);
             pnlEquipamento.Controls.Add(cbxMarca);
@@ -601,20 +505,20 @@
             pnlEquipamento.Controls.Add(lblPatrimonio);
             pnlEquipamento.Controls.Add(dgvEquipamento);
             pnlEquipamento.Dock = DockStyle.Fill;
-            pnlEquipamento.Location = new Point(0, 218);
+            pnlEquipamento.Location = new Point(0, 298);
             pnlEquipamento.Margin = new Padding(0);
             pnlEquipamento.Name = "pnlEquipamento";
-            pnlEquipamento.Size = new Size(1007, 118);
+            pnlEquipamento.Size = new Size(1007, 138);
             pnlEquipamento.TabIndex = 3;
             // 
-            // pictureBox1
+            // ptbSerie
             // 
-            pictureBox1.Image = Properties.Resources.Lupa;
-            pictureBox1.Location = new Point(311, 24);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(20, 20);
-            pictureBox1.TabIndex = 33;
-            pictureBox1.TabStop = false;
+            ptbSerie.Image = Properties.Resources.Lupa;
+            ptbSerie.Location = new Point(311, 24);
+            ptbSerie.Name = "ptbSerie";
+            ptbSerie.Size = new Size(20, 20);
+            ptbSerie.TabIndex = 33;
+            ptbSerie.TabStop = false;
             // 
             // ptbLupaPatrimonio
             // 
@@ -772,7 +676,7 @@
             dgvEquipamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEquipamento.Columns.AddRange(new DataGridViewColumn[] { userIDDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, areaDataGridViewTextBoxColumn, cargoDataGridViewTextBoxColumn, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
             dgvEquipamento.DataSource = clienteBindingSource;
-            dgvEquipamento.Location = new Point(12, 53);
+            dgvEquipamento.Location = new Point(12, 59);
             dgvEquipamento.Name = "dgvEquipamento";
             dgvEquipamento.ReadOnly = true;
             dgvEquipamento.RowHeadersWidth = 62;
@@ -845,6 +749,114 @@
             // 
             clienteBindingSource.DataSource = typeof(Entites.Cliente);
             // 
+            // pnlEquipamentoTop
+            // 
+            pnlEquipamentoTop.Controls.Add(pnlLinhaAbaixo);
+            pnlEquipamentoTop.Controls.Add(ptbTrocar);
+            pnlEquipamentoTop.Controls.Add(lblTituloEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbMoverEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbApagarEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbRemoverEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbEditarEquipamento);
+            pnlEquipamentoTop.Controls.Add(ptbAdicionarEquipamento);
+            pnlEquipamentoTop.Dock = DockStyle.Fill;
+            pnlEquipamentoTop.Location = new Point(0, 218);
+            pnlEquipamentoTop.Margin = new Padding(0);
+            pnlEquipamentoTop.Name = "pnlEquipamentoTop";
+            pnlEquipamentoTop.Size = new Size(1007, 80);
+            pnlEquipamentoTop.TabIndex = 2;
+            // 
+            // pnlLinhaAbaixo
+            // 
+            pnlLinhaAbaixo.BackColor = Color.Black;
+            pnlLinhaAbaixo.Location = new Point(0, 1);
+            pnlLinhaAbaixo.Name = "pnlLinhaAbaixo";
+            pnlLinhaAbaixo.Size = new Size(1100, 1);
+            pnlLinhaAbaixo.TabIndex = 10;
+            // 
+            // ptbTrocar
+            // 
+            ptbTrocar.Cursor = Cursors.Hand;
+            ptbTrocar.Image = Properties.Resources.Trocar;
+            ptbTrocar.Location = new Point(359, 33);
+            ptbTrocar.Margin = new Padding(0);
+            ptbTrocar.Name = "ptbTrocar";
+            ptbTrocar.Size = new Size(40, 40);
+            ptbTrocar.TabIndex = 6;
+            ptbTrocar.TabStop = false;
+            ptbTrocar.Click += ptbTrocar_Click;
+            // 
+            // lblTituloEquipamento
+            // 
+            lblTituloEquipamento.AutoSize = true;
+            lblTituloEquipamento.BackColor = Color.White;
+            lblTituloEquipamento.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTituloEquipamento.Location = new Point(433, 15);
+            lblTituloEquipamento.Name = "lblTituloEquipamento";
+            lblTituloEquipamento.Size = new Size(134, 23);
+            lblTituloEquipamento.TabIndex = 9;
+            lblTituloEquipamento.Text = "Equipamento";
+            // 
+            // ptbMoverEquipamento
+            // 
+            ptbMoverEquipamento.Cursor = Cursors.Hand;
+            ptbMoverEquipamento.Image = Properties.Resources.Mover;
+            ptbMoverEquipamento.Location = new Point(290, 34);
+            ptbMoverEquipamento.Margin = new Padding(0);
+            ptbMoverEquipamento.Name = "ptbMoverEquipamento";
+            ptbMoverEquipamento.Size = new Size(40, 40);
+            ptbMoverEquipamento.TabIndex = 5;
+            ptbMoverEquipamento.TabStop = false;
+            ptbMoverEquipamento.Click += ptbMoverEquipamento_Click;
+            // 
+            // ptbApagarEquipamento
+            // 
+            ptbApagarEquipamento.Cursor = Cursors.Hand;
+            ptbApagarEquipamento.Image = Properties.Resources.Borracha;
+            ptbApagarEquipamento.Location = new Point(221, 34);
+            ptbApagarEquipamento.Margin = new Padding(0);
+            ptbApagarEquipamento.Name = "ptbApagarEquipamento";
+            ptbApagarEquipamento.Size = new Size(40, 40);
+            ptbApagarEquipamento.TabIndex = 4;
+            ptbApagarEquipamento.TabStop = false;
+            ptbApagarEquipamento.Click += ptbApagarEquipamento_Click;
+            // 
+            // ptbRemoverEquipamento
+            // 
+            ptbRemoverEquipamento.Cursor = Cursors.Hand;
+            ptbRemoverEquipamento.Image = Properties.Resources.RemoverEquipamento;
+            ptbRemoverEquipamento.Location = new Point(152, 34);
+            ptbRemoverEquipamento.Margin = new Padding(0);
+            ptbRemoverEquipamento.Name = "ptbRemoverEquipamento";
+            ptbRemoverEquipamento.Size = new Size(40, 40);
+            ptbRemoverEquipamento.TabIndex = 3;
+            ptbRemoverEquipamento.TabStop = false;
+            ptbRemoverEquipamento.Click += ptbRemoverEquipamento_Click;
+            // 
+            // ptbEditarEquipamento
+            // 
+            ptbEditarEquipamento.Cursor = Cursors.Hand;
+            ptbEditarEquipamento.Image = Properties.Resources.EditarEquipamento;
+            ptbEditarEquipamento.Location = new Point(83, 34);
+            ptbEditarEquipamento.Margin = new Padding(0);
+            ptbEditarEquipamento.Name = "ptbEditarEquipamento";
+            ptbEditarEquipamento.Size = new Size(40, 40);
+            ptbEditarEquipamento.TabIndex = 2;
+            ptbEditarEquipamento.TabStop = false;
+            ptbEditarEquipamento.Click += ptbEditarEquipamento_Click;
+            // 
+            // ptbAdicionarEquipamento
+            // 
+            ptbAdicionarEquipamento.Cursor = Cursors.Hand;
+            ptbAdicionarEquipamento.Image = Properties.Resources.AdicionarEquipamento;
+            ptbAdicionarEquipamento.Location = new Point(14, 34);
+            ptbAdicionarEquipamento.Margin = new Padding(0);
+            ptbAdicionarEquipamento.Name = "ptbAdicionarEquipamento";
+            ptbAdicionarEquipamento.Size = new Size(40, 40);
+            ptbAdicionarEquipamento.TabIndex = 1;
+            ptbAdicionarEquipamento.TabStop = false;
+            ptbAdicionarEquipamento.Click += ptbAdicionarEquipamento_Click;
+            // 
             // lblCliente
             // 
             lblCliente.AutoSize = true;
@@ -871,16 +883,8 @@
             Controls.Add(tlphome);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "uctHome";
-            Size = new Size(1007, 367);
+            Size = new Size(1007, 467);
             tlphome.ResumeLayout(false);
-            pnlEquipamentoTop.ResumeLayout(false);
-            pnlEquipamentoTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ptbTrocar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbMoverEquipamento).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbApagarEquipamento).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbRemoverEquipamento).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbEditarEquipamento).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ptbAdicionarEquipamento).EndInit();
             pnlCLienteTop.ResumeLayout(false);
             pnlCLienteTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ptbGerarTermo).EndInit();
@@ -897,10 +901,18 @@
             ((System.ComponentModel.ISupportInitialize)equipamentoBindingSource).EndInit();
             pnlEquipamento.ResumeLayout(false);
             pnlEquipamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbSerie).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbLupaPatrimonio).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvEquipamento).EndInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).EndInit();
+            pnlEquipamentoTop.ResumeLayout(false);
+            pnlEquipamentoTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbTrocar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbMoverEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbApagarEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbRemoverEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbEditarEquipamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbAdicionarEquipamento).EndInit();
             ResumeLayout(false);
         }
 
@@ -945,7 +957,7 @@
         private BindingSource clienteBindingSource;
         private PictureBox ptbLupaNome;
         private PictureBox ptbLupaUserID;
-        private PictureBox pictureBox1;
+        private PictureBox ptbSerie;
         private PictureBox ptbLupaPatrimonio;
         public Label lblTituloCLiente;
         private DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
@@ -974,5 +986,6 @@
         public PictureBox ptbApagarCampoCliente;
         public PictureBox ptbTrocar;
         public PictureBox ptbEditarEquipamento;
+        private Panel pnlLinhaAbaixo;
     }
 }

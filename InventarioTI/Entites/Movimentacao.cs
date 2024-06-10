@@ -13,7 +13,6 @@ namespace InventarioTI.Entites
     {
         public string STATUS { get; set; }
         public string RESPONSAVEL { get; set; }
-        public DateTime DATA { get; set; }
         public string OBSERVACAO { get; set; }
 
         public Movimentacao(string status, Inventario inventario, string origem = null, bool troca = false)
@@ -34,8 +33,8 @@ namespace InventarioTI.Entites
             NOMENCLATURA = inventario.NOMENCLATURA;
             SERIE = inventario.SERIE;
             MEMORIA = inventario.MEMORIA;
+            DATA = inventario.DATA;
             RESPONSAVEL = Base.FI.uctAjustes.txbResponsavel.Text;
-            DATA = DateTime.Now;
             switch (STATUS)
             {
                 case "adicionado":
@@ -59,6 +58,9 @@ namespace InventarioTI.Entites
                     break;
                 case "troca":
                     OBSERVACAO = "Cliente " + USERID + " trocou equipamento de patrimonio " + origem + " para equipamento patrimônio: " + inventario.PATRIMONIO;
+                    break;
+                case "inventario":
+                    OBSERVACAO = "Inventariado realizado!";
                     break;
             }
         }

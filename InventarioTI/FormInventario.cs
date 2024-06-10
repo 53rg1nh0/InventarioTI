@@ -39,6 +39,7 @@ namespace InventarioTI
             ttpForm.SetToolTip(ptbFechar, "Fechar");
             ttpForm.SetToolTip(ptbMinimizar, "Minimizar");
             ttpForm.SetToolTip(ptbHome, "Home");
+            ttpForm.SetToolTip(ptbInventario,"Inventário Rotativo");
             ttpForm.SetToolTip(ptbAjustes, "Ajustes");
             ttpForm.SetToolTip(ptbSobre, "Sobre o Software");
             ttpForm.SetToolTip(uctHome.ptbAdicionarCLinete, "Adicionar Cliente");
@@ -55,6 +56,8 @@ namespace InventarioTI
             ttpForm.SetToolTip(uctHome.ptbTrocar, "Trocar equipamento");
 
             Paginas.Add("Home", new object[3] { Properties.Resources.HomeAnimado, ptbHome, uctHome });
+
+            Paginas.Add("Inventario", new object[3] { Properties.Resources.InventarioAnimado, ptbInventario, uctInventario });
 
             Paginas.Add("Ajustes", new object[3] { Properties.Resources.AjustesAnimado, ptbAjustes, uctAjustes });
 
@@ -75,6 +78,10 @@ namespace InventarioTI
             ptbHome.Image = Properties.Resources.Home;
             ptbHome.BackColor = Color.Transparent;
             uctHome.Visible = false;
+            uctHome.Dock = DockStyle.None;
+            ptbInventario.Image = Properties.Resources.Inventario;
+            ptbInventario.BackColor = Color.Transparent;
+            uctInventario.Visible = false;
             uctHome.Dock = DockStyle.None;
             ptbAjustes.Image = Properties.Resources.Ajustes;
             ptbAjustes.BackColor = Color.Transparent;
@@ -135,6 +142,11 @@ namespace InventarioTI
             PassarPagina("Home");
         }
 
+        private void ptbInventario_Click(object sender, EventArgs e)
+        {
+            PassarPagina("Inventario");
+        }
+
         private void ptbAjustes_Click(object sender, EventArgs e)
         {
             PassarPagina("Ajustes");
@@ -164,5 +176,7 @@ namespace InventarioTI
             Properties.Settings.Default.Save();
             System.Windows.Forms.Application.Restart();
         }
+
+        
     }
 }
