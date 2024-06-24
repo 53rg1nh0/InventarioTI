@@ -276,7 +276,8 @@ namespace InventarioTI.View
                 Unidade unidade = Base.Unidades.Where(u => u.Sigla == Base.Unidade).FirstOrDefault();
                 Inventario i = Base.GetBackup(new Inventario(), unidade);
 
-                i.PATRIMONIO = txbPatrimonio.Text.Length > 8 ? throw new DomainException("Patrimonio só pode conter 8 ou menos caracteres!") : txbPatrimonio.Text;
+                i.PATRIMONIO = txbPatrimonio.Text.Length > 8 || txbPatrimonio.Text.Length <5 || !int.TryParse(txbPatrimonio.Text, out int result) ? 
+                    throw new DomainException("Patrimonio é um número entre 5 a 8 caracteres!") : txbPatrimonio.Text;
                 i.EQUIPAMENTO = cbxTipo.Text;
                 i.SERIE = txbSerie.Text;
                 i.MARCA = cbxMarca.Text;
@@ -369,6 +370,8 @@ namespace InventarioTI.View
         {
             try
             {
+                if(txbPatrimonio.Text.Length > 8 || txbPatrimonio.Text.Length < 5 || !int.TryParse(txbPatrimonio.Text, out int result)) throw 
+                        new DomainException("Patrimonio é um número entre 5 a 8 caracteres!");
                 if (string.IsNullOrEmpty(Cache.Equipamento)) throw new Exception("Incira o equipamento que deseja Editar!");
                 Base.Atualizar(false, false);
                 Inventario i = Base.Inv.Where(x => x.PATRIMONIO == Cache.Equipamento).FirstOrDefault();
